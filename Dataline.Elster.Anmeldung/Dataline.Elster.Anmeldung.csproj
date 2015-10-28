@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{629DA954-C067-46EB-BB53-A53182FFAD2B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dataline.Elster.Anmeldung</RootNamespace>
+    <AssemblyName>Dataline.Elster.Anmeldung</AssemblyName>
+    <DefaultLanguage>de-DE</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <None Include="Dataline.Elster.Anmeldung.nuspec" />
+    <None Include="xsd\convert.cmd" />
+    <EmbeddedResource Include="xsd\elster0810_LStA_200401_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_LStA_200501_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_LStA_200601_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_LStA_200701_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_LStA_200801_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_LStA_200901_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_LStA_201001_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_LStA_201101_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_LStA_201201_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_LStA_201301_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_LStA_201401_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_LStA_201501_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_UStA_200401_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_UStA_200501_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_UStA_200601_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_UStA_200701_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_UStA_200801_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_UStA_200901_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_UStA_201001_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_UStA_201101_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_UStA_201102_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_UStA_201201_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_UStA_201301_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_UStA_201401_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_UStA_201501_extern.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\lsta_200401.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\lsta_200501.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\lsta_200601.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\lsta_200701.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\lsta_200801.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\lsta_200901.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\lsta_201001.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\lsta_201101.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\lsta_201201.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\lsta_201301.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\lsta_201401.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\lsta_201501.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\usta_200401.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\usta_200501.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\usta_200601.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\usta_200701.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\usta_200801.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\usta_200901.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\usta_201001.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\usta_201101.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\usta_201102.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\usta_201201.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\usta_201301.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\usta_201401.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\usta_201501.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnmeldungResourceProvider.cs" />
+    <Compile Include="Lohnsteuer200401\elster0810_LStA_200401_extern.cs" />
+    <Compile Include="Lohnsteuer200501\elster0810_LStA_200501_extern.cs" />
+    <Compile Include="Lohnsteuer200601\elster0810_LStA_200601_extern.cs" />
+    <Compile Include="Lohnsteuer200701\elster0810_LStA_200701_extern.cs" />
+    <Compile Include="Lohnsteuer200801\elster0810_LStA_200801_extern.cs" />
+    <Compile Include="Lohnsteuer200901\elster0810_LStA_200901_extern.cs" />
+    <Compile Include="Lohnsteuer201001\elster0810_LStA_201001_extern.cs" />
+    <Compile Include="Lohnsteuer201101\elster0810_LStA_201101_extern.cs" />
+    <Compile Include="Lohnsteuer201201\elster0810_LStA_201201_extern.cs" />
+    <Compile Include="Lohnsteuer201301\elster0810_LStA_201301_extern.cs" />
+    <Compile Include="Lohnsteuer201401\elster0810_LStA_201401_extern.cs" />
+    <Compile Include="Lohnsteuer201501\elster0810_LStA_201501_extern.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Umsatzsteuer200401\elster0810_UStA_200401_extern.cs" />
+    <Compile Include="Umsatzsteuer200501\elster0810_UStA_200501_extern.cs" />
+    <Compile Include="Umsatzsteuer200601\elster0810_UStA_200601_extern.cs" />
+    <Compile Include="Umsatzsteuer200701\elster0810_UStA_200701_extern.cs" />
+    <Compile Include="Umsatzsteuer200801\elster0810_UStA_200801_extern.cs" />
+    <Compile Include="Umsatzsteuer200901\elster0810_UStA_200901_extern.cs" />
+    <Compile Include="Umsatzsteuer201001\elster0810_UStA_201001_extern.cs" />
+    <Compile Include="Umsatzsteuer201101\elster0810_UStA_201101_extern.cs" />
+    <Compile Include="Umsatzsteuer201102\elster0810_UStA_201102_extern.cs" />
+    <Compile Include="Umsatzsteuer201201\elster0810_UStA_201201_extern.cs" />
+    <Compile Include="Umsatzsteuer201301\elster0810_UStA_201301_extern.cs" />
+    <Compile Include="Umsatzsteuer201401\elster0810_UStA_201401_extern.cs" />
+    <Compile Include="Umsatzsteuer201501\elster0810_UStA_201501_extern.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dataline.Elster.Basis\Dataline.Elster.Basis.csproj">
+      <Project>{03239608-fa8f-4d16-9ec5-df54cc99ba8f}</Project>
+      <Name>Dataline.Elster.Basis</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

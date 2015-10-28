@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+	XML-Schema für die Stornierung der elektronischen Lohnsteuerbescheinigung.
+	=============
+	Änderungshistorie
+	Version 1: Erstellung
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:elsterlohn="http://www.elsterlohn.de/LStBStornoV1/XMLSchema" xmlns:elsterbase="http://www.elster.de/basis08/XMLSchema" targetNamespace="http://www.elsterlohn.de/LStBStornoV1/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!--Version 1 -->
+	<xs:import namespace="http://www.elster.de/basis08/XMLSchema" schemaLocation="./allg000008.xsd"/>
+	<xs:complexType name="StornierungCType">
+		<xs:sequence>
+			<xs:element name="Anweisung">
+				<xs:annotation>
+					<xs:documentation>Eindeutige Kennzeichnung der Anweisung durch den Verfasser. Hier sind die Art der Anweisung (Storno) und die eindeutige KmId anzugeben.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="KmId" type="elsterbase:allg_KmIdSType">
+							<xs:annotation>
+								<xs:documentation>Durch den Verfasser vorgegebene bundesweit eindeutige Identifikation der Storno-Mitteilung.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="RefKmId" type="elsterbase:allg_KmIdSType">
+							<xs:annotation>
+								<xs:documentation xml:lang="DE">Referenzierte Mitteilung - bei der Stornierung ist hier die KmId der zu stornierenden Mitteilung anzugeben.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="art" use="required">
+						<xs:annotation>
+							<xs:documentation>Anweisungsart (hier nur Storno).</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="Storno"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Zuflussjahr">
+				<xs:annotation>
+					<xs:documentation>Das Zuflussjahr der zu stornierenden Lohnsteuerbescheinigung.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:gYear">
+						<xs:minInclusive value="2016"/>
+						<xs:maxInclusive value="2016"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Allgemein">
+				<xs:annotation>
+					<xs:documentation>Allgemeine Angaben zum Steuerpflichtigen der zu stornierenden Lohnsteuerbescheinigung.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ETIN" type="elsterbase:allg_ETINSType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Die eTIN des Arbeitnehmers so wie sie in der zu stornierenden Lohnsteuerbescheinigung angegeben wurde.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IdNr" type="elsterbase:allg_IdNrSType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Die IdNr der Arbeitnehmers so wie sie in der zu stornierenden Lohnsteuerbescheinigung angegeben wurde.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Ordnungsmerkmal">
+							<xs:annotation>
+								<xs:documentation>Ordnungsmerkmal des Arbeitgebers für den Arbeitnehmer (z.B. Personalnummer) so wie es in der zu stornierenden Lohnsteuerbescheinigung angegeben wurde.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="elsterbase:allg_BaseStringLightSType">
+									<xs:maxLength value="32"/>
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Arbeitgeber">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ArbGName">
+							<xs:annotation>
+								<xs:documentation xml:lang="DE">Name des Arbeitsgebers.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="elsterbase:allg_BaseStringLightSType">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="60"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="ArbGStNr" type="elsterbase:allg_StNrSType">
+							<xs:annotation>
+								<xs:documentation xml:lang="DE">Steuernummer des Arbeitgebers (im bundeseinheitlichen "Elsterformat").</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="version" use="required">
+			<xs:annotation>
+				<xs:documentation>Die Version der Stornierung ist hier immer 1.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<!-- Definierung einfacher Elements________________________________________________________-->
+	<!-- A -->
+	<!-- B -->
+	<!-- D -->
+	<!-- E -->
+	<!-- F -->
+	<!-- G -->
+	<!-- H -->
+	<!-- I -->
+	<!-- J -->
+	<!-- K -->
+	<!-- L -->
+	<!-- M -->
+	<!-- N -->
+	<!-- O -->
+	<!-- P -->
+	<!-- Q -->
+	<!-- R -->
+	<!-- S -->
+	<!-- T -->
+	<!-- U -->
+	<!-- V -->
+	<!-- W -->
+	<!-- X -->
+	<!-- Y -->
+	<!-- Z -->
+	<!-- Definierung globaler complex Types __________________________________________________ -->
+	<!-- A -->
+	<!-- B -->
+	<!-- C -->
+	<!-- D -->
+	<!-- E -->
+	<!-- F -->
+	<!-- G -->
+	<!-- H -->
+	<!-- I -->
+	<!-- J -->
+	<!-- K -->
+	<!-- L -->
+	<!-- M -->
+	<!-- N -->
+	<!-- O -->
+	<!-- P -->
+	<!-- Q -->
+	<!-- R -->
+	<!-- S -->
+	<!-- T -->
+	<!-- U -->
+	<!-- V -->
+	<!-- W -->
+	<!-- X -->
+	<!-- Y -->
+	<!-- Z -->
+	<!-- Definierung globaler Attribute _______________________________________________________ -->
+</xs:schema>

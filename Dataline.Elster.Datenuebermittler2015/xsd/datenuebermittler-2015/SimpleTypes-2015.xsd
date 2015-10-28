@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.elster.de/elo2/datenuebermittler/types/simple/2015"
+	targetNamespace="http://www.elster.de/elo2/datenuebermittler/types/simple/2015">
+
+	<xs:simpleType name="IdNrSimple">
+		<xs:annotation>
+			<xs:documentation xml:lang="DE">die 11-stellige IdNr
+				gemäß § 139b AO
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="TextSimple">
+			<xs:length value="11" />
+			<xs:pattern value="\d{11}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="StNrSimple">
+		<xs:annotation>
+			<xs:documentation xml:lang="DE">gemäß Elster Developers
+				Toolkit
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">13-stellig Nummerisch
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">Bundesfinanzamtsnummer +
+				0 + Bezirk + Unterscheidungsnr. + Prüfziffer
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="TextSimple">
+			<xs:length value="13" />
+			<xs:pattern value="28\d{2}0\d{8}" />
+			<xs:pattern value="91\d{2}0\d{8}" />
+			<xs:pattern value="92\d{2}0\d{8}" />
+			<xs:pattern value="11\d{2}0\d{8}" />
+			<xs:pattern value="30\d{2}0\d{8}" />
+			<xs:pattern value="24\d{2}0\d{8}" />
+			<xs:pattern value="22\d{2}0\d{8}" />
+			<xs:pattern value="26\d{2}0\d{8}" />
+			<xs:pattern value="40\d{2}0\d{8}" />
+			<xs:pattern value="23\d{2}0\d{8}" />
+			<xs:pattern value="27\d{2}0\d{8}" />
+			<xs:pattern value="10\d{2}0\d{8}" />
+			<xs:pattern value="32\d{2}0\d{8}" />
+			<xs:pattern value="31\d{2}0\d{8}" />
+			<xs:pattern value="21\d{2}0\d{8}" />
+			<xs:pattern value="41\d{2}0\d{8}" />
+			<xs:pattern value="51\d{2}0\d{8}" />
+			<xs:pattern value="52\d{2}0\d{8}" />
+			<xs:pattern value="53\d{2}0\d{8}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DatumSimple">
+		<xs:annotation>
+			<xs:documentation xml:lang="DE">Datum 8-stellig ohne
+				Trennzeichen
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">Format : JJJJMMTT
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="TextSimple">
+			<xs:length value="8" />
+			<xs:pattern
+				value="(19|20)[0-9]{2}(((01|03|05|07|08|10|12)(0[1-9]|[12][0-9]|3[01]))|(02(0[1-9]|[12][0-9]))|((04|06|09|11)(0[1-9]|[12][0-9]|30)))" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="GeburtsdatumSimple">
+		<xs:annotation>
+			<xs:documentation xml:lang="DE">Datum 8-stellig ohne
+				Trennzeichen
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">Format : JJJJMMTT
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">Lässt auch teilweise oder
+				vollständig unbekannte Daten zu. In diesen Fällen wird der Wert für
+				Tag, Monat oder Jahr entsprechend genullt (19501231, 19501200,
+				19500000, 00000000)
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="TextSimple">
+			<xs:length value="8" />
+			<xs:pattern
+				value="(((18)(8|9)\d)|((19|20)\d{2})|(0000))(([0][0-9])|([1][0-2]))[0-3][0-9]" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TextSimple">
+		<xs:annotation>
+			<xs:documentation xml:lang="DE">die Einschränkungen sind
+				in der Schnittstellenbeschreibung SST_Arbeitgeber zu entnehmen"
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="KeineTrennzeichenSimple">
+			<xs:pattern value="[\p{L}\p{P}\p{Zs}\p{Nd}]*" />
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="KeineTrennzeichenSimple">
+		<xs:annotation>
+			<xs:documentation xml:lang="DE">das letzte Zeichen darf
+				nicht vom Typ {Z} sein, zusätzlich gelten die Einschränkungen des
+				BaseStringNoLeadingSeparators
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">Verweis auf
+				http://www.w3.org/TR/2001/REC-xmlschema-2-20010502/#regexs
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="KeineFuehrendenTrennzeichenSimple">
+			<xs:pattern value=".*[^\p{Z}_`^}]" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="KeineFuehrendenTrennzeichenSimple">
+		<xs:annotation>
+			<xs:documentation xml:lang="DE">das erste Zeichen darf
+				nicht vom Typ {Z} sein, zusätzlich gelten die Einschränkungen des
+				BaseStringUltraLight
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">Verweis auf
+				http://www.w3.org/TR/2001/REC-xmlschema-2-20010502/#regexs
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="EinfacherTextSimple">
+			<xs:pattern value="[^\p{Z}_`^}].*" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="EinfacherTextSimple">
+		<xs:annotation>
+			<xs:documentation xml:lang="DE">alle Zeichen die nicht
+				Kategorien C oder Zl gehören
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">Verweis auf
+				http://www.w3.org/TR/2001/REC-xmlschema-2-20010502/#regexs
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([^\n\r\t\p{C}\p{Zl}])*" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="BetragSimple">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0" />
+			<xs:maxInclusive value="999999999" />
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

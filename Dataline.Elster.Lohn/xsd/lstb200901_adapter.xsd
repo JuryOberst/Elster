@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) by Michael Wilz (Rechenzentrum der Finanzverwaltung des Landes NRW) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:elsterbase="http://www.elster.de/basis08/XMLSchema" xmlns:elsterlohn="http://www.elsterlohn.de/2009-01/XMLSchema" targetNamespace="http://www.elsterlohn.de/2009-01/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- Version 1 -->
+	<!-- RootElement = Lohnsteuerbescheinigung 2009_________________________________________________-->
+	<xs:include schemaLocation="./lstb200901.xsd"/>
+	<xs:element name="Lohnsteuerbescheinigung" type="elsterlohn:lstb_LohnsteuerbescheinigungCType"/>
+</xs:schema>

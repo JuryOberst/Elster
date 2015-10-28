@@ -1,0 +1,2 @@
+@echo off
+xsd /o:.. /n:Dataline.Elster.Lohn /edb /c headerbasis000002.xsd allg000008.xsd lstb200901_adapter.xsd lstb201001_adapter.xsd lstb201101_adapter.xsd lstb201201_adapter.xsd lstb201301_adapter.xsd lstb201302_adapter.xsd lstb201401_adapter.xsd lstb201501_adapter.xsd lstb201601_adapter.xsd protokoll000004_adapter.xsd protokoll000005_adapter.xsd lstb_storno_000001_adapter.xsd protokollanforderung000003.xsd .\elster0810_elo_extern.xsd 

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by Michael Wilz (Rechenzentrum der Finanzverwaltung NRW) -->
+<!-- Änderungshistorie -->
+<!-- Version 13 
+	bei dem Attribut lfdNr den Datentyp von positiveInteger auf nonPositivInteger geändert
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:elster="http://www.elster.de/2002/XMLSchema" xmlns:elsterbase="http://www.elster.de/basis08/XMLSchema" targetNamespace="http://www.elster.de/2002/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.elster.de/basis08/XMLSchema" schemaLocation="./allg000008.xsd"/>
+	<!-- RootElemente _______________________________________________________________________________________-->
+	<xs:element name="Protokoll" type="elster:ProtokollCType"/>
+	<xs:element name="ProtokollAnforderung" type="elster:ProtokollAnforderungCType"/>
+	<!-- zulässige Versionen-->
+	<xs:simpleType name="ProtokollAnforderungVersionSType">
+		<xs:annotation>
+			<xs:documentation xml:lang="DE">Definiert zulässige Versionen der Protokollanforderung</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="000002"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ProtokollVersionSType">
+		<xs:restriction base="xs:integer">
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="000002"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="000003"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Definierung einfacher Elements________________________________________________________-->
+	<!-- A -->
+	<!-- B -->
+	<!-- C -->
+	<!-- D -->
+	<!-- E -->
+	<!-- F -->
+	<!-- G -->
+	<!-- H -->
+	<!-- I -->
+	<!-- J -->
+	<!-- K -->
+	<!-- L -->
+	<!-- M -->
+	<!-- N -->
+	<!-- O -->
+	<!-- P -->
+	<xs:simpleType name="ProtokollStatusCodeSType">
+		<xs:restriction base="xs:integer">
+			<xs:enumeration value="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Datenlieferung ok</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Es sind Fehler aufgetreten - die Nutzdatenblöcke konnten nur teilweise verarbeitet werden</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="2">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Datenlieferung konnte garnicht verarbeitet werden - alle Nutzdatenblöcke fehlerhaft</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="3">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Datenlieferung wurde noch nicht verarbeitet - bitte fordern Sie das Protokoll nochmal zu einen späteren Zeitpunkt an</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="4">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Zu diesem Transferticket liegen keine Daten vor</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="5">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Anfrage abgewiesen, der PublicKey der Datenlieferung und der Protokollanforderung stimmen nicht überein</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="6">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Datenlieferung konnte garnicht verarbeitet werden - Datenteil konnte nicht entschlüsselt werden</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Q -->
+	<!-- R -->
+	<!-- S -->
+	<!-- T -->
+	<!-- U -->
+	<!-- V -->
+	<!-- W -->
+	<!-- X -->
+	<!-- Y -->
+	<!-- Z -->
+	<!-- Definierung globaler complex Types __________________________________________________ -->
+	<!-- A -->
+	<!-- B -->
+	<!-- C -->
+	<!-- D -->
+	<xs:complexType name="DatenTeilStatusCType">
+		<xs:sequence>
+			<xs:element name="DTStatus" type="elster:DTStatusCType"/>
+			<xs:element name="NutzdatenBlockStatus" type="elster:NutzdatenBlockStatusCType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Nur in den Fällen in denen der DatenTeilStatus =3,4 oder 5 ist wird kein NutzdatenBlockStatus erstellt</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="transferTicket" type="elsterbase:allg_TransferTicketSType"/>
+	</xs:complexType>
+	<xs:complexType name="DTStatusCType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="code" type="elster:ProtokollStatusCodeSType"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!-- E -->
+	<!-- F -->
+	<!-- G -->
+	<!-- J -->
+	<!-- K -->
+	<!-- L -->
+	<!-- M -->
+	<!-- N -->
+	<xs:complexType name="NdBStatusCType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="code" type="elster:ProtokollStatusCodeSType"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="NutzdatenBlockStatusCType">
+		<xs:sequence>
+			<xs:element name="NdBStatus" type="elster:NdBStatusCType"/>
+			<xs:element name="NdSFehler" type="elster:NdSFehlerCType" minOccurs="0" maxOccurs="100"/>
+		</xs:sequence>
+		<xs:attribute name="nutzdatenTicket" type="elsterbase:allg_NutzdatenBlockTicketSType"/>
+	</xs:complexType>
+	<xs:complexType name="NdSFehlerCType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="ordnungsMerkmal" type="xs:string">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">das Ordnungsmerkmal des Arbeitnehmers aus der Lohnsteuerbescheinigung </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="fehlerNummer" type="xs:positiveInteger">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">9stellige Fehlernummer </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="lfdNr" type="xs:nonNegativeInteger">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">laufende Nummer der Lohnsteuerbescheinigung innerhalb des Nutzdatenblockes</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!-- O -->
+	<!-- P -->
+	<xs:complexType name="ProtokollCType">
+		<xs:sequence>
+			<xs:element name="ZeitStempel" type="elsterbase:allg_DatumSType"/>
+			<xs:element name="DatenTeilStatus" type="elster:DatenTeilStatusCType"/>
+		</xs:sequence>
+		<xs:attribute name="version" type="elsterbase:allg_VersionSType" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ProtokollAnforderungCType">
+		<xs:sequence>
+			<xs:element name="TransferTicket" type="elsterbase:allg_TransferTicketSType"/>
+			<xs:element name="PublicKey" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="version" type="elster:ProtokollAnforderungVersionSType" use="required"/>
+		<xs:attribute name="protokollVersion" type="elster:ProtokollVersionSType" use="required"/>
+	</xs:complexType>
+	<!-- Q -->
+	<!-- R -->
+	<!-- S -->
+	<!-- T -->
+	<!-- U -->
+	<!-- V -->
+	<!-- W -->
+	<!-- X -->
+	<!-- Y -->
+	<!-- Z -->
+	<!-- Definierung globaler Gruppen _______________________________________________________ -->
+</xs:schema>

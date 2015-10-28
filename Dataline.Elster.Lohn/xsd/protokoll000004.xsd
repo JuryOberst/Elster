@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+	XML-Schema für das Verarbeitungsprotokoll in Version 4.
+	=============
+	Änderungshistorie
+	Version 10: bei den Attributen verarbeiteteNDS, nichtverarbeiteteNDS und lfdNr den Datentyp von positiveInteger auf nonNegativeInteger geändert
+	Version 11: NdSFehlerCType - Attribut "idNr" in "idnr" umbenannt
+	Version 12: Enum für Statuscode zur gesamten Datenlieferung und zum Nutzdatenblock an Dokumentation angepasst
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:elsterprotokoll="http://www.elsterfachmethodik.de/protokollverfahren/version4/XMLSchema" xmlns:elster="http://www.elster.de/2002/XMLSchema" xmlns:elsterbase="http://www.elster.de/basis08/XMLSchema" targetNamespace="http://www.elsterfachmethodik.de/protokollverfahren/version4/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.elster.de/basis08/XMLSchema" schemaLocation="./allg000008.xsd"/>
+	<!-- RootElemente _____________________________________________________________________-->
+	<!-- Definierung einfacher Elements________________________________________________________-->
+	<!-- A -->
+	<!-- B -->
+	<!-- C -->
+	<!-- D -->
+	<!-- E -->
+	<!-- F -->
+	<!-- G -->
+	<!-- H -->
+	<!-- I -->
+	<!-- J -->
+	<!-- K -->
+	<!-- L -->
+	<!-- M -->
+	<!-- N -->
+	<!-- O -->
+	<!-- P -->
+	<!-- Q -->
+	<!-- R -->
+	<!-- S -->
+	<!-- T -->
+	<!-- U -->
+	<!-- V -->
+	<!-- W -->
+	<!-- X -->
+	<!-- Y -->
+	<!-- Z -->
+	<!-- Definierung globaler complex Types __________________________________________________ -->
+	<!-- A -->
+	<!-- B -->
+	<!-- C -->
+	<!-- D -->
+	<xs:complexType name="DatenTeilStatusCType">
+		<xs:sequence>
+			<xs:element name="Nutzdatenblock" type="elsterprotokoll:NutzdatenBlockStatusCType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Abhängig vom Statuscode der gesamten Datenlieferung, weitere Informationen zu jedem Nutzdatenblock aus der Datenlieferung.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="transferTicket" type="elsterbase:allg_TransferTicketSType" use="required">
+			<xs:annotation>
+				<xs:documentation>TransferTicket der Datenlieferung</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="code" use="required">
+			<xs:annotation>
+				<xs:documentation>Verarbeitungscode zur gesamten Datenlieferung</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:enumeration value="0">
+						<xs:annotation>
+							<xs:documentation xml:lang="DE">Datenlieferung ok.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="1">
+						<xs:annotation>
+							<xs:documentation xml:lang="DE">Es sind Fehler aufgetreten - die Nutzdatenblöcke konnten nur teilweise verarbeitet werden.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="2">
+						<xs:annotation>
+							<xs:documentation xml:lang="DE">Datenlieferung konnte gar nicht verarbeitet werden - alle Nutzdatenblöcke fehlerhaft.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="3">
+						<xs:annotation>
+							<xs:documentation xml:lang="DE">Datenlieferung wurde noch nicht verarbeitet - bitte fordern Sie das Protokoll nochmal zu einen späteren Zeitpunkt an.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="text" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Statustext zur gesamten Datenlieferung</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<!-- E -->
+	<!-- F -->
+	<!-- G -->
+	<!-- J -->
+	<!-- K -->
+	<!-- L -->
+	<!-- M -->
+	<!-- N -->
+	<xs:complexType name="NutzdatenBlockStatusCType">
+		<xs:sequence>
+			<xs:element name="NdSFehler" type="elsterprotokoll:NdSFehlerCType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Beschreibung der einzelnen Fehler im Nutzdatenblock</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="nutzdatenTicket" type="elsterbase:allg_NutzdatenBlockTicketSType" use="required">
+			<xs:annotation>
+				<xs:documentation>das eindeutige Ticket des Nutzdatenbkockes aus der Datenlieferung</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="code" use="required">
+			<xs:annotation>
+				<xs:documentation>Statuscode zum Nutzdatenblock</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:enumeration value="2">
+						<xs:annotation>
+							<xs:documentation xml:lang="DE">Daten geprüft und korrekt.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="3">
+						<xs:annotation>
+							<xs:documentation xml:lang="DE">Daten geprüft und fehlerhaft - Datenblock wurde nicht verarbeitet.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="4">
+						<xs:annotation>
+							<xs:documentation xml:lang="DE">Daten geprüft und teilweise fehlerhaft - Datenblock wurde nur teilweise verarbeitet.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="text" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Statustext zum Nutzdatenblock</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="verarbeiteteNdS" type="xs:nonNegativeInteger">
+			<xs:annotation>
+				<xs:documentation>Anzahl der verarbeiteten Datensätze des Nutzdatenblockes</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="nichtverarbeiteteNdS" type="xs:nonNegativeInteger">
+			<xs:annotation>
+				<xs:documentation>Anzahl der nicht verarbeiteten Datensätze des Nutzdatenblockes</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="NdSFehlerCType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="idnr" type="xs:positiveInteger" use="optional">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">Die IdNr des Steuerpflichtigen, dem der nicht verarbeitbare Datensatz zugeordnet ist.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="ordnungsMerkmal" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">das vom Datenlieferanten zur eindeutigen Identifizierung vergebene Ordnungsmerkmal</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="lfdNr" type="xs:nonNegativeInteger" use="required">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">laufende Nummer des Datensatzes innerhalb des Nutzdatenblockes</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="fehlerNummer" type="xs:positiveInteger" use="required">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">9-stellige Fehlernummer </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="fehlerText" type="xs:string" use="required">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">der Fehlertext zur Fehlernummer</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!-- O -->
+	<!-- P -->
+	<xs:complexType name="ProtokollCType">
+		<xs:sequence>
+			<xs:element name="ZeitStempel" type="elsterbase:allg_DatumSType">
+				<xs:annotation>
+					<xs:documentation>Zeitstempel im Format JJJJMMTThhmmss zu dem das Protokoll auf den Servern der Finanzverwaltung erstellt wurde.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DatenTeil" type="elsterprotokoll:DatenTeilStatusCType">
+				<xs:annotation>
+					<xs:documentation>Der Datenteil beinhaltet die Verarbeitungsergebnisse der Datenlieferung</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="version" type="elsterbase:allg_VersionSType" use="required">
+			<xs:annotation>
+				<xs:documentation>Version des Protokolls; immer 4</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<!-- Q -->
+	<!-- R -->
+	<!-- S -->
+	<!-- T -->
+	<!-- U -->
+	<!-- V -->
+	<!-- W -->
+	<!-- X -->
+	<!-- Y -->
+	<!-- Z -->
+	<!-- Definierung globaler Gruppen _______________________________________________________ -->
+</xs:schema>

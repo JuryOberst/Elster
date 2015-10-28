@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+	XML-Adapterschema für die elektronische Lohnsteuerbescheinigung 2013 (Version 201302).
+	=============
+	Änderungshistorie
+	Version 1: Erstellung
+	Version 2: Kommentar vom Element Lohnsteuerbescheinigung entfernt
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:elsterlohn="http://www.elsterlohn.de/2013-02/XMLSchema" targetNamespace="http://www.elsterlohn.de/2013-02/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- Version 2-->
+	<!-- RootElement = Lohnsteuerbescheinigung 2013_________________________________________________-->
+	<xs:include schemaLocation="./lstb201302.xsd"/>
+	<xs:element name="Lohnsteuerbescheinigung" type="elsterlohn:lstb_LohnsteuerbescheinigungCType"/>
+</xs:schema>

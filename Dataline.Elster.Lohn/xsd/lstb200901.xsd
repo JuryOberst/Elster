@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) by Michael Wilz (Rechenzentrum der Finanzverwaltung des Landes NRW) -->
+<!-- Änderungshistorie -->
+<!-- Version 14
+	Element Lohnsteuerbescheinigung ist nun im Schema "lstb200901_adapter.xsd" definiert
+-->
+<!-- Version 13 
+	allg_PLZSType: Der Verweis auf die allg000008.xsd wurde nun auch für die AG-Adresse ersetzt durch eine lokale Definition : positiveInteger zwischen 01001 - 99999
+-->
+<!-- Version 12 
+	allg_PLZSType: Der Verweis auf die allg000008.xsd wurde ersetzt durch eine lokale Definition : positiveInteger zwischen 01001 - 99999
+-->
+<!-- Version 10 
+	Pattern für Großbuchstaben von [F|S]([,| ][F|S])? auf [F|S]([,| ]?[F|S]){0,1} entsprechend der Dokumentation geändert.
+-->
+<!-- Version 9 
+	Versionsnummer angepasst
+-->
+<!-- Version 7 + 8 
+	StFreiFahrtKAusw ist nun optional
+-->
+<!-- Version 6 
+	Überarbeitung der Kommentare 
+-->
+<!-- Version 5 
+	Entfernen des Großbuchstaben V
+	Maximale Anzahl der Arbeitstage auf 265 reduziert
+-->
+<!-- Version 4 
+	Die AuslandsPostleitzahl des Arbeitgebers wurde angepasst.
+
+-->
+<!-- Version 3 
+	Änderungen an der AuslandsPLZ, das Staatenkürzel wurde als Attribut an die AuslandsPLZ angehangen...
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:elsterbase="http://www.elster.de/basis08/XMLSchema" xmlns:elsterlohn="http://www.elsterlohn.de/2009-01/XMLSchema" targetNamespace="http://www.elsterlohn.de/2009-01/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- Version 14 -->
+	<!-- RootElement = Lohnsteuerbescheinigung 2009_________________________________________________-->
+	<xs:import namespace="http://www.elster.de/basis08/XMLSchema" schemaLocation="./allg000008.xsd"/>
+	<xs:simpleType name="lstb_LohnsteuerbescheinigungVersionSType">
+		<xs:restriction base="elsterbase:allg_BaseStringSType">
+			<xs:length value="6"/>
+			<xs:enumeration value="200901"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="lstb_LohnsteuerbescheinigungJahrSType">
+		<xs:restriction base="xs:positiveInteger">
+			<xs:enumeration value="2009"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Definierung einfacher Elements________________________________________________________-->
+	<!-- K -->
+	<xs:simpleType name="lstb_KinderSType">
+		<xs:annotation>
+			<xs:documentation xml:lang="DE">Anzahl der Kinderfreibeträge</xs:documentation>
+			<xs:documentation xml:lang="DE">Dezimaltrennzeichen = "."</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="3"/>
+			<xs:fractionDigits value="1" fixed="true"/>
+			<xs:minInclusive value="0.0"/>
+			<xs:maxInclusive value="99.5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="InlandsPLZ_2009SType">
+		<xs:annotation>
+			<xs:documentation>Inlandspostleitzahl (Deutschland)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:minInclusive value="01001"/>
+			<xs:maxExclusive value="100000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- T -->
+	<xs:simpleType name="lstb_Text200">
+		<xs:restriction base="elsterbase:allg_BaseStringLightSType">
+			<xs:maxLength value="200"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- W -->
+	<xs:simpleType name="lstb_WertSType">
+		<xs:annotation>
+			<xs:documentation xml:lang="DE">Einheitlicher Datentyp aller zu bescheigenden Werte</xs:documentation>
+			<xs:documentation xml:lang="DE">Vorzeichen: es ist nur das "-" als Vorzeichen zulässig "+" nicht !!!</xs:documentation>
+			<xs:documentation xml:lang="DE">13 Stellen (Ziffern) vor dem Dezimaltrennzeichen</xs:documentation>
+			<xs:documentation xml:lang="DE">Dezimaltrennzeichen ist der "."</xs:documentation>
+			<xs:documentation xml:lang="DE">2 Stellen nach dem Dezimaltrennzeichen</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="15"/>
+			<xs:fractionDigits value="2" fixed="true"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Definierung globaler complex Types __________________________________________________ -->
+	<!-- A -->
+	<xs:complexType name="lstb_AdresseCType">
+		<xs:sequence>
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>Hausadresse</xs:documentation>
+				</xs:annotation>
+				<xs:element name="Str" type="elsterbase:allg_StrSType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Strasse</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Hausnummer" type="elsterbase:allg_HausnummerSType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Hausnummer ohne Zusätze</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="HNrZusatz" type="elsterbase:allg_HausnummernZusatzSType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Hausnummernzusatz</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Anschriftenzusatz" type="elsterbase:allg_AnschriftenZusatzSType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>weitere Anschriftenzusätze</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Ort" type="elsterbase:allg_OrtSType">
+					<xs:annotation>
+						<xs:documentation>Ort</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:choice>
+					<xs:element name="PLZ" type="elsterlohn:InlandsPLZ_2009SType"/>
+					<xs:element name="AuslandsPLZ" type="elsterlohn:AuslandsPLZCType">
+						<xs:annotation>
+							<xs:documentation>0-10 -stellige Auslandspostleitzahl</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:choice>
+			</xs:sequence>
+			<xs:sequence minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Postfachadresse</xs:documentation>
+				</xs:annotation>
+				<xs:element name="PostfachOrt" type="elsterbase:allg_OrtSType"/>
+				<xs:element name="Postfach" type="elsterbase:allg_PostfachSType"/>
+				<xs:element name="PostfachPLZ" type="elsterlohn:InlandsPLZ_2009SType"/>
+			</xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="lstb_ArbGAdresseCType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="Str" type="elsterbase:allg_StrSType" minOccurs="0"/>
+				<xs:element name="Hausnummer" type="elsterbase:allg_HausnummerSType" minOccurs="0"/>
+				<xs:element name="HNrZusatz" type="elsterbase:allg_HausnummernZusatzSType" minOccurs="0"/>
+				<xs:element name="Anschriftenzusatz" type="elsterbase:allg_AnschriftenZusatzSType" minOccurs="0"/>
+				<xs:element name="Ort" type="elsterbase:allg_OrtSType"/>
+				<xs:choice>
+					<xs:element name="PLZ" type="elsterlohn:InlandsPLZ_2009SType"/>
+					<xs:element name="AuslandsPLZ" type="elsterlohn:AuslandsPLZCType"/>
+				</xs:choice>
+				<xs:sequence minOccurs="0">
+					<xs:element name="PostfachOrt" type="elsterbase:allg_OrtSType"/>
+					<xs:choice>
+						<xs:sequence>
+							<xs:element name="Postfach" type="elsterbase:allg_PostfachSType"/>
+							<xs:element name="PostfachPLZ" type="elsterlohn:InlandsPLZ_2009SType"/>
+						</xs:sequence>
+						<xs:element name="GKPLZ" type="elsterlohn:InlandsPLZ_2009SType"/>
+					</xs:choice>
+				</xs:sequence>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="PostfachOrt" type="elsterbase:allg_OrtSType"/>
+				<xs:choice>
+					<xs:sequence>
+						<xs:element name="Postfach" type="elsterbase:allg_PostfachSType"/>
+						<xs:element name="PostfachPLZ" type="elsterlohn:InlandsPLZ_2009SType"/>
+					</xs:sequence>
+					<xs:element name="GKPLZ" type="elsterlohn:InlandsPLZ_2009SType"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="lstb_ArbeitgeberCType">
+		<xs:sequence>
+			<xs:element name="ArbGName">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Name des AG der die Lohnsteuer abgeführt hat</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="elsterbase:allg_BaseStringLightSType">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ArbGFANr">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Bundesfinanzamtsnummer des Finanzamtes an das die Lohnsteuer abgeführt wurde</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="elsterbase:allg_BaseStringSType">
+						<xs:length value="4"/>
+						<xs:pattern value="28\d{2}"/>
+						<xs:pattern value="91\d{2}"/>
+						<xs:pattern value="92\d{2}"/>
+						<xs:pattern value="11\d{2}"/>
+						<xs:pattern value="30\d{2}"/>
+						<xs:pattern value="24\d{2}"/>
+						<xs:pattern value="22\d{2}"/>
+						<xs:pattern value="26\d{2}"/>
+						<xs:pattern value="40\d{2}"/>
+						<xs:pattern value="23\d{2}"/>
+						<xs:pattern value="27\d{2}"/>
+						<xs:pattern value="10\d{2}"/>
+						<xs:pattern value="32\d{2}"/>
+						<xs:pattern value="31\d{2}"/>
+						<xs:pattern value="21\d{2}"/>
+						<xs:pattern value="41\d{2}"/>
+						<xs:pattern value="51\d{2}"/>
+						<xs:pattern value="52\d{2}"/>
+						<xs:pattern value="53\d{2}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ArbGFAName">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Names des Finanzamtes an das die Lohnsteuer abgeführt wurde</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="elsterbase:allg_BaseStringSType">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ArbGStNr" type="elsterbase:allg_StNrSType">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Steuernummer des Arbeitgebers unter der die Lohnsteuer abgeführt wurde im bundeseinheitlichen "Elsterformat" </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Adresse" type="elsterlohn:lstb_ArbGAdresseCType">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Adresse des Arbeitgebers</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="lstb_AllgemeinCType">
+		<xs:sequence>
+			<xs:element name="ETIN" type="elsterbase:allg_ETINSType">
+				<xs:annotation>
+					<xs:documentation>eTIN des Arbeitnehmers</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IdNr" type="elsterbase:allg_IdNrSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Optional: die IdNr nach §139b AO des Arbeitnehmers</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Ordnungsmerkmal">
+				<xs:annotation>
+					<xs:documentation>Ordnungsmerkmal des Arbeitgebers für den Arbeitnehmer z.B. Personalnummer</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="elsterbase:allg_BaseStringLightSType">
+						<xs:maxLength value="20"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="AGS" type="elsterbase:allg_AGSSType">
+				<xs:annotation>
+					<xs:documentation>Amtlicher Gemeindeschlüssel in dem der Arbeitnehmer zum 20.09. des Vorjahres gemeldet war</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Person" type="elsterlohn:lstb_PersonCType">
+				<xs:annotation>
+					<xs:documentation>Personendaten des Arbeitnehmers</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- B -->
+	<xs:complexType name="lstb_BesteuerungsmerkmaleCType">
+		<xs:sequence>
+			<xs:element name="Steuerklasse" maxOccurs="12">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Steuerklassen mit Historie</xs:documentation>
+					<xs:documentation xml:lang="DE">die Steuerklasse 0 ist ausschließlich bei Arbeitnehmern mit Hauptwohnsitz im Ausland zulässig, deren Arbeitlohn auf Grund eines DBA steuerfrei ist (besondere Lohnsteuerbescheinigung)</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="elsterbase:allg_SteuerklasseSType">
+							<xs:attribute name="gueltig_ab" type="elsterbase:allg_TTMM" use="required">
+								<xs:annotation>
+									<xs:documentation>gültig ab Datum im Format TTMM</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Kinder" maxOccurs="12">
+				<xs:annotation>
+					<xs:documentation>Kinder mit Historie</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="elsterlohn:lstb_KinderSType">
+							<xs:attribute name="gueltig_ab" type="elsterbase:allg_TTMM" use="required">
+								<xs:annotation>
+									<xs:documentation>gültig ab Datum im Format TTMM</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Kirchensteuerabzug" maxOccurs="12">
+				<xs:annotation>
+					<xs:documentation>Kirchensteuerabzug mit Historie</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="konfession" type="elsterbase:allg_Konfession_ab2008SType" use="required">
+						<xs:annotation>
+							<xs:documentation>Konfession des Arbeitnehmers</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="ehegkonfession" type="elsterbase:allg_Konfession_ab2008SType" use="optional">
+						<xs:annotation>
+							<xs:documentation>abweichende Konfession des Ehegatten des Arbeitnehmers</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="gueltig_ab" type="elsterbase:allg_TTMM" use="required">
+						<xs:annotation>
+							<xs:documentation>gültig ab Datum im Format TTMM</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Steuerfreibetrag" type="elsterlohn:lstb_SteuerfreibetragCType" minOccurs="0" maxOccurs="12">
+				<xs:annotation>
+					<xs:documentation>Steuerfreibetrag mit Historie</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Hinzurechnungsbetrag" type="elsterlohn:lstb_SteuerfreibetragCType" minOccurs="0" maxOccurs="12">
+				<xs:annotation>
+					<xs:documentation>Hinzurechnungsbetrag mit Historie</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="lstb_BesteuerungsgrundlagenCType">
+		<xs:annotation>
+			<xs:documentation xml:lang="DE">Besteuerungsgrundlagen der LSTK 2008</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="AnzahlU" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">2. Zeiträume ohne Anspruch auf Arbeitslohn </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="elsterbase:allg_BaseStringSType">
+						<xs:maxLength value="2"/>
+						<xs:minLength value="1"/>
+						<xs:pattern value="[0-9][0-9]?"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="BruttoArbLohn">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">3. Bruttoarbeitslohn einsch. Sachbezüge ohne 9. und 10</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="elsterlohn:lstb_WertSType">
+							<xs:attribute name="lStTab" use="required">
+								<xs:annotation>
+									<xs:documentation>Lohnsteuertabelle nach der der Bruttoarbeitslohn besteuert wurde</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="elsterbase:allg_BaseStringSType">
+										<xs:enumeration value="A"/>
+										<xs:enumeration value="B"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="LSteuer" type="elsterlohn:lstb_WertSType">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">4. Einbehaltene Lohnsteuer von 3.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Soli" type="elsterlohn:lstb_WertSType">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE"> 5. - Einbehaltene Solidaritätszuschlag von 3.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArbnKiSteuer" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE"> 6. Einbehaltene Kirchensteuer des Arbeitnehmers von 3.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EhegKiSteuer" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE"> 7. - Einbehaltene Kirchensteuer des Ehegatten von 3. (nur bei konfessionsverschiedener Ehe)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StBegVBez" minOccurs="0" maxOccurs="12">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE"> 8. - In 3. enthaltene steuerbegünstigte Versorgungsbezüge</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="elsterlohn:lstb_WertSType">
+							<xs:attribute name="jahr" type="elsterbase:allg_Datum_JahrSType" use="required">
+								<xs:annotation>
+									<xs:documentation>Maßgebendes Kalenderjahr in dem die Rechtsgrundlage des Vorsorgungsbezug geschaffen wurde</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="beginn" type="elsterbase:allg_Datum_MMSType" use="optional">
+								<xs:annotation>
+									<xs:documentation>bei nur zeitweiser Gewährung von laufenden Versorgungsbezügen ist der Beginn und Ende Monat zu bescheinigen</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="ende" type="elsterbase:allg_Datum_MMSType" use="optional">
+								<xs:annotation>
+									<xs:documentation>bei nur zeitweiser Gewährung von laufenden Versorgungsbezügen ist der Beginn und Ende Monat zu bescheinigen</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="bmgfreibetrag" type="elsterlohn:lstb_WertSType" use="required">
+								<xs:annotation>
+									<xs:documentation>Bemessungsgrundlage für den Versorgungsfreibtrag</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="einmversbezug" type="elsterlohn:lstb_WertSType" use="optional">
+								<xs:annotation>
+									<xs:documentation>Einmalige Versorgungsbezüge sind Sonderzahlungen wie z.B. Sterbegeld</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:sequence minOccurs="0">
+				<xs:element name="StBegVBezMKalJahr" minOccurs="0" maxOccurs="12">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">9. - Steuerbegünstigte Versorgungsbezüge für mehrere Jahre</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="elsterlohn:lstb_WertSType">
+								<xs:attribute name="jahr" type="elsterbase:allg_Datum_JahrSType" use="required">
+									<xs:annotation>
+										<xs:documentation>Maßgebendes Kalenderjahr in dem die Rechtsgrundlage des Vorsorgungsbezug geschaffen wurde</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ErmStBetrMKalJahr" type="elsterlohn:lstb_WertSType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">10. - Ermäßigt besteuerter Arbeitslohn für mehrere Kalenderjahre (ohne 9.) und ermäßigt besteuerte Entschädigungen</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="LSteuerMKalJahr" type="elsterlohn:lstb_WertSType">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">11. - Einbehaltene Lohnsteuer von 9. und 10.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="SoliMKalJahr" type="elsterlohn:lstb_WertSType">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">12. - Einbehaltene Solidaritätszuschlag von 9. und 10.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="KiSteuerArbnMKalJahr" type="elsterlohn:lstb_WertSType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">13. - Einbehaltene Kirchensteuer des Arbeitnehmers von 9. und 10.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="KiSteuerEhegMKalJahr" type="elsterlohn:lstb_WertSType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">14. - Einbehaltene Kirchensteuer des Ehegatten von 9. und 10. (nur bei konfessionsverschiedener Ehe)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:element name="KurzArbGeld" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">15. - Kurzarbeitergeld, Winterausfallgeld, Zuschuss zum Mutterschaftsgeld, Verdienstausfallentschädigung (Infektionsschutzgesetz), Aufstockungsbetrag und Altersteilzuschlag</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StFreiArbLohnDBA" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">16a. - Steuerfreier Arbeitslohn nach Doppelbesteuerungsabkommen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StFreiArbLohnATE" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">16b. - Steuerfreier Arbeitslohn nach Auslandstätigkeitserlass</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StFreiArbgLeistg" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">17. - Steuerfreie Arbeitgeberleistungen für Fahrten zwischen Wohnung und Arbeitsstätte</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PauschArbgLeistg" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">18. - Pauschalbesteuerte Arbeitgberleistungen für Fahrten zwischen Wohnung und Arbeitsstätte</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StPflichtArbLohnMKalJahr" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">19. - Steuerpflichtige Entschädigungen und Arbeitslohn für mehrere Kalenderjahre, die nicht ermäßigt besteuert wurden in 3. enthalten</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StFreiVerpfleg" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">20. - Steuerfreie Verpflegungszuschüsse bei Auswärtstätigkeit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StFreiDopHaushalt" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">21. - Steuerfreie Arbeitgeberleistung bei doppelter Haushaltsführung</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArbgAnteilRenVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">22. - Arbeitgeberanteil zur gestzlichen Rentenversicherung und an berufsständische Versorgungseinrichtungen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArbnAnteilRenVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">23. - Arbeitnehmeranteil zur gesetzlichen Rentenversicherung und an berufsständische Versorgungseinrichtungen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StFreiArbgZuschKrankVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">24. - Steuerfreie Arbeitgeberzuschüsse zur freiwilligen Krankenversicherung und zur Pflegeversicherung</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArbnAnteilSozVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">25. - Arbeitnehmeranteil am Gesamtsozialversicherungsbeitrag ohne Arbeitnehmeranteil zur gesetzlichen Rentenversicherung und an berufsständische Versorgungseinrichtungen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AusgezKinderGeld" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">26. - Ausgezahltes Kindergeld</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grossbuchstaben" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">zu bescheinigende Großbuchstaben</xs:documentation>
+					<xs:documentation xml:lang="DE">"S" ist einzutragen, wenn die Lohnsteuer von einem sonstigen Bezug im ersten Dienstverhältnis berechnet wurde und dabei der Arbeitslohn aus früheren Dienstverhältnissen des Kalenderjahres außer Betracht geblieben ist. </xs:documentation>
+					<xs:documentation xml:lang="DE">_B_ ist einzutragen, wenn das Dienstverhältnis vor Ablauf des Kalenderjahres endet und der Arbeitnehmer für einen abgelaufenen Lohnzahlungszeitraum oder Lohnabrechnungszeitraum des Kalenderjahres unter Berücksichtigung der Vorsorgepauschale
+nach10c Abs. 3 EStG zu besteuern war. </xs:documentation>
+					<xs:documentation xml:lang="DE">_V_ ist einzutragen, wenn steuerfreie Beiträge nach 3 Nr. 63 EStG geleistet wurden.</xs:documentation>
+					<xs:documentation xml:lang="DE">_F_ ist einzutragen, wenn eine steuerfreie Sammelbeförderung gemäß 3 Nr. 32 EStG erfolgte.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="elsterbase:allg_BaseStringSType">
+						<xs:pattern value="[F|S]([,| ]?[F|S]){0,1}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Kammerbeitrag" minOccurs="0" maxOccurs="2">
+				<xs:annotation>
+					<xs:documentation>Kammerbeiträge der Arbeitskammer Saarland und der Arbeitnehmerkammer Bremen</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="elsterlohn:lstb_WertSType">
+							<xs:attribute name="bundesland" use="required">
+								<xs:annotation>
+									<xs:documentation>HB für Bremen oder SL für Saarland</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="elsterbase:allg_BaseStringSType">
+										<xs:enumeration value="HB">
+											<xs:annotation>
+												<xs:documentation>Kammerbeitrag zur Arbeitnehmerkammer Bremen</xs:documentation>
+											</xs:annotation>
+										</xs:enumeration>
+										<xs:enumeration value="SL">
+											<xs:annotation>
+												<xs:documentation>Kammerbeitrag zur Arbeitskammer Saarland </xs:documentation>
+											</xs:annotation>
+										</xs:enumeration>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ArbnAnteilWBUmlage" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Arbeitnehmeranteil zur Winterbeschäftigungsumlage</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArbgAnteilZusatzVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>steuerpflichtiger Arbeitgeberbeitrag zur Zusatzversorgungskasse</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArbnAnteilZusatzVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Arbeitnehmerbeitrag zur Zusatzversorgungskasse</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AnzahlArbTag" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anzahl der Arbeitstage</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="365"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="StFreiFahrtKAusw" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Steuerfreie Fahrtkosten bei 
+Auswärtstätigkeit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Wert" minOccurs="0" maxOccurs="10">
+				<xs:annotation>
+					<xs:documentation>freier Wert</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">weitere vom Arbeitgeber freiwillig bescheinigte Werte</xs:documentation>
+						<xs:documentation xml:lang="DE">Die Art des zu bescheinigenden Wertes muss in dem Attribut "name" mitgeteilt werden</xs:documentation>
+					</xs:annotation>
+					<xs:simpleContent>
+						<xs:extension base="elsterlohn:lstb_WertSType">
+							<xs:attribute name="name" use="required">
+								<xs:annotation>
+									<xs:documentation>Beschreibung um was für einen Wert es sich handelt.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="elsterbase:allg_BaseStringLightSType">
+										<xs:maxLength value="60"/>
+										<xs:minLength value="1"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Text" minOccurs="0" maxOccurs="10">
+				<xs:annotation>
+					<xs:documentation>freier Text</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">weitere vom Arbeitgeber freiwillig becheinigte Texte</xs:documentation>
+					</xs:annotation>
+					<xs:simpleContent>
+						<xs:extension base="elsterlohn:lstb_Text200">
+							<xs:attribute name="name" use="required">
+								<xs:annotation>
+									<xs:documentation>Beschreibung um was für einen Wert es sich handelt.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="elsterbase:allg_BaseStringLightSType">
+										<xs:maxLength value="60"/>
+										<xs:minLength value="1"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Arbeitgeber" type="elsterlohn:lstb_ArbeitgeberCType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- L -->
+	<xs:complexType name="lstb_LohnsteuerbescheinigungCType">
+		<xs:sequence>
+			<xs:element name="Dauer">
+				<xs:annotation>
+					<xs:documentation>Dauer des Beschäftigunsgzeitraum</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Anfang" type="elsterbase:allg_TTMM">
+							<xs:annotation>
+								<xs:documentation>Beginn des Beschäftigungszeitraum im Format TTMM</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Ende" type="elsterbase:allg_TTMM">
+							<xs:annotation>
+								<xs:documentation>Ende des Beschäftigungszeitraum im Format TTMM</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="jahr" type="elsterlohn:lstb_LohnsteuerbescheinigungJahrSType" use="required">
+						<xs:annotation>
+							<xs:documentation>Jahr für den die Lohnsteuerbescheinigung ausgestellt wird, in dieser Version ist einzig 2009 zulässig.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Allgemein" type="elsterlohn:lstb_AllgemeinCType">
+				<xs:annotation>
+					<xs:documentation>Allgemeine Daten zum Steuerpflichtigen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Besteuerungsmerkmale" type="elsterlohn:lstb_BesteuerungsmerkmaleCType">
+				<xs:annotation>
+					<xs:documentation>Besteuerungsmerkmale zum Steuerpflichtigen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Besteuerungsgrundlagen" type="elsterlohn:lstb_BesteuerungsgrundlagenCType">
+				<xs:annotation>
+					<xs:documentation>Besteuerungsgrundlagen zum Steuerpflichtigen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="version" type="elsterlohn:lstb_LohnsteuerbescheinigungVersionSType" use="required">
+			<xs:annotation>
+				<xs:documentation>Version der Lohnsteuerbescheinigung : einzig zulässig "200901"</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="art" use="required">
+			<xs:annotation>
+				<xs:documentation>Art der Lohnsteuerbescheinigung: LStK oder besLStB</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="elsterbase:allg_BaseStringSType">
+					<xs:enumeration value="LSTK"/>
+					<xs:enumeration value="besLSTB"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<!-- P -->
+	<xs:complexType name="lstb_PersonCType">
+		<xs:sequence>
+			<xs:element name="Familienname">
+				<xs:annotation>
+					<xs:documentation>Familienname mit Namensbestandteilen</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Name" type="elsterbase:allg_NachNameSType">
+							<xs:annotation>
+								<xs:documentation>Familienname des Arbeitnehmers</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Vorname" type="elsterbase:allg_VornameSType">
+							<xs:annotation>
+								<xs:documentation>Vorname des Arbeitnehmers</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Namensvorsatz" type="elsterbase:allg_NamensvorsatzSType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Namensvorsatz zum Familienname; es gelten die Namensvorsatzworte der DRV Bund (DEÜV)</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Namenszusatz" type="elsterbase:allg_NamenszusatzSType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Namenszusatz zum Familienname; es gelten die Namenszusätze der DRV Bund (DEÜV)</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Titel" type="elsterbase:allg_TitelSType" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Geburtsname" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>optional ein abweichender Geburtsname mit seinen Namensbestandteilen</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Name" type="elsterbase:allg_NachNameSType"/>
+						<xs:element name="Namensvorsatz" type="elsterbase:allg_NamensvorsatzSType" minOccurs="0"/>
+						<xs:element name="Namenszusatz" type="elsterbase:allg_NamenszusatzSType" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Geburtsdatum" type="elsterbase:allg_Datum8SType">
+				<xs:annotation>
+					<xs:documentation>Geburtsdatum des Arbeitnehmers</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Adresse" type="elsterlohn:lstb_AdresseCType">
+				<xs:annotation>
+					<xs:documentation>Adresse des Arbeitnehmers</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="geschlecht" use="required">
+			<xs:annotation>
+				<xs:documentation>Geschlecht des Arbeitnehmers</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="elsterbase:allg_BaseStringSType">
+					<xs:enumeration value="M"/>
+					<xs:enumeration value="W"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<!-- S -->
+	<xs:complexType name="lstb_SteuerfreibetragCType">
+		<xs:simpleContent>
+			<xs:extension base="elsterlohn:lstb_SteuerfreibetragSType">
+				<xs:attribute name="gueltig_ab" type="elsterbase:allg_TTMM" use="required">
+					<xs:annotation>
+						<xs:documentation>gültig ab Datum im Format TTMM</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="lstb_SteuerfreibetragSType">
+		<xs:restriction base="elsterlohn:lstb_WertSType">
+			<xs:minInclusive value="0.00"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="AuslandsPLZCType">
+		<xs:simpleContent>
+			<xs:extension base="elsterlohn:NewAuslandsPLZSType">
+				<xs:attribute name="laenderkennzeichen" type="elsterbase:allg_LaenderKennzeichenSType" use="required">
+					<xs:annotation>
+						<xs:documentation>1-3-stelliges Länderkennzeichen</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="NewAuslandsPLZSType">
+		<xs:annotation>
+			<xs:documentation>Einzelne Auslandspostleitzahlen - insbesondere diese von Nachbarländern werden Serverseitig mittels einer logischen Plausibilitätsprüfung auf ein für dieses Land korrektes Format geprüft. Nähere Informationen zu den zulässigen Formaten kann der Dokumentation entnommen werden.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="elsterbase:allg_BaseStringUltraLightSType">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

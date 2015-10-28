@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+	XML-Adapterschema für die elektronische Lohnsteuerbescheinigung 2016 (Version 201601).
+	=============
+	Änderungshistorie
+	Version 1: Erstellung
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:elsterlohn="http://www.elsterlohn.de/2016-01/XMLSchema" targetNamespace="http://www.elsterlohn.de/2016-01/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- RootElement = Lohnsteuerbescheinigung 2016_________________________________________________-->
+	<xs:include schemaLocation="./lstb201601.xsd"/>
+	<xs:element name="Lohnsteuerbescheinigung" type="elsterlohn:lstb_LohnsteuerbescheinigungCType"/>
+</xs:schema>

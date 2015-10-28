@@ -1,0 +1,3935 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+	XML-Schema für die elektronische Lohnsteuerbescheinigung 2013 (Version 201301).
+	=============
+	Änderungshistorie
+	Version 1: Erstellung
+	Version 2: Datentypen bei den Attributen "konfession" und "ehegkonfession" wieder auf "allg_Konfession_ab2008SType" zurück gesetzt (analog 2012)
+	Version 3: Kommentar des Attributs "version" der Lohnsteuerbescheinigung geändert
+	Version 4: Typen basierend auf xs:date mit zusätzlichem Pattern "\d{4}-\d{2}-\d{2}" versehen
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:elsterbase="http://www.elster.de/basis08/XMLSchema" xmlns:elsterlohn="http://www.elsterlohn.de/2013-01/XMLSchema" targetNamespace="http://www.elsterlohn.de/2013-01/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- Version 4 -->
+	<xs:import namespace="http://www.elster.de/basis08/XMLSchema" schemaLocation="./allg000008.xsd"/>
+	<!-- RootElement = Lohnsteuerbescheinigung 2013_________________________________________________-->
+	<xs:simpleType name="lstb_LohnsteuerbescheinigungVersionSType">
+		<xs:restriction base="elsterbase:allg_BaseStringSType">
+			<xs:length value="6"/>
+			<xs:enumeration value="201301"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="lstb_LohnsteuerbescheinigungJahrSType">
+		<xs:restriction base="xs:positiveInteger">
+			<xs:enumeration value="2013"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Definierung einfacher Elements________________________________________________________-->
+	<!-- K -->
+	<xs:simpleType name="lstb_KinderSType">
+		<xs:annotation>
+			<xs:documentation xml:lang="DE">Anzahl der Kinderfreibeträge</xs:documentation>
+			<xs:documentation xml:lang="DE">Dezimaltrennzeichen = "."</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="3"/>
+			<xs:fractionDigits value="1" fixed="true"/>
+			<xs:minInclusive value="0.0"/>
+			<xs:maxInclusive value="99.5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- T -->
+	<xs:simpleType name="lstb_Text200">
+		<xs:restriction base="elsterbase:allg_BaseStringLightSType">
+			<xs:maxLength value="200"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- W -->
+	<xs:simpleType name="lstb_WertSType">
+		<xs:annotation>
+			<xs:documentation xml:lang="DE">Einheitlicher Datentyp aller zu bescheigenden Werte</xs:documentation>
+			<xs:documentation xml:lang="DE">Vorzeichen: es ist nur das "-" als Vorzeichen zulässig "+" nicht !!!</xs:documentation>
+			<xs:documentation xml:lang="DE">13 Stellen (Ziffern) vor dem Dezimaltrennzeichen</xs:documentation>
+			<xs:documentation xml:lang="DE">Dezimaltrennzeichen ist der "."</xs:documentation>
+			<xs:documentation xml:lang="DE">2 Stellen nach dem Dezimaltrennzeichen</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="15"/>
+			<xs:fractionDigits value="2" fixed="true"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Definierung globaler complex Types __________________________________________________ -->
+	<!-- A -->
+	<xs:complexType name="lstb_AdresseCType">
+		<xs:sequence>
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>Hausadresse</xs:documentation>
+				</xs:annotation>
+				<xs:element name="Str" type="elsterbase:allg_StrSType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Strasse</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Hausnummer" type="elsterbase:allg_HausnummerSType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Hausnummer ohne Zusätze</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="HNrZusatz" type="elsterbase:allg_HausnummernZusatzSType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Hausnummernzusatz</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Anschriftenzusatz" type="elsterbase:allg_AnschriftenZusatzSType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>weitere Anschriftenzusätze</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Ort" type="elsterbase:allg_OrtSType">
+					<xs:annotation>
+						<xs:documentation>Ort</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:choice>
+					<xs:element name="PLZ" type="elsterbase:allg_PLZSType">
+						<xs:annotation>
+							<xs:documentation>Inlandspostleitzahl (Deutschland)</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="AuslandsPLZ" type="elsterlohn:AuslandsPLZCType">
+						<xs:annotation>
+							<xs:documentation>0-10 -stellige Auslandspostleitzahl</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:choice>
+			</xs:sequence>
+			<xs:sequence minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Postfachadresse</xs:documentation>
+				</xs:annotation>
+				<xs:element name="PostfachOrt" type="elsterbase:allg_OrtSType"/>
+				<xs:element name="Postfach" type="elsterbase:allg_PostfachSType"/>
+				<xs:element name="PostfachPLZ" type="elsterbase:allg_PLZSType"/>
+			</xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="lstb_ArbGAdresseCType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="Str" type="elsterbase:allg_StrSType" minOccurs="0"/>
+				<xs:element name="Hausnummer" type="elsterbase:allg_HausnummerSType" minOccurs="0"/>
+				<xs:element name="HNrZusatz" type="elsterbase:allg_HausnummernZusatzSType" minOccurs="0"/>
+				<xs:element name="Anschriftenzusatz" type="elsterbase:allg_AnschriftenZusatzSType" minOccurs="0"/>
+				<xs:element name="Ort" type="elsterbase:allg_OrtSType"/>
+				<xs:choice>
+					<xs:element name="PLZ" type="elsterbase:allg_PLZSType"/>
+					<xs:element name="AuslandsPLZ" type="elsterlohn:AuslandsPLZCType"/>
+				</xs:choice>
+				<xs:sequence minOccurs="0">
+					<xs:element name="PostfachOrt" type="elsterbase:allg_OrtSType"/>
+					<xs:choice>
+						<xs:sequence>
+							<xs:element name="Postfach" type="elsterbase:allg_PostfachSType"/>
+							<xs:element name="PostfachPLZ" type="elsterbase:allg_PLZSType"/>
+						</xs:sequence>
+						<xs:element name="GKPLZ" type="elsterbase:allg_PLZSType"/>
+					</xs:choice>
+				</xs:sequence>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="PostfachOrt" type="elsterbase:allg_OrtSType"/>
+				<xs:choice>
+					<xs:sequence>
+						<xs:element name="Postfach" type="elsterbase:allg_PostfachSType"/>
+						<xs:element name="PostfachPLZ" type="elsterbase:allg_PLZSType"/>
+					</xs:sequence>
+					<xs:element name="GKPLZ" type="elsterbase:allg_PLZSType"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="lstb_ArbeitgeberCType">
+		<xs:sequence>
+			<xs:element name="ArbGName">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Name des AG der die Lohnsteuer abgeführt hat</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="elsterbase:allg_BaseStringLightSType">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="60"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ArbGFANr">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Bundesfinanzamtsnummer des Finanzamtes an das die Lohnsteuer abgeführt wurde</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="elsterbase:allg_BaseStringSType">
+						<xs:length value="4"/>
+						<xs:pattern value="28\d{2}"/>
+						<xs:pattern value="91\d{2}"/>
+						<xs:pattern value="92\d{2}"/>
+						<xs:pattern value="11\d{2}"/>
+						<xs:pattern value="30\d{2}"/>
+						<xs:pattern value="24\d{2}"/>
+						<xs:pattern value="22\d{2}"/>
+						<xs:pattern value="26\d{2}"/>
+						<xs:pattern value="40\d{2}"/>
+						<xs:pattern value="23\d{2}"/>
+						<xs:pattern value="27\d{2}"/>
+						<xs:pattern value="10\d{2}"/>
+						<xs:pattern value="32\d{2}"/>
+						<xs:pattern value="31\d{2}"/>
+						<xs:pattern value="21\d{2}"/>
+						<xs:pattern value="41\d{2}"/>
+						<xs:pattern value="51\d{2}"/>
+						<xs:pattern value="52\d{2}"/>
+						<xs:pattern value="53\d{2}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ArbGFAName">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Names des Finanzamtes an das die Lohnsteuer abgeführt wurde</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="elsterbase:allg_BaseStringSType">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ArbGStNr" type="elsterbase:allg_StNrSType">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Steuernummer des Arbeitgebers unter der die Lohnsteuer abgeführt wurde im bundeseinheitlichen "Elsterformat" </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Adresse" type="elsterlohn:lstb_ArbGAdresseCType">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Adresse des Arbeitgebers</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="lstb_AllgemeinCType">
+		<xs:sequence>
+			<xs:element name="ETIN" type="elsterbase:allg_ETINSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>eTIN des Arbeitnehmers</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IdNr" type="elsterbase:allg_IdNrSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>die IdNr nach §139b AO des Arbeitnehmers</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Ordnungsmerkmal">
+				<xs:annotation>
+					<xs:documentation>Ordnungsmerkmal des Arbeitgebers für den Arbeitnehmer z.B. Personalnummer</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="elsterbase:allg_BaseStringLightSType">
+						<xs:maxLength value="20"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Person" type="elsterlohn:lstb_PersonCType">
+				<xs:annotation>
+					<xs:documentation>Personendaten des Arbeitnehmers</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- B -->
+	<xs:complexType name="lstb_BesteuerungsmerkmaleCType">
+		<xs:sequence>
+			<xs:element name="ELStAM" maxOccurs="12">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Steuerklasse">
+							<xs:annotation>
+								<xs:documentation xml:lang="DE">Steuerklasse ggfls. mit Faktor</xs:documentation>
+								<xs:documentation xml:lang="DE">die Steuerklasse 0 ist ausschließlich bei Arbeitnehmern mit Hauptwohnsitz im Ausland zulässig, deren Arbeitlohn auf Grund eines DBA steuerfrei ist (besondere Lohnsteuerbescheinigung)</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="elsterbase:allg_SteuerklasseSType">
+										<xs:attribute name="faktor">
+											<xs:annotation>
+												<xs:documentation>Die Angabe des Faktors ist ausschließlich in der Lohnsteuerklasse 4 zulässig.</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:decimal">
+													<xs:totalDigits value="4"/>
+													<xs:fractionDigits value="3" fixed="true"/>
+													<xs:maxInclusive value="0.999"/>
+													<xs:minInclusive value="0.001"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:attribute>
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Kinder" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Anzahl der Kinderfreibeträge</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="elsterlohn:lstb_KinderSType"/>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Kirchensteuerabzug" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Kirchensteuerabzug</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="konfession" type="elsterbase:allg_Konfession_ab2008SType" use="required">
+									<xs:annotation>
+										<xs:documentation>Konfession des Arbeitnehmers</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="ehegkonfession" type="elsterbase:allg_Konfession_ab2008SType" use="optional">
+									<xs:annotation>
+										<xs:documentation>abweichende Konfession des Ehegatten des Arbeitnehmers</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+						<xs:choice minOccurs="0">
+							<xs:element name="Steuerfreibetrag" nillable="true">
+								<xs:annotation>
+									<xs:documentation>Angabe des Steuerfreibetrages für den entsprechenden Zeitraum.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attributeGroup ref="elsterlohn:lstb_Besteuerungsmerkmal-Korrekturbetrag-Attr_Group"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Hinzurechnungsbetrag" nillable="true">
+								<xs:annotation>
+									<xs:documentation>Angabe des Hinzurechnungsbetrages für den entsprechenden Zeitraum.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attributeGroup ref="elsterlohn:lstb_Besteuerungsmerkmal-Korrekturbetrag-Attr_Group"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:choice>
+					</xs:sequence>
+					<xs:attribute name="gueltig_ab" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:date">
+								<xs:minInclusive value="2012-01-01"/>
+								<xs:pattern value="\d{4}-\d{2}-\d{2}"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="lstb_BesteuerungsgrundlagenCType">
+		<xs:annotation>
+			<xs:documentation xml:lang="DE">Besteuerungsgrundlagen der LSTK 2008</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="AnzahlU" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">2. Zeiträume ohne Anspruch auf Arbeitslohn </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="elsterbase:allg_BaseStringSType">
+						<xs:maxLength value="2"/>
+						<xs:minLength value="1"/>
+						<xs:pattern value="[0-9][0-9]?"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="BruttoArbLohn" type="elsterlohn:lstb_WertSType">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">3. Bruttoarbeitslohn einsch. Sachbezüge ohne 9. und 10</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LSteuer" type="elsterlohn:lstb_WertSType">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">4. Einbehaltene Lohnsteuer von 3.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Soli" type="elsterlohn:lstb_WertSType">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE"> 5. - Einbehaltene Solidaritätszuschlag von 3.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArbnKiSteuer" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE"> 6. Einbehaltene Kirchensteuer des Arbeitnehmers von 3.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EhegKiSteuer" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE"> 7. - Einbehaltene Kirchensteuer des Ehegatten von 3. (nur bei konfessionsverschiedener Ehe)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VBez" minOccurs="0" maxOccurs="12">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE"> 8. - In 3. enthaltene Versorgungsbezüge</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="elsterlohn:lstb_WertSType">
+							<xs:attribute name="jahr" type="elsterbase:allg_Datum_JahrSType" use="required">
+								<xs:annotation>
+									<xs:documentation>Maßgebendes Kalenderjahr in dem die Rechtsgrundlage des Vorsorgungsbezug geschaffen wurde</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="beginn" type="elsterbase:allg_Datum_MMSType" use="optional">
+								<xs:annotation>
+									<xs:documentation>bei nur zeitweiser Gewährung von laufenden Versorgungsbezügen ist der Beginn und Ende Monat zu bescheinigen</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="ende" type="elsterbase:allg_Datum_MMSType" use="optional">
+								<xs:annotation>
+									<xs:documentation>bei nur zeitweiser Gewährung von laufenden Versorgungsbezügen ist der Beginn und Ende Monat zu bescheinigen</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="bmgfreibetrag" type="elsterlohn:lstb_WertSType" use="required">
+								<xs:annotation>
+									<xs:documentation>Bemessungsgrundlage für den Versorgungsfreibtrag</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="einmversbezug" type="elsterlohn:lstb_WertSType" use="optional">
+								<xs:annotation>
+									<xs:documentation>Einmalige Versorgungsbezüge sind Sonderzahlungen wie z.B. Sterbegeld</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:sequence minOccurs="0">
+				<xs:element name="ErmStVBezMKalJahr" minOccurs="0" maxOccurs="12">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">9. - Ermäßigt besteuerte Versorgungsbezüge für mehrere Kalenderjahre</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="elsterlohn:lstb_WertSType">
+								<xs:attribute name="jahr" type="elsterbase:allg_Datum_JahrSType" use="required">
+									<xs:annotation>
+										<xs:documentation>Maßgebendes Kalenderjahr in dem die Rechtsgrundlage des Vorsorgungsbezug geschaffen wurde</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ErmStBetrMKalJahr" type="elsterlohn:lstb_WertSType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">10. - Ermäßigt besteuerter Arbeitslohn für mehrere Kalenderjahre (ohne 9.) und ermäßigt besteuerte Entschädigungen</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="LSteuerMKalJahr" type="elsterlohn:lstb_WertSType">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">11. - Einbehaltene Lohnsteuer von 9. und 10.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="SoliMKalJahr" type="elsterlohn:lstb_WertSType">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">12. - Einbehaltene Solidaritätszuschlag von 9. und 10.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="KiSteuerArbnMKalJahr" type="elsterlohn:lstb_WertSType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">13. - Einbehaltene Kirchensteuer des Arbeitnehmers von 9. und 10.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="KiSteuerEhegMKalJahr" type="elsterlohn:lstb_WertSType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">14. - Einbehaltene Kirchensteuer des Ehegatten von 9. und 10. (nur bei konfessionsverschiedener Ehe)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:element name="KurzArbGeld" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">15. - Kurzarbeitergeld, Winterausfallgeld, Zuschuss zum Mutterschaftsgeld, Verdienstausfallentschädigung (Infektionsschutzgesetz), Aufstockungsbetrag und Altersteilzuschlag</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StFreiArbLohnDBA" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">16a. - Steuerfreier Arbeitslohn nach Doppelbesteuerungsabkommen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StFreiArbLohnATE" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">16b. - Steuerfreier Arbeitslohn nach Auslandstätigkeitserlass</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StFreiArbgLeistg" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">17. - Steuerfreie Arbeitgeberleistungen für Fahrten zwischen Wohnung und Arbeitsstätte</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PauschArbgLeistg" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">18. - Pauschalbesteuerte Arbeitgberleistungen für Fahrten zwischen Wohnung und Arbeitsstätte</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StPflichtArbLohnMKalJahr" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">19. - Steuerpflichtige Entschädigungen und Arbeitslohn für mehrere Kalenderjahre, die nicht ermäßigt besteuert wurden in 3. enthalten</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StFreiVerpfleg" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">20. - Steuerfreie Verpflegungszuschüsse bei Auswärtstätigkeit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StFreiDopHaushalt" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">21. - Steuerfreie Arbeitgeberleistung bei doppelter Haushaltsführung</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArbgAnteilRenVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">22a. - Arbeitgeberanteil zur gesetzlichen Rentenversicherung</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArbgAnteilBerufsVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">22b. - Arbeitgeberanteil an berufsständische Versorgungseinrichtungen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArbnAnteilRenVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">23a. - Arbeitnehmeranteil zur gesetzlichen Rentenversicherung </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArbnAnteilBerufsVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">23b. - Arbeitnehmeranteil an berufsständische Versorgungseinrichtungen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StFreiGeKrankVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">24a. - Steuerfreie Arbeitgeberzuschüsse zur gesetzlichen Krankenversicherung</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StFreiPrKrankVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">24b. - Steuerfreie Arbeitgeberzuschüsse zur privaten Krankenversicherung</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StFreiGePflegeVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">24c. - Steuerfreie Arbeitgeberzuschüsse zur gesetzlichen Pflegeversicherung</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArbnAnteilKrankVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">25. - Arbeitnehmerbeiträge zur gesetzlichen Krankenversicherung</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArbnAnteilPflegVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">26. - Arbeitnehmerbeiträge zur  sozialen Pflegeversicherung </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArbnAnteilArblVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">27. - Arbeitnehmerbeiträge zur  Arbeitslosenversicherung  </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BeitrPrKrankVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">28. - Beiträge zur privaten Krankenversicherung und Pflege-Pflichtversicherung </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AusgezKinderGeld" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">33. - Ausgezahltes Kindergeld</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Grossbuchstaben" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">zu bescheinigende Großbuchstaben</xs:documentation>
+					<xs:documentation xml:lang="DE">"S" ist einzutragen, wenn die Lohnsteuer von einem sonstigen Bezug im ersten Dienstverhältnis berechnet wurde und dabei der Arbeitslohn aus früheren Dienstverhältnissen des Kalenderjahres außer Betracht geblieben ist. </xs:documentation>
+					<xs:documentation xml:lang="DE">_F_ ist einzutragen, wenn eine steuerfreie Sammelbeförderung eines Arbeitnehmers zwischen Wohnung und regelmäßiger Arbeitsstätte nach § 3 Nr. 32 EStG erfolgte.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="elsterbase:allg_BaseStringSType">
+						<xs:pattern value="[F|S]([,| ]?[F|S]){0,1}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Kammerbeitrag" minOccurs="0" maxOccurs="2">
+				<xs:annotation>
+					<xs:documentation>Kammerbeiträge der Arbeitskammer Saarland und der Arbeitnehmerkammer Bremen</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="elsterlohn:lstb_WertSType">
+							<xs:attribute name="bundesland" use="required">
+								<xs:annotation>
+									<xs:documentation>HB für Bremen oder SL für Saarland</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="elsterbase:allg_BaseStringSType">
+										<xs:enumeration value="HB">
+											<xs:annotation>
+												<xs:documentation>Kammerbeitrag zur Arbeitnehmerkammer Bremen</xs:documentation>
+											</xs:annotation>
+										</xs:enumeration>
+										<xs:enumeration value="SL">
+											<xs:annotation>
+												<xs:documentation>Kammerbeitrag zur Arbeitskammer Saarland </xs:documentation>
+											</xs:annotation>
+										</xs:enumeration>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ArbnAnteilWBUmlage" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Arbeitnehmeranteil zur Winterbeschäftigungsumlage</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArbgAnteilZusatzVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>steuerpflichtiger Arbeitgeberbeitrag zur Zusatzversorgungskasse</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArbnAnteilZusatzVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Arbeitnehmerbeitrag zur Zusatzversorgungskasse</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AnzahlArbTag" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anzahl der Arbeitstage</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="365"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="StFreiFahrtKAusw" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Steuerfreie Fahrtkosten bei 
+Auswärtstätigkeit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NErmStVBezMKalJahr" minOccurs="0" maxOccurs="12">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Versorgungsbezüge für mehrere Kalenderjahre, die nicht ermäßigt besteuert wurden - in 3. und 8. enthalten</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="elsterlohn:lstb_WertSType">
+							<xs:attribute name="jahr" type="elsterbase:allg_Datum_JahrSType" use="required">
+								<xs:annotation>
+									<xs:documentation>Maßgebendes Kalenderjahr in dem die Rechtsgrundlage des Vorsorgungsbezug geschaffen wurde</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="StFreiArbgZuschBerufsVers" type="elsterlohn:lstb_WertSType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Steuerfreie Arbeitgeberzuschüsse zur berufsständischen Versorgungseinrichtungen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Wert" minOccurs="0" maxOccurs="10">
+				<xs:annotation>
+					<xs:documentation>freier Wert</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">weitere vom Arbeitgeber freiwillig bescheinigte Werte</xs:documentation>
+						<xs:documentation xml:lang="DE">Die Art des zu bescheinigenden Wertes muss in dem Attribut "name" mitgeteilt werden</xs:documentation>
+					</xs:annotation>
+					<xs:simpleContent>
+						<xs:extension base="elsterlohn:lstb_WertSType">
+							<xs:attribute name="name" use="required">
+								<xs:annotation>
+									<xs:documentation>Beschreibung um was für einen Wert es sich handelt.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="elsterbase:allg_BaseStringLightSType">
+										<xs:maxLength value="60"/>
+										<xs:minLength value="1"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Text" minOccurs="0" maxOccurs="10">
+				<xs:annotation>
+					<xs:documentation>freier Text</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation xml:lang="DE">weitere vom Arbeitgeber freiwillig becheinigte Texte</xs:documentation>
+					</xs:annotation>
+					<xs:simpleContent>
+						<xs:extension base="elsterlohn:lstb_Text200">
+							<xs:attribute name="name" use="required">
+								<xs:annotation>
+									<xs:documentation>Beschreibung um was für einen Wert es sich handelt.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="elsterbase:allg_BaseStringLightSType">
+										<xs:maxLength value="60"/>
+										<xs:minLength value="1"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Arbeitgeber" type="elsterlohn:lstb_ArbeitgeberCType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- L -->
+	<xs:complexType name="lstb_LohnsteuerbescheinigungCType">
+		<xs:sequence>
+			<xs:element name="Dauer">
+				<xs:annotation>
+					<xs:documentation>Dauer des Beschäftigungszeitraum</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Anfang" type="elsterbase:allg_TTMM">
+							<xs:annotation>
+								<xs:documentation>Beginn des Beschäftigungszeitraum im Format TTMM</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Ende" type="elsterbase:allg_TTMM">
+							<xs:annotation>
+								<xs:documentation>Ende des Beschäftigungszeitraum im Format TTMM</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="jahr" type="elsterlohn:lstb_LohnsteuerbescheinigungJahrSType" use="required">
+						<xs:annotation>
+							<xs:documentation>Jahr für den die Lohnsteuerbescheinigung ausgestellt wird, in dieser Version ist einzig 2013 zulässig.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Allgemein" type="elsterlohn:lstb_AllgemeinCType">
+				<xs:annotation>
+					<xs:documentation>Allgemeine Daten zum Steuerpflichtigen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Besteuerungsmerkmale" type="elsterlohn:lstb_BesteuerungsmerkmaleCType">
+				<xs:annotation>
+					<xs:documentation>Besteuerungsmerkmale zum Steuerpflichtigen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Besteuerungsgrundlagen" type="elsterlohn:lstb_BesteuerungsgrundlagenCType"/>
+		</xs:sequence>
+		<xs:attribute name="version" type="elsterlohn:lstb_LohnsteuerbescheinigungVersionSType" use="required">
+			<xs:annotation>
+				<xs:documentation>in diesem Attribut ist die technische Schnittstellenversion der Lohnsteuerbescheinigung anzugeben</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="art" use="required">
+			<xs:annotation>
+				<xs:documentation>Art der Lohnsteuerbescheinigung: ELStAM oder besLStB</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="elsterbase:allg_BaseStringSType">
+					<xs:enumeration value="ELStAM"/>
+					<xs:enumeration value="besLSTB"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<!-- P -->
+	<xs:complexType name="lstb_PersonCType">
+		<xs:sequence>
+			<xs:element name="Familienname">
+				<xs:annotation>
+					<xs:documentation>Familienname mit Namensbestandteilen</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Name" type="elsterbase:allg_NachNameSType">
+							<xs:annotation>
+								<xs:documentation>Familienname des Arbeitnehmers</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Vorname" type="elsterbase:allg_VornameSType">
+							<xs:annotation>
+								<xs:documentation>Vorname des Arbeitnehmers</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Namensvorsatz" type="elsterbase:allg_NamensvorsatzSType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Namensvorsatz zum Familienname; es gelten die Namensvorsatzworte der DRV Bund (DEÜV)</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Namenszusatz" type="elsterbase:allg_NamenszusatzSType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Namenszusatz zum Familienname; es gelten die Namenszusätze der DRV Bund (DEÜV)</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Titel" type="elsterbase:allg_TitelSType" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Geburtsname" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>optional ein abweichender Geburtsname mit seinen Namensbestandteilen</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Name" type="elsterbase:allg_NachNameSType"/>
+						<xs:element name="Namensvorsatz" type="elsterbase:allg_NamensvorsatzSType" minOccurs="0"/>
+						<xs:element name="Namenszusatz" type="elsterbase:allg_NamenszusatzSType" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Geburtsdatum" type="elsterbase:allg_Datum8SType">
+				<xs:annotation>
+					<xs:documentation>Geburtsdatum des Arbeitnehmers</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Adresse" type="elsterlohn:lstb_AdresseCType">
+				<xs:annotation>
+					<xs:documentation>Adresse des Arbeitnehmers</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="geschlecht" use="required">
+			<xs:annotation>
+				<xs:documentation>Geschlecht des Arbeitnehmers</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="elsterbase:allg_BaseStringSType">
+					<xs:enumeration value="M"/>
+					<xs:enumeration value="W"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<!-- S -->
+	<xs:complexType name="lstb_SteuerfreibetragCType">
+		<xs:simpleContent>
+			<xs:extension base="elsterlohn:lstb_SteuerfreibetragSType">
+				<xs:attribute name="gueltig_ab" type="elsterbase:allg_TTMM" use="required">
+					<xs:annotation>
+						<xs:documentation>gültig ab Datum im Format TTMM</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="lstb_SteuerfreibetragSType">
+		<xs:restriction base="elsterlohn:lstb_WertSType">
+			<xs:minInclusive value="0.00"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="AuslandsPLZCType">
+		<xs:simpleContent>
+			<xs:extension base="elsterlohn:NewAuslandsPLZSType">
+				<xs:attribute name="laenderkennzeichen" type="elsterlohn:LaenderkennzeichenSType" use="required">
+					<xs:annotation>
+						<xs:documentation>1-3-stelliges Länderkennzeichen</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="NewAuslandsPLZSType">
+		<xs:annotation>
+			<xs:documentation>Einzelne Auslandspostleitzahlen - insbesondere diese von Nachbarländern werden Serverseitig mittels einer logischen Plausibilitätsprüfung auf ein für dieses Land korrektes Format geprüft. Nähere Informationen zu den zulässigen Formaten kann der Dokumentation entnommen werden.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="elsterbase:allg_BaseStringUltraLightSType">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LaenderkennzeichenSType">
+		<xs:annotation>
+			<xs:documentation>Liste basierend auf der Anlage 8 des gemeinsamen Rundschreibens der Deutschen Rentenversicherung Bund in der Version 2.40 vom 24.02.2010 </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="elsterbase:allg_BaseStringUltraLightSType">
+			<xs:pattern value="AFG">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Afghanistan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =afghanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =423</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="AFG">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Afghanistan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =afghanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =423</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ET">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Ägypten</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =ägyptisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =287</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ET">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Ägypten</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =ägyptisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =287</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="AL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Albanien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =albanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =121</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="AL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Albanien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =albanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =121</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="DZ">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Algerien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =algerisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =221</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="DZ">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Algerien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =algerisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =221</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="AJ">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Amerik.-Jungferninseln</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =399</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="AS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Amerik.-Samoa</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =599</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="AND">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Andorra</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =andorranisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =123</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="AND">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Andorra</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =andorranisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =123</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="AGO">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Angola</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =angolanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =223</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="AGO">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Angola</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =angolanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =223</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ANG">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Anguilla</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =395</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="AT">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Antarktis-Territorium</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =395</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ANT">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Antigua und Barbuda</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =antiguanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =320</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ANT">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Antigua und Barbuda</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =antiguanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =320</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="AQU">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Äquatorialguinea</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =äquatorialguineisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =274</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="AQU">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Äquatorialguinea</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =äquatorialguineisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =274</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Argentinien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =argentinisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =323</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Argentinien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =argentinisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =323</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ARM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Armenien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =armenisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =422</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ARM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Armenien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =armenisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =422</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ASE">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Aserbaidschan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =aserbaidschanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =425</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ASE">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Aserbaidschan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =aserbaidschanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =425</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ETH">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Äthiopien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =äthiopisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =225</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ETH">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Äthiopien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =äthiopisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =225</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="AUS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Australien, einschl. Kokosinseln, Weihnachtsinsel und Norfolk-Insel</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =australisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =523</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="AUS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Australien, einschl. Kokosinseln, Weihnachtsinsel und Norfolk-Insel</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =australisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =523</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Bahamas</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =bahamaisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =324</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Bahamas</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =bahamaisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =324</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BRN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Bahrain</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =bahrainisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =424</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BRN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Bahrain</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =bahrainisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =424</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BD">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Bangladesch</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =bangladeschisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =460</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BD">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Bangladesch</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =bangladeschisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =460</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BDS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Barbados</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =barbadisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =322</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BDS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Barbados</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =barbadisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =322</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="B">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Belgien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =belgisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =124</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="B">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Belgien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =belgisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =124</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BH">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Belize</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =belizisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =330</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BH">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Belize</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =belizisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =330</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="DY">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Benin</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =beninisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =229</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="DY">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Benin</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =beninisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =229</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BER">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Bermuda</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =395</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BHT">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Bhutan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =bhutanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =426</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BHT">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Bhutan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =bhutanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =426</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BOL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Bolivien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =bolivianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =326</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BOL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Bolivien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =bolivianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =326</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BIH">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Bosnien und Herzegowina</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =bosnisch-herzegowinisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =122</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BIH">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Bosnien und Herzegowina</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =bosnisch-herzegowinisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =122</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Botsuana</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =botsuanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =227</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Botsuana</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =botsuanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =227</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Brasilien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =brasilianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =327</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Brasilien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =brasilianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =327</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BJ">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Brit.-Jungferninseln</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =395</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BRU">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Brunei Darussalam</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =bruneiisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =429</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BRU">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Brunei Darussalam</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =bruneiisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =429</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BG">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Bulgarien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =bulgarisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =125</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BG">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Bulgarien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =bulgarisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =125</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="HV">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Burkina Faso</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =burkinisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =258</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="HV">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Burkina Faso</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =burkinisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =258</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RU">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Burundi</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =burundisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =291</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RU">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Burundi</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =burundisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =291</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CUE">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Canton und Enderbury</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =599</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CUE">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Canton und Enderbury</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =599</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RCH">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Chile</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =chilenisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =332</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RCH">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Chile</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =chilenisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =332</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TJ">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =China</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =chinesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =479</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TJ">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =China</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =chinesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =479</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="COI">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Cookinseln</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =von den Cookinseln</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =527</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="COI">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Cookinseln</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =von den Cookinseln</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =527</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Costa Rica</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =costaricanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =334</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Costa Rica</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =costaricanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =334</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CI">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Cote d´Ivoire</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =ivorisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =231</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CI">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Cote d´Ivoire</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =ivorisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =231</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="DK">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Dänemark</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =dänisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =126</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="DK">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Dänemark</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =dänisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =126</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="D">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Deutschland</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =deutsch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =000</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="D">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Deutschland</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =deutsch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =000</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="WD">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Dominica</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =dominicanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =333</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="WD">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Dominica</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =dominicanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =333</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="DOM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Dominikanische Republik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =dominikanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =335</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="DOM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Dominikanische Republik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =dominikanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =335</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="DSC">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Dschibuti</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =dschibutisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =230</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="DSC">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Dschibuti</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =dschibutisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =230</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="EC">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Ecuador, einschl. Galapagos-Inseln</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =ecuadorianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =336</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="EC">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Ecuador, einschl. Galapagos-Inseln</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =ecuadorianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =336</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ES">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =El Salvador</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =salvadorianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =337</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ES">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =El Salvador</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =salvadorianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =337</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ERI">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Eritrea</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =eritreisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =224</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ERI">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Eritrea</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =eritreisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =224</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="EST">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Estland</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =estnisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =127</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="EST">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Estland</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =estnisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =127</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="FAL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Falklandinseln</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =395</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="FR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Färöer</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =dänisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =126</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="FR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Färöer</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =dänisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =126</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="FJI">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Fidschi</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =fidschianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =526</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="FJI">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Fidschi</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =fidschianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =526</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="FIN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Finnland</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =finnisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =128</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="FIN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Finnland</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =finnisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =128</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="F">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Frankreich, einschl. Korsika</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =französisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =129</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="F">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Frankreich, einschl. Korsika</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =französisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =129</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="FG">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Franz.-Guayana</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =399</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="FP">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Franz.-Polynesien</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =599</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GAB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Gabun</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =gabunisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =236</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GAB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Gabun</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =gabunisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =236</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="WAG">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Gambia</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =gambisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =237</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="WAG">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Gambia</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =gambisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =237</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GEO">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Georgien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =georgisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =430</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GEO">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Georgien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =georgisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =430</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GH">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Ghana</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =ghanaisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =238</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GH">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Ghana</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =ghanaisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =238</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GIB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Gibraltar</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =195</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="WG">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Grenada</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =grenadisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =340</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="WG">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Grenada</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =grenadisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =340</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Griechenland</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =griechisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =134</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Griechenland</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =griechisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =134</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GRO">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Grönland</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =399</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Großbritannien und Nordirland</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =britisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =168</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Großbritannien und Nordirland</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =britisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =168</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GUA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Guadeloupe</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =399</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GUM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Guam</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =599</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GCA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Guatemala</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =guatemaltekisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =345</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GCA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Guatemala</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =guatemaltekisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =345</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RG">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Guinea</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =guineisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =261</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RG">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Guinea</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =guineisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =261</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GUB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Guinea-Bissau</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =guinea-bissauisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =259</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GUB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Guinea-Bissau</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =guinea-bissauisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =259</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GUY">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Guyana</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =guyanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =328</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="GUY">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Guyana</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =guyanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =328</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RH">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Haiti</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =haitianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =346</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RH">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Haiti</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =haitianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =346</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="HCA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Honduras</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =honduranisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =347</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="HCA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Honduras</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =honduranisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =347</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="HOK">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Hongkong</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =495</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="IND">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Indien, einschl. Sikkim und Goa</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =indisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =436</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="IND">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Indien, einschl. Sikkim und Goa</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =indisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =436</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RI">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Indonesien, einschl. Irian Jaya</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =indonesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =437</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RI">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Indonesien, einschl. Irian Jaya</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =indonesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =437</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MAN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Insel Man</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =195</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="IRQ">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Irak</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =irakisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =438</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="IRQ">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Irak</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =irakisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =438</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="IR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Iran, Islamische Republik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =iranisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =439</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="IR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Iran, Islamische Republik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =iranisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =439</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="IRL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Irland</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =irisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =135</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="IRL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Irland</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =irisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =135</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="IS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Island</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =isländisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =136</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="IS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Island</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =isländisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =136</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="IL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Israel</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =israelisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =441</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="IL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Israel</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =israelisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =441</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="I">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Italien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =italienisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =137</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="I">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Italien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =italienisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =137</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="JA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Jamaika</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =jamaikanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =355</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="JA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Jamaika</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =jamaikanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =355</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="J">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Japan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =japanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =442</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="J">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Japan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =japanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =442</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="YEM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Jemen</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =jemenitisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =421</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="YEM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Jemen</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =jemenitisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =421</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="JOR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Jordanien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =jordanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =445</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="JOR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Jordanien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =jordanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =445</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="YU">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Jugoslawien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =jugoslawisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =138</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="KAI">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kaimaninseln</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =395</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="K">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kambodscha</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kambodschanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =446</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="K">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kambodscha</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kambodschanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =446</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CAM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kamerun</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kamerunisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =262</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CAM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kamerun</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kamerunisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =262</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CDN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kanada</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kanadisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =348</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CDN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kanada</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kanadisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =348</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="KAN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kanalinseln</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =195</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CV">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kap Verde</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kapverdisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =242</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CV">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kap Verde</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kapverdisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =242</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="KAS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kasachstan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kasachisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =444</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="KAS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kasachstan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kasachisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =444</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="QAT">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Katar/Qatar</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =katarisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =447</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="QAT">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Katar/Qatar</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =katarisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =447</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="EAK">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kenia</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kenianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =243</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="EAK">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kenia</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kenianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =243</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="KIS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kirgisistan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kirgisisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =450</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="KIS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kirgisistan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kirgisisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =450</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="KIB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kiribati</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kiribatisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =530</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="KIB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kiribati</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kiribatisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =530</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CO">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kolumbien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kolumbianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =349</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CO">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kolumbien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kolumbianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =349</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="KOM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Komoren</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =komorisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =244</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="KOM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Komoren</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =komorisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =244</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RCB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kongo</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kongolesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =245</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RCB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kongo</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kongolesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =245</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ZRE">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kongo, Dem. Republik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kongolesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =246</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ZRE">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kongo, Dem. Republik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kongolesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =246</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="KOR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Korea, Dem. Volksrepublik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =koreanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =434</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="KOR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Korea, Dem. Volksrepublik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =koreanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =434</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ROK">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Korea, Republik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =koreanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =467</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ROK">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Korea, Republik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =koreanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =467</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="KOS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kosovo</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kosovarisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =150</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="KOS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kosovo</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kosovarisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =150</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="HR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kroatien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kroatisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =130</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="HR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kroatien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kroatisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =130</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="C">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kuba</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kubanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =351</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="C">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kuba</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kubanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =351</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="KWT">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kuwait</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kuwaitisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =448</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="KWT">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Kuwait</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =kuwaitisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =448</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="LAO">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Laos, Dem. Volksrepublik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =laotisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =449</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="LAO">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Laos, Dem. Volksrepublik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =laotisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =449</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="LS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Lesotho</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =lesothisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =226</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="LS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Lesotho</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =lesothisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =226</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="LV">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Lettland</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =lettisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =139</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="LV">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Lettland</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =lettisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =139</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Libanon</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =libanesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =451</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Libanon</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =libanesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =451</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="LB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Liberia</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =liberianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =247</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="LB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Liberia</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =liberianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =247</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="LAR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Libysch-Arabische Dschamahirija</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =libysch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =248</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="LAR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Libysch-Arabische Dschamahirija</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =libysch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =248</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="FL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Liechtenstein</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =liechtensteinisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =141</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="FL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Liechtenstein</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =liechtensteinisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =141</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="LT">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Litauen</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =litauisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =142</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="LT">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Litauen</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =litauisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =142</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="L">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Luxemburg</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =luxemburgisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =143</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="L">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Luxemburg</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =luxemburgisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =143</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MAC">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Macau</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =499</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MAC">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Macau</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =499</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Madagaskar</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =madagassisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =249</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Madagaskar</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =madagassisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =249</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MK">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Makedonien / Mazedonien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =makedonisch / mazedonisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =144</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MK">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Makedonien / Mazedonien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =makedonisch / mazedonisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =144</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MW">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Malawi</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =malawisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =256</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MW">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Malawi</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =malawisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =256</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MAL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Malaysia</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =malaysisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =482</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MAL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Malaysia</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =malaysisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =482</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BIO">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Malediven</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =maledivisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =454</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BIO">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Malediven</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =maledivisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =454</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RMM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Mali</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =malisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =251</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RMM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Mali</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =malisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =251</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="M">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Malta</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =maltesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =145</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="M">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Malta</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =maltesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =145</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Marokko</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =marokkanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =252</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Marokko</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =marokkanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =252</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MAR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Marshallinseln</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =marshallisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =544</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MAR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Marshallinseln</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =marshallisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =544</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MAT">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Martinique</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =399</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RIM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Mauretanien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =mauretanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =239</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RIM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Mauretanien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =mauretanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =239</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Mauritius</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =mauritisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =253</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Mauritius</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =mauritisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =253</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MAY">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Mayotte</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =299</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MEX">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Mexiko</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =mexikanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =353</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MEX">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Mexiko</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =mexikanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =353</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MIK">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Mikronesien, Föderierte Staaten von</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =mikronesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =545</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MIK">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Mikronesien, Föderierte Staaten von</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =mikronesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =545</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MD">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Moldau</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =moldauisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =146</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MD">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Moldau</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =moldauisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =146</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MC">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Monaco</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =monegassisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =147</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MC">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Monaco</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =monegassisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =147</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MON">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Mongolei</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =mongolisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =457</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MON">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Mongolei</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =mongolisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =457</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MNE">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Montenegro</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =montenegrinisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =140</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MNE">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Montenegro</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =montenegrinisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =140</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MOT">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Montserrat</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =395</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MOZ">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Mosambik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =mosambikanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =254</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MOZ">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Mosambik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =mosambikanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =254</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MYA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Myanmar</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =myanmarisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =427</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MYA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Myanmar</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =myanmarisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =427</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SWA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Namibia</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =namibisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =267</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SWA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Namibia</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =namibisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =267</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="NAU">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Nauru</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =nauruisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =531</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="NAU">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Nauru</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =nauruisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =531</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="NEP">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Nepal</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =nepalesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =458</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="NEP">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Nepal</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =nepalesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =458</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="NKA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Neukaledonien</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =599</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="NZ">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Neuseeland</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =neuseeländisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =536</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="NZ">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Neuseeland</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =neuseeländisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =536</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="NIC">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Nicaragua</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =nicaraguanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =354</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="NIC">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Nicaragua</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =nicaraguanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =354</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="NL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Niederlande</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =niederländisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =148</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="NL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Niederlande</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =niederländisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =148</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="NLA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Niederländische Antillen einschl.Curacao</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =399</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="NLA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Niederländische Antillen einschl.Curacao</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =399</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Niger</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =nigrisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =255</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Niger</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =nigrisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =255</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="WAN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Nigeria</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =nigerianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =232</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="WAN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Nigeria</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =nigerianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =232</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="NIU">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Niue</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =niueanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =533</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="NIU">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Niue</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =niueanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =533</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="NMA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Nördliche Marianen</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =der Nördl. Marianen</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =525</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="NMA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Nördliche Marianen</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =der Nördl. Marianen</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =525</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="N">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Norwegen, einschl. Bäreninsel und Spitzbergen, auch Svalbard</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =norwegisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =149</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="N">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Norwegen, einschl. Bäreninsel und Spitzbergen, auch Svalbard</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =norwegisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =149</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MAO">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Oman</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =omanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =456</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="MAO">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Oman</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =omanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =456</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="A">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Österreich</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =österreichisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =151</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="A">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Österreich</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =österreichisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =151</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="PK">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Pakistan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =pakistanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =461</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="PK">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Pakistan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =pakistanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =461</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="PAL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Palau</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =palauisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =537</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="PAL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Palau</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =palauisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =537</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="PA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Panama</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =panamaisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =357</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="PA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Panama</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =panamaisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =357</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="PNG">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Papua-Neugiunea</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =papua-neuguineisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =538</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="PNG">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Papua-Neugiunea</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =papua-neuguineisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =538</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="PY">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Paraguay</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =paraguayisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =359</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="PY">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Paraguay</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =paraguayisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =359</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="PIN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Pazifische Inseln (Marianen- und Karolineninseln)</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =599</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="PE">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Peru</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =peruanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =361</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="PE">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Peru</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =peruanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =361</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RP">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Philippinen</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =philippinisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =462</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RP">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Philippinen</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =philippinisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =462</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="PIT">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Pitcairn-Insel</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =595</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="PL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Polen</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =polnisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =152</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="PL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Polen</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =polnisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =152</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="P">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Portugal</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =portugiesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =153</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="P">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Portugal</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =portugiesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =153</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="PRI">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Puerto Rico</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =399</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="REU">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Réunion</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =299</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RWA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Ruanda</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =ruandisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =265</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RWA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Ruanda</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =ruandisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =265</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RO">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Rumänien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =rumänisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =154</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RO">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Rumänien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =rumänisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =154</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RUS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Russische Föderation</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =russisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =160</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RUS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Russische Föderation</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =russisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =160</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="PIE">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Saint Pierre und Miquelon</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =399</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SOL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Salomonen</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =salomonisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =524</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SOL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Salomonen</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =salomonisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =524</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="Z">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Sambia</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =sambisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =257</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="Z">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Sambia</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =sambisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =257</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="WS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Samoa</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =samoanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =543</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="WS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Samoa</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =samoanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =543</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RSM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =San Marino</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =sanmarinesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =156</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RSM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =San Marino</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =sanmarinesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =156</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="STP">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Sao Tomé und Principe</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =santomeisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =268</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="STP">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Sao Tomé und Principe</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =santomeisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =268</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SAU">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Saudi-Arabien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =saudiarabisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =472</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SAU">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Saudi-Arabien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =saudiarabisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =472</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="S">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Schweden</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =schwedisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =157</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="S">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Schweden</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =schwedisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =157</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CH">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Schweiz</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =schweizerisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =158</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CH">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Schweiz</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =schweizerisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =158</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Senegal</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =senegalesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =269</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Senegal</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =senegalesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =269</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SRB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Serbien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =serbisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =170</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SRB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Serbien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =serbisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =170</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SRB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Serbien (einschl. Kosovo)</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =Serbisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =133</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SCG">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Serbien und Montenegro</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =serbisch,montenegrinisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =132</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SY">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Seychellen</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =seychellisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =271</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SY">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Seychellen</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =seychellisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =271</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="WAL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Sierra Leone</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =sierraleonisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =272</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="WAL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Sierra Leone</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =sierraleonisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =272</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ZW">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Simbabwe</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =simbabwisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =233</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ZW">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Simbabwe</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =simbabwisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =233</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SGP">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Singapur</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =singapurisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =474</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SGP">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Singapur</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =singapurisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =474</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SK">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Slowakei</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =slowakisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =155</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SK">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Slowakei</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =slowakisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =155</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SLO">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Slowenien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =slowenisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =131</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SLO">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Slowenien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =slowenisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =131</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SP">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Somalia</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =somalisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =273</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SP">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Somalia</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =somalisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =273</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="E">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Spanien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =spanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =161</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="E">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Spanien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =spanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =161</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Sri Lanka</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =srilankisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =431</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Sri Lanka</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =srilankisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =431</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="HEL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =St. Helena einschl. Ascension</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =295</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SCN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =St. Kitts und Nevis</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =von St. Kitts und Nevis</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =370</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SCN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =St. Kitts und Nevis</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =von St. Kitts und Nevis</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =370</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="WL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =St. Lucia</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =lucianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =366</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="WL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =St. Lucia</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =lucianisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =366</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="WV">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =St. Vincent und die Grenadinen</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =vincentisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =369</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="WV">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =St. Vincent und die Grenadinen</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =vincentisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =369</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ZA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Südafrika</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =südafrikanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =263</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ZA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Südafrika</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =südafrikanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =263</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SUD">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Sudan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =sudanesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =276</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SUD">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Sudan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =sudanesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =276</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SME">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Suriname</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =surinamisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =364</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SME">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Suriname</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =surinamisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =364</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SD">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Swasiland</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =swasiländisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =281</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SD">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Swasiland</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =swasiländisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =281</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SYR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Syrien, Arabische Republik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =syrisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =475</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="SYR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Syrien, Arabische Republik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =syrisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =475</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TAD">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Tadschikistan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =tadschikisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =470</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TAD">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Tadschikistan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =tadschikisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =470</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RC">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Taiwan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =chinesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =465</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RC">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Taiwan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =chinesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =465</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="EAT">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Tansania, Vereinigte Republik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =tansanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =282</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="EAT">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Tansania, Vereinigte Republik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =tansanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =282</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="T">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Thailand</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =thailändisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =476</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="T">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Thailand</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =thailändisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =476</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TJ">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Tibet</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =chinesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =479</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TJ">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Tibet</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =chinesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =479</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="OTI">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Timor-Leste</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =von Timor-Leste</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =483</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="OTI">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Timor-Leste</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =von Timor-Leste</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =483</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TG">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Togo</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =togoisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =283</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TG">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Togo</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =togoisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =283</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TOK">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Tokelau-Inseln</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =599</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TON">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Tonga</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =tongaisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =541</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TON">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Tonga</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =tongaisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =541</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TT">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Trinidad und Tobago</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =von Trinidad und Tobago</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =371</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TT">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Trinidad und Tobago</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =von Trinidad und Tobago</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =371</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CHD">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Tschad</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =tschadisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =284</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CHD">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Tschad</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =tschadisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =284</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CZ">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Tschechische Republik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =tschechisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =164</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CZ">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Tschechische Republik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =tschechisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =164</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Tunesien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =tunesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =285</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Tunesien</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =tunesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =285</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Türkei</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =türkisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =163</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Türkei</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =türkisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =163</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TUR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Turkmenistan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =turkmenisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =471</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TUR">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Turkmenistan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =turkmenisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =471</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TUC">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Turks- und Caicosinseln</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =395</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TUV">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Tuvalu</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =tuvaluisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =540</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="TUV">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Tuvalu</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =tuvaluisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =540</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="EAU">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Uganda</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =ugandisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =286</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="EAU">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Uganda</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =ugandisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =286</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="UA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Ukraine</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =ukrainisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =166</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="UA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Ukraine</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =ukrainisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =166</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="H">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Ungarn</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =ungarisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =165</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="H">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Ungarn</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =ungarisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =165</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ROU">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Uruguay</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =uruguayisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =365</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="ROU">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Uruguay</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =uruguayisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =365</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="USB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Usbekistan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =usbekisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =477</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="USB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Usbekistan</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =usbekisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =477</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="VAN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Vanuatu</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =vanuatuisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =532</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="VAN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Vanuatu</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =vanuatuisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =532</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="V">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Vatikanstadt</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =vatikanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =167</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="V">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Vatikanstadt</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =vatikanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =167</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="YV">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Venezuela</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =venezolanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =367</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="YV">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Venezuela</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =venezolanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =367</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="UAE">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Vereinigte Arabische Emirate</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =der Ver. Arab. Emirate</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =469</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="UAE">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Vereinigte Arabische Emirate</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =der Ver. Arab. Emirate</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =469</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="USA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Vereinigte Staaten</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =amerikanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =368</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="USA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Vereinigte Staaten</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =amerikanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =368</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="VN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Vietnam</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =vietnamesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =432</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="VN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Vietnam</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =vietnamesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =432</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BY">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Weißrußland (Belarus)</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =weißrussisch (belarussisch)</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =169</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="BY">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Weißrußland (Belarus)</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =weißrussisch (belarussisch)</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =169</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RCA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Zentralafrikanische Republik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =zentralafrikanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =289</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="RCA">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Zentralafrikanische Republik</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =zentralafrikanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =289</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CY">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Zypern</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =zyprisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =181</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+			<xs:pattern value="CY">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Zypern</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =zyprisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =181</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:attributeGroup name="lstb_Besteuerungsmerkmal-Korrekturbetrag-Attr_Group">
+		<xs:attribute name="jahr" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:nonNegativeInteger">
+					<xs:maxExclusive value="100000000"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="monat" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:nonNegativeInteger">
+					<xs:maxExclusive value="100000000"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="woche" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:decimal">
+					<xs:minInclusive value="0"/>
+					<xs:maxExclusive value="10000000"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="tag" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:decimal">
+					<xs:minInclusive value="0"/>
+					<xs:maxExclusive value="10000000"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+</xs:schema>

@@ -164,7 +164,8 @@ AppPackages/
 
 # Others
 ClientBin/
-[Ss]tyle[Cc]op.*
+[Ss]tyle[Cc]op.xml
+[Ss]tyle[Cc]op.config
 ~$*
 *~
 *.dbmdl
@@ -210,3 +211,15 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+/Dataline.Elster.Anmeldung/xsd/th000008_extern.xsd
+/Dataline.Elster.Anmeldung/xsd/ndh000010_extern.xsd
+/Dataline.Elster.Anmeldung/xsd/headerbasis000002.xsd
+/Dataline.Elster.Lohn/xsd/th000008_extern.xsd
+/Dataline.Elster.Lohn/xsd/ndh000010_extern.xsd
+/Dataline.Elster.Lohn/xsd/headerbasis000002.xsd
+/Dataline.Elster.Datenuebermittler2015/xsd/th000008_extern.xsd
+/Dataline.Elster.Datenuebermittler2015/xsd/ndh000010_extern.xsd
+/Dataline.Elster.Datenuebermittler2015/xsd/headerbasis000002.xsd
+/Dataline.Elster.Datenabholung/xsd/th000008_extern.xsd
+/Dataline.Elster.Datenabholung/xsd/ndh000010_extern.xsd
+/Dataline.Elster.Datenabholung/xsd/headerbasis000002.xsd

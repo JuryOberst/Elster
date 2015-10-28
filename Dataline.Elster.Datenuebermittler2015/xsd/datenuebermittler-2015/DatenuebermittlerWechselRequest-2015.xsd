@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2013 sp1 (http://www.altova.com) von Rechenzentrum der Finanzverwaltung des Landes Nordrhein - Westfalen (Rechenzentrum der Finanzverwaltung des Landes Nordrhein - Westfalen) bearbeitet -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:st="http://www.elster.de/elo2/datenuebermittler/types/simple/2015" xmlns="http://www.elster.de/elo2/datenuebermittler/DatenuebermittlerWechselRequest/2015" targetNamespace="http://www.elster.de/elo2/datenuebermittler/DatenuebermittlerWechselRequest/2015" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.elster.de/elo2/datenuebermittler/types/simple/2015" schemaLocation="./SimpleTypes-2015.xsd"/>
+	<xs:element name="DatenuebermittlerWechselRequest">
+		<xs:annotation>
+			<xs:documentation>Wechsel des Datenübermittlers für die angegebenen
+				Arbeitnehmer.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:annotation>
+				<xs:documentation>Grunddaten eines Arbeitgebers.</xs:documentation>
+			</xs:annotation>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element name="ArbeitnehmerUm" type="ArbeitnehmerUmmeldenComplex">
+					<xs:annotation>
+						<xs:documentation>Grunddaten eines Arbeitnehmers.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="stnrAG" type="st:StNrSimple" use="required">
+				<xs:annotation>
+					<xs:documentation>Steuernummer der lohnsteuerlichen Betriebsstätte
+des Arbeitgebers.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="refDatumAG" type="st:DatumSimple" use="required">
+				<xs:annotation>
+					<xs:documentation>Referenzdatum des Arbeitgebers, ab dem ELStAM geliefert werden sollen. Einschränkungen ergeben sich aus der
+Schnittstellenbeschreibung ELStAM/ZK. Angabe in der Form JJJJMMTT.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ArbeitnehmerUmmeldenComplex">
+		<xs:attribute name="idnr" type="st:IdNrSimple" use="required">
+			<xs:annotation>
+				<xs:documentation>IdNr des Arbeitnehmers nach §139b AO.			</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="gebdat" type="st:GeburtsdatumSimple" use="required">
+			<xs:annotation>
+				<xs:documentation>Geburtsdatum zur Verifikation. Lässt auch
+teilweise oder vollständig unbekannte Daten zu. In diesen Fällen wird der Wert für Tag, Monat oder Jahr entsprechend
+genullt (19501231, 19501200, 19500000, 00000000)	</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

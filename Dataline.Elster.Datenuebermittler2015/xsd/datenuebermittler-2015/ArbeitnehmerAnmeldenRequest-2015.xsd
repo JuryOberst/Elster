@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2013 sp1 (http://www.altova.com) von Rechenzentrum der Finanzverwaltung des Landes Nordrhein - Westfalen (Rechenzentrum der Finanzverwaltung des Landes Nordrhein - Westfalen) bearbeitet -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:st="http://www.elster.de/elo2/datenuebermittler/types/simple/2015" xmlns="http://www.elster.de/elo2/datenuebermittler/ArbeitnehmerAnmeldenRequest/2015" targetNamespace="http://www.elster.de/elo2/datenuebermittler/ArbeitnehmerAnmeldenRequest/2015" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.elster.de/elo2/datenuebermittler/types/simple/2015" schemaLocation="./SimpleTypes-2015.xsd"/>
+	<xs:element name="ArbeitnehmerAnmeldenRequest">
+		<xs:annotation>
+			<xs:documentation>Anmelden von Arbeitnehmern.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:annotation>
+				<xs:documentation>Grunddaten eines Arbeitgebers.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element name="ArbeitnehmerAn" type="ArbeitnehmerAnmeldenComplex">
+					<xs:annotation>
+						<xs:documentation>Grunddaten eines Arbeitnehmers
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="stnrAG" type="st:StNrSimple" use="required">
+				<xs:annotation>
+					<xs:documentation>Steuernummer der lohnsteuerlichen Betriebsstätte
+des Arbeitgebers.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ArbeitnehmerAnmeldenComplex">
+		<xs:attribute name="idnr" type="st:IdNrSimple" use="required">
+			<xs:annotation>
+				<xs:documentation>IdNr des Arbeitnehmers nach §139b AO.			</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="gebdat" type="st:GeburtsdatumSimple" use="required">
+			<xs:annotation>
+				<xs:documentation>Geburtsdatum zur Verifikation. Lässt auch
+teilweise oder vollständig unbekannte Daten zu. In diesen Fällen wird der Wert für Tag, Monat oder Jahr entsprechend genullt
+(19501231, 19501200, 19500000, 00000000)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="istHauptarbeitgeber" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>Gibt an, ob der Arbeitgeber der Hauptarbeitgeber ist.		</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="gewuenschterFreibetrag" type="st:BetragSimple" use="optional">
+			<xs:annotation>
+				<xs:documentation>Für ein NAV kann der gewünschte jährliche Freibetrag aus Hinzurechnung eingetragen werden. Maximal ist hier 999999999 zu übergeben.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="beschaeftigungsbeginn" type="st:DatumSimple" use="required">
+			<xs:annotation>
+				<xs:documentation>Beginn des Beschäftigungsverhältnisses
+laut Arbeitsvertrag. Angabe in der Form JJJJMMTT.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="refDatumAG" type="st:DatumSimple" use="required">
+			<xs:annotation>
+				<xs:documentation>Referenzdatum des Arbeitgebers, ab dem
+für diese	Anmeldung ELStAM geliefert werden sollen; frühestens aber	Beginn des Beschäftigungsverhältnisses. 
+Weitere Einschränkungen  ergeben sich aus der Schnittstellenbeschreibung ELStAM/ZK. Besonderheit: 
+Bei Anmeldungen von Nebenbeschäftigungen zwecks Änderung des Freibetrags aus Hinzurechnung ist hier das Datum einzutragen, ab dem der geänderte Freibetrag gelten soll. Angabe in der Form JJJJMMTT.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>
