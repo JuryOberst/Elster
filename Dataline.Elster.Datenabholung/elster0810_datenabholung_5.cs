@@ -982,20 +982,6 @@ namespace Dataline.Elster.Datenabholung {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elster.de/2002/XMLSchema")]
-    public enum NutzdatenHeaderCTypeVersion {
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("10")]
-        Item10,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("000010")]
-        Item000010,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/2002/XMLSchema")]
     public partial class DatenTeilCType : object, System.ComponentModel.INotifyPropertyChanged {
