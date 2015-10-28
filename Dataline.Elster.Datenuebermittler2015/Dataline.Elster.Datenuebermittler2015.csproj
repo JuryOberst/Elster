@@ -67,6 +67,7 @@
     <Compile Include="..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Aenderungsliste-2015.cs" />
     <Compile Include="Datenuebermittler2015ResourceProvider.cs" />
     <Compile Include="elster0810_elo2_extern-2015.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
