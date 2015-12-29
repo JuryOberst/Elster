@@ -59,6 +59,7 @@
     <Compile Include="ndh000010_extern.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="th000008_extern.cs" />
+    <Compile Include="XmlSchemaUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Dataline.Elster.Basis.nuspec" />
