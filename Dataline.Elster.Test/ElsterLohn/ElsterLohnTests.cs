@@ -46,7 +46,7 @@ namespace Dataline.Elster.Test.ElsterLohn
         private static XDocument Load([NotNull] string relativeFileName)
         {
             var asm = typeof(ElsterLohnTests).Assembly;
-            var resFileName = relativeFileName.Replace('/', '.');
+            var resFileName = $"Daten.{relativeFileName.Replace('/', '.')}";
             using (var resStream = asm.GetManifestResourceStream(typeof(ElsterLohnTests), resFileName))
             {
                 Assert.NotNull(resStream);
