@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<?xml-stylesheet type="text/xsl" href="../lstb_html.xsl"?>
+<Elster xmlns="http://www.elster.de/2002/XMLSchema">
+
+	<TransferHeader version="8">
+		<Verfahren>ElsterLohn</Verfahren>
+		<DatenArt>LStB</DatenArt>
+		<Vorgang>send-Auth-Offline</Vorgang>
+		<Testmerker>0</Testmerker>
+			<HerstellerID>74931</HerstellerID>
+		<DatenLieferant>RZF NRW; Roßstr 131;-133 ; ; 40476; Düsseldorf; Deutschland; 0211-4572-0 ; test@rzf.fin-nrw.de</DatenLieferant>
+		<EingangsDatum>20091021095829</EingangsDatum>
+		<Datei>
+			<Verschluesselung>PKCS#7v1.5</Verschluesselung>
+			<Kompression>GZIP</Kompression>
+			<DatenGroesse>12222222</DatenGroesse>
+			<TransportSchluessel>MIIDzTCCArUCAQAwDQYJKoZIhvcNAQEEBQAwgawxCzAJBgNVBAYTAkRFMQ8wDQYD
+VQQKEwZFTFNURVIxDjAMBgNVBAsTBUNSWVBUMQswCQYDVQQDEwJYWDENMAsGA1UE
+BxMEMjAwMjENMAsGA1UECRMEMDAwMDETMBEGA1UEBRMKMjAwMlhYMDAwMDE8MDoG
+A1UEDRMzVGVzdEtleSBTY2hsdWVzc2VsdmVyc2lvbiAwMDAwIDIwMDIgKEVLQyBW
+MjAwMS4xLjApMB4XDTAyMDEwMTAwMDAwMFoXDTA0MTIzMTAwMDAwMFowgawxCzAJ
+BgNVBAYTAkRFMQ8wDQYDVQQKEwZFTFNURVIxDjAMBgNVBAsTBUNSWVBUMQswCQYD
+VQQDEwJYWDENMAsGA1UEBxMEMjAwMjENMAsGA1UECRMEMDAwMDETMBEGA1UEBRMK
+MjAwMlhYMDAwMDE8MDoGA1UEDRMzVGVzdEtleSBTY2hsdWVzc2VsdmVyc2lvbiAw
+MDAwIDIwMDIgKEVLQyBWMjAwMS4xLjApMIIBITANBgkqhkiG9w0BAQEFAAOCAQ4A
+MIIBCQKCAQBkU8u+1QIP99lVqAuEFdKX5gARyzpHTSL+pu+IoVml/76KM/gFxEHK
+rDO0sfcX8YxRv6Bvhl2gEU+O1cpVE+MpSNGn861G3UvK5rhzj6FV/XTasCgrSMSq
+/6q1tnwTHPBEXiWbQDMF9d8PX4B2lHLzIQIXey5oCQn2cRj7uKRKKEI/K+2dn0eS
+BbxwbIn+HkZkHRbzIht/OyD+A8Qw14QPA2oKbmc7K7wH9Njs6HCguBHGAugy33j8
+yf52qpMYDd8O392OegravuRQXIxxxD6J3EvdTdcHKnO+gDrdCNR+PzQjUYwcG4OO
+Rg83Jk5OfhsJhl0zJCMKAJ9XOVXRBVQPAgMBAAEwDQYJKoZIhvcNAQEEBQADggEB
+AC/MOKGD7xqqzeNZ4KEZyhSBFdD0psUMMDl/HQCnZWf2g8PVgsWsm6mQAmAT4QH6
+o89APMVVufbiE3Xs/3LYsFVqdugkCPvzeOm4x/Is2LVsLWeHytrrPEQVXzey4UYi
+Y/yO4lqY1WIpKOPejUevckQGlABwlwmWZ6O9hQauLVrLeJ4+zuZrBK4cIJd2Uowz
+aDRKfKwzXKwLhHJ0xpteyEJJcKTn4nni+gOHI5QieEBkYMXOTJwCk10Ev2O0h2pu
+xzw/ISXuf9u24UMvhwnc2l1hQiXdYwz8QRHy5+YfPWIaC7je7cU8KxO5i/kmrcSK
+AhjH8k/TvGlEU7FYaqjypFw=</TransportSchluessel>
+		</Datei>
+		<VersionClient>GLOBEX 1.0</VersionClient>
+		<Zusatz>
+			<Info>Ich bin ein Info String</Info>
+			<Info>Ich auch!</Info>
+		</Zusatz>
+	</TransferHeader>
+	<DatenTeil>
+		<Nutzdatenblock>
+			<NutzdatenHeader version="10">
+				<NutzdatenTicket>1</NutzdatenTicket>
+				<Empfaenger id="L">NW</Empfaenger>
+				<Hersteller>
+					<ProduktName>QS ElsterLohn Software </ProduktName>
+					<ProduktVersion>8.0.1</ProduktVersion>
+				</Hersteller>
+				<DatenLieferant>RZF NRW; Roßstr 131;-133 ; ; 40476; Düsseldorf; Deutschland; 0211-4572-0 ; test@rzf.fin-nrw.de</DatenLieferant>
+			</NutzdatenHeader>
+			<Nutzdaten>
+				<Lohnsteuerbescheinigung art="LSTK" version="201001" xmlns="http://www.elsterlohn.de/2010-01/XMLSchema">
+					<Dauer jahr="2010">
+						<Anfang>0101</Anfang>
+						<Ende>3112</Ende>
+					</Dauer>
+					<Allgemein>
+						<IdNr>20013456978</IdNr>
+						<Ordnungsmerkmal>1</Ordnungsmerkmal>
+						<AGS>05111000</AGS>
+						<Person geschlecht="M">
+							<Familienname>
+								<Name>Erassmuss</Name>
+								<Vorname>Julia</Vorname>
+							</Familienname>
+							<Geburtsdatum>19630708</Geburtsdatum>
+							<Adresse>
+								<Str>Woauchimmer Weg</Str>
+								<Hausnummer>13</Hausnummer>
+								<Ort>Pipapo</Ort>
+								<PLZ>44444</PLZ>
+								<PostfachOrt>Pipapo</PostfachOrt>
+								<Postfach>40404</Postfach>
+								<PostfachPLZ>40404</PostfachPLZ>
+							</Adresse>
+						</Person>
+					</Allgemein>
+					<Besteuerungsmerkmale>
+						<Steuerklasse gueltig_ab="0101">1</Steuerklasse>
+						<Steuerklasse gueltig_ab="0105" faktor="0.499">4</Steuerklasse>
+						<Kinder gueltig_ab="0101">1.0</Kinder>
+						<Kirchensteuerabzug ehegkonfession="rk" gueltig_ab="0101" konfession="rk"/>
+						<Steuerfreibetrag gueltig_ab="0101">0</Steuerfreibetrag>
+						<Hinzurechnungsbetrag gueltig_ab="0106">1.00</Hinzurechnungsbetrag>
+					</Besteuerungsmerkmale>
+					<Besteuerungsgrundlagen>
+						<AnzahlU>0</AnzahlU>
+						<BruttoArbLohn>0</BruttoArbLohn>
+						<LSteuer>0</LSteuer>
+						<Soli>0</Soli>
+						<ArbnKiSteuer>0</ArbnKiSteuer>
+						<EhegKiSteuer>0</EhegKiSteuer>
+						<ArbgAnteilRenVers>0</ArbgAnteilRenVers>
+						<ArbnAnteilRenVers>0</ArbnAnteilRenVers>
+						<StFreiArbgZuschKrankVers>0</StFreiArbgZuschKrankVers>
+						<ArbnAnteilKrankVers>0</ArbnAnteilKrankVers>
+						<ArbnAnteilPflegVers>0</ArbnAnteilPflegVers>
+						<ArbnAnteilArblVers>0</ArbnAnteilArblVers>
+						<AusgezKinderGeld>0</AusgezKinderGeld>
+						<Arbeitgeber>
+							<ArbGName>Habnichts GmbH</ArbGName>
+							<ArbGFANr>3113</ArbGFANr>
+							<ArbGFAName>Dortmund-West</ArbGFAName>
+							<ArbGStNr>3113012345678</ArbGStNr>
+							<Adresse>
+								<Str>Katastrophenweg</Str>
+								<Hausnummer>42</Hausnummer>
+								<Ort>Zappenduster</Ort>
+								<PLZ>40404</PLZ>
+							</Adresse>
+						</Arbeitgeber>
+					</Besteuerungsgrundlagen>
+				</Lohnsteuerbescheinigung>
+			</Nutzdaten>
+		</Nutzdatenblock>
+	</DatenTeil>
+</Elster>

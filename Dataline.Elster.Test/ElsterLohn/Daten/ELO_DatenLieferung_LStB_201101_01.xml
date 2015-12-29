@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="iso-8859-15"?>
+<?xml-stylesheet type="text/xsl" href="lstb_html.xsl"?>
+<Elster xmlns="http://www.elster.de/2002/XMLSchema">
+	<TransferHeader version="8">
+		<Verfahren>ElsterLohn</Verfahren>
+		<DatenArt>LStB</DatenArt>
+		<Vorgang>send-NoSig-Offline</Vorgang>
+		<Testmerker>220002000</Testmerker>
+		<HerstellerID>74931</HerstellerID>
+		<DatenLieferant>ANST.F.KOMMUNALE DATENVERARBTG;HANSASTRASSE 16;80686;MUENCHEN;08959031874;elster@akdb.de</DatenLieferant>
+		<Datei>
+			<Verschluesselung>none</Verschluesselung>
+			<Kompression>none</Kompression>
+			<DatenGroesse>1</DatenGroesse>
+			<TransportSchluessel>MIIDNjCCAh6gAwIBAgIEO5rNmTANBgkqhkiG9w0BAQUFADBFMQswCQYDVQQGEwJERTEPMA0GA1UEChMGRWxzdGVyMQswCQYDVQQLEwJDQTEYMBYGA1UEAxMPRWxzdGVyU29mdE9yZ0NBMB4XDTA2MDYxMjEwMDEzMVoXDTA5MDYxMjEwMDEzMVowPzEUMBIGA1UEBRMLMTAwMDIzMDEyMUMxJzAlBgNVBAMTHkFOU1QuRi5LT01NVU5BTEUgREFURU5WRVJBUkJURzCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAx7PSGexZg9OzJpJz4dCXNWQ2wyWcEC74dj8841sWq93Rm+OdLIiC1yGWJ0aQYBJni6YXjC2mIDkXaGKoG1yxkqRAZOW9klXAeM4bmI04gkJe6hksfjt1y0e9VSG9WkV56wBVCO9a7nRBZKSVX5YKeiUbmMvDzKnSwFEvPL0S4aECAwEAAaOBtzCBtDALBgNVHQ8EBAMCBSAwgZkGA1UdHwSBkTCBjjCBi6CBhKCBgYZ/bGRhcDovLzE5Mi4xNjguNi4yNDozODkvbCUzZENBJTIwWmVydGlmaWthdGUsb3UlM2RDQSxjbiUzZEVsc3RlclNvZnRPcmdDQSxkYyUzZHdpZXNlbCxkYyUzZGVsc3RlcixkYyUzZGRlPz9iYXNlPyhvYmplY3RDbGFzcz0qKYECBkAwCQYDVR0TBAIwADANBgkqhkiG9w0BAQUFAAOCAQEAqmYgB4v3+HgxY5PFEVVZHJJ7LNuttqYMI1rXZbTJCGEnLrABo5fPkPMLWkDyMYYMzG9eH4yljfRYInxUB0pifo1vJJugHVW5Cyz3jLbnruA8jsXOYITEZHmqLku0W2q3Oayi1f1Kinpa9d1l/DO1Mp/G/tgtb8+3Tcup6Bb0yxY0h41k967bquGB5svS5E//a5pFXbYsPQsBLhxyZ53m0MMpfZA9ftg08oPU2dXqTwrPJntoGHd9ijT7X14W4iITZLlvDInoYjdVuTxw3UAuJGZGf8pLBtf7ukg7hbcP65radVNemx55drmSz3wYqYrooZAUn5ZOojUHaFkRvDjr2Q==</TransportSchluessel>
+		</Datei>
+	</TransferHeader>
+	<DatenTeil>
+		<Nutzdatenblock>
+			<NutzdatenHeader version="10">
+				<NutzdatenTicket>BY109990008012008101</NutzdatenTicket>
+				<Empfaenger id="L">BY</Empfaenger>
+				<Hersteller>
+					<ProduktName>PERS ElsterLohn Schnittstelle</ProduktName>
+					<ProduktVersion>1.4</ProduktVersion>
+				</Hersteller>
+				<DatenLieferant>ANST.F.KOMMUNALE DATENVERARBTG</DatenLieferant>
+			</NutzdatenHeader>
+			<Nutzdaten>
+				<Lohnsteuerbescheinigung xmlns="http://www.elsterlohn.de/2011-01/XMLSchema" version="201101" art="LSTK">
+					<Dauer jahr="2011">
+						<Anfang>0101</Anfang>
+						<Ende>3101</Ende>
+					</Dauer>
+					<Allgemein>
+						<ETIN>MSTRSBNE66G01K</ETIN>
+						<IdNr>96527816341</IdNr>
+						<Ordnungsmerkmal>1099900010766501</Ordnungsmerkmal>
+						<AGS>09184132</AGS>
+						<Person geschlecht="W">
+							<Familienname>
+								<Name>MUSTER</Name>
+								<Vorname>SABINE</Vorname>
+							</Familienname>
+							<Geburtsname>
+								<Name>RABE</Name>
+							</Geburtsname>
+							<Geburtsdatum>19660701</Geburtsdatum>
+							<Adresse>
+								<Str>REHMSTR.</Str>
+								<Hausnummer>107</Hausnummer>
+								<Ort>NEURIED</Ort>
+								<PLZ>82061</PLZ>
+								<!--<AuslandsPLZ laenderkennzeichen="NL">1234 AB</AuslandsPLZ>-->
+							</Adresse>
+						</Person>
+					</Allgemein>
+					<Besteuerungsmerkmale>
+						<Steuerklasse gueltig_ab="0101" faktor="0.671">4</Steuerklasse>
+						<Kinder gueltig_ab="0101">0.0</Kinder>
+						<Kirchensteuerabzug gueltig_ab="0101" konfession="rk" ehegkonfession="ev"/>
+					</Besteuerungsmerkmale>
+					<Besteuerungsgrundlagen>
+						<AnzahlU>0</AnzahlU>
+						<BruttoArbLohn>3165.46</BruttoArbLohn>
+						<LSteuer>319.00</LSteuer>
+						<Soli>17.54</Soli>
+						<ArbnKiSteuer>25.52</ArbnKiSteuer>
+						<EhegKiSteuer>25.55</EhegKiSteuer>
+						<VBez beginn="01" ende="11" jahr="2011" bmgfreibetrag="1000.00">123.45</VBez>
+						<ErmStVBezMKalJahr jahr="2011">100.23</ErmStVBezMKalJahr>
+						<LSteuerMKalJahr>54.12</LSteuerMKalJahr>
+						<SoliMKalJahr>45.34</SoliMKalJahr>
+						<ArbgAnteilRenVers>318.33</ArbgAnteilRenVers>
+						<ArbgAnteilBerufsVers>256.44</ArbgAnteilBerufsVers>
+						<ArbnAnteilRenVers>318.33</ArbnAnteilRenVers>
+						<ArbnAnteilBerufsVers>256.55</ArbnAnteilBerufsVers>
+						<ArbnAnteilKrankVers>245.60</ArbnAnteilKrankVers>
+						<ArbnAnteilPflegVers>245.61</ArbnAnteilPflegVers>
+						<ArbnAnteilArblVers>245.62</ArbnAnteilArblVers>
+						<BeitrPrKrankVers>645.00</BeitrPrKrankVers>
+						<Grossbuchstaben>S,F</Grossbuchstaben>
+						<Kammerbeitrag bundesland="HB">300.00</Kammerbeitrag>
+						<ArbnAnteilWBUmlage>400.00</ArbnAnteilWBUmlage>
+						<ArbgAnteilZusatzVers>500.00</ArbgAnteilZusatzVers>
+						<ArbnAnteilZusatzVers>600.00</ArbnAnteilZusatzVers>
+						<AnzahlArbTag>200</AnzahlArbTag>
+						<StFreiFahrtKAusw>700.00</StFreiFahrtKAusw>
+						<NErmStVBezMKalJahr jahr="2011">150.40</NErmStVBezMKalJahr>						
+						<StFreiArbgZuschBerufsVers>800.00</StFreiArbgZuschBerufsVers>
+						<Wert name="FreierWert">180.00</Wert>
+						<Text name="FreierText1">EinText1</Text>
+						<Text name="FreierText2">EinText2</Text>
+						<Arbeitgeber>
+							<ArbGName>TESTKUNDE-ELSTER</ArbGName>
+							<ArbGFANr>9143</ArbGFANr>
+							<ArbGFAName>MUENCHEN F. KOERPERSCH. -KOERPERSCHAFTST</ArbGFAName>
+							<ArbGStNr>9143036920270</ArbGStNr>
+							<Adresse>
+								<Str>DENNINGER STR.</Str>
+								<Hausnummer>37</Hausnummer>
+								<Ort>MUENCHEN</Ort>
+								<PLZ>81921</PLZ>
+							</Adresse>
+						</Arbeitgeber>
+					</Besteuerungsgrundlagen>
+				</Lohnsteuerbescheinigung>
+			</Nutzdaten>
+		</Nutzdatenblock>
+	</DatenTeil>
+</Elster>
