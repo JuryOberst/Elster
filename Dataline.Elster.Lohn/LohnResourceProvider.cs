@@ -27,7 +27,7 @@ namespace Dataline.Elster.Lohn
         /// </summary>
         public LohnResourceProvider()
         {
-            var type = GetType();
+            var type = typeof(LohnResourceProvider);
             var basePath = $"{type.Namespace}.xsd.";
             _assembly = type.GetTypeInfo().Assembly;
             _fileToResourceName = _assembly.GetManifestResourceNames()
@@ -39,8 +39,7 @@ namespace Dataline.Elster.Lohn
         }
 
         /// <inheritdoc/>
-        public IReadOnlyCollection<string> FileNames
-        { get; }
+        public IReadOnlyCollection<string> FileNames { get; }
 
         /// <inheritdoc/>
         public IReadOnlyCollection<string> BaseFileNames { get; } = new[]
