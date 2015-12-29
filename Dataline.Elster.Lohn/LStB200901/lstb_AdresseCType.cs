@@ -56,7 +56,7 @@ namespace Dataline.Elster.Lohn.LStB200901
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType = "integer")]
+        [XmlElement(DataType = "integer")]
         public string Hausnummer
         {
             get
@@ -113,8 +113,8 @@ namespace Dataline.Elster.Lohn.LStB200901
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("AuslandsPLZ", typeof(LStB200901.AuslandsPLZCType))]
-        [System.Xml.Serialization.XmlElementAttribute("PLZ", typeof(string), DataType = "positiveInteger")]
+        [XmlElement("AuslandsPLZ", typeof(LStB200901.AuslandsPLZCType))]
+        [XmlElement("PLZ", typeof(string), DataType = "positiveInteger")]
         public object Item
         {
             get
@@ -143,7 +143,7 @@ namespace Dataline.Elster.Lohn.LStB200901
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType = "positiveInteger")]
+        [XmlElement(DataType = "positiveInteger")]
         public string Postfach
         {
             get
@@ -158,7 +158,7 @@ namespace Dataline.Elster.Lohn.LStB200901
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType = "positiveInteger")]
+        [XmlElement(DataType = "positiveInteger")]
         public string PostfachPLZ
         {
             get

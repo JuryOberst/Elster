@@ -17,7 +17,7 @@ namespace Dataline.Elster.Lohn.LStB201101 {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="lstb_BesteuerungsmerkmaleCType", Namespace="http://www.elsterlohn.de/2011-01/XMLSchema")]
+    [XmlType(TypeName="lstb_BesteuerungsmerkmaleCType", Namespace="http://www.elsterlohn.de/2011-01/XMLSchema")]
     public partial class lstb_BesteuerungsmerkmaleCType: object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Collections.Generic.List<LStB201101.lstb_BesteuerungsmerkmaleCTypeSteuerklasse> steuerklasseField;
@@ -31,7 +31,7 @@ namespace Dataline.Elster.Lohn.LStB201101 {
         private System.Collections.Generic.List<LStB201101.lstb_SteuerfreibetragCType> hinzurechnungsbetragField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Steuerklasse")]
+        [XmlElement("Steuerklasse")]
         public System.Collections.Generic.List<LStB201101.lstb_BesteuerungsmerkmaleCTypeSteuerklasse> Steuerklasse {
             get {
                 return steuerklasseField;
@@ -43,7 +43,7 @@ namespace Dataline.Elster.Lohn.LStB201101 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Kinder")]
+        [XmlElement("Kinder")]
         public System.Collections.Generic.List<LStB201101.lstb_BesteuerungsmerkmaleCTypeKinder> Kinder {
             get {
                 return kinderField;
@@ -55,7 +55,7 @@ namespace Dataline.Elster.Lohn.LStB201101 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Kirchensteuerabzug")]
+        [XmlElement("Kirchensteuerabzug")]
         public System.Collections.Generic.List<LStB201101.lstb_BesteuerungsmerkmaleCTypeKirchensteuerabzug> Kirchensteuerabzug {
             get {
                 return kirchensteuerabzugField;
@@ -67,7 +67,7 @@ namespace Dataline.Elster.Lohn.LStB201101 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Steuerfreibetrag")]
+        [XmlElement("Steuerfreibetrag")]
         public System.Collections.Generic.List<LStB201101.lstb_SteuerfreibetragCType> Steuerfreibetrag {
             get {
                 return steuerfreibetragField;
@@ -79,7 +79,7 @@ namespace Dataline.Elster.Lohn.LStB201101 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Hinzurechnungsbetrag")]
+        [XmlElement("Hinzurechnungsbetrag")]
         public System.Collections.Generic.List<LStB201101.lstb_SteuerfreibetragCType> Hinzurechnungsbetrag {
             get {
                 return hinzurechnungsbetragField;

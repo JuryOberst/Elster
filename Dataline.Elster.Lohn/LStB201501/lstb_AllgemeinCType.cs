@@ -17,7 +17,7 @@ namespace Dataline.Elster.Lohn.LStB201501 {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="lstb_AllgemeinCType", Namespace="http://www.elsterlohn.de/2015-01/XMLSchema")]
+    [XmlType(TypeName="lstb_AllgemeinCType", Namespace="http://www.elsterlohn.de/2015-01/XMLSchema")]
     public partial class lstb_AllgemeinCType: object, System.ComponentModel.INotifyPropertyChanged {
         
         private string eTINField;

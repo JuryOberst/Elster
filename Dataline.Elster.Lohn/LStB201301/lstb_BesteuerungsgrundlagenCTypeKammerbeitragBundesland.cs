@@ -16,7 +16,7 @@ namespace Dataline.Elster.Lohn.LStB201301 {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elsterlohn.de/2013-01/XMLSchema")]
+    [XmlType(AnonymousType=true, Namespace="http://www.elsterlohn.de/2013-01/XMLSchema")]
     public enum lstb_BesteuerungsgrundlagenCTypeKammerbeitragBundesland{
         
         /// <remarks/>

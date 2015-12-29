@@ -25,17 +25,17 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         private LStB200901.ItemsChoiceType[] itemsElementNameField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Anschriftenzusatz", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("AuslandsPLZ", typeof(LStB200901.AuslandsPLZCType))]
-        [System.Xml.Serialization.XmlElementAttribute("GKPLZ", typeof(string), DataType="positiveInteger")]
-        [System.Xml.Serialization.XmlElementAttribute("HNrZusatz", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("Hausnummer", typeof(string), DataType="integer")]
-        [System.Xml.Serialization.XmlElementAttribute("Ort", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("PLZ", typeof(string), DataType="positiveInteger")]
-        [System.Xml.Serialization.XmlElementAttribute("Postfach", typeof(string), DataType="positiveInteger")]
-        [System.Xml.Serialization.XmlElementAttribute("PostfachOrt", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("PostfachPLZ", typeof(string), DataType="positiveInteger")]
-        [System.Xml.Serialization.XmlElementAttribute("Str", typeof(string))]
+        [XmlElement("Anschriftenzusatz", typeof(string))]
+        [XmlElement("AuslandsPLZ", typeof(LStB200901.AuslandsPLZCType))]
+        [XmlElement("GKPLZ", typeof(string), DataType="positiveInteger")]
+        [XmlElement("HNrZusatz", typeof(string))]
+        [XmlElement("Hausnummer", typeof(string), DataType="integer")]
+        [XmlElement("Ort", typeof(string))]
+        [XmlElement("PLZ", typeof(string), DataType="positiveInteger")]
+        [XmlElement("Postfach", typeof(string), DataType="positiveInteger")]
+        [XmlElement("PostfachOrt", typeof(string))]
+        [XmlElement("PostfachPLZ", typeof(string), DataType="positiveInteger")]
+        [XmlElement("Str", typeof(string))]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
         public object[] Items {
             get {
@@ -48,7 +48,7 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
+        [XmlElement("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public LStB200901.ItemsChoiceType[] ItemsElementName {
             get {

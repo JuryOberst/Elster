@@ -17,26 +17,26 @@ namespace Dataline.Elster.Lohn {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/2002/XMLSchema")]
+    [XmlType(Namespace="http://www.elster.de/2002/XMLSchema")]
     public partial class NutzdatenCType: object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Collections.Generic.List<object> itemsField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Protokoll", typeof(ProtokollCType))]
-        [System.Xml.Serialization.XmlElementAttribute("ProtokollAnforderung", typeof(ProtokollAnforderungCType))]
-        [System.Xml.Serialization.XmlElementAttribute("ProtokollAnforderung", typeof(Protocol3.ProtokollAnforderungCType), Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version3/XMLSchema")]
-        [System.Xml.Serialization.XmlElementAttribute("Protokoll", typeof(Protocol4.ProtokollCType), Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version4/XMLSchema")]
-        [System.Xml.Serialization.XmlElementAttribute("Protokoll", typeof(Protocol5.ProtokollCType), Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version5/XMLSchema")]
-        [System.Xml.Serialization.XmlElementAttribute("Lohnsteuerbescheinigung", typeof(LStB200901.lstb_LohnsteuerbescheinigungCType), Namespace = "http://www.elsterlohn.de/2009-01/XMLSchema")]
-        [System.Xml.Serialization.XmlElementAttribute("Lohnsteuerbescheinigung", typeof(LStB201001.lstb_LohnsteuerbescheinigungCType), Namespace = "http://www.elsterlohn.de/2010-01/XMLSchema")]
-        [System.Xml.Serialization.XmlElementAttribute("Lohnsteuerbescheinigung", typeof(LStB201101.lstb_LohnsteuerbescheinigungCType), Namespace = "http://www.elsterlohn.de/2011-01/XMLSchema")]
-        [System.Xml.Serialization.XmlElementAttribute("Lohnsteuerbescheinigung", typeof(LStB201201.lstb_LohnsteuerbescheinigungCType), Namespace="http://www.elsterlohn.de/2012-01/XMLSchema")]
-        [System.Xml.Serialization.XmlElementAttribute("Lohnsteuerbescheinigung", typeof(LStB201301.lstb_LohnsteuerbescheinigungCType), Namespace="http://www.elsterlohn.de/2013-01/XMLSchema")]
-        [System.Xml.Serialization.XmlElementAttribute("Lohnsteuerbescheinigung", typeof(LStB201302.lstb_LohnsteuerbescheinigungCType), Namespace="http://www.elsterlohn.de/2013-02/XMLSchema")]
-        [System.Xml.Serialization.XmlElementAttribute("Lohnsteuerbescheinigung", typeof(LStB201401.lstb_LohnsteuerbescheinigungCType), Namespace="http://www.elsterlohn.de/2014-01/XMLSchema")]
-        [System.Xml.Serialization.XmlElementAttribute("Lohnsteuerbescheinigung", typeof(LStB201501.lstb_LohnsteuerbescheinigungCType), Namespace = "http://www.elsterlohn.de/2015-01/XMLSchema")]
-        [System.Xml.Serialization.XmlElementAttribute("Lohnsteuerbescheinigung", typeof(LStB201601.lstb_LohnsteuerbescheinigungCType), Namespace = "http://www.elsterlohn.de/2016-01/XMLSchema")]
+        [XmlElement("Protokoll", typeof(ProtokollCType))]
+        [XmlElement("ProtokollAnforderung", typeof(ProtokollAnforderungCType))]
+        [XmlElement("ProtokollAnforderung", typeof(Protocol3.ProtokollAnforderungCType), Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version3/XMLSchema")]
+        [XmlElement("Protokoll", typeof(Protocol4.ProtokollCType), Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version4/XMLSchema")]
+        [XmlElement("Protokoll", typeof(Protocol5.ProtokollCType), Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version5/XMLSchema")]
+        [XmlElement("Lohnsteuerbescheinigung", typeof(LStB200901.lstb_LohnsteuerbescheinigungCType), Namespace = "http://www.elsterlohn.de/2009-01/XMLSchema")]
+        [XmlElement("Lohnsteuerbescheinigung", typeof(LStB201001.lstb_LohnsteuerbescheinigungCType), Namespace = "http://www.elsterlohn.de/2010-01/XMLSchema")]
+        [XmlElement("Lohnsteuerbescheinigung", typeof(LStB201101.lstb_LohnsteuerbescheinigungCType), Namespace = "http://www.elsterlohn.de/2011-01/XMLSchema")]
+        [XmlElement("Lohnsteuerbescheinigung", typeof(LStB201201.lstb_LohnsteuerbescheinigungCType), Namespace="http://www.elsterlohn.de/2012-01/XMLSchema")]
+        [XmlElement("Lohnsteuerbescheinigung", typeof(LStB201301.lstb_LohnsteuerbescheinigungCType), Namespace="http://www.elsterlohn.de/2013-01/XMLSchema")]
+        [XmlElement("Lohnsteuerbescheinigung", typeof(LStB201302.lstb_LohnsteuerbescheinigungCType), Namespace="http://www.elsterlohn.de/2013-02/XMLSchema")]
+        [XmlElement("Lohnsteuerbescheinigung", typeof(LStB201401.lstb_LohnsteuerbescheinigungCType), Namespace="http://www.elsterlohn.de/2014-01/XMLSchema")]
+        [XmlElement("Lohnsteuerbescheinigung", typeof(LStB201501.lstb_LohnsteuerbescheinigungCType), Namespace = "http://www.elsterlohn.de/2015-01/XMLSchema")]
+        [XmlElement("Lohnsteuerbescheinigung", typeof(LStB201601.lstb_LohnsteuerbescheinigungCType), Namespace = "http://www.elsterlohn.de/2016-01/XMLSchema")]
         public System.Collections.Generic.List<object> Items
         {
             get {

@@ -229,7 +229,7 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("StBegVBez")]
+        [XmlElement("StBegVBez")]
         public System.Collections.Generic.List<LStB200901.lstb_BesteuerungsgrundlagenCTypeStBegVBez> StBegVBez {
             get {
                 return stBegVBezField;
@@ -241,7 +241,7 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("StBegVBezMKalJahr")]
+        [XmlElement("StBegVBezMKalJahr")]
         public System.Collections.Generic.List<LStB200901.lstb_BesteuerungsgrundlagenCTypeStBegVBezMKalJahr> StBegVBezMKalJahr {
             get {
                 return stBegVBezMKalJahrField;
@@ -654,7 +654,7 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Kammerbeitrag")]
+        [XmlElement("Kammerbeitrag")]
         public System.Collections.Generic.List<LStB200901.lstb_BesteuerungsgrundlagenCTypeKammerbeitrag> Kammerbeitrag {
             get {
                 return kammerbeitragField;
@@ -781,7 +781,7 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Wert")]
+        [XmlElement("Wert")]
         public System.Collections.Generic.List<LStB200901.lstb_BesteuerungsgrundlagenCTypeWert> Wert {
             get {
                 return wertField;
@@ -793,7 +793,7 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Text")]
+        [XmlElement("Text")]
         public System.Collections.Generic.List<LStB200901.lstb_BesteuerungsgrundlagenCTypeText> Text {
             get {
                 return textField;

@@ -64,8 +64,8 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Hinzurechnungsbetrag", typeof(LStB201201.lstb_BesteuerungsmerkmaleCTypeELStAMHinzurechnungsbetrag), IsNullable=true)]
-        [System.Xml.Serialization.XmlElementAttribute("Steuerfreibetrag", typeof(LStB201201.lstb_BesteuerungsmerkmaleCTypeELStAMSteuerfreibetrag), IsNullable=true)]
+        [XmlElement("Hinzurechnungsbetrag", typeof(LStB201201.lstb_BesteuerungsmerkmaleCTypeELStAMHinzurechnungsbetrag), IsNullable=true)]
+        [XmlElement("Steuerfreibetrag", typeof(LStB201201.lstb_BesteuerungsmerkmaleCTypeELStAMSteuerfreibetrag), IsNullable=true)]
         public object Item {
             get {
                 return itemField;

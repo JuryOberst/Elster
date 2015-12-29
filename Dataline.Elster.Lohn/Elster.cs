@@ -20,8 +20,8 @@ namespace Dataline.Elster.Lohn {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elster.de/2002/XMLSchema")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.elster.de/2002/XMLSchema", IsNullable=false)]
+    [XmlType(AnonymousType=true, Namespace="http://www.elster.de/2002/XMLSchema")]
+    [XmlRoot(Namespace="http://www.elster.de/2002/XMLSchema", IsNullable=false)]
     public partial class Elster: object, System.ComponentModel.INotifyPropertyChanged {
         
         private TransferHeaderCType transferHeaderField;

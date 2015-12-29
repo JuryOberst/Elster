@@ -16,7 +16,7 @@ namespace Dataline.Elster.Lohn.LStB201401 {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="lstb_LohnsteuerbescheinigungVersionSType", Namespace="http://www.elsterlohn.de/2014-01/XMLSchema")]
+    [XmlType(TypeName="lstb_LohnsteuerbescheinigungVersionSType", Namespace="http://www.elsterlohn.de/2014-01/XMLSchema")]
     public enum lstb_LohnsteuerbescheinigungVersionSType{
         
         /// <remarks/>

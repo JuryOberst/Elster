@@ -243,7 +243,7 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("VBez")]
+        [XmlElement("VBez")]
         public System.Collections.Generic.List<LStB201001.lstb_BesteuerungsgrundlagenCTypeVBez> VBez {
             get {
                 return vBezField;
@@ -255,7 +255,7 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ErmStVBezMKalJahr")]
+        [XmlElement("ErmStVBezMKalJahr")]
         public System.Collections.Generic.List<LStB201001.lstb_BesteuerungsgrundlagenCTypeErmStVBezMKalJahr> ErmStVBezMKalJahr {
             get {
                 return ermStVBezMKalJahrField;
@@ -737,7 +737,7 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Kammerbeitrag")]
+        [XmlElement("Kammerbeitrag")]
         public System.Collections.Generic.List<LStB201001.lstb_BesteuerungsgrundlagenCTypeKammerbeitrag> Kammerbeitrag {
             get {
                 return kammerbeitragField;
@@ -864,7 +864,7 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("NErmStVBezMKalJahr")]
+        [XmlElement("NErmStVBezMKalJahr")]
         public System.Collections.Generic.List<LStB201001.lstb_BesteuerungsgrundlagenCTypeNErmStVBezMKalJahr> NErmStVBezMKalJahr {
             get {
                 return nErmStVBezMKalJahrField;
@@ -876,7 +876,7 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Wert")]
+        [XmlElement("Wert")]
         public System.Collections.Generic.List<LStB201001.lstb_BesteuerungsgrundlagenCTypeWert> Wert {
             get {
                 return wertField;
@@ -888,7 +888,7 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Text")]
+        [XmlElement("Text")]
         public System.Collections.Generic.List<LStB201001.lstb_BesteuerungsgrundlagenCTypeText> Text {
             get {
                 return textField;

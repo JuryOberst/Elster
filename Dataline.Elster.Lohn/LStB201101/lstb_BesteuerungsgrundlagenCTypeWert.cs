@@ -17,7 +17,7 @@ namespace Dataline.Elster.Lohn.LStB201101 {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elsterlohn.de/2011-01/XMLSchema")]
+    [XmlType(AnonymousType=true, Namespace="http://www.elsterlohn.de/2011-01/XMLSchema")]
     public partial class lstb_BesteuerungsgrundlagenCTypeWert: object, System.ComponentModel.INotifyPropertyChanged {
         
         private string nameField;

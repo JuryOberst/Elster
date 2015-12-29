@@ -17,8 +17,8 @@ namespace Dataline.Elster.Lohn.Protocol3 {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="ProtokollAnforderungCType", Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version3/XMLSchema")]
-    [System.Xml.Serialization.XmlRootAttribute("ProtokollAnforderung", Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version3/XMLSchema", IsNullable=false)]
+    [XmlType(TypeName="ProtokollAnforderungCType", Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version3/XMLSchema")]
+    [XmlRoot("ProtokollAnforderung", Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version3/XMLSchema", IsNullable=false)]
     public partial class ProtokollAnforderungCType: object, System.ComponentModel.INotifyPropertyChanged {
         
         private string transferTicketField;

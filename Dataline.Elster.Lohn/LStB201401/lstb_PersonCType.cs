@@ -17,7 +17,7 @@ namespace Dataline.Elster.Lohn.LStB201401 {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="lstb_PersonCType", Namespace="http://www.elsterlohn.de/2014-01/XMLSchema")]
+    [XmlType(TypeName="lstb_PersonCType", Namespace="http://www.elsterlohn.de/2014-01/XMLSchema")]
     public partial class lstb_PersonCType: object, System.ComponentModel.INotifyPropertyChanged {
         
         private LStB201401.lstb_PersonCTypeFamilienname familiennameField;

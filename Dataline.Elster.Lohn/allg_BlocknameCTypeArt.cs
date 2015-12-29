@@ -17,7 +17,7 @@ namespace Dataline.Elster.Lohn
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elster.de/basis08/XMLSchema")]
+    [XmlType(AnonymousType=true, Namespace="http://www.elster.de/basis08/XMLSchema")]
     public enum allg_BlocknameCTypeArt{
         
         /// <remarks/>

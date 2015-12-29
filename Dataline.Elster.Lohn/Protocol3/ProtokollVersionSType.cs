@@ -16,7 +16,7 @@ namespace Dataline.Elster.Lohn.Protocol3 {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="ProtokollVersionSType", Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version3/XMLSchema")]
+    [XmlType(TypeName="ProtokollVersionSType", Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version3/XMLSchema")]
     public enum ProtokollVersionSType{
         
         /// <remarks/>

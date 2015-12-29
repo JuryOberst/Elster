@@ -16,7 +16,7 @@ namespace Dataline.Elster.Lohn.LStB201201 {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elsterlohn.de/2012-01/XMLSchema", IncludeInSchema=false)]
+    [XmlType(Namespace="http://www.elsterlohn.de/2012-01/XMLSchema", IncludeInSchema=false)]
     public enum ItemsChoiceType{
         
         /// <remarks/>

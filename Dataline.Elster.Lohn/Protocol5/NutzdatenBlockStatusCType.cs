@@ -17,7 +17,7 @@ namespace Dataline.Elster.Lohn.Protocol5 {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="NutzdatenBlockStatusCType", Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version5/XMLSchema")]
+    [XmlType(TypeName="NutzdatenBlockStatusCType", Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version5/XMLSchema")]
     public partial class NutzdatenBlockStatusCType: object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Collections.Generic.List<Protocol5.NdSFehlerCType> ndSFehlerField;
@@ -33,7 +33,7 @@ namespace Dataline.Elster.Lohn.Protocol5 {
         private string nichtverarbeiteteNdSField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("NdSFehler")]
+        [XmlElement("NdSFehler")]
         public System.Collections.Generic.List<Protocol5.NdSFehlerCType> NdSFehler {
             get {
                 return ndSFehlerField;

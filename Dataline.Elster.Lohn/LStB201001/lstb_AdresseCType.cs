@@ -50,7 +50,7 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer")]
+        [XmlElement(DataType="integer")]
         public string Hausnummer {
             get {
                 return hausnummerField;
@@ -95,8 +95,8 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("AuslandsPLZ", typeof(LStB201001.AuslandsPLZCType))]
-        [System.Xml.Serialization.XmlElementAttribute("PLZ", typeof(string))]
+        [XmlElement("AuslandsPLZ", typeof(LStB201001.AuslandsPLZCType))]
+        [XmlElement("PLZ", typeof(string))]
         public object Item {
             get {
                 return itemField;
@@ -119,7 +119,7 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="positiveInteger")]
+        [XmlElement(DataType="positiveInteger")]
         public string Postfach {
             get {
                 return postfachField;

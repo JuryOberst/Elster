@@ -31,9 +31,9 @@ namespace Dataline.Elster.Lohn.LStB201501 {
         private string titelField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Blockname", typeof(allg_BlocknameCType))]
-        [System.Xml.Serialization.XmlElementAttribute("Name", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("Vorname", typeof(string))]
+        [XmlElement("Blockname", typeof(allg_BlocknameCType))]
+        [XmlElement("Name", typeof(string))]
+        [XmlElement("Vorname", typeof(string))]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
         public object[] Items {
             get {
@@ -46,7 +46,7 @@ namespace Dataline.Elster.Lohn.LStB201501 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
+        [XmlElement("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemsChoiceType[] ItemsElementName {
             get {

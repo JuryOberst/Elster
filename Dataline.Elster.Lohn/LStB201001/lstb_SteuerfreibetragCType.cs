@@ -17,7 +17,7 @@ namespace Dataline.Elster.Lohn.LStB201001 {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="lstb_SteuerfreibetragCType", Namespace="http://www.elsterlohn.de/2010-01/XMLSchema")]
+    [XmlType(TypeName="lstb_SteuerfreibetragCType", Namespace="http://www.elsterlohn.de/2010-01/XMLSchema")]
     public partial class lstb_SteuerfreibetragCType: object, System.ComponentModel.INotifyPropertyChanged {
         
         private string gueltig_abField;

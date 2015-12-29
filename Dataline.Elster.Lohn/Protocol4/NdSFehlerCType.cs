@@ -17,7 +17,7 @@ namespace Dataline.Elster.Lohn.Protocol4 {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="NdSFehlerCType", Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version4/XMLSchema")]
+    [XmlType(TypeName="NdSFehlerCType", Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version4/XMLSchema")]
     public partial class NdSFehlerCType: object, System.ComponentModel.INotifyPropertyChanged {
         
         private string idnrField;

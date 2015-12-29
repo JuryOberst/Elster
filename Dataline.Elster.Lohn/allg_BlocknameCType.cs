@@ -17,7 +17,7 @@ namespace Dataline.Elster.Lohn {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/basis08/XMLSchema")]
+    [XmlType(Namespace="http://www.elster.de/basis08/XMLSchema")]
     public partial class allg_BlocknameCType: object, System.ComponentModel.INotifyPropertyChanged {
         
         private allg_BlocknameCTypeArt artField;

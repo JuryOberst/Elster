@@ -17,7 +17,7 @@ namespace Dataline.Elster.Lohn.Protocol4 {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="DatenTeilStatusCType", Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version4/XMLSchema")]
+    [XmlType(TypeName="DatenTeilStatusCType", Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version4/XMLSchema")]
     public partial class DatenTeilStatusCType: object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Collections.Generic.List<Protocol4.NutzdatenBlockStatusCType> nutzdatenblockField;
@@ -29,7 +29,7 @@ namespace Dataline.Elster.Lohn.Protocol4 {
         private string textField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Nutzdatenblock")]
+        [XmlElement("Nutzdatenblock")]
         public System.Collections.Generic.List<Protocol4.NutzdatenBlockStatusCType> Nutzdatenblock {
             get {
                 return nutzdatenblockField;

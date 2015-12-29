@@ -17,7 +17,7 @@ namespace Dataline.Elster.Lohn.LStB201001 {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elsterlohn.de/2010-01/XMLSchema")]
+    [XmlType(AnonymousType=true, Namespace="http://www.elsterlohn.de/2010-01/XMLSchema")]
     public partial class lstb_BesteuerungsgrundlagenCTypeKammerbeitrag: object, System.ComponentModel.INotifyPropertyChanged {
         
         private LStB201001.lstb_BesteuerungsgrundlagenCTypeKammerbeitragBundesland bundeslandField;

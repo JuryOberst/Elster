@@ -18,8 +18,8 @@ namespace Dataline.Elster.Lohn
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/2002/XMLSchema")]
-    [System.Xml.Serialization.XmlRootAttribute("ProtokollAnforderung", Namespace="http://www.elster.de/2002/XMLSchema", IsNullable=false)]
+    [XmlType(Namespace="http://www.elster.de/2002/XMLSchema")]
+    [XmlRoot("ProtokollAnforderung", Namespace="http://www.elster.de/2002/XMLSchema", IsNullable=false)]
     public partial class ProtokollAnforderungCType: object, System.ComponentModel.INotifyPropertyChanged {
         
         private string transferTicketField;

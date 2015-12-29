@@ -16,7 +16,7 @@ namespace Dataline.Elster.Lohn.Protocol4 {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version4/XMLSchema")]
+    [XmlType(AnonymousType=true, Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version4/XMLSchema")]
     public enum NutzdatenBlockStatusCTypeCode{
         
         /// <remarks/>

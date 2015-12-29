@@ -25,17 +25,17 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         private LStB201201.ItemsChoiceType[] itemsElementNameField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Anschriftenzusatz", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("AuslandsPLZ", typeof(LStB201201.AuslandsPLZCType))]
-        [System.Xml.Serialization.XmlElementAttribute("GKPLZ", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("HNrZusatz", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("Hausnummer", typeof(string), DataType="integer")]
-        [System.Xml.Serialization.XmlElementAttribute("Ort", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("PLZ", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("Postfach", typeof(string), DataType="positiveInteger")]
-        [System.Xml.Serialization.XmlElementAttribute("PostfachOrt", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("PostfachPLZ", typeof(string))]
-        [System.Xml.Serialization.XmlElementAttribute("Str", typeof(string))]
+        [XmlElement("Anschriftenzusatz", typeof(string))]
+        [XmlElement("AuslandsPLZ", typeof(LStB201201.AuslandsPLZCType))]
+        [XmlElement("GKPLZ", typeof(string))]
+        [XmlElement("HNrZusatz", typeof(string))]
+        [XmlElement("Hausnummer", typeof(string), DataType="integer")]
+        [XmlElement("Ort", typeof(string))]
+        [XmlElement("PLZ", typeof(string))]
+        [XmlElement("Postfach", typeof(string), DataType="positiveInteger")]
+        [XmlElement("PostfachOrt", typeof(string))]
+        [XmlElement("PostfachPLZ", typeof(string))]
+        [XmlElement("Str", typeof(string))]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
         public object[] Items {
             get {
@@ -48,7 +48,7 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName")]
+        [XmlElement("ItemsElementName")]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public LStB201201.ItemsChoiceType[] ItemsElementName {
             get {

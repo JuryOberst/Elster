@@ -17,8 +17,8 @@ namespace Dataline.Elster.Lohn.Protocol4 {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="ProtokollCType", Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version4/XMLSchema")]
-    [System.Xml.Serialization.XmlRootAttribute("Protokoll", Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version4/XMLSchema", IsNullable=false)]
+    [XmlType(TypeName="ProtokollCType", Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version4/XMLSchema")]
+    [XmlRoot("Protokoll", Namespace="http://www.elsterfachmethodik.de/protokollverfahren/version4/XMLSchema", IsNullable=false)]
     public partial class ProtokollCType: object, System.ComponentModel.INotifyPropertyChanged {
         
         private string zeitStempelField;
