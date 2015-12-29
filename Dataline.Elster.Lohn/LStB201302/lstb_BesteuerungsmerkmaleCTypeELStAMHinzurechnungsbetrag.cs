@@ -36,11 +36,11 @@ namespace Dataline.Elster.Lohn.LStB201302 {
         [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
         public string jahr {
             get {
-                return this.jahrField;
+                return jahrField;
             }
             set {
-                this.jahrField = value;
-                this.RaisePropertyChanged("jahr");
+                jahrField = value;
+                RaisePropertyChanged("jahr");
             }
         }
         
@@ -48,11 +48,11 @@ namespace Dataline.Elster.Lohn.LStB201302 {
         [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
         public string monat {
             get {
-                return this.monatField;
+                return monatField;
             }
             set {
-                this.monatField = value;
-                this.RaisePropertyChanged("monat");
+                monatField = value;
+                RaisePropertyChanged("monat");
             }
         }
         
@@ -60,11 +60,11 @@ namespace Dataline.Elster.Lohn.LStB201302 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public decimal woche {
             get {
-                return this.wocheField;
+                return wocheField;
             }
             set {
-                this.wocheField = value;
-                this.RaisePropertyChanged("woche");
+                wocheField = value;
+                RaisePropertyChanged("woche");
             }
         }
         
@@ -72,11 +72,11 @@ namespace Dataline.Elster.Lohn.LStB201302 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool wocheSpecified {
             get {
-                return this.wocheFieldSpecified;
+                return wocheFieldSpecified;
             }
             set {
-                this.wocheFieldSpecified = value;
-                this.RaisePropertyChanged("wocheSpecified");
+                wocheFieldSpecified = value;
+                RaisePropertyChanged("wocheSpecified");
             }
         }
         
@@ -84,11 +84,11 @@ namespace Dataline.Elster.Lohn.LStB201302 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public decimal tag {
             get {
-                return this.tagField;
+                return tagField;
             }
             set {
-                this.tagField = value;
-                this.RaisePropertyChanged("tag");
+                tagField = value;
+                RaisePropertyChanged("tag");
             }
         }
         
@@ -96,18 +96,18 @@ namespace Dataline.Elster.Lohn.LStB201302 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool tagSpecified {
             get {
-                return this.tagFieldSpecified;
+                return tagFieldSpecified;
             }
             set {
-                this.tagFieldSpecified = value;
-                this.RaisePropertyChanged("tagSpecified");
+                tagFieldSpecified = value;
+                RaisePropertyChanged("tagSpecified");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

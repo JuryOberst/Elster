@@ -26,12 +26,12 @@ namespace Dataline.Elster.Lohn
                 if (other == null)
                     return false;
 
-                return this.gueltig_ab == other.gueltig_ab
-                    && this.Steuerfreibetrag == other.Steuerfreibetrag
-                    && this.Hinzurechnungsbetrag == other.Hinzurechnungsbetrag
-                    && this.Kinder == other.Kinder
-                    && this.Kirchensteuerabzug == other.Kirchensteuerabzug
-                    && this.Steuerklasse == other.Steuerklasse;
+                return gueltig_ab == other.gueltig_ab
+                    && Steuerfreibetrag == other.Steuerfreibetrag
+                    && Hinzurechnungsbetrag == other.Hinzurechnungsbetrag
+                    && Kinder == other.Kinder
+                    && Kirchensteuerabzug == other.Kirchensteuerabzug
+                    && Steuerklasse == other.Steuerklasse;
             }
 
             public override int GetHashCode()

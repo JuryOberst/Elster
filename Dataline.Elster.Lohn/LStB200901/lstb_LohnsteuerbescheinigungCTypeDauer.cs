@@ -27,22 +27,22 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         /// <remarks/>
         public string Anfang {
             get {
-                return this.anfangField;
+                return anfangField;
             }
             set {
-                this.anfangField = value;
-                this.RaisePropertyChanged("Anfang");
+                anfangField = value;
+                RaisePropertyChanged("Anfang");
             }
         }
         
         /// <remarks/>
         public string Ende {
             get {
-                return this.endeField;
+                return endeField;
             }
             set {
-                this.endeField = value;
-                this.RaisePropertyChanged("Ende");
+                endeField = value;
+                RaisePropertyChanged("Ende");
             }
         }
         
@@ -50,18 +50,18 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public LStB200901.lstb_LohnsteuerbescheinigungJahrSType jahr {
             get {
-                return this.jahrField;
+                return jahrField;
             }
             set {
-                this.jahrField = value;
-                this.RaisePropertyChanged("jahr");
+                jahrField = value;
+                RaisePropertyChanged("jahr");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

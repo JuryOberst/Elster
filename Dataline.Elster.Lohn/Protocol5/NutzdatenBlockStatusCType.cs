@@ -36,11 +36,11 @@ namespace Dataline.Elster.Lohn.Protocol5 {
         [System.Xml.Serialization.XmlElementAttribute("NdSFehler")]
         public System.Collections.Generic.List<Protocol5.NdSFehlerCType> NdSFehler {
             get {
-                return this.ndSFehlerField;
+                return ndSFehlerField;
             }
             set {
-                this.ndSFehlerField = value;
-                this.RaisePropertyChanged("NdSFehler");
+                ndSFehlerField = value;
+                RaisePropertyChanged("NdSFehler");
             }
         }
         
@@ -48,11 +48,11 @@ namespace Dataline.Elster.Lohn.Protocol5 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string nutzdatenTicket {
             get {
-                return this.nutzdatenTicketField;
+                return nutzdatenTicketField;
             }
             set {
-                this.nutzdatenTicketField = value;
-                this.RaisePropertyChanged("nutzdatenTicket");
+                nutzdatenTicketField = value;
+                RaisePropertyChanged("nutzdatenTicket");
             }
         }
         
@@ -60,11 +60,11 @@ namespace Dataline.Elster.Lohn.Protocol5 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public Protocol5.ProtokollStatusCodeSType code {
             get {
-                return this.codeField;
+                return codeField;
             }
             set {
-                this.codeField = value;
-                this.RaisePropertyChanged("code");
+                codeField = value;
+                RaisePropertyChanged("code");
             }
         }
         
@@ -72,11 +72,11 @@ namespace Dataline.Elster.Lohn.Protocol5 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string text {
             get {
-                return this.textField;
+                return textField;
             }
             set {
-                this.textField = value;
-                this.RaisePropertyChanged("text");
+                textField = value;
+                RaisePropertyChanged("text");
             }
         }
         
@@ -84,11 +84,11 @@ namespace Dataline.Elster.Lohn.Protocol5 {
         [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
         public string verarbeiteteNdS {
             get {
-                return this.verarbeiteteNdSField;
+                return verarbeiteteNdSField;
             }
             set {
-                this.verarbeiteteNdSField = value;
-                this.RaisePropertyChanged("verarbeiteteNdS");
+                verarbeiteteNdSField = value;
+                RaisePropertyChanged("verarbeiteteNdS");
             }
         }
         
@@ -96,18 +96,18 @@ namespace Dataline.Elster.Lohn.Protocol5 {
         [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
         public string nichtverarbeiteteNdS {
             get {
-                return this.nichtverarbeiteteNdSField;
+                return nichtverarbeiteteNdSField;
             }
             set {
-                this.nichtverarbeiteteNdSField = value;
-                this.RaisePropertyChanged("nichtverarbeiteteNdS");
+                nichtverarbeiteteNdSField = value;
+                RaisePropertyChanged("nichtverarbeiteteNdS");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

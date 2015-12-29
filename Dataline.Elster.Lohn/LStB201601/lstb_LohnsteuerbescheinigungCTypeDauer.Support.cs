@@ -30,7 +30,7 @@ namespace Dataline.Elster.Lohn
                 get
                 {
                     DateTime result;
-                    if (!DateTime.TryParseExact(this.Anfang + XmlSchemaUtilities.GetEnumXmlValue(this.jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+                    if (!DateTime.TryParseExact(Anfang + XmlSchemaUtilities.GetEnumXmlValue(jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
                         return null;
                     return result;
                 }
@@ -42,7 +42,7 @@ namespace Dataline.Elster.Lohn
                 get
                 {
                     DateTime result;
-                    if (!DateTime.TryParseExact(this.Ende + XmlSchemaUtilities.GetEnumXmlValue(this.jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+                    if (!DateTime.TryParseExact(Ende + XmlSchemaUtilities.GetEnumXmlValue(jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
                         return null;
                     return result;
                 }
@@ -51,7 +51,7 @@ namespace Dataline.Elster.Lohn
             [XmlIgnore]
             public int FuerJahr
             {
-                get { return Convert.ToInt32(XmlSchemaUtilities.GetEnumXmlValue(this.jahr)); }
+                get { return Convert.ToInt32(XmlSchemaUtilities.GetEnumXmlValue(jahr)); }
             }
         }
     }
@@ -66,7 +66,7 @@ namespace Dataline.Elster.Lohn
                 get
                 {
                     DateTime result;
-                    if (!DateTime.TryParseExact(this.Anfang + XmlSchemaUtilities.GetEnumXmlValue(this.jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+                    if (!DateTime.TryParseExact(Anfang + XmlSchemaUtilities.GetEnumXmlValue(jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
                         return null;
                     return result;
                 }
@@ -78,7 +78,7 @@ namespace Dataline.Elster.Lohn
                 get
                 {
                     DateTime result;
-                    if (!DateTime.TryParseExact(this.Ende + XmlSchemaUtilities.GetEnumXmlValue(this.jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+                    if (!DateTime.TryParseExact(Ende + XmlSchemaUtilities.GetEnumXmlValue(jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
                         return null;
                     return result;
                 }
@@ -87,7 +87,7 @@ namespace Dataline.Elster.Lohn
             [XmlIgnore]
             public int FuerJahr
             {
-                get { return Convert.ToInt32(XmlSchemaUtilities.GetEnumXmlValue(this.jahr)); }
+                get { return Convert.ToInt32(XmlSchemaUtilities.GetEnumXmlValue(jahr)); }
             }
         }
     }
@@ -102,7 +102,7 @@ namespace Dataline.Elster.Lohn
                 get
                 {
                     DateTime result;
-                    if (!DateTime.TryParseExact(this.Anfang + XmlSchemaUtilities.GetEnumXmlValue(this.jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+                    if (!DateTime.TryParseExact(Anfang + XmlSchemaUtilities.GetEnumXmlValue(jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
                         return null;
                     return result;
                 }
@@ -114,7 +114,7 @@ namespace Dataline.Elster.Lohn
                 get
                 {
                     DateTime result;
-                    if (!DateTime.TryParseExact(this.Ende + XmlSchemaUtilities.GetEnumXmlValue(this.jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+                    if (!DateTime.TryParseExact(Ende + XmlSchemaUtilities.GetEnumXmlValue(jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
                         return null;
                     return result;
                 }
@@ -123,7 +123,7 @@ namespace Dataline.Elster.Lohn
             [XmlIgnore]
             public int FuerJahr
             {
-                get { return Convert.ToInt32(XmlSchemaUtilities.GetEnumXmlValue(this.jahr)); }
+                get { return Convert.ToInt32(XmlSchemaUtilities.GetEnumXmlValue(jahr)); }
             }
         }
     }
@@ -138,7 +138,7 @@ namespace Dataline.Elster.Lohn
                 get
                 {
                     DateTime result;
-                    if (!DateTime.TryParseExact(this.Anfang + XmlSchemaUtilities.GetEnumXmlValue(this.jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+                    if (!DateTime.TryParseExact(Anfang + XmlSchemaUtilities.GetEnumXmlValue(jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
                         return null;
                     return result;
                 }
@@ -150,7 +150,7 @@ namespace Dataline.Elster.Lohn
                 get
                 {
                     DateTime result;
-                    if (!DateTime.TryParseExact(this.Ende + XmlSchemaUtilities.GetEnumXmlValue(this.jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+                    if (!DateTime.TryParseExact(Ende + XmlSchemaUtilities.GetEnumXmlValue(jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
                         return null;
                     return result;
                 }
@@ -159,7 +159,7 @@ namespace Dataline.Elster.Lohn
             [XmlIgnore]
             public int FuerJahr
             {
-                get { return Convert.ToInt32(XmlSchemaUtilities.GetEnumXmlValue(this.jahr)); }
+                get { return Convert.ToInt32(XmlSchemaUtilities.GetEnumXmlValue(jahr)); }
             }
         }
     }
@@ -174,7 +174,7 @@ namespace Dataline.Elster.Lohn
                 get
                 {
                     DateTime result;
-                    if (!DateTime.TryParseExact(this.Anfang + XmlSchemaUtilities.GetEnumXmlValue(this.jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+                    if (!DateTime.TryParseExact(Anfang + XmlSchemaUtilities.GetEnumXmlValue(jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
                         return null;
                     return result;
                 }
@@ -186,7 +186,7 @@ namespace Dataline.Elster.Lohn
                 get
                 {
                     DateTime result;
-                    if (!DateTime.TryParseExact(this.Ende + XmlSchemaUtilities.GetEnumXmlValue(this.jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+                    if (!DateTime.TryParseExact(Ende + XmlSchemaUtilities.GetEnumXmlValue(jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
                         return null;
                     return result;
                 }
@@ -195,7 +195,7 @@ namespace Dataline.Elster.Lohn
             [XmlIgnore]
             public int FuerJahr
             {
-                get { return Convert.ToInt32(XmlSchemaUtilities.GetEnumXmlValue(this.jahr)); }
+                get { return Convert.ToInt32(XmlSchemaUtilities.GetEnumXmlValue(jahr)); }
             }
         }
     }
@@ -210,7 +210,7 @@ namespace Dataline.Elster.Lohn
                 get
                 {
                     DateTime result;
-                    if (!DateTime.TryParseExact(this.Anfang + XmlSchemaUtilities.GetEnumXmlValue(this.jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+                    if (!DateTime.TryParseExact(Anfang + XmlSchemaUtilities.GetEnumXmlValue(jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
                         return null;
                     return result;
                 }
@@ -222,7 +222,7 @@ namespace Dataline.Elster.Lohn
                 get
                 {
                     DateTime result;
-                    if (!DateTime.TryParseExact(this.Ende + XmlSchemaUtilities.GetEnumXmlValue(this.jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+                    if (!DateTime.TryParseExact(Ende + XmlSchemaUtilities.GetEnumXmlValue(jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
                         return null;
                     return result;
                 }
@@ -231,7 +231,7 @@ namespace Dataline.Elster.Lohn
             [XmlIgnore]
             public int FuerJahr
             {
-                get { return Convert.ToInt32(XmlSchemaUtilities.GetEnumXmlValue(this.jahr)); }
+                get { return Convert.ToInt32(XmlSchemaUtilities.GetEnumXmlValue(jahr)); }
             }
         }
     }
@@ -246,7 +246,7 @@ namespace Dataline.Elster.Lohn
                 get
                 {
                     DateTime result;
-                    if (!DateTime.TryParseExact(this.Anfang + XmlSchemaUtilities.GetEnumXmlValue(this.jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+                    if (!DateTime.TryParseExact(Anfang + XmlSchemaUtilities.GetEnumXmlValue(jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
                         return null;
                     return result;
                 }
@@ -258,7 +258,7 @@ namespace Dataline.Elster.Lohn
                 get
                 {
                     DateTime result;
-                    if (!DateTime.TryParseExact(this.Ende + XmlSchemaUtilities.GetEnumXmlValue(this.jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+                    if (!DateTime.TryParseExact(Ende + XmlSchemaUtilities.GetEnumXmlValue(jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
                         return null;
                     return result;
                 }
@@ -267,7 +267,7 @@ namespace Dataline.Elster.Lohn
             [XmlIgnore]
             public int FuerJahr
             {
-                get { return Convert.ToInt32(XmlSchemaUtilities.GetEnumXmlValue(this.jahr)); }
+                get { return Convert.ToInt32(XmlSchemaUtilities.GetEnumXmlValue(jahr)); }
             }
         }
     }
@@ -282,7 +282,7 @@ namespace Dataline.Elster.Lohn
                 get
                 {
                     DateTime result;
-                    if (!DateTime.TryParseExact(this.Anfang + XmlSchemaUtilities.GetEnumXmlValue(this.jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+                    if (!DateTime.TryParseExact(Anfang + XmlSchemaUtilities.GetEnumXmlValue(jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
                         return null;
                     return result;
                 }
@@ -294,7 +294,7 @@ namespace Dataline.Elster.Lohn
                 get
                 {
                     DateTime result;
-                    if (!DateTime.TryParseExact(this.Ende + XmlSchemaUtilities.GetEnumXmlValue(this.jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+                    if (!DateTime.TryParseExact(Ende + XmlSchemaUtilities.GetEnumXmlValue(jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
                         return null;
                     return result;
                 }
@@ -303,7 +303,7 @@ namespace Dataline.Elster.Lohn
             [XmlIgnore]
             public int FuerJahr
             {
-                get { return Convert.ToInt32(XmlSchemaUtilities.GetEnumXmlValue(this.jahr)); }
+                get { return Convert.ToInt32(XmlSchemaUtilities.GetEnumXmlValue(jahr)); }
             }
         }
     }
@@ -318,7 +318,7 @@ namespace Dataline.Elster.Lohn
                 get
                 {
                     DateTime result;
-                    if (!DateTime.TryParseExact(this.Anfang + XmlSchemaUtilities.GetEnumXmlValue(this.jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+                    if (!DateTime.TryParseExact(Anfang + XmlSchemaUtilities.GetEnumXmlValue(jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
                         return null;
                     return result;
                 }
@@ -330,7 +330,7 @@ namespace Dataline.Elster.Lohn
                 get
                 {
                     DateTime result;
-                    if (!DateTime.TryParseExact(this.Ende + XmlSchemaUtilities.GetEnumXmlValue(this.jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
+                    if (!DateTime.TryParseExact(Ende + XmlSchemaUtilities.GetEnumXmlValue(jahr), "ddMMyyyy", CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out result))
                         return null;
                     return result;
                 }
@@ -339,7 +339,7 @@ namespace Dataline.Elster.Lohn
             [XmlIgnore]
             public int FuerJahr
             {
-                get { return Convert.ToInt32(XmlSchemaUtilities.GetEnumXmlValue(this.jahr)); }
+                get { return Convert.ToInt32(XmlSchemaUtilities.GetEnumXmlValue(jahr)); }
             }
         }
     }

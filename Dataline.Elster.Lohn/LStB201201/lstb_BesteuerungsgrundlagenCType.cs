@@ -175,55 +175,55 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         /// <remarks/>
         public string AnzahlU {
             get {
-                return this.anzahlUField;
+                return anzahlUField;
             }
             set {
-                this.anzahlUField = value;
-                this.RaisePropertyChanged("AnzahlU");
+                anzahlUField = value;
+                RaisePropertyChanged("AnzahlU");
             }
         }
         
         /// <remarks/>
         public decimal BruttoArbLohn {
             get {
-                return this.bruttoArbLohnField;
+                return bruttoArbLohnField;
             }
             set {
-                this.bruttoArbLohnField = value;
-                this.RaisePropertyChanged("BruttoArbLohn");
+                bruttoArbLohnField = value;
+                RaisePropertyChanged("BruttoArbLohn");
             }
         }
         
         /// <remarks/>
         public decimal LSteuer {
             get {
-                return this.lSteuerField;
+                return lSteuerField;
             }
             set {
-                this.lSteuerField = value;
-                this.RaisePropertyChanged("LSteuer");
+                lSteuerField = value;
+                RaisePropertyChanged("LSteuer");
             }
         }
         
         /// <remarks/>
         public decimal Soli {
             get {
-                return this.soliField;
+                return soliField;
             }
             set {
-                this.soliField = value;
-                this.RaisePropertyChanged("Soli");
+                soliField = value;
+                RaisePropertyChanged("Soli");
             }
         }
         
         /// <remarks/>
         public decimal ArbnKiSteuer {
             get {
-                return this.arbnKiSteuerField;
+                return arbnKiSteuerField;
             }
             set {
-                this.arbnKiSteuerField = value;
-                this.RaisePropertyChanged("ArbnKiSteuer");
+                arbnKiSteuerField = value;
+                RaisePropertyChanged("ArbnKiSteuer");
             }
         }
         
@@ -231,22 +231,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ArbnKiSteuerSpecified {
             get {
-                return this.arbnKiSteuerFieldSpecified;
+                return arbnKiSteuerFieldSpecified;
             }
             set {
-                this.arbnKiSteuerFieldSpecified = value;
-                this.RaisePropertyChanged("ArbnKiSteuerSpecified");
+                arbnKiSteuerFieldSpecified = value;
+                RaisePropertyChanged("ArbnKiSteuerSpecified");
             }
         }
         
         /// <remarks/>
         public decimal EhegKiSteuer {
             get {
-                return this.ehegKiSteuerField;
+                return ehegKiSteuerField;
             }
             set {
-                this.ehegKiSteuerField = value;
-                this.RaisePropertyChanged("EhegKiSteuer");
+                ehegKiSteuerField = value;
+                RaisePropertyChanged("EhegKiSteuer");
             }
         }
         
@@ -254,11 +254,11 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool EhegKiSteuerSpecified {
             get {
-                return this.ehegKiSteuerFieldSpecified;
+                return ehegKiSteuerFieldSpecified;
             }
             set {
-                this.ehegKiSteuerFieldSpecified = value;
-                this.RaisePropertyChanged("EhegKiSteuerSpecified");
+                ehegKiSteuerFieldSpecified = value;
+                RaisePropertyChanged("EhegKiSteuerSpecified");
             }
         }
         
@@ -266,11 +266,11 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlElementAttribute("VBez")]
         public System.Collections.Generic.List<LStB201201.lstb_BesteuerungsgrundlagenCTypeVBez> VBez {
             get {
-                return this.vBezField;
+                return vBezField;
             }
             set {
-                this.vBezField = value;
-                this.RaisePropertyChanged("VBez");
+                vBezField = value;
+                RaisePropertyChanged("VBez");
             }
         }
         
@@ -278,22 +278,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlElementAttribute("ErmStVBezMKalJahr")]
         public System.Collections.Generic.List<LStB201201.lstb_BesteuerungsgrundlagenCTypeErmStVBezMKalJahr> ErmStVBezMKalJahr {
             get {
-                return this.ermStVBezMKalJahrField;
+                return ermStVBezMKalJahrField;
             }
             set {
-                this.ermStVBezMKalJahrField = value;
-                this.RaisePropertyChanged("ErmStVBezMKalJahr");
+                ermStVBezMKalJahrField = value;
+                RaisePropertyChanged("ErmStVBezMKalJahr");
             }
         }
         
         /// <remarks/>
         public decimal ErmStBetrMKalJahr {
             get {
-                return this.ermStBetrMKalJahrField;
+                return ermStBetrMKalJahrField;
             }
             set {
-                this.ermStBetrMKalJahrField = value;
-                this.RaisePropertyChanged("ErmStBetrMKalJahr");
+                ermStBetrMKalJahrField = value;
+                RaisePropertyChanged("ErmStBetrMKalJahr");
             }
         }
         
@@ -301,44 +301,44 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ErmStBetrMKalJahrSpecified {
             get {
-                return this.ermStBetrMKalJahrFieldSpecified;
+                return ermStBetrMKalJahrFieldSpecified;
             }
             set {
-                this.ermStBetrMKalJahrFieldSpecified = value;
-                this.RaisePropertyChanged("ErmStBetrMKalJahrSpecified");
+                ermStBetrMKalJahrFieldSpecified = value;
+                RaisePropertyChanged("ErmStBetrMKalJahrSpecified");
             }
         }
         
         /// <remarks/>
         public decimal LSteuerMKalJahr {
             get {
-                return this.lSteuerMKalJahrField;
+                return lSteuerMKalJahrField;
             }
             set {
-                this.lSteuerMKalJahrField = value;
-                this.RaisePropertyChanged("LSteuerMKalJahr");
+                lSteuerMKalJahrField = value;
+                RaisePropertyChanged("LSteuerMKalJahr");
             }
         }
         
         /// <remarks/>
         public decimal SoliMKalJahr {
             get {
-                return this.soliMKalJahrField;
+                return soliMKalJahrField;
             }
             set {
-                this.soliMKalJahrField = value;
-                this.RaisePropertyChanged("SoliMKalJahr");
+                soliMKalJahrField = value;
+                RaisePropertyChanged("SoliMKalJahr");
             }
         }
         
         /// <remarks/>
         public decimal KiSteuerArbnMKalJahr {
             get {
-                return this.kiSteuerArbnMKalJahrField;
+                return kiSteuerArbnMKalJahrField;
             }
             set {
-                this.kiSteuerArbnMKalJahrField = value;
-                this.RaisePropertyChanged("KiSteuerArbnMKalJahr");
+                kiSteuerArbnMKalJahrField = value;
+                RaisePropertyChanged("KiSteuerArbnMKalJahr");
             }
         }
         
@@ -346,22 +346,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool KiSteuerArbnMKalJahrSpecified {
             get {
-                return this.kiSteuerArbnMKalJahrFieldSpecified;
+                return kiSteuerArbnMKalJahrFieldSpecified;
             }
             set {
-                this.kiSteuerArbnMKalJahrFieldSpecified = value;
-                this.RaisePropertyChanged("KiSteuerArbnMKalJahrSpecified");
+                kiSteuerArbnMKalJahrFieldSpecified = value;
+                RaisePropertyChanged("KiSteuerArbnMKalJahrSpecified");
             }
         }
         
         /// <remarks/>
         public decimal KiSteuerEhegMKalJahr {
             get {
-                return this.kiSteuerEhegMKalJahrField;
+                return kiSteuerEhegMKalJahrField;
             }
             set {
-                this.kiSteuerEhegMKalJahrField = value;
-                this.RaisePropertyChanged("KiSteuerEhegMKalJahr");
+                kiSteuerEhegMKalJahrField = value;
+                RaisePropertyChanged("KiSteuerEhegMKalJahr");
             }
         }
         
@@ -369,22 +369,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool KiSteuerEhegMKalJahrSpecified {
             get {
-                return this.kiSteuerEhegMKalJahrFieldSpecified;
+                return kiSteuerEhegMKalJahrFieldSpecified;
             }
             set {
-                this.kiSteuerEhegMKalJahrFieldSpecified = value;
-                this.RaisePropertyChanged("KiSteuerEhegMKalJahrSpecified");
+                kiSteuerEhegMKalJahrFieldSpecified = value;
+                RaisePropertyChanged("KiSteuerEhegMKalJahrSpecified");
             }
         }
         
         /// <remarks/>
         public decimal KurzArbGeld {
             get {
-                return this.kurzArbGeldField;
+                return kurzArbGeldField;
             }
             set {
-                this.kurzArbGeldField = value;
-                this.RaisePropertyChanged("KurzArbGeld");
+                kurzArbGeldField = value;
+                RaisePropertyChanged("KurzArbGeld");
             }
         }
         
@@ -392,22 +392,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool KurzArbGeldSpecified {
             get {
-                return this.kurzArbGeldFieldSpecified;
+                return kurzArbGeldFieldSpecified;
             }
             set {
-                this.kurzArbGeldFieldSpecified = value;
-                this.RaisePropertyChanged("KurzArbGeldSpecified");
+                kurzArbGeldFieldSpecified = value;
+                RaisePropertyChanged("KurzArbGeldSpecified");
             }
         }
         
         /// <remarks/>
         public decimal StFreiArbLohnDBA {
             get {
-                return this.stFreiArbLohnDBAField;
+                return stFreiArbLohnDBAField;
             }
             set {
-                this.stFreiArbLohnDBAField = value;
-                this.RaisePropertyChanged("StFreiArbLohnDBA");
+                stFreiArbLohnDBAField = value;
+                RaisePropertyChanged("StFreiArbLohnDBA");
             }
         }
         
@@ -415,22 +415,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool StFreiArbLohnDBASpecified {
             get {
-                return this.stFreiArbLohnDBAFieldSpecified;
+                return stFreiArbLohnDBAFieldSpecified;
             }
             set {
-                this.stFreiArbLohnDBAFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiArbLohnDBASpecified");
+                stFreiArbLohnDBAFieldSpecified = value;
+                RaisePropertyChanged("StFreiArbLohnDBASpecified");
             }
         }
         
         /// <remarks/>
         public decimal StFreiArbLohnATE {
             get {
-                return this.stFreiArbLohnATEField;
+                return stFreiArbLohnATEField;
             }
             set {
-                this.stFreiArbLohnATEField = value;
-                this.RaisePropertyChanged("StFreiArbLohnATE");
+                stFreiArbLohnATEField = value;
+                RaisePropertyChanged("StFreiArbLohnATE");
             }
         }
         
@@ -438,22 +438,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool StFreiArbLohnATESpecified {
             get {
-                return this.stFreiArbLohnATEFieldSpecified;
+                return stFreiArbLohnATEFieldSpecified;
             }
             set {
-                this.stFreiArbLohnATEFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiArbLohnATESpecified");
+                stFreiArbLohnATEFieldSpecified = value;
+                RaisePropertyChanged("StFreiArbLohnATESpecified");
             }
         }
         
         /// <remarks/>
         public decimal StFreiArbgLeistg {
             get {
-                return this.stFreiArbgLeistgField;
+                return stFreiArbgLeistgField;
             }
             set {
-                this.stFreiArbgLeistgField = value;
-                this.RaisePropertyChanged("StFreiArbgLeistg");
+                stFreiArbgLeistgField = value;
+                RaisePropertyChanged("StFreiArbgLeistg");
             }
         }
         
@@ -461,22 +461,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool StFreiArbgLeistgSpecified {
             get {
-                return this.stFreiArbgLeistgFieldSpecified;
+                return stFreiArbgLeistgFieldSpecified;
             }
             set {
-                this.stFreiArbgLeistgFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiArbgLeistgSpecified");
+                stFreiArbgLeistgFieldSpecified = value;
+                RaisePropertyChanged("StFreiArbgLeistgSpecified");
             }
         }
         
         /// <remarks/>
         public decimal PauschArbgLeistg {
             get {
-                return this.pauschArbgLeistgField;
+                return pauschArbgLeistgField;
             }
             set {
-                this.pauschArbgLeistgField = value;
-                this.RaisePropertyChanged("PauschArbgLeistg");
+                pauschArbgLeistgField = value;
+                RaisePropertyChanged("PauschArbgLeistg");
             }
         }
         
@@ -484,22 +484,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool PauschArbgLeistgSpecified {
             get {
-                return this.pauschArbgLeistgFieldSpecified;
+                return pauschArbgLeistgFieldSpecified;
             }
             set {
-                this.pauschArbgLeistgFieldSpecified = value;
-                this.RaisePropertyChanged("PauschArbgLeistgSpecified");
+                pauschArbgLeistgFieldSpecified = value;
+                RaisePropertyChanged("PauschArbgLeistgSpecified");
             }
         }
         
         /// <remarks/>
         public decimal StPflichtArbLohnMKalJahr {
             get {
-                return this.stPflichtArbLohnMKalJahrField;
+                return stPflichtArbLohnMKalJahrField;
             }
             set {
-                this.stPflichtArbLohnMKalJahrField = value;
-                this.RaisePropertyChanged("StPflichtArbLohnMKalJahr");
+                stPflichtArbLohnMKalJahrField = value;
+                RaisePropertyChanged("StPflichtArbLohnMKalJahr");
             }
         }
         
@@ -507,22 +507,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool StPflichtArbLohnMKalJahrSpecified {
             get {
-                return this.stPflichtArbLohnMKalJahrFieldSpecified;
+                return stPflichtArbLohnMKalJahrFieldSpecified;
             }
             set {
-                this.stPflichtArbLohnMKalJahrFieldSpecified = value;
-                this.RaisePropertyChanged("StPflichtArbLohnMKalJahrSpecified");
+                stPflichtArbLohnMKalJahrFieldSpecified = value;
+                RaisePropertyChanged("StPflichtArbLohnMKalJahrSpecified");
             }
         }
         
         /// <remarks/>
         public decimal StFreiVerpfleg {
             get {
-                return this.stFreiVerpflegField;
+                return stFreiVerpflegField;
             }
             set {
-                this.stFreiVerpflegField = value;
-                this.RaisePropertyChanged("StFreiVerpfleg");
+                stFreiVerpflegField = value;
+                RaisePropertyChanged("StFreiVerpfleg");
             }
         }
         
@@ -530,22 +530,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool StFreiVerpflegSpecified {
             get {
-                return this.stFreiVerpflegFieldSpecified;
+                return stFreiVerpflegFieldSpecified;
             }
             set {
-                this.stFreiVerpflegFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiVerpflegSpecified");
+                stFreiVerpflegFieldSpecified = value;
+                RaisePropertyChanged("StFreiVerpflegSpecified");
             }
         }
         
         /// <remarks/>
         public decimal StFreiDopHaushalt {
             get {
-                return this.stFreiDopHaushaltField;
+                return stFreiDopHaushaltField;
             }
             set {
-                this.stFreiDopHaushaltField = value;
-                this.RaisePropertyChanged("StFreiDopHaushalt");
+                stFreiDopHaushaltField = value;
+                RaisePropertyChanged("StFreiDopHaushalt");
             }
         }
         
@@ -553,22 +553,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool StFreiDopHaushaltSpecified {
             get {
-                return this.stFreiDopHaushaltFieldSpecified;
+                return stFreiDopHaushaltFieldSpecified;
             }
             set {
-                this.stFreiDopHaushaltFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiDopHaushaltSpecified");
+                stFreiDopHaushaltFieldSpecified = value;
+                RaisePropertyChanged("StFreiDopHaushaltSpecified");
             }
         }
         
         /// <remarks/>
         public decimal ArbgAnteilRenVers {
             get {
-                return this.arbgAnteilRenVersField;
+                return arbgAnteilRenVersField;
             }
             set {
-                this.arbgAnteilRenVersField = value;
-                this.RaisePropertyChanged("ArbgAnteilRenVers");
+                arbgAnteilRenVersField = value;
+                RaisePropertyChanged("ArbgAnteilRenVers");
             }
         }
         
@@ -576,22 +576,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ArbgAnteilRenVersSpecified {
             get {
-                return this.arbgAnteilRenVersFieldSpecified;
+                return arbgAnteilRenVersFieldSpecified;
             }
             set {
-                this.arbgAnteilRenVersFieldSpecified = value;
-                this.RaisePropertyChanged("ArbgAnteilRenVersSpecified");
+                arbgAnteilRenVersFieldSpecified = value;
+                RaisePropertyChanged("ArbgAnteilRenVersSpecified");
             }
         }
         
         /// <remarks/>
         public decimal ArbgAnteilBerufsVers {
             get {
-                return this.arbgAnteilBerufsVersField;
+                return arbgAnteilBerufsVersField;
             }
             set {
-                this.arbgAnteilBerufsVersField = value;
-                this.RaisePropertyChanged("ArbgAnteilBerufsVers");
+                arbgAnteilBerufsVersField = value;
+                RaisePropertyChanged("ArbgAnteilBerufsVers");
             }
         }
         
@@ -599,22 +599,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ArbgAnteilBerufsVersSpecified {
             get {
-                return this.arbgAnteilBerufsVersFieldSpecified;
+                return arbgAnteilBerufsVersFieldSpecified;
             }
             set {
-                this.arbgAnteilBerufsVersFieldSpecified = value;
-                this.RaisePropertyChanged("ArbgAnteilBerufsVersSpecified");
+                arbgAnteilBerufsVersFieldSpecified = value;
+                RaisePropertyChanged("ArbgAnteilBerufsVersSpecified");
             }
         }
         
         /// <remarks/>
         public decimal ArbnAnteilRenVers {
             get {
-                return this.arbnAnteilRenVersField;
+                return arbnAnteilRenVersField;
             }
             set {
-                this.arbnAnteilRenVersField = value;
-                this.RaisePropertyChanged("ArbnAnteilRenVers");
+                arbnAnteilRenVersField = value;
+                RaisePropertyChanged("ArbnAnteilRenVers");
             }
         }
         
@@ -622,22 +622,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ArbnAnteilRenVersSpecified {
             get {
-                return this.arbnAnteilRenVersFieldSpecified;
+                return arbnAnteilRenVersFieldSpecified;
             }
             set {
-                this.arbnAnteilRenVersFieldSpecified = value;
-                this.RaisePropertyChanged("ArbnAnteilRenVersSpecified");
+                arbnAnteilRenVersFieldSpecified = value;
+                RaisePropertyChanged("ArbnAnteilRenVersSpecified");
             }
         }
         
         /// <remarks/>
         public decimal ArbnAnteilBerufsVers {
             get {
-                return this.arbnAnteilBerufsVersField;
+                return arbnAnteilBerufsVersField;
             }
             set {
-                this.arbnAnteilBerufsVersField = value;
-                this.RaisePropertyChanged("ArbnAnteilBerufsVers");
+                arbnAnteilBerufsVersField = value;
+                RaisePropertyChanged("ArbnAnteilBerufsVers");
             }
         }
         
@@ -645,22 +645,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ArbnAnteilBerufsVersSpecified {
             get {
-                return this.arbnAnteilBerufsVersFieldSpecified;
+                return arbnAnteilBerufsVersFieldSpecified;
             }
             set {
-                this.arbnAnteilBerufsVersFieldSpecified = value;
-                this.RaisePropertyChanged("ArbnAnteilBerufsVersSpecified");
+                arbnAnteilBerufsVersFieldSpecified = value;
+                RaisePropertyChanged("ArbnAnteilBerufsVersSpecified");
             }
         }
         
         /// <remarks/>
         public decimal StFreiGeKrankVers {
             get {
-                return this.stFreiGeKrankVersField;
+                return stFreiGeKrankVersField;
             }
             set {
-                this.stFreiGeKrankVersField = value;
-                this.RaisePropertyChanged("StFreiGeKrankVers");
+                stFreiGeKrankVersField = value;
+                RaisePropertyChanged("StFreiGeKrankVers");
             }
         }
         
@@ -668,22 +668,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool StFreiGeKrankVersSpecified {
             get {
-                return this.stFreiGeKrankVersFieldSpecified;
+                return stFreiGeKrankVersFieldSpecified;
             }
             set {
-                this.stFreiGeKrankVersFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiGeKrankVersSpecified");
+                stFreiGeKrankVersFieldSpecified = value;
+                RaisePropertyChanged("StFreiGeKrankVersSpecified");
             }
         }
         
         /// <remarks/>
         public decimal StFreiPrKrankVers {
             get {
-                return this.stFreiPrKrankVersField;
+                return stFreiPrKrankVersField;
             }
             set {
-                this.stFreiPrKrankVersField = value;
-                this.RaisePropertyChanged("StFreiPrKrankVers");
+                stFreiPrKrankVersField = value;
+                RaisePropertyChanged("StFreiPrKrankVers");
             }
         }
         
@@ -691,22 +691,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool StFreiPrKrankVersSpecified {
             get {
-                return this.stFreiPrKrankVersFieldSpecified;
+                return stFreiPrKrankVersFieldSpecified;
             }
             set {
-                this.stFreiPrKrankVersFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiPrKrankVersSpecified");
+                stFreiPrKrankVersFieldSpecified = value;
+                RaisePropertyChanged("StFreiPrKrankVersSpecified");
             }
         }
         
         /// <remarks/>
         public decimal StFreiGePflegeVers {
             get {
-                return this.stFreiGePflegeVersField;
+                return stFreiGePflegeVersField;
             }
             set {
-                this.stFreiGePflegeVersField = value;
-                this.RaisePropertyChanged("StFreiGePflegeVers");
+                stFreiGePflegeVersField = value;
+                RaisePropertyChanged("StFreiGePflegeVers");
             }
         }
         
@@ -714,22 +714,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool StFreiGePflegeVersSpecified {
             get {
-                return this.stFreiGePflegeVersFieldSpecified;
+                return stFreiGePflegeVersFieldSpecified;
             }
             set {
-                this.stFreiGePflegeVersFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiGePflegeVersSpecified");
+                stFreiGePflegeVersFieldSpecified = value;
+                RaisePropertyChanged("StFreiGePflegeVersSpecified");
             }
         }
         
         /// <remarks/>
         public decimal ArbnAnteilKrankVers {
             get {
-                return this.arbnAnteilKrankVersField;
+                return arbnAnteilKrankVersField;
             }
             set {
-                this.arbnAnteilKrankVersField = value;
-                this.RaisePropertyChanged("ArbnAnteilKrankVers");
+                arbnAnteilKrankVersField = value;
+                RaisePropertyChanged("ArbnAnteilKrankVers");
             }
         }
         
@@ -737,22 +737,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ArbnAnteilKrankVersSpecified {
             get {
-                return this.arbnAnteilKrankVersFieldSpecified;
+                return arbnAnteilKrankVersFieldSpecified;
             }
             set {
-                this.arbnAnteilKrankVersFieldSpecified = value;
-                this.RaisePropertyChanged("ArbnAnteilKrankVersSpecified");
+                arbnAnteilKrankVersFieldSpecified = value;
+                RaisePropertyChanged("ArbnAnteilKrankVersSpecified");
             }
         }
         
         /// <remarks/>
         public decimal ArbnAnteilPflegVers {
             get {
-                return this.arbnAnteilPflegVersField;
+                return arbnAnteilPflegVersField;
             }
             set {
-                this.arbnAnteilPflegVersField = value;
-                this.RaisePropertyChanged("ArbnAnteilPflegVers");
+                arbnAnteilPflegVersField = value;
+                RaisePropertyChanged("ArbnAnteilPflegVers");
             }
         }
         
@@ -760,22 +760,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ArbnAnteilPflegVersSpecified {
             get {
-                return this.arbnAnteilPflegVersFieldSpecified;
+                return arbnAnteilPflegVersFieldSpecified;
             }
             set {
-                this.arbnAnteilPflegVersFieldSpecified = value;
-                this.RaisePropertyChanged("ArbnAnteilPflegVersSpecified");
+                arbnAnteilPflegVersFieldSpecified = value;
+                RaisePropertyChanged("ArbnAnteilPflegVersSpecified");
             }
         }
         
         /// <remarks/>
         public decimal ArbnAnteilArblVers {
             get {
-                return this.arbnAnteilArblVersField;
+                return arbnAnteilArblVersField;
             }
             set {
-                this.arbnAnteilArblVersField = value;
-                this.RaisePropertyChanged("ArbnAnteilArblVers");
+                arbnAnteilArblVersField = value;
+                RaisePropertyChanged("ArbnAnteilArblVers");
             }
         }
         
@@ -783,22 +783,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ArbnAnteilArblVersSpecified {
             get {
-                return this.arbnAnteilArblVersFieldSpecified;
+                return arbnAnteilArblVersFieldSpecified;
             }
             set {
-                this.arbnAnteilArblVersFieldSpecified = value;
-                this.RaisePropertyChanged("ArbnAnteilArblVersSpecified");
+                arbnAnteilArblVersFieldSpecified = value;
+                RaisePropertyChanged("ArbnAnteilArblVersSpecified");
             }
         }
         
         /// <remarks/>
         public decimal BeitrPrKrankVers {
             get {
-                return this.beitrPrKrankVersField;
+                return beitrPrKrankVersField;
             }
             set {
-                this.beitrPrKrankVersField = value;
-                this.RaisePropertyChanged("BeitrPrKrankVers");
+                beitrPrKrankVersField = value;
+                RaisePropertyChanged("BeitrPrKrankVers");
             }
         }
         
@@ -806,22 +806,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool BeitrPrKrankVersSpecified {
             get {
-                return this.beitrPrKrankVersFieldSpecified;
+                return beitrPrKrankVersFieldSpecified;
             }
             set {
-                this.beitrPrKrankVersFieldSpecified = value;
-                this.RaisePropertyChanged("BeitrPrKrankVersSpecified");
+                beitrPrKrankVersFieldSpecified = value;
+                RaisePropertyChanged("BeitrPrKrankVersSpecified");
             }
         }
         
         /// <remarks/>
         public decimal AusgezKinderGeld {
             get {
-                return this.ausgezKinderGeldField;
+                return ausgezKinderGeldField;
             }
             set {
-                this.ausgezKinderGeldField = value;
-                this.RaisePropertyChanged("AusgezKinderGeld");
+                ausgezKinderGeldField = value;
+                RaisePropertyChanged("AusgezKinderGeld");
             }
         }
         
@@ -829,22 +829,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool AusgezKinderGeldSpecified {
             get {
-                return this.ausgezKinderGeldFieldSpecified;
+                return ausgezKinderGeldFieldSpecified;
             }
             set {
-                this.ausgezKinderGeldFieldSpecified = value;
-                this.RaisePropertyChanged("AusgezKinderGeldSpecified");
+                ausgezKinderGeldFieldSpecified = value;
+                RaisePropertyChanged("AusgezKinderGeldSpecified");
             }
         }
         
         /// <remarks/>
         public string Grossbuchstaben {
             get {
-                return this.grossbuchstabenField;
+                return grossbuchstabenField;
             }
             set {
-                this.grossbuchstabenField = value;
-                this.RaisePropertyChanged("Grossbuchstaben");
+                grossbuchstabenField = value;
+                RaisePropertyChanged("Grossbuchstaben");
             }
         }
         
@@ -852,22 +852,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlElementAttribute("Kammerbeitrag")]
         public System.Collections.Generic.List<LStB201201.lstb_BesteuerungsgrundlagenCTypeKammerbeitrag> Kammerbeitrag {
             get {
-                return this.kammerbeitragField;
+                return kammerbeitragField;
             }
             set {
-                this.kammerbeitragField = value;
-                this.RaisePropertyChanged("Kammerbeitrag");
+                kammerbeitragField = value;
+                RaisePropertyChanged("Kammerbeitrag");
             }
         }
         
         /// <remarks/>
         public decimal ArbnAnteilWBUmlage {
             get {
-                return this.arbnAnteilWBUmlageField;
+                return arbnAnteilWBUmlageField;
             }
             set {
-                this.arbnAnteilWBUmlageField = value;
-                this.RaisePropertyChanged("ArbnAnteilWBUmlage");
+                arbnAnteilWBUmlageField = value;
+                RaisePropertyChanged("ArbnAnteilWBUmlage");
             }
         }
         
@@ -875,22 +875,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ArbnAnteilWBUmlageSpecified {
             get {
-                return this.arbnAnteilWBUmlageFieldSpecified;
+                return arbnAnteilWBUmlageFieldSpecified;
             }
             set {
-                this.arbnAnteilWBUmlageFieldSpecified = value;
-                this.RaisePropertyChanged("ArbnAnteilWBUmlageSpecified");
+                arbnAnteilWBUmlageFieldSpecified = value;
+                RaisePropertyChanged("ArbnAnteilWBUmlageSpecified");
             }
         }
         
         /// <remarks/>
         public decimal ArbgAnteilZusatzVers {
             get {
-                return this.arbgAnteilZusatzVersField;
+                return arbgAnteilZusatzVersField;
             }
             set {
-                this.arbgAnteilZusatzVersField = value;
-                this.RaisePropertyChanged("ArbgAnteilZusatzVers");
+                arbgAnteilZusatzVersField = value;
+                RaisePropertyChanged("ArbgAnteilZusatzVers");
             }
         }
         
@@ -898,22 +898,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ArbgAnteilZusatzVersSpecified {
             get {
-                return this.arbgAnteilZusatzVersFieldSpecified;
+                return arbgAnteilZusatzVersFieldSpecified;
             }
             set {
-                this.arbgAnteilZusatzVersFieldSpecified = value;
-                this.RaisePropertyChanged("ArbgAnteilZusatzVersSpecified");
+                arbgAnteilZusatzVersFieldSpecified = value;
+                RaisePropertyChanged("ArbgAnteilZusatzVersSpecified");
             }
         }
         
         /// <remarks/>
         public decimal ArbnAnteilZusatzVers {
             get {
-                return this.arbnAnteilZusatzVersField;
+                return arbnAnteilZusatzVersField;
             }
             set {
-                this.arbnAnteilZusatzVersField = value;
-                this.RaisePropertyChanged("ArbnAnteilZusatzVers");
+                arbnAnteilZusatzVersField = value;
+                RaisePropertyChanged("ArbnAnteilZusatzVers");
             }
         }
         
@@ -921,22 +921,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ArbnAnteilZusatzVersSpecified {
             get {
-                return this.arbnAnteilZusatzVersFieldSpecified;
+                return arbnAnteilZusatzVersFieldSpecified;
             }
             set {
-                this.arbnAnteilZusatzVersFieldSpecified = value;
-                this.RaisePropertyChanged("ArbnAnteilZusatzVersSpecified");
+                arbnAnteilZusatzVersFieldSpecified = value;
+                RaisePropertyChanged("ArbnAnteilZusatzVersSpecified");
             }
         }
         
         /// <remarks/>
         public int AnzahlArbTag {
             get {
-                return this.anzahlArbTagField;
+                return anzahlArbTagField;
             }
             set {
-                this.anzahlArbTagField = value;
-                this.RaisePropertyChanged("AnzahlArbTag");
+                anzahlArbTagField = value;
+                RaisePropertyChanged("AnzahlArbTag");
             }
         }
         
@@ -944,22 +944,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool AnzahlArbTagSpecified {
             get {
-                return this.anzahlArbTagFieldSpecified;
+                return anzahlArbTagFieldSpecified;
             }
             set {
-                this.anzahlArbTagFieldSpecified = value;
-                this.RaisePropertyChanged("AnzahlArbTagSpecified");
+                anzahlArbTagFieldSpecified = value;
+                RaisePropertyChanged("AnzahlArbTagSpecified");
             }
         }
         
         /// <remarks/>
         public decimal StFreiFahrtKAusw {
             get {
-                return this.stFreiFahrtKAuswField;
+                return stFreiFahrtKAuswField;
             }
             set {
-                this.stFreiFahrtKAuswField = value;
-                this.RaisePropertyChanged("StFreiFahrtKAusw");
+                stFreiFahrtKAuswField = value;
+                RaisePropertyChanged("StFreiFahrtKAusw");
             }
         }
         
@@ -967,11 +967,11 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool StFreiFahrtKAuswSpecified {
             get {
-                return this.stFreiFahrtKAuswFieldSpecified;
+                return stFreiFahrtKAuswFieldSpecified;
             }
             set {
-                this.stFreiFahrtKAuswFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiFahrtKAuswSpecified");
+                stFreiFahrtKAuswFieldSpecified = value;
+                RaisePropertyChanged("StFreiFahrtKAuswSpecified");
             }
         }
         
@@ -979,22 +979,22 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlElementAttribute("NErmStVBezMKalJahr")]
         public System.Collections.Generic.List<LStB201201.lstb_BesteuerungsgrundlagenCTypeNErmStVBezMKalJahr> NErmStVBezMKalJahr {
             get {
-                return this.nErmStVBezMKalJahrField;
+                return nErmStVBezMKalJahrField;
             }
             set {
-                this.nErmStVBezMKalJahrField = value;
-                this.RaisePropertyChanged("NErmStVBezMKalJahr");
+                nErmStVBezMKalJahrField = value;
+                RaisePropertyChanged("NErmStVBezMKalJahr");
             }
         }
         
         /// <remarks/>
         public decimal StFreiArbgZuschBerufsVers {
             get {
-                return this.stFreiArbgZuschBerufsVersField;
+                return stFreiArbgZuschBerufsVersField;
             }
             set {
-                this.stFreiArbgZuschBerufsVersField = value;
-                this.RaisePropertyChanged("StFreiArbgZuschBerufsVers");
+                stFreiArbgZuschBerufsVersField = value;
+                RaisePropertyChanged("StFreiArbgZuschBerufsVers");
             }
         }
         
@@ -1002,11 +1002,11 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool StFreiArbgZuschBerufsVersSpecified {
             get {
-                return this.stFreiArbgZuschBerufsVersFieldSpecified;
+                return stFreiArbgZuschBerufsVersFieldSpecified;
             }
             set {
-                this.stFreiArbgZuschBerufsVersFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiArbgZuschBerufsVersSpecified");
+                stFreiArbgZuschBerufsVersFieldSpecified = value;
+                RaisePropertyChanged("StFreiArbgZuschBerufsVersSpecified");
             }
         }
         
@@ -1014,11 +1014,11 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlElementAttribute("Wert")]
         public System.Collections.Generic.List<LStB201201.lstb_BesteuerungsgrundlagenCTypeWert> Wert {
             get {
-                return this.wertField;
+                return wertField;
             }
             set {
-                this.wertField = value;
-                this.RaisePropertyChanged("Wert");
+                wertField = value;
+                RaisePropertyChanged("Wert");
             }
         }
         
@@ -1026,29 +1026,29 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlElementAttribute("Text")]
         public System.Collections.Generic.List<LStB201201.lstb_BesteuerungsgrundlagenCTypeText> Text {
             get {
-                return this.textField;
+                return textField;
             }
             set {
-                this.textField = value;
-                this.RaisePropertyChanged("Text");
+                textField = value;
+                RaisePropertyChanged("Text");
             }
         }
         
         /// <remarks/>
         public LStB201201.lstb_ArbeitgeberCType Arbeitgeber {
             get {
-                return this.arbeitgeberField;
+                return arbeitgeberField;
             }
             set {
-                this.arbeitgeberField = value;
-                this.RaisePropertyChanged("Arbeitgeber");
+                arbeitgeberField = value;
+                RaisePropertyChanged("Arbeitgeber");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

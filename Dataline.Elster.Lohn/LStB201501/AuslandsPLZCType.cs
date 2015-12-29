@@ -28,11 +28,11 @@ namespace Dataline.Elster.Lohn.LStB201501 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string laenderkennzeichen {
             get {
-                return this.laenderkennzeichenField;
+                return laenderkennzeichenField;
             }
             set {
-                this.laenderkennzeichenField = value;
-                this.RaisePropertyChanged("laenderkennzeichen");
+                laenderkennzeichenField = value;
+                RaisePropertyChanged("laenderkennzeichen");
             }
         }
         
@@ -40,18 +40,18 @@ namespace Dataline.Elster.Lohn.LStB201501 {
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value {
             get {
-                return this.valueField;
+                return valueField;
             }
             set {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
+                valueField = value;
+                RaisePropertyChanged("Value");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

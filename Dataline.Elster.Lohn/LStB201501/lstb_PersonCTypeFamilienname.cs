@@ -37,11 +37,11 @@ namespace Dataline.Elster.Lohn.LStB201501 {
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
         public object[] Items {
             get {
-                return this.itemsField;
+                return itemsField;
             }
             set {
-                this.itemsField = value;
-                this.RaisePropertyChanged("Items");
+                itemsField = value;
+                RaisePropertyChanged("Items");
             }
         }
         
@@ -50,51 +50,51 @@ namespace Dataline.Elster.Lohn.LStB201501 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public ItemsChoiceType[] ItemsElementName {
             get {
-                return this.itemsElementNameField;
+                return itemsElementNameField;
             }
             set {
-                this.itemsElementNameField = value;
-                this.RaisePropertyChanged("ItemsElementName");
+                itemsElementNameField = value;
+                RaisePropertyChanged("ItemsElementName");
             }
         }
         
         /// <remarks/>
         public string Namensvorsatz {
             get {
-                return this.namensvorsatzField;
+                return namensvorsatzField;
             }
             set {
-                this.namensvorsatzField = value;
-                this.RaisePropertyChanged("Namensvorsatz");
+                namensvorsatzField = value;
+                RaisePropertyChanged("Namensvorsatz");
             }
         }
         
         /// <remarks/>
         public string Namenszusatz {
             get {
-                return this.namenszusatzField;
+                return namenszusatzField;
             }
             set {
-                this.namenszusatzField = value;
-                this.RaisePropertyChanged("Namenszusatz");
+                namenszusatzField = value;
+                RaisePropertyChanged("Namenszusatz");
             }
         }
         
         /// <remarks/>
         public string Titel {
             get {
-                return this.titelField;
+                return titelField;
             }
             set {
-                this.titelField = value;
-                this.RaisePropertyChanged("Titel");
+                titelField = value;
+                RaisePropertyChanged("Titel");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

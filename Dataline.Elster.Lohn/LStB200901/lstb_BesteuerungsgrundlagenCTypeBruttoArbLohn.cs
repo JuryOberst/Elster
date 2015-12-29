@@ -26,11 +26,11 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public LStB200901.lstb_BesteuerungsgrundlagenCTypeBruttoArbLohnLStTab lStTab {
             get {
-                return this.lStTabField;
+                return lStTabField;
             }
             set {
-                this.lStTabField = value;
-                this.RaisePropertyChanged("lStTab");
+                lStTabField = value;
+                RaisePropertyChanged("lStTab");
             }
         }
         
@@ -38,18 +38,18 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         [System.Xml.Serialization.XmlTextAttribute()]
         public decimal Value {
             get {
-                return this.valueField;
+                return valueField;
             }
             set {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
+                valueField = value;
+                RaisePropertyChanged("Value");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

@@ -30,22 +30,22 @@ namespace Dataline.Elster.Lohn.Protocol5 {
         /// <remarks/>
         public string ZeitStempel {
             get {
-                return this.zeitStempelField;
+                return zeitStempelField;
             }
             set {
-                this.zeitStempelField = value;
-                this.RaisePropertyChanged("ZeitStempel");
+                zeitStempelField = value;
+                RaisePropertyChanged("ZeitStempel");
             }
         }
         
         /// <remarks/>
         public Protocol5.DatenTeilStatusCType DatenTeil {
             get {
-                return this.datenTeilField;
+                return datenTeilField;
             }
             set {
-                this.datenTeilField = value;
-                this.RaisePropertyChanged("DatenTeil");
+                datenTeilField = value;
+                RaisePropertyChanged("DatenTeil");
             }
         }
         
@@ -53,18 +53,18 @@ namespace Dataline.Elster.Lohn.Protocol5 {
         [System.Xml.Serialization.XmlAttributeAttribute(DataType="positiveInteger")]
         public string version {
             get {
-                return this.versionField;
+                return versionField;
             }
             set {
-                this.versionField = value;
-                this.RaisePropertyChanged("version");
+                versionField = value;
+                RaisePropertyChanged("version");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

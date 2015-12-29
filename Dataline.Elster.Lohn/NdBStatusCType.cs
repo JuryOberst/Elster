@@ -31,11 +31,11 @@ namespace Dataline.Elster.Lohn
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public ProtokollStatusCodeSType code {
             get {
-                return this.codeField;
+                return codeField;
             }
             set {
-                this.codeField = value;
-                this.RaisePropertyChanged("code");
+                codeField = value;
+                RaisePropertyChanged("code");
             }
         }
         
@@ -43,11 +43,11 @@ namespace Dataline.Elster.Lohn
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool codeSpecified {
             get {
-                return this.codeFieldSpecified;
+                return codeFieldSpecified;
             }
             set {
-                this.codeFieldSpecified = value;
-                this.RaisePropertyChanged("codeSpecified");
+                codeFieldSpecified = value;
+                RaisePropertyChanged("codeSpecified");
             }
         }
         
@@ -55,18 +55,18 @@ namespace Dataline.Elster.Lohn
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value {
             get {
-                return this.valueField;
+                return valueField;
             }
             set {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
+                valueField = value;
+                RaisePropertyChanged("Value");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

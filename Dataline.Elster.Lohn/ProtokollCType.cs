@@ -31,22 +31,22 @@ namespace Dataline.Elster.Lohn
         /// <remarks/>
         public string ZeitStempel {
             get {
-                return this.zeitStempelField;
+                return zeitStempelField;
             }
             set {
-                this.zeitStempelField = value;
-                this.RaisePropertyChanged("ZeitStempel");
+                zeitStempelField = value;
+                RaisePropertyChanged("ZeitStempel");
             }
         }
         
         /// <remarks/>
         public DatenTeilStatusCType DatenTeilStatus {
             get {
-                return this.datenTeilStatusField;
+                return datenTeilStatusField;
             }
             set {
-                this.datenTeilStatusField = value;
-                this.RaisePropertyChanged("DatenTeilStatus");
+                datenTeilStatusField = value;
+                RaisePropertyChanged("DatenTeilStatus");
             }
         }
         
@@ -54,18 +54,18 @@ namespace Dataline.Elster.Lohn
         [System.Xml.Serialization.XmlAttributeAttribute(DataType="positiveInteger")]
         public string version {
             get {
-                return this.versionField;
+                return versionField;
             }
             set {
-                this.versionField = value;
-                this.RaisePropertyChanged("version");
+                versionField = value;
+                RaisePropertyChanged("version");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

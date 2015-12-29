@@ -30,29 +30,29 @@ namespace Dataline.Elster.Lohn {
         /// <remarks/>
         public NutzdatenHeaderCType NutzdatenHeader {
             get {
-                return this.nutzdatenHeaderField;
+                return nutzdatenHeaderField;
             }
             set {
-                this.nutzdatenHeaderField = value;
-                this.RaisePropertyChanged("NutzdatenHeader");
+                nutzdatenHeaderField = value;
+                RaisePropertyChanged("NutzdatenHeader");
             }
         }
         
         /// <remarks/>
         public NutzdatenCType Nutzdaten {
             get {
-                return this.nutzdatenField;
+                return nutzdatenField;
             }
             set {
-                this.nutzdatenField = value;
-                this.RaisePropertyChanged("Nutzdaten");
+                nutzdatenField = value;
+                RaisePropertyChanged("Nutzdaten");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

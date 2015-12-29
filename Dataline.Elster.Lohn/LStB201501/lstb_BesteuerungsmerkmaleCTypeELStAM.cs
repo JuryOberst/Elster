@@ -35,55 +35,55 @@ namespace Dataline.Elster.Lohn.LStB201501 {
         /// <remarks/>
         public lstb_BesteuerungsmerkmaleCTypeELStAMSteuerklasse Steuerklasse {
             get {
-                return this.steuerklasseField;
+                return steuerklasseField;
             }
             set {
-                this.steuerklasseField = value;
-                this.RaisePropertyChanged("Steuerklasse");
+                steuerklasseField = value;
+                RaisePropertyChanged("Steuerklasse");
             }
         }
         
         /// <remarks/>
         public lstb_BesteuerungsmerkmaleCTypeELStAMKinder Kinder {
             get {
-                return this.kinderField;
+                return kinderField;
             }
             set {
-                this.kinderField = value;
-                this.RaisePropertyChanged("Kinder");
+                kinderField = value;
+                RaisePropertyChanged("Kinder");
             }
         }
         
         /// <remarks/>
         public lstb_BesteuerungsmerkmaleCTypeELStAMKirchensteuerabzug Kirchensteuerabzug {
             get {
-                return this.kirchensteuerabzugField;
+                return kirchensteuerabzugField;
             }
             set {
-                this.kirchensteuerabzugField = value;
-                this.RaisePropertyChanged("Kirchensteuerabzug");
+                kirchensteuerabzugField = value;
+                RaisePropertyChanged("Kirchensteuerabzug");
             }
         }
         
         /// <remarks/>
         public lstb_BesteuerungsmerkmaleCTypeELStAMSteuerfreibetrag Steuerfreibetrag {
             get {
-                return this.steuerfreibetragField;
+                return steuerfreibetragField;
             }
             set {
-                this.steuerfreibetragField = value;
-                this.RaisePropertyChanged("Steuerfreibetrag");
+                steuerfreibetragField = value;
+                RaisePropertyChanged("Steuerfreibetrag");
             }
         }
         
         /// <remarks/>
         public lstb_BesteuerungsmerkmaleCTypeELStAMHinzurechnungsbetrag Hinzurechnungsbetrag {
             get {
-                return this.hinzurechnungsbetragField;
+                return hinzurechnungsbetragField;
             }
             set {
-                this.hinzurechnungsbetragField = value;
-                this.RaisePropertyChanged("Hinzurechnungsbetrag");
+                hinzurechnungsbetragField = value;
+                RaisePropertyChanged("Hinzurechnungsbetrag");
             }
         }
         
@@ -91,18 +91,18 @@ namespace Dataline.Elster.Lohn.LStB201501 {
         [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
         public System.DateTime gueltig_ab {
             get {
-                return this.gueltig_abField;
+                return gueltig_abField;
             }
             set {
-                this.gueltig_abField = value;
-                this.RaisePropertyChanged("gueltig_ab");
+                gueltig_abField = value;
+                RaisePropertyChanged("gueltig_ab");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

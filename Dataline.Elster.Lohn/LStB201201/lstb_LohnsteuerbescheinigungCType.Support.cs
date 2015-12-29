@@ -26,7 +26,7 @@ namespace Dataline.Elster.Lohn
         {
             public string LStBVersion
             {
-                get { return XmlSchemaUtilities.GetEnumXmlValue(this.version); }
+                get { return XmlSchemaUtilities.GetEnumXmlValue(version); }
             }
 
             private IEnumerable<lstb_BesteuerungsmerkmaleCTypeELStAM> FilterBesteuerungsmerkmale<T>(Func<lstb_BesteuerungsmerkmaleCTypeELStAM, T> getCompareItem) where T : class

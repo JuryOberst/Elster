@@ -36,22 +36,22 @@ namespace Dataline.Elster.Lohn.LStB201501 {
         /// <remarks/>
         public lstb_LohnsteuerbescheinigungCTypeDauer Dauer {
             get {
-                return this.dauerField;
+                return dauerField;
             }
             set {
-                this.dauerField = value;
-                this.RaisePropertyChanged("Dauer");
+                dauerField = value;
+                RaisePropertyChanged("Dauer");
             }
         }
         
         /// <remarks/>
         public lstb_AllgemeinCType Allgemein {
             get {
-                return this.allgemeinField;
+                return allgemeinField;
             }
             set {
-                this.allgemeinField = value;
-                this.RaisePropertyChanged("Allgemein");
+                allgemeinField = value;
+                RaisePropertyChanged("Allgemein");
             }
         }
         
@@ -59,22 +59,22 @@ namespace Dataline.Elster.Lohn.LStB201501 {
         [System.Xml.Serialization.XmlArrayItemAttribute("ELStAM", IsNullable=false)]
         public System.Collections.Generic.List<lstb_BesteuerungsmerkmaleCTypeELStAM> Besteuerungsmerkmale {
             get {
-                return this.besteuerungsmerkmaleField;
+                return besteuerungsmerkmaleField;
             }
             set {
-                this.besteuerungsmerkmaleField = value;
-                this.RaisePropertyChanged("Besteuerungsmerkmale");
+                besteuerungsmerkmaleField = value;
+                RaisePropertyChanged("Besteuerungsmerkmale");
             }
         }
         
         /// <remarks/>
         public lstb_BesteuerungsgrundlagenCType Besteuerungsgrundlagen {
             get {
-                return this.besteuerungsgrundlagenField;
+                return besteuerungsgrundlagenField;
             }
             set {
-                this.besteuerungsgrundlagenField = value;
-                this.RaisePropertyChanged("Besteuerungsgrundlagen");
+                besteuerungsgrundlagenField = value;
+                RaisePropertyChanged("Besteuerungsgrundlagen");
             }
         }
         
@@ -82,11 +82,11 @@ namespace Dataline.Elster.Lohn.LStB201501 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public lstb_LohnsteuerbescheinigungVersionSType version {
             get {
-                return this.versionField;
+                return versionField;
             }
             set {
-                this.versionField = value;
-                this.RaisePropertyChanged("version");
+                versionField = value;
+                RaisePropertyChanged("version");
             }
         }
         
@@ -94,18 +94,18 @@ namespace Dataline.Elster.Lohn.LStB201501 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public lstb_LohnsteuerbescheinigungCTypeArt art {
             get {
-                return this.artField;
+                return artField;
             }
             set {
-                this.artField = value;
-                this.RaisePropertyChanged("art");
+                artField = value;
+                RaisePropertyChanged("art");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

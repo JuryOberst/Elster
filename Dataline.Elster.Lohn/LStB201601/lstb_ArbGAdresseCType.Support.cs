@@ -22,7 +22,7 @@ namespace Dataline.Elster.Lohn
         {
             private int GetIndexFor(ItemsChoiceType2 choice)
             {
-                for (int i = 0; i != this.ItemsElementName.Length; ++i)
+                for (int i = 0; i != ItemsElementName.Length; ++i)
                 {
                     if (ItemsElementName[i] == choice)
                     {

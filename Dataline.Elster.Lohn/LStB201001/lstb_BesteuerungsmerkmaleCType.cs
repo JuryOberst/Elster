@@ -34,11 +34,11 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         [System.Xml.Serialization.XmlElementAttribute("Steuerklasse")]
         public System.Collections.Generic.List<LStB201001.lstb_BesteuerungsmerkmaleCTypeSteuerklasse> Steuerklasse {
             get {
-                return this.steuerklasseField;
+                return steuerklasseField;
             }
             set {
-                this.steuerklasseField = value;
-                this.RaisePropertyChanged("Steuerklasse");
+                steuerklasseField = value;
+                RaisePropertyChanged("Steuerklasse");
             }
         }
         
@@ -46,11 +46,11 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         [System.Xml.Serialization.XmlElementAttribute("Kinder")]
         public System.Collections.Generic.List<LStB201001.lstb_BesteuerungsmerkmaleCTypeKinder> Kinder {
             get {
-                return this.kinderField;
+                return kinderField;
             }
             set {
-                this.kinderField = value;
-                this.RaisePropertyChanged("Kinder");
+                kinderField = value;
+                RaisePropertyChanged("Kinder");
             }
         }
         
@@ -58,11 +58,11 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         [System.Xml.Serialization.XmlElementAttribute("Kirchensteuerabzug")]
         public System.Collections.Generic.List<LStB201001.lstb_BesteuerungsmerkmaleCTypeKirchensteuerabzug> Kirchensteuerabzug {
             get {
-                return this.kirchensteuerabzugField;
+                return kirchensteuerabzugField;
             }
             set {
-                this.kirchensteuerabzugField = value;
-                this.RaisePropertyChanged("Kirchensteuerabzug");
+                kirchensteuerabzugField = value;
+                RaisePropertyChanged("Kirchensteuerabzug");
             }
         }
         
@@ -70,11 +70,11 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         [System.Xml.Serialization.XmlElementAttribute("Steuerfreibetrag")]
         public System.Collections.Generic.List<LStB201001.lstb_SteuerfreibetragCType> Steuerfreibetrag {
             get {
-                return this.steuerfreibetragField;
+                return steuerfreibetragField;
             }
             set {
-                this.steuerfreibetragField = value;
-                this.RaisePropertyChanged("Steuerfreibetrag");
+                steuerfreibetragField = value;
+                RaisePropertyChanged("Steuerfreibetrag");
             }
         }
         
@@ -82,18 +82,18 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         [System.Xml.Serialization.XmlElementAttribute("Hinzurechnungsbetrag")]
         public System.Collections.Generic.List<LStB201001.lstb_SteuerfreibetragCType> Hinzurechnungsbetrag {
             get {
-                return this.hinzurechnungsbetragField;
+                return hinzurechnungsbetragField;
             }
             set {
-                this.hinzurechnungsbetragField = value;
-                this.RaisePropertyChanged("Hinzurechnungsbetrag");
+                hinzurechnungsbetragField = value;
+                RaisePropertyChanged("Hinzurechnungsbetrag");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

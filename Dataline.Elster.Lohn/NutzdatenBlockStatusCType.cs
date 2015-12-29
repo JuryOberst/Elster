@@ -30,11 +30,11 @@ namespace Dataline.Elster.Lohn
         /// <remarks/>
         public NdBStatusCType NdBStatus {
             get {
-                return this.ndBStatusField;
+                return ndBStatusField;
             }
             set {
-                this.ndBStatusField = value;
-                this.RaisePropertyChanged("NdBStatus");
+                ndBStatusField = value;
+                RaisePropertyChanged("NdBStatus");
             }
         }
         
@@ -42,11 +42,11 @@ namespace Dataline.Elster.Lohn
         [System.Xml.Serialization.XmlElementAttribute("NdSFehler")]
         public System.Collections.Generic.List<NdSFehlerCType> NdSFehler {
             get {
-                return this.ndSFehlerField;
+                return ndSFehlerField;
             }
             set {
-                this.ndSFehlerField = value;
-                this.RaisePropertyChanged("NdSFehler");
+                ndSFehlerField = value;
+                RaisePropertyChanged("NdSFehler");
             }
         }
         
@@ -54,18 +54,18 @@ namespace Dataline.Elster.Lohn
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string nutzdatenTicket {
             get {
-                return this.nutzdatenTicketField;
+                return nutzdatenTicketField;
             }
             set {
-                this.nutzdatenTicketField = value;
-                this.RaisePropertyChanged("nutzdatenTicket");
+                nutzdatenTicketField = value;
+                RaisePropertyChanged("nutzdatenTicket");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

@@ -31,44 +31,44 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         /// <remarks/>
         public LStB200901.lstb_PersonCTypeFamilienname Familienname {
             get {
-                return this.familiennameField;
+                return familiennameField;
             }
             set {
-                this.familiennameField = value;
-                this.RaisePropertyChanged("Familienname");
+                familiennameField = value;
+                RaisePropertyChanged("Familienname");
             }
         }
         
         /// <remarks/>
         public LStB200901.lstb_PersonCTypeGeburtsname Geburtsname {
             get {
-                return this.geburtsnameField;
+                return geburtsnameField;
             }
             set {
-                this.geburtsnameField = value;
-                this.RaisePropertyChanged("Geburtsname");
+                geburtsnameField = value;
+                RaisePropertyChanged("Geburtsname");
             }
         }
         
         /// <remarks/>
         public string Geburtsdatum {
             get {
-                return this.geburtsdatumField;
+                return geburtsdatumField;
             }
             set {
-                this.geburtsdatumField = value;
-                this.RaisePropertyChanged("Geburtsdatum");
+                geburtsdatumField = value;
+                RaisePropertyChanged("Geburtsdatum");
             }
         }
         
         /// <remarks/>
         public LStB200901.lstb_AdresseCType Adresse {
             get {
-                return this.adresseField;
+                return adresseField;
             }
             set {
-                this.adresseField = value;
-                this.RaisePropertyChanged("Adresse");
+                adresseField = value;
+                RaisePropertyChanged("Adresse");
             }
         }
         
@@ -76,18 +76,18 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public LStB200901.lstb_PersonCTypeGeschlecht geschlecht {
             get {
-                return this.geschlechtField;
+                return geschlechtField;
             }
             set {
-                this.geschlechtField = value;
-                this.RaisePropertyChanged("geschlecht");
+                geschlechtField = value;
+                RaisePropertyChanged("geschlecht");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

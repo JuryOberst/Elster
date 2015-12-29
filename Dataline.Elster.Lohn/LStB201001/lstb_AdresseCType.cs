@@ -41,11 +41,11 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         /// <remarks/>
         public string Str {
             get {
-                return this.strField;
+                return strField;
             }
             set {
-                this.strField = value;
-                this.RaisePropertyChanged("Str");
+                strField = value;
+                RaisePropertyChanged("Str");
             }
         }
         
@@ -53,44 +53,44 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         [System.Xml.Serialization.XmlElementAttribute(DataType="integer")]
         public string Hausnummer {
             get {
-                return this.hausnummerField;
+                return hausnummerField;
             }
             set {
-                this.hausnummerField = value;
-                this.RaisePropertyChanged("Hausnummer");
+                hausnummerField = value;
+                RaisePropertyChanged("Hausnummer");
             }
         }
         
         /// <remarks/>
         public string HNrZusatz {
             get {
-                return this.hNrZusatzField;
+                return hNrZusatzField;
             }
             set {
-                this.hNrZusatzField = value;
-                this.RaisePropertyChanged("HNrZusatz");
+                hNrZusatzField = value;
+                RaisePropertyChanged("HNrZusatz");
             }
         }
         
         /// <remarks/>
         public string Anschriftenzusatz {
             get {
-                return this.anschriftenzusatzField;
+                return anschriftenzusatzField;
             }
             set {
-                this.anschriftenzusatzField = value;
-                this.RaisePropertyChanged("Anschriftenzusatz");
+                anschriftenzusatzField = value;
+                RaisePropertyChanged("Anschriftenzusatz");
             }
         }
         
         /// <remarks/>
         public string Ort {
             get {
-                return this.ortField;
+                return ortField;
             }
             set {
-                this.ortField = value;
-                this.RaisePropertyChanged("Ort");
+                ortField = value;
+                RaisePropertyChanged("Ort");
             }
         }
         
@@ -99,22 +99,22 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         [System.Xml.Serialization.XmlElementAttribute("PLZ", typeof(string))]
         public object Item {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
-                this.RaisePropertyChanged("Item");
+                itemField = value;
+                RaisePropertyChanged("Item");
             }
         }
         
         /// <remarks/>
         public string PostfachOrt {
             get {
-                return this.postfachOrtField;
+                return postfachOrtField;
             }
             set {
-                this.postfachOrtField = value;
-                this.RaisePropertyChanged("PostfachOrt");
+                postfachOrtField = value;
+                RaisePropertyChanged("PostfachOrt");
             }
         }
         
@@ -122,29 +122,29 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         [System.Xml.Serialization.XmlElementAttribute(DataType="positiveInteger")]
         public string Postfach {
             get {
-                return this.postfachField;
+                return postfachField;
             }
             set {
-                this.postfachField = value;
-                this.RaisePropertyChanged("Postfach");
+                postfachField = value;
+                RaisePropertyChanged("Postfach");
             }
         }
         
         /// <remarks/>
         public string PostfachPLZ {
             get {
-                return this.postfachPLZField;
+                return postfachPLZField;
             }
             set {
-                this.postfachPLZField = value;
-                this.RaisePropertyChanged("PostfachPLZ");
+                postfachPLZField = value;
+                RaisePropertyChanged("PostfachPLZ");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

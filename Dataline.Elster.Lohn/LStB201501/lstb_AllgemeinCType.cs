@@ -31,51 +31,51 @@ namespace Dataline.Elster.Lohn.LStB201501 {
         /// <remarks/>
         public string ETIN {
             get {
-                return this.eTINField;
+                return eTINField;
             }
             set {
-                this.eTINField = value;
-                this.RaisePropertyChanged("ETIN");
+                eTINField = value;
+                RaisePropertyChanged("ETIN");
             }
         }
         
         /// <remarks/>
         public string IdNr {
             get {
-                return this.idNrField;
+                return idNrField;
             }
             set {
-                this.idNrField = value;
-                this.RaisePropertyChanged("IdNr");
+                idNrField = value;
+                RaisePropertyChanged("IdNr");
             }
         }
         
         /// <remarks/>
         public string Ordnungsmerkmal {
             get {
-                return this.ordnungsmerkmalField;
+                return ordnungsmerkmalField;
             }
             set {
-                this.ordnungsmerkmalField = value;
-                this.RaisePropertyChanged("Ordnungsmerkmal");
+                ordnungsmerkmalField = value;
+                RaisePropertyChanged("Ordnungsmerkmal");
             }
         }
         
         /// <remarks/>
         public lstb_PersonCType Person {
             get {
-                return this.personField;
+                return personField;
             }
             set {
-                this.personField = value;
-                this.RaisePropertyChanged("Person");
+                personField = value;
+                RaisePropertyChanged("Person");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

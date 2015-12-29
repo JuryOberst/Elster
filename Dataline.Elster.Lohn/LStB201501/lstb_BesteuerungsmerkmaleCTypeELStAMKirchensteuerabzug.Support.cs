@@ -24,7 +24,7 @@ namespace Dataline.Elster.Lohn
                 if (other == null)
                     return false;
 
-                return this.konfession == other.konfession && this.ehegkonfession == other.ehegkonfession && this.ehegkonfessionSpecified == other.ehegkonfessionSpecified;
+                return konfession == other.konfession && ehegkonfession == other.ehegkonfession && ehegkonfessionSpecified == other.ehegkonfessionSpecified;
             }
 
             public override int GetHashCode()

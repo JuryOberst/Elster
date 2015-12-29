@@ -31,11 +31,11 @@ namespace Dataline.Elster.Lohn {
         /// <remarks/>
         public TransferHeaderCType TransferHeader {
             get {
-                return this.transferHeaderField;
+                return transferHeaderField;
             }
             set {
-                this.transferHeaderField = value;
-                this.RaisePropertyChanged("TransferHeader");
+                transferHeaderField = value;
+                RaisePropertyChanged("TransferHeader");
             }
         }
         
@@ -43,18 +43,18 @@ namespace Dataline.Elster.Lohn {
         [System.Xml.Serialization.XmlArrayItemAttribute("Nutzdatenblock", IsNullable=false)]
         public System.Collections.Generic.List<NutzdatenblockCType> DatenTeil {
             get {
-                return this.datenTeilField;
+                return datenTeilField;
             }
             set {
-                this.datenTeilField = value;
-                this.RaisePropertyChanged("DatenTeil");
+                datenTeilField = value;
+                RaisePropertyChanged("DatenTeil");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

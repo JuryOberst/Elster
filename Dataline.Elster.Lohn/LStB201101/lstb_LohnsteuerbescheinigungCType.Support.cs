@@ -22,7 +22,7 @@ namespace Dataline.Elster.Lohn
         {
             public string LStBVersion
             {
-                get { return XmlSchemaUtilities.GetEnumXmlValue(this.version); }
+                get { return XmlSchemaUtilities.GetEnumXmlValue(version); }
             }
         }
     }

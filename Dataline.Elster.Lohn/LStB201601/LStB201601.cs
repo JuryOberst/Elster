@@ -43,12 +43,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.anweisungField;
+                return anweisungField;
             }
             set
             {
-                this.anweisungField = value;
-                this.RaisePropertyChanged("Anweisung");
+                anweisungField = value;
+                RaisePropertyChanged("Anweisung");
             }
         }
 
@@ -57,12 +57,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.dauerField;
+                return dauerField;
             }
             set
             {
-                this.dauerField = value;
-                this.RaisePropertyChanged("Dauer");
+                dauerField = value;
+                RaisePropertyChanged("Dauer");
             }
         }
 
@@ -71,12 +71,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.allgemeinField;
+                return allgemeinField;
             }
             set
             {
-                this.allgemeinField = value;
-                this.RaisePropertyChanged("Allgemein");
+                allgemeinField = value;
+                RaisePropertyChanged("Allgemein");
             }
         }
 
@@ -86,12 +86,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.besteuerungsmerkmaleField;
+                return besteuerungsmerkmaleField;
             }
             set
             {
-                this.besteuerungsmerkmaleField = value;
-                this.RaisePropertyChanged("Besteuerungsmerkmale");
+                besteuerungsmerkmaleField = value;
+                RaisePropertyChanged("Besteuerungsmerkmale");
             }
         }
 
@@ -100,12 +100,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.besteuerungsgrundlagenField;
+                return besteuerungsgrundlagenField;
             }
             set
             {
-                this.besteuerungsgrundlagenField = value;
-                this.RaisePropertyChanged("Besteuerungsgrundlagen");
+                besteuerungsgrundlagenField = value;
+                RaisePropertyChanged("Besteuerungsgrundlagen");
             }
         }
 
@@ -115,12 +115,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.versionField;
+                return versionField;
             }
             set
             {
-                this.versionField = value;
-                this.RaisePropertyChanged("version");
+                versionField = value;
+                RaisePropertyChanged("version");
             }
         }
 
@@ -130,12 +130,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.artField;
+                return artField;
             }
             set
             {
-                this.artField = value;
-                this.RaisePropertyChanged("art");
+                artField = value;
+                RaisePropertyChanged("art");
             }
         }
 
@@ -143,7 +143,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -169,12 +169,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.kmIdField;
+                return kmIdField;
             }
             set
             {
-                this.kmIdField = value;
-                this.RaisePropertyChanged("KmId");
+                kmIdField = value;
+                RaisePropertyChanged("KmId");
             }
         }
 
@@ -183,12 +183,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.refKmIdField;
+                return refKmIdField;
             }
             set
             {
-                this.refKmIdField = value;
-                this.RaisePropertyChanged("RefKmId");
+                refKmIdField = value;
+                RaisePropertyChanged("RefKmId");
             }
         }
 
@@ -198,12 +198,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.artField;
+                return artField;
             }
             set
             {
-                this.artField = value;
-                this.RaisePropertyChanged("art");
+                artField = value;
+                RaisePropertyChanged("art");
             }
         }
 
@@ -211,7 +211,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -250,12 +250,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.anfangField;
+                return anfangField;
             }
             set
             {
-                this.anfangField = value;
-                this.RaisePropertyChanged("Anfang");
+                anfangField = value;
+                RaisePropertyChanged("Anfang");
             }
         }
 
@@ -264,12 +264,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.endeField;
+                return endeField;
             }
             set
             {
-                this.endeField = value;
-                this.RaisePropertyChanged("Ende");
+                endeField = value;
+                RaisePropertyChanged("Ende");
             }
         }
 
@@ -279,12 +279,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.jahrField;
+                return jahrField;
             }
             set
             {
-                this.jahrField = value;
-                this.RaisePropertyChanged("jahr");
+                jahrField = value;
+                RaisePropertyChanged("jahr");
             }
         }
 
@@ -292,7 +292,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -331,12 +331,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.eTINField;
+                return eTINField;
             }
             set
             {
-                this.eTINField = value;
-                this.RaisePropertyChanged("ETIN");
+                eTINField = value;
+                RaisePropertyChanged("ETIN");
             }
         }
 
@@ -345,12 +345,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.idNrField;
+                return idNrField;
             }
             set
             {
-                this.idNrField = value;
-                this.RaisePropertyChanged("IdNr");
+                idNrField = value;
+                RaisePropertyChanged("IdNr");
             }
         }
 
@@ -359,12 +359,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.ordnungsmerkmalField;
+                return ordnungsmerkmalField;
             }
             set
             {
-                this.ordnungsmerkmalField = value;
-                this.RaisePropertyChanged("Ordnungsmerkmal");
+                ordnungsmerkmalField = value;
+                RaisePropertyChanged("Ordnungsmerkmal");
             }
         }
 
@@ -373,12 +373,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.personField;
+                return personField;
             }
             set
             {
-                this.personField = value;
-                this.RaisePropertyChanged("Person");
+                personField = value;
+                RaisePropertyChanged("Person");
             }
         }
 
@@ -386,7 +386,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -416,12 +416,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.familiennameField;
+                return familiennameField;
             }
             set
             {
-                this.familiennameField = value;
-                this.RaisePropertyChanged("Familienname");
+                familiennameField = value;
+                RaisePropertyChanged("Familienname");
             }
         }
 
@@ -430,12 +430,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.geburtsnameField;
+                return geburtsnameField;
             }
             set
             {
-                this.geburtsnameField = value;
-                this.RaisePropertyChanged("Geburtsname");
+                geburtsnameField = value;
+                RaisePropertyChanged("Geburtsname");
             }
         }
 
@@ -444,12 +444,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.geburtsdatumField;
+                return geburtsdatumField;
             }
             set
             {
-                this.geburtsdatumField = value;
-                this.RaisePropertyChanged("Geburtsdatum");
+                geburtsdatumField = value;
+                RaisePropertyChanged("Geburtsdatum");
             }
         }
 
@@ -458,12 +458,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.adresseField;
+                return adresseField;
             }
             set
             {
-                this.adresseField = value;
-                this.RaisePropertyChanged("Adresse");
+                adresseField = value;
+                RaisePropertyChanged("Adresse");
             }
         }
 
@@ -473,12 +473,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.geschlechtField;
+                return geschlechtField;
             }
             set
             {
-                this.geschlechtField = value;
-                this.RaisePropertyChanged("geschlecht");
+                geschlechtField = value;
+                RaisePropertyChanged("geschlecht");
             }
         }
 
@@ -486,7 +486,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -520,12 +520,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.itemsField;
+                return itemsField;
             }
             set
             {
-                this.itemsField = value;
-                this.RaisePropertyChanged("Items");
+                itemsField = value;
+                RaisePropertyChanged("Items");
             }
         }
 
@@ -536,12 +536,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.itemsElementNameField;
+                return itemsElementNameField;
             }
             set
             {
-                this.itemsElementNameField = value;
-                this.RaisePropertyChanged("ItemsElementName");
+                itemsElementNameField = value;
+                RaisePropertyChanged("ItemsElementName");
             }
         }
 
@@ -550,12 +550,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.namensvorsatzField;
+                return namensvorsatzField;
             }
             set
             {
-                this.namensvorsatzField = value;
-                this.RaisePropertyChanged("Namensvorsatz");
+                namensvorsatzField = value;
+                RaisePropertyChanged("Namensvorsatz");
             }
         }
 
@@ -564,12 +564,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.namenszusatzField;
+                return namenszusatzField;
             }
             set
             {
-                this.namenszusatzField = value;
-                this.RaisePropertyChanged("Namenszusatz");
+                namenszusatzField = value;
+                RaisePropertyChanged("Namenszusatz");
             }
         }
 
@@ -578,12 +578,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.titelField;
+                return titelField;
             }
             set
             {
-                this.titelField = value;
-                this.RaisePropertyChanged("Titel");
+                titelField = value;
+                RaisePropertyChanged("Titel");
             }
         }
 
@@ -591,7 +591,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -633,12 +633,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.nameField;
+                return nameField;
             }
             set
             {
-                this.nameField = value;
-                this.RaisePropertyChanged("Name");
+                nameField = value;
+                RaisePropertyChanged("Name");
             }
         }
 
@@ -647,12 +647,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.namensvorsatzField;
+                return namensvorsatzField;
             }
             set
             {
-                this.namensvorsatzField = value;
-                this.RaisePropertyChanged("Namensvorsatz");
+                namensvorsatzField = value;
+                RaisePropertyChanged("Namensvorsatz");
             }
         }
 
@@ -661,12 +661,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.namenszusatzField;
+                return namenszusatzField;
             }
             set
             {
-                this.namenszusatzField = value;
-                this.RaisePropertyChanged("Namenszusatz");
+                namenszusatzField = value;
+                RaisePropertyChanged("Namenszusatz");
             }
         }
 
@@ -674,7 +674,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -712,12 +712,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.strField;
+                return strField;
             }
             set
             {
-                this.strField = value;
-                this.RaisePropertyChanged("Str");
+                strField = value;
+                RaisePropertyChanged("Str");
             }
         }
 
@@ -727,12 +727,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.hausnummerField;
+                return hausnummerField;
             }
             set
             {
-                this.hausnummerField = value;
-                this.RaisePropertyChanged("Hausnummer");
+                hausnummerField = value;
+                RaisePropertyChanged("Hausnummer");
             }
         }
 
@@ -741,12 +741,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.hNrZusatzField;
+                return hNrZusatzField;
             }
             set
             {
-                this.hNrZusatzField = value;
-                this.RaisePropertyChanged("HNrZusatz");
+                hNrZusatzField = value;
+                RaisePropertyChanged("HNrZusatz");
             }
         }
 
@@ -755,12 +755,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.anschriftenzusatzField;
+                return anschriftenzusatzField;
             }
             set
             {
-                this.anschriftenzusatzField = value;
-                this.RaisePropertyChanged("Anschriftenzusatz");
+                anschriftenzusatzField = value;
+                RaisePropertyChanged("Anschriftenzusatz");
             }
         }
 
@@ -769,12 +769,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.ortField;
+                return ortField;
             }
             set
             {
-                this.ortField = value;
-                this.RaisePropertyChanged("Ort");
+                ortField = value;
+                RaisePropertyChanged("Ort");
             }
         }
 
@@ -785,12 +785,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.itemField;
+                return itemField;
             }
             set
             {
-                this.itemField = value;
-                this.RaisePropertyChanged("Item");
+                itemField = value;
+                RaisePropertyChanged("Item");
             }
         }
 
@@ -799,12 +799,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.postfachOrtField;
+                return postfachOrtField;
             }
             set
             {
-                this.postfachOrtField = value;
-                this.RaisePropertyChanged("PostfachOrt");
+                postfachOrtField = value;
+                RaisePropertyChanged("PostfachOrt");
             }
         }
 
@@ -814,12 +814,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.postfachField;
+                return postfachField;
             }
             set
             {
-                this.postfachField = value;
-                this.RaisePropertyChanged("Postfach");
+                postfachField = value;
+                RaisePropertyChanged("Postfach");
             }
         }
 
@@ -828,12 +828,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.postfachPLZField;
+                return postfachPLZField;
             }
             set
             {
-                this.postfachPLZField = value;
-                this.RaisePropertyChanged("PostfachPLZ");
+                postfachPLZField = value;
+                RaisePropertyChanged("PostfachPLZ");
             }
         }
 
@@ -841,7 +841,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -866,12 +866,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.laenderkennzeichenField;
+                return laenderkennzeichenField;
             }
             set
             {
-                this.laenderkennzeichenField = value;
-                this.RaisePropertyChanged("laenderkennzeichen");
+                laenderkennzeichenField = value;
+                RaisePropertyChanged("laenderkennzeichen");
             }
         }
 
@@ -881,12 +881,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.valueField;
+                return valueField;
             }
             set
             {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
+                valueField = value;
+                RaisePropertyChanged("Value");
             }
         }
 
@@ -894,7 +894,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -939,12 +939,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.steuerklasseField;
+                return steuerklasseField;
             }
             set
             {
-                this.steuerklasseField = value;
-                this.RaisePropertyChanged("Steuerklasse");
+                steuerklasseField = value;
+                RaisePropertyChanged("Steuerklasse");
             }
         }
 
@@ -953,12 +953,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.kinderField;
+                return kinderField;
             }
             set
             {
-                this.kinderField = value;
-                this.RaisePropertyChanged("Kinder");
+                kinderField = value;
+                RaisePropertyChanged("Kinder");
             }
         }
 
@@ -967,12 +967,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.kirchensteuerabzugField;
+                return kirchensteuerabzugField;
             }
             set
             {
-                this.kirchensteuerabzugField = value;
-                this.RaisePropertyChanged("Kirchensteuerabzug");
+                kirchensteuerabzugField = value;
+                RaisePropertyChanged("Kirchensteuerabzug");
             }
         }
 
@@ -981,12 +981,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.steuerfreibetragField;
+                return steuerfreibetragField;
             }
             set
             {
-                this.steuerfreibetragField = value;
-                this.RaisePropertyChanged("Steuerfreibetrag");
+                steuerfreibetragField = value;
+                RaisePropertyChanged("Steuerfreibetrag");
             }
         }
 
@@ -995,12 +995,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.hinzurechnungsbetragField;
+                return hinzurechnungsbetragField;
             }
             set
             {
-                this.hinzurechnungsbetragField = value;
-                this.RaisePropertyChanged("Hinzurechnungsbetrag");
+                hinzurechnungsbetragField = value;
+                RaisePropertyChanged("Hinzurechnungsbetrag");
             }
         }
 
@@ -1010,12 +1010,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.gueltig_abField;
+                return gueltig_abField;
             }
             set
             {
-                this.gueltig_abField = value;
-                this.RaisePropertyChanged("gueltig_ab");
+                gueltig_abField = value;
+                RaisePropertyChanged("gueltig_ab");
             }
         }
 
@@ -1023,7 +1023,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -1050,12 +1050,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.faktorField;
+                return faktorField;
             }
             set
             {
-                this.faktorField = value;
-                this.RaisePropertyChanged("faktor");
+                faktorField = value;
+                RaisePropertyChanged("faktor");
             }
         }
 
@@ -1065,12 +1065,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.faktorFieldSpecified;
+                return faktorFieldSpecified;
             }
             set
             {
-                this.faktorFieldSpecified = value;
-                this.RaisePropertyChanged("faktorSpecified");
+                faktorFieldSpecified = value;
+                RaisePropertyChanged("faktorSpecified");
             }
         }
 
@@ -1080,12 +1080,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.valueField;
+                return valueField;
             }
             set
             {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
+                valueField = value;
+                RaisePropertyChanged("Value");
             }
         }
 
@@ -1093,7 +1093,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -1116,12 +1116,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.valueField;
+                return valueField;
             }
             set
             {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
+                valueField = value;
+                RaisePropertyChanged("Value");
             }
         }
 
@@ -1129,7 +1129,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -1156,12 +1156,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.konfessionField;
+                return konfessionField;
             }
             set
             {
-                this.konfessionField = value;
-                this.RaisePropertyChanged("konfession");
+                konfessionField = value;
+                RaisePropertyChanged("konfession");
             }
         }
 
@@ -1171,12 +1171,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.ehegkonfessionField;
+                return ehegkonfessionField;
             }
             set
             {
-                this.ehegkonfessionField = value;
-                this.RaisePropertyChanged("ehegkonfession");
+                ehegkonfessionField = value;
+                RaisePropertyChanged("ehegkonfession");
             }
         }
 
@@ -1186,12 +1186,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.ehegkonfessionFieldSpecified;
+                return ehegkonfessionFieldSpecified;
             }
             set
             {
-                this.ehegkonfessionFieldSpecified = value;
-                this.RaisePropertyChanged("ehegkonfessionSpecified");
+                ehegkonfessionFieldSpecified = value;
+                RaisePropertyChanged("ehegkonfessionSpecified");
             }
         }
 
@@ -1199,7 +1199,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -1232,12 +1232,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.jahrField;
+                return jahrField;
             }
             set
             {
-                this.jahrField = value;
-                this.RaisePropertyChanged("jahr");
+                jahrField = value;
+                RaisePropertyChanged("jahr");
             }
         }
 
@@ -1247,12 +1247,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.monatField;
+                return monatField;
             }
             set
             {
-                this.monatField = value;
-                this.RaisePropertyChanged("monat");
+                monatField = value;
+                RaisePropertyChanged("monat");
             }
         }
 
@@ -1262,12 +1262,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.wocheField;
+                return wocheField;
             }
             set
             {
-                this.wocheField = value;
-                this.RaisePropertyChanged("woche");
+                wocheField = value;
+                RaisePropertyChanged("woche");
             }
         }
 
@@ -1277,12 +1277,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.wocheFieldSpecified;
+                return wocheFieldSpecified;
             }
             set
             {
-                this.wocheFieldSpecified = value;
-                this.RaisePropertyChanged("wocheSpecified");
+                wocheFieldSpecified = value;
+                RaisePropertyChanged("wocheSpecified");
             }
         }
 
@@ -1292,12 +1292,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.tagField;
+                return tagField;
             }
             set
             {
-                this.tagField = value;
-                this.RaisePropertyChanged("tag");
+                tagField = value;
+                RaisePropertyChanged("tag");
             }
         }
 
@@ -1307,12 +1307,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.tagFieldSpecified;
+                return tagFieldSpecified;
             }
             set
             {
-                this.tagFieldSpecified = value;
-                this.RaisePropertyChanged("tagSpecified");
+                tagFieldSpecified = value;
+                RaisePropertyChanged("tagSpecified");
             }
         }
 
@@ -1320,7 +1320,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -1353,12 +1353,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.jahrField;
+                return jahrField;
             }
             set
             {
-                this.jahrField = value;
-                this.RaisePropertyChanged("jahr");
+                jahrField = value;
+                RaisePropertyChanged("jahr");
             }
         }
 
@@ -1368,12 +1368,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.monatField;
+                return monatField;
             }
             set
             {
-                this.monatField = value;
-                this.RaisePropertyChanged("monat");
+                monatField = value;
+                RaisePropertyChanged("monat");
             }
         }
 
@@ -1383,12 +1383,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.wocheField;
+                return wocheField;
             }
             set
             {
-                this.wocheField = value;
-                this.RaisePropertyChanged("woche");
+                wocheField = value;
+                RaisePropertyChanged("woche");
             }
         }
 
@@ -1398,12 +1398,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.wocheFieldSpecified;
+                return wocheFieldSpecified;
             }
             set
             {
-                this.wocheFieldSpecified = value;
-                this.RaisePropertyChanged("wocheSpecified");
+                wocheFieldSpecified = value;
+                RaisePropertyChanged("wocheSpecified");
             }
         }
 
@@ -1413,12 +1413,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.tagField;
+                return tagField;
             }
             set
             {
-                this.tagField = value;
-                this.RaisePropertyChanged("tag");
+                tagField = value;
+                RaisePropertyChanged("tag");
             }
         }
 
@@ -1428,12 +1428,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.tagFieldSpecified;
+                return tagFieldSpecified;
             }
             set
             {
-                this.tagFieldSpecified = value;
-                this.RaisePropertyChanged("tagSpecified");
+                tagFieldSpecified = value;
+                RaisePropertyChanged("tagSpecified");
             }
         }
 
@@ -1441,7 +1441,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -1617,12 +1617,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.anzahlUField;
+                return anzahlUField;
             }
             set
             {
-                this.anzahlUField = value;
-                this.RaisePropertyChanged("AnzahlU");
+                anzahlUField = value;
+                RaisePropertyChanged("AnzahlU");
             }
         }
 
@@ -1631,12 +1631,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.bruttoArbLohnField;
+                return bruttoArbLohnField;
             }
             set
             {
-                this.bruttoArbLohnField = value;
-                this.RaisePropertyChanged("BruttoArbLohn");
+                bruttoArbLohnField = value;
+                RaisePropertyChanged("BruttoArbLohn");
             }
         }
 
@@ -1645,12 +1645,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.lSteuerField;
+                return lSteuerField;
             }
             set
             {
-                this.lSteuerField = value;
-                this.RaisePropertyChanged("LSteuer");
+                lSteuerField = value;
+                RaisePropertyChanged("LSteuer");
             }
         }
 
@@ -1659,12 +1659,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.soliField;
+                return soliField;
             }
             set
             {
-                this.soliField = value;
-                this.RaisePropertyChanged("Soli");
+                soliField = value;
+                RaisePropertyChanged("Soli");
             }
         }
 
@@ -1673,12 +1673,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbnKiSteuerField;
+                return arbnKiSteuerField;
             }
             set
             {
-                this.arbnKiSteuerField = value;
-                this.RaisePropertyChanged("ArbnKiSteuer");
+                arbnKiSteuerField = value;
+                RaisePropertyChanged("ArbnKiSteuer");
             }
         }
 
@@ -1688,12 +1688,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbnKiSteuerFieldSpecified;
+                return arbnKiSteuerFieldSpecified;
             }
             set
             {
-                this.arbnKiSteuerFieldSpecified = value;
-                this.RaisePropertyChanged("ArbnKiSteuerSpecified");
+                arbnKiSteuerFieldSpecified = value;
+                RaisePropertyChanged("ArbnKiSteuerSpecified");
             }
         }
 
@@ -1702,12 +1702,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.ehegKiSteuerField;
+                return ehegKiSteuerField;
             }
             set
             {
-                this.ehegKiSteuerField = value;
-                this.RaisePropertyChanged("EhegKiSteuer");
+                ehegKiSteuerField = value;
+                RaisePropertyChanged("EhegKiSteuer");
             }
         }
 
@@ -1717,12 +1717,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.ehegKiSteuerFieldSpecified;
+                return ehegKiSteuerFieldSpecified;
             }
             set
             {
-                this.ehegKiSteuerFieldSpecified = value;
-                this.RaisePropertyChanged("EhegKiSteuerSpecified");
+                ehegKiSteuerFieldSpecified = value;
+                RaisePropertyChanged("EhegKiSteuerSpecified");
             }
         }
 
@@ -1732,12 +1732,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.vBezField;
+                return vBezField;
             }
             set
             {
-                this.vBezField = value;
-                this.RaisePropertyChanged("VBez");
+                vBezField = value;
+                RaisePropertyChanged("VBez");
             }
         }
 
@@ -1747,12 +1747,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.ermStVBezMKalJahrField;
+                return ermStVBezMKalJahrField;
             }
             set
             {
-                this.ermStVBezMKalJahrField = value;
-                this.RaisePropertyChanged("ErmStVBezMKalJahr");
+                ermStVBezMKalJahrField = value;
+                RaisePropertyChanged("ErmStVBezMKalJahr");
             }
         }
 
@@ -1761,12 +1761,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.ermStBetrMKalJahrField;
+                return ermStBetrMKalJahrField;
             }
             set
             {
-                this.ermStBetrMKalJahrField = value;
-                this.RaisePropertyChanged("ErmStBetrMKalJahr");
+                ermStBetrMKalJahrField = value;
+                RaisePropertyChanged("ErmStBetrMKalJahr");
             }
         }
 
@@ -1776,12 +1776,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.ermStBetrMKalJahrFieldSpecified;
+                return ermStBetrMKalJahrFieldSpecified;
             }
             set
             {
-                this.ermStBetrMKalJahrFieldSpecified = value;
-                this.RaisePropertyChanged("ErmStBetrMKalJahrSpecified");
+                ermStBetrMKalJahrFieldSpecified = value;
+                RaisePropertyChanged("ErmStBetrMKalJahrSpecified");
             }
         }
 
@@ -1790,12 +1790,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.lSteuerMKalJahrField;
+                return lSteuerMKalJahrField;
             }
             set
             {
-                this.lSteuerMKalJahrField = value;
-                this.RaisePropertyChanged("LSteuerMKalJahr");
+                lSteuerMKalJahrField = value;
+                RaisePropertyChanged("LSteuerMKalJahr");
             }
         }
 
@@ -1804,12 +1804,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.soliMKalJahrField;
+                return soliMKalJahrField;
             }
             set
             {
-                this.soliMKalJahrField = value;
-                this.RaisePropertyChanged("SoliMKalJahr");
+                soliMKalJahrField = value;
+                RaisePropertyChanged("SoliMKalJahr");
             }
         }
 
@@ -1818,12 +1818,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.kiSteuerArbnMKalJahrField;
+                return kiSteuerArbnMKalJahrField;
             }
             set
             {
-                this.kiSteuerArbnMKalJahrField = value;
-                this.RaisePropertyChanged("KiSteuerArbnMKalJahr");
+                kiSteuerArbnMKalJahrField = value;
+                RaisePropertyChanged("KiSteuerArbnMKalJahr");
             }
         }
 
@@ -1833,12 +1833,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.kiSteuerArbnMKalJahrFieldSpecified;
+                return kiSteuerArbnMKalJahrFieldSpecified;
             }
             set
             {
-                this.kiSteuerArbnMKalJahrFieldSpecified = value;
-                this.RaisePropertyChanged("KiSteuerArbnMKalJahrSpecified");
+                kiSteuerArbnMKalJahrFieldSpecified = value;
+                RaisePropertyChanged("KiSteuerArbnMKalJahrSpecified");
             }
         }
 
@@ -1847,12 +1847,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.kiSteuerEhegMKalJahrField;
+                return kiSteuerEhegMKalJahrField;
             }
             set
             {
-                this.kiSteuerEhegMKalJahrField = value;
-                this.RaisePropertyChanged("KiSteuerEhegMKalJahr");
+                kiSteuerEhegMKalJahrField = value;
+                RaisePropertyChanged("KiSteuerEhegMKalJahr");
             }
         }
 
@@ -1862,12 +1862,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.kiSteuerEhegMKalJahrFieldSpecified;
+                return kiSteuerEhegMKalJahrFieldSpecified;
             }
             set
             {
-                this.kiSteuerEhegMKalJahrFieldSpecified = value;
-                this.RaisePropertyChanged("KiSteuerEhegMKalJahrSpecified");
+                kiSteuerEhegMKalJahrFieldSpecified = value;
+                RaisePropertyChanged("KiSteuerEhegMKalJahrSpecified");
             }
         }
 
@@ -1876,12 +1876,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.kurzArbGeldField;
+                return kurzArbGeldField;
             }
             set
             {
-                this.kurzArbGeldField = value;
-                this.RaisePropertyChanged("KurzArbGeld");
+                kurzArbGeldField = value;
+                RaisePropertyChanged("KurzArbGeld");
             }
         }
 
@@ -1891,12 +1891,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.kurzArbGeldFieldSpecified;
+                return kurzArbGeldFieldSpecified;
             }
             set
             {
-                this.kurzArbGeldFieldSpecified = value;
-                this.RaisePropertyChanged("KurzArbGeldSpecified");
+                kurzArbGeldFieldSpecified = value;
+                RaisePropertyChanged("KurzArbGeldSpecified");
             }
         }
 
@@ -1905,12 +1905,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiArbLohnDBAField;
+                return stFreiArbLohnDBAField;
             }
             set
             {
-                this.stFreiArbLohnDBAField = value;
-                this.RaisePropertyChanged("StFreiArbLohnDBA");
+                stFreiArbLohnDBAField = value;
+                RaisePropertyChanged("StFreiArbLohnDBA");
             }
         }
 
@@ -1920,12 +1920,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiArbLohnDBAFieldSpecified;
+                return stFreiArbLohnDBAFieldSpecified;
             }
             set
             {
-                this.stFreiArbLohnDBAFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiArbLohnDBASpecified");
+                stFreiArbLohnDBAFieldSpecified = value;
+                RaisePropertyChanged("StFreiArbLohnDBASpecified");
             }
         }
 
@@ -1934,12 +1934,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiArbLohnATEField;
+                return stFreiArbLohnATEField;
             }
             set
             {
-                this.stFreiArbLohnATEField = value;
-                this.RaisePropertyChanged("StFreiArbLohnATE");
+                stFreiArbLohnATEField = value;
+                RaisePropertyChanged("StFreiArbLohnATE");
             }
         }
 
@@ -1949,12 +1949,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiArbLohnATEFieldSpecified;
+                return stFreiArbLohnATEFieldSpecified;
             }
             set
             {
-                this.stFreiArbLohnATEFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiArbLohnATESpecified");
+                stFreiArbLohnATEFieldSpecified = value;
+                RaisePropertyChanged("StFreiArbLohnATESpecified");
             }
         }
 
@@ -1963,12 +1963,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiArbgLeistgField;
+                return stFreiArbgLeistgField;
             }
             set
             {
-                this.stFreiArbgLeistgField = value;
-                this.RaisePropertyChanged("StFreiArbgLeistg");
+                stFreiArbgLeistgField = value;
+                RaisePropertyChanged("StFreiArbgLeistg");
             }
         }
 
@@ -1978,12 +1978,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiArbgLeistgFieldSpecified;
+                return stFreiArbgLeistgFieldSpecified;
             }
             set
             {
-                this.stFreiArbgLeistgFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiArbgLeistgSpecified");
+                stFreiArbgLeistgFieldSpecified = value;
+                RaisePropertyChanged("StFreiArbgLeistgSpecified");
             }
         }
 
@@ -1992,12 +1992,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.pauschArbgLeistgField;
+                return pauschArbgLeistgField;
             }
             set
             {
-                this.pauschArbgLeistgField = value;
-                this.RaisePropertyChanged("PauschArbgLeistg");
+                pauschArbgLeistgField = value;
+                RaisePropertyChanged("PauschArbgLeistg");
             }
         }
 
@@ -2007,12 +2007,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.pauschArbgLeistgFieldSpecified;
+                return pauschArbgLeistgFieldSpecified;
             }
             set
             {
-                this.pauschArbgLeistgFieldSpecified = value;
-                this.RaisePropertyChanged("PauschArbgLeistgSpecified");
+                pauschArbgLeistgFieldSpecified = value;
+                RaisePropertyChanged("PauschArbgLeistgSpecified");
             }
         }
 
@@ -2021,12 +2021,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stPflichtArbLohnMKalJahrField;
+                return stPflichtArbLohnMKalJahrField;
             }
             set
             {
-                this.stPflichtArbLohnMKalJahrField = value;
-                this.RaisePropertyChanged("StPflichtArbLohnMKalJahr");
+                stPflichtArbLohnMKalJahrField = value;
+                RaisePropertyChanged("StPflichtArbLohnMKalJahr");
             }
         }
 
@@ -2036,12 +2036,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stPflichtArbLohnMKalJahrFieldSpecified;
+                return stPflichtArbLohnMKalJahrFieldSpecified;
             }
             set
             {
-                this.stPflichtArbLohnMKalJahrFieldSpecified = value;
-                this.RaisePropertyChanged("StPflichtArbLohnMKalJahrSpecified");
+                stPflichtArbLohnMKalJahrFieldSpecified = value;
+                RaisePropertyChanged("StPflichtArbLohnMKalJahrSpecified");
             }
         }
 
@@ -2050,12 +2050,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiVerpflegField;
+                return stFreiVerpflegField;
             }
             set
             {
-                this.stFreiVerpflegField = value;
-                this.RaisePropertyChanged("StFreiVerpfleg");
+                stFreiVerpflegField = value;
+                RaisePropertyChanged("StFreiVerpfleg");
             }
         }
 
@@ -2065,12 +2065,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiVerpflegFieldSpecified;
+                return stFreiVerpflegFieldSpecified;
             }
             set
             {
-                this.stFreiVerpflegFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiVerpflegSpecified");
+                stFreiVerpflegFieldSpecified = value;
+                RaisePropertyChanged("StFreiVerpflegSpecified");
             }
         }
 
@@ -2079,12 +2079,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiDopHaushaltField;
+                return stFreiDopHaushaltField;
             }
             set
             {
-                this.stFreiDopHaushaltField = value;
-                this.RaisePropertyChanged("StFreiDopHaushalt");
+                stFreiDopHaushaltField = value;
+                RaisePropertyChanged("StFreiDopHaushalt");
             }
         }
 
@@ -2094,12 +2094,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiDopHaushaltFieldSpecified;
+                return stFreiDopHaushaltFieldSpecified;
             }
             set
             {
-                this.stFreiDopHaushaltFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiDopHaushaltSpecified");
+                stFreiDopHaushaltFieldSpecified = value;
+                RaisePropertyChanged("StFreiDopHaushaltSpecified");
             }
         }
 
@@ -2108,12 +2108,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbgAnteilRenVersField;
+                return arbgAnteilRenVersField;
             }
             set
             {
-                this.arbgAnteilRenVersField = value;
-                this.RaisePropertyChanged("ArbgAnteilRenVers");
+                arbgAnteilRenVersField = value;
+                RaisePropertyChanged("ArbgAnteilRenVers");
             }
         }
 
@@ -2123,12 +2123,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbgAnteilRenVersFieldSpecified;
+                return arbgAnteilRenVersFieldSpecified;
             }
             set
             {
-                this.arbgAnteilRenVersFieldSpecified = value;
-                this.RaisePropertyChanged("ArbgAnteilRenVersSpecified");
+                arbgAnteilRenVersFieldSpecified = value;
+                RaisePropertyChanged("ArbgAnteilRenVersSpecified");
             }
         }
 
@@ -2137,12 +2137,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbgAnteilBerufsVersField;
+                return arbgAnteilBerufsVersField;
             }
             set
             {
-                this.arbgAnteilBerufsVersField = value;
-                this.RaisePropertyChanged("ArbgAnteilBerufsVers");
+                arbgAnteilBerufsVersField = value;
+                RaisePropertyChanged("ArbgAnteilBerufsVers");
             }
         }
 
@@ -2152,12 +2152,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbgAnteilBerufsVersFieldSpecified;
+                return arbgAnteilBerufsVersFieldSpecified;
             }
             set
             {
-                this.arbgAnteilBerufsVersFieldSpecified = value;
-                this.RaisePropertyChanged("ArbgAnteilBerufsVersSpecified");
+                arbgAnteilBerufsVersFieldSpecified = value;
+                RaisePropertyChanged("ArbgAnteilBerufsVersSpecified");
             }
         }
 
@@ -2166,12 +2166,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbnAnteilRenVersField;
+                return arbnAnteilRenVersField;
             }
             set
             {
-                this.arbnAnteilRenVersField = value;
-                this.RaisePropertyChanged("ArbnAnteilRenVers");
+                arbnAnteilRenVersField = value;
+                RaisePropertyChanged("ArbnAnteilRenVers");
             }
         }
 
@@ -2181,12 +2181,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbnAnteilRenVersFieldSpecified;
+                return arbnAnteilRenVersFieldSpecified;
             }
             set
             {
-                this.arbnAnteilRenVersFieldSpecified = value;
-                this.RaisePropertyChanged("ArbnAnteilRenVersSpecified");
+                arbnAnteilRenVersFieldSpecified = value;
+                RaisePropertyChanged("ArbnAnteilRenVersSpecified");
             }
         }
 
@@ -2195,12 +2195,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbnAnteilBerufsVersField;
+                return arbnAnteilBerufsVersField;
             }
             set
             {
-                this.arbnAnteilBerufsVersField = value;
-                this.RaisePropertyChanged("ArbnAnteilBerufsVers");
+                arbnAnteilBerufsVersField = value;
+                RaisePropertyChanged("ArbnAnteilBerufsVers");
             }
         }
 
@@ -2210,12 +2210,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbnAnteilBerufsVersFieldSpecified;
+                return arbnAnteilBerufsVersFieldSpecified;
             }
             set
             {
-                this.arbnAnteilBerufsVersFieldSpecified = value;
-                this.RaisePropertyChanged("ArbnAnteilBerufsVersSpecified");
+                arbnAnteilBerufsVersFieldSpecified = value;
+                RaisePropertyChanged("ArbnAnteilBerufsVersSpecified");
             }
         }
 
@@ -2224,12 +2224,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiGeKrankVersField;
+                return stFreiGeKrankVersField;
             }
             set
             {
-                this.stFreiGeKrankVersField = value;
-                this.RaisePropertyChanged("StFreiGeKrankVers");
+                stFreiGeKrankVersField = value;
+                RaisePropertyChanged("StFreiGeKrankVers");
             }
         }
 
@@ -2239,12 +2239,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiGeKrankVersFieldSpecified;
+                return stFreiGeKrankVersFieldSpecified;
             }
             set
             {
-                this.stFreiGeKrankVersFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiGeKrankVersSpecified");
+                stFreiGeKrankVersFieldSpecified = value;
+                RaisePropertyChanged("StFreiGeKrankVersSpecified");
             }
         }
 
@@ -2253,12 +2253,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiPrKrankVersField;
+                return stFreiPrKrankVersField;
             }
             set
             {
-                this.stFreiPrKrankVersField = value;
-                this.RaisePropertyChanged("StFreiPrKrankVers");
+                stFreiPrKrankVersField = value;
+                RaisePropertyChanged("StFreiPrKrankVers");
             }
         }
 
@@ -2268,12 +2268,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiPrKrankVersFieldSpecified;
+                return stFreiPrKrankVersFieldSpecified;
             }
             set
             {
-                this.stFreiPrKrankVersFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiPrKrankVersSpecified");
+                stFreiPrKrankVersFieldSpecified = value;
+                RaisePropertyChanged("StFreiPrKrankVersSpecified");
             }
         }
 
@@ -2282,12 +2282,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiGePflegeVersField;
+                return stFreiGePflegeVersField;
             }
             set
             {
-                this.stFreiGePflegeVersField = value;
-                this.RaisePropertyChanged("StFreiGePflegeVers");
+                stFreiGePflegeVersField = value;
+                RaisePropertyChanged("StFreiGePflegeVers");
             }
         }
 
@@ -2297,12 +2297,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiGePflegeVersFieldSpecified;
+                return stFreiGePflegeVersFieldSpecified;
             }
             set
             {
-                this.stFreiGePflegeVersFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiGePflegeVersSpecified");
+                stFreiGePflegeVersFieldSpecified = value;
+                RaisePropertyChanged("StFreiGePflegeVersSpecified");
             }
         }
 
@@ -2311,12 +2311,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbnAnteilKrankVersField;
+                return arbnAnteilKrankVersField;
             }
             set
             {
-                this.arbnAnteilKrankVersField = value;
-                this.RaisePropertyChanged("ArbnAnteilKrankVers");
+                arbnAnteilKrankVersField = value;
+                RaisePropertyChanged("ArbnAnteilKrankVers");
             }
         }
 
@@ -2326,12 +2326,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbnAnteilKrankVersFieldSpecified;
+                return arbnAnteilKrankVersFieldSpecified;
             }
             set
             {
-                this.arbnAnteilKrankVersFieldSpecified = value;
-                this.RaisePropertyChanged("ArbnAnteilKrankVersSpecified");
+                arbnAnteilKrankVersFieldSpecified = value;
+                RaisePropertyChanged("ArbnAnteilKrankVersSpecified");
             }
         }
 
@@ -2340,12 +2340,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbnAnteilPflegVersField;
+                return arbnAnteilPflegVersField;
             }
             set
             {
-                this.arbnAnteilPflegVersField = value;
-                this.RaisePropertyChanged("ArbnAnteilPflegVers");
+                arbnAnteilPflegVersField = value;
+                RaisePropertyChanged("ArbnAnteilPflegVers");
             }
         }
 
@@ -2355,12 +2355,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbnAnteilPflegVersFieldSpecified;
+                return arbnAnteilPflegVersFieldSpecified;
             }
             set
             {
-                this.arbnAnteilPflegVersFieldSpecified = value;
-                this.RaisePropertyChanged("ArbnAnteilPflegVersSpecified");
+                arbnAnteilPflegVersFieldSpecified = value;
+                RaisePropertyChanged("ArbnAnteilPflegVersSpecified");
             }
         }
 
@@ -2369,12 +2369,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbnAnteilArblVersField;
+                return arbnAnteilArblVersField;
             }
             set
             {
-                this.arbnAnteilArblVersField = value;
-                this.RaisePropertyChanged("ArbnAnteilArblVers");
+                arbnAnteilArblVersField = value;
+                RaisePropertyChanged("ArbnAnteilArblVers");
             }
         }
 
@@ -2384,12 +2384,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbnAnteilArblVersFieldSpecified;
+                return arbnAnteilArblVersFieldSpecified;
             }
             set
             {
-                this.arbnAnteilArblVersFieldSpecified = value;
-                this.RaisePropertyChanged("ArbnAnteilArblVersSpecified");
+                arbnAnteilArblVersFieldSpecified = value;
+                RaisePropertyChanged("ArbnAnteilArblVersSpecified");
             }
         }
 
@@ -2398,12 +2398,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.beitrPrKrankVersField;
+                return beitrPrKrankVersField;
             }
             set
             {
-                this.beitrPrKrankVersField = value;
-                this.RaisePropertyChanged("BeitrPrKrankVers");
+                beitrPrKrankVersField = value;
+                RaisePropertyChanged("BeitrPrKrankVers");
             }
         }
 
@@ -2413,12 +2413,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.beitrPrKrankVersFieldSpecified;
+                return beitrPrKrankVersFieldSpecified;
             }
             set
             {
-                this.beitrPrKrankVersFieldSpecified = value;
-                this.RaisePropertyChanged("BeitrPrKrankVersSpecified");
+                beitrPrKrankVersFieldSpecified = value;
+                RaisePropertyChanged("BeitrPrKrankVersSpecified");
             }
         }
 
@@ -2427,12 +2427,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.ausgezKinderGeldField;
+                return ausgezKinderGeldField;
             }
             set
             {
-                this.ausgezKinderGeldField = value;
-                this.RaisePropertyChanged("AusgezKinderGeld");
+                ausgezKinderGeldField = value;
+                RaisePropertyChanged("AusgezKinderGeld");
             }
         }
 
@@ -2442,12 +2442,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.ausgezKinderGeldFieldSpecified;
+                return ausgezKinderGeldFieldSpecified;
             }
             set
             {
-                this.ausgezKinderGeldFieldSpecified = value;
-                this.RaisePropertyChanged("AusgezKinderGeldSpecified");
+                ausgezKinderGeldFieldSpecified = value;
+                RaisePropertyChanged("AusgezKinderGeldSpecified");
             }
         }
 
@@ -2456,12 +2456,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.freibetragDbaTuerkeiField;
+                return freibetragDbaTuerkeiField;
             }
             set
             {
-                this.freibetragDbaTuerkeiField = value;
-                this.RaisePropertyChanged("FreibetragDbaTuerkei");
+                freibetragDbaTuerkeiField = value;
+                RaisePropertyChanged("FreibetragDbaTuerkei");
             }
         }
 
@@ -2471,12 +2471,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.freibetragDbaTuerkeiFieldSpecified;
+                return freibetragDbaTuerkeiFieldSpecified;
             }
             set
             {
-                this.freibetragDbaTuerkeiFieldSpecified = value;
-                this.RaisePropertyChanged("FreibetragDbaTuerkeiSpecified");
+                freibetragDbaTuerkeiFieldSpecified = value;
+                RaisePropertyChanged("FreibetragDbaTuerkeiSpecified");
             }
         }
 
@@ -2485,12 +2485,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.grossbuchstabenField;
+                return grossbuchstabenField;
             }
             set
             {
-                this.grossbuchstabenField = value;
-                this.RaisePropertyChanged("Grossbuchstaben");
+                grossbuchstabenField = value;
+                RaisePropertyChanged("Grossbuchstaben");
             }
         }
 
@@ -2500,12 +2500,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.kammerbeitragField;
+                return kammerbeitragField;
             }
             set
             {
-                this.kammerbeitragField = value;
-                this.RaisePropertyChanged("Kammerbeitrag");
+                kammerbeitragField = value;
+                RaisePropertyChanged("Kammerbeitrag");
             }
         }
 
@@ -2514,12 +2514,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbnAnteilWBUmlageField;
+                return arbnAnteilWBUmlageField;
             }
             set
             {
-                this.arbnAnteilWBUmlageField = value;
-                this.RaisePropertyChanged("ArbnAnteilWBUmlage");
+                arbnAnteilWBUmlageField = value;
+                RaisePropertyChanged("ArbnAnteilWBUmlage");
             }
         }
 
@@ -2529,12 +2529,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbnAnteilWBUmlageFieldSpecified;
+                return arbnAnteilWBUmlageFieldSpecified;
             }
             set
             {
-                this.arbnAnteilWBUmlageFieldSpecified = value;
-                this.RaisePropertyChanged("ArbnAnteilWBUmlageSpecified");
+                arbnAnteilWBUmlageFieldSpecified = value;
+                RaisePropertyChanged("ArbnAnteilWBUmlageSpecified");
             }
         }
 
@@ -2543,12 +2543,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbgAnteilZusatzVersField;
+                return arbgAnteilZusatzVersField;
             }
             set
             {
-                this.arbgAnteilZusatzVersField = value;
-                this.RaisePropertyChanged("ArbgAnteilZusatzVers");
+                arbgAnteilZusatzVersField = value;
+                RaisePropertyChanged("ArbgAnteilZusatzVers");
             }
         }
 
@@ -2558,12 +2558,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbgAnteilZusatzVersFieldSpecified;
+                return arbgAnteilZusatzVersFieldSpecified;
             }
             set
             {
-                this.arbgAnteilZusatzVersFieldSpecified = value;
-                this.RaisePropertyChanged("ArbgAnteilZusatzVersSpecified");
+                arbgAnteilZusatzVersFieldSpecified = value;
+                RaisePropertyChanged("ArbgAnteilZusatzVersSpecified");
             }
         }
 
@@ -2572,12 +2572,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbnAnteilZusatzVersField;
+                return arbnAnteilZusatzVersField;
             }
             set
             {
-                this.arbnAnteilZusatzVersField = value;
-                this.RaisePropertyChanged("ArbnAnteilZusatzVers");
+                arbnAnteilZusatzVersField = value;
+                RaisePropertyChanged("ArbnAnteilZusatzVers");
             }
         }
 
@@ -2587,12 +2587,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbnAnteilZusatzVersFieldSpecified;
+                return arbnAnteilZusatzVersFieldSpecified;
             }
             set
             {
-                this.arbnAnteilZusatzVersFieldSpecified = value;
-                this.RaisePropertyChanged("ArbnAnteilZusatzVersSpecified");
+                arbnAnteilZusatzVersFieldSpecified = value;
+                RaisePropertyChanged("ArbnAnteilZusatzVersSpecified");
             }
         }
 
@@ -2601,12 +2601,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.anzahlArbTagField;
+                return anzahlArbTagField;
             }
             set
             {
-                this.anzahlArbTagField = value;
-                this.RaisePropertyChanged("AnzahlArbTag");
+                anzahlArbTagField = value;
+                RaisePropertyChanged("AnzahlArbTag");
             }
         }
 
@@ -2616,12 +2616,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.anzahlArbTagFieldSpecified;
+                return anzahlArbTagFieldSpecified;
             }
             set
             {
-                this.anzahlArbTagFieldSpecified = value;
-                this.RaisePropertyChanged("AnzahlArbTagSpecified");
+                anzahlArbTagFieldSpecified = value;
+                RaisePropertyChanged("AnzahlArbTagSpecified");
             }
         }
 
@@ -2630,12 +2630,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiFahrtKAuswField;
+                return stFreiFahrtKAuswField;
             }
             set
             {
-                this.stFreiFahrtKAuswField = value;
-                this.RaisePropertyChanged("StFreiFahrtKAusw");
+                stFreiFahrtKAuswField = value;
+                RaisePropertyChanged("StFreiFahrtKAusw");
             }
         }
 
@@ -2645,12 +2645,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiFahrtKAuswFieldSpecified;
+                return stFreiFahrtKAuswFieldSpecified;
             }
             set
             {
-                this.stFreiFahrtKAuswFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiFahrtKAuswSpecified");
+                stFreiFahrtKAuswFieldSpecified = value;
+                RaisePropertyChanged("StFreiFahrtKAuswSpecified");
             }
         }
 
@@ -2660,12 +2660,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.nErmStVBezMKalJahrField;
+                return nErmStVBezMKalJahrField;
             }
             set
             {
-                this.nErmStVBezMKalJahrField = value;
-                this.RaisePropertyChanged("NErmStVBezMKalJahr");
+                nErmStVBezMKalJahrField = value;
+                RaisePropertyChanged("NErmStVBezMKalJahr");
             }
         }
 
@@ -2674,12 +2674,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiArbgZuschBerufsVersField;
+                return stFreiArbgZuschBerufsVersField;
             }
             set
             {
-                this.stFreiArbgZuschBerufsVersField = value;
-                this.RaisePropertyChanged("StFreiArbgZuschBerufsVers");
+                stFreiArbgZuschBerufsVersField = value;
+                RaisePropertyChanged("StFreiArbgZuschBerufsVers");
             }
         }
 
@@ -2689,12 +2689,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.stFreiArbgZuschBerufsVersFieldSpecified;
+                return stFreiArbgZuschBerufsVersFieldSpecified;
             }
             set
             {
-                this.stFreiArbgZuschBerufsVersFieldSpecified = value;
-                this.RaisePropertyChanged("StFreiArbgZuschBerufsVersSpecified");
+                stFreiArbgZuschBerufsVersFieldSpecified = value;
+                RaisePropertyChanged("StFreiArbgZuschBerufsVersSpecified");
             }
         }
 
@@ -2704,12 +2704,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.wertField;
+                return wertField;
             }
             set
             {
-                this.wertField = value;
-                this.RaisePropertyChanged("Wert");
+                wertField = value;
+                RaisePropertyChanged("Wert");
             }
         }
 
@@ -2719,12 +2719,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.textField;
+                return textField;
             }
             set
             {
-                this.textField = value;
-                this.RaisePropertyChanged("Text");
+                textField = value;
+                RaisePropertyChanged("Text");
             }
         }
 
@@ -2733,12 +2733,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbeitgeberField;
+                return arbeitgeberField;
             }
             set
             {
-                this.arbeitgeberField = value;
-                this.RaisePropertyChanged("Arbeitgeber");
+                arbeitgeberField = value;
+                RaisePropertyChanged("Arbeitgeber");
             }
         }
 
@@ -2746,7 +2746,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -2785,12 +2785,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.jahrField;
+                return jahrField;
             }
             set
             {
-                this.jahrField = value;
-                this.RaisePropertyChanged("jahr");
+                jahrField = value;
+                RaisePropertyChanged("jahr");
             }
         }
 
@@ -2800,12 +2800,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.beginnField;
+                return beginnField;
             }
             set
             {
-                this.beginnField = value;
-                this.RaisePropertyChanged("beginn");
+                beginnField = value;
+                RaisePropertyChanged("beginn");
             }
         }
 
@@ -2815,12 +2815,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.beginnFieldSpecified;
+                return beginnFieldSpecified;
             }
             set
             {
-                this.beginnFieldSpecified = value;
-                this.RaisePropertyChanged("beginnSpecified");
+                beginnFieldSpecified = value;
+                RaisePropertyChanged("beginnSpecified");
             }
         }
 
@@ -2830,12 +2830,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.endeField;
+                return endeField;
             }
             set
             {
-                this.endeField = value;
-                this.RaisePropertyChanged("ende");
+                endeField = value;
+                RaisePropertyChanged("ende");
             }
         }
 
@@ -2845,12 +2845,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.endeFieldSpecified;
+                return endeFieldSpecified;
             }
             set
             {
-                this.endeFieldSpecified = value;
-                this.RaisePropertyChanged("endeSpecified");
+                endeFieldSpecified = value;
+                RaisePropertyChanged("endeSpecified");
             }
         }
 
@@ -2860,12 +2860,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.bmgfreibetragField;
+                return bmgfreibetragField;
             }
             set
             {
-                this.bmgfreibetragField = value;
-                this.RaisePropertyChanged("bmgfreibetrag");
+                bmgfreibetragField = value;
+                RaisePropertyChanged("bmgfreibetrag");
             }
         }
 
@@ -2875,12 +2875,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.einmversbezugField;
+                return einmversbezugField;
             }
             set
             {
-                this.einmversbezugField = value;
-                this.RaisePropertyChanged("einmversbezug");
+                einmversbezugField = value;
+                RaisePropertyChanged("einmversbezug");
             }
         }
 
@@ -2890,12 +2890,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.einmversbezugFieldSpecified;
+                return einmversbezugFieldSpecified;
             }
             set
             {
-                this.einmversbezugFieldSpecified = value;
-                this.RaisePropertyChanged("einmversbezugSpecified");
+                einmversbezugFieldSpecified = value;
+                RaisePropertyChanged("einmversbezugSpecified");
             }
         }
 
@@ -2905,12 +2905,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.valueField;
+                return valueField;
             }
             set
             {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
+                valueField = value;
+                RaisePropertyChanged("Value");
             }
         }
 
@@ -2918,7 +2918,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -2943,12 +2943,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.jahrField;
+                return jahrField;
             }
             set
             {
-                this.jahrField = value;
-                this.RaisePropertyChanged("jahr");
+                jahrField = value;
+                RaisePropertyChanged("jahr");
             }
         }
 
@@ -2958,12 +2958,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.valueField;
+                return valueField;
             }
             set
             {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
+                valueField = value;
+                RaisePropertyChanged("Value");
             }
         }
 
@@ -2971,7 +2971,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -2996,12 +2996,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.bundeslandField;
+                return bundeslandField;
             }
             set
             {
-                this.bundeslandField = value;
-                this.RaisePropertyChanged("bundesland");
+                bundeslandField = value;
+                RaisePropertyChanged("bundesland");
             }
         }
 
@@ -3011,12 +3011,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.valueField;
+                return valueField;
             }
             set
             {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
+                valueField = value;
+                RaisePropertyChanged("Value");
             }
         }
 
@@ -3024,7 +3024,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -3062,12 +3062,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.jahrField;
+                return jahrField;
             }
             set
             {
-                this.jahrField = value;
-                this.RaisePropertyChanged("jahr");
+                jahrField = value;
+                RaisePropertyChanged("jahr");
             }
         }
 
@@ -3077,12 +3077,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.valueField;
+                return valueField;
             }
             set
             {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
+                valueField = value;
+                RaisePropertyChanged("Value");
             }
         }
 
@@ -3090,7 +3090,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -3115,12 +3115,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.nameField;
+                return nameField;
             }
             set
             {
-                this.nameField = value;
-                this.RaisePropertyChanged("name");
+                nameField = value;
+                RaisePropertyChanged("name");
             }
         }
 
@@ -3130,12 +3130,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.valueField;
+                return valueField;
             }
             set
             {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
+                valueField = value;
+                RaisePropertyChanged("Value");
             }
         }
 
@@ -3143,7 +3143,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -3168,12 +3168,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.nameField;
+                return nameField;
             }
             set
             {
-                this.nameField = value;
-                this.RaisePropertyChanged("name");
+                nameField = value;
+                RaisePropertyChanged("name");
             }
         }
 
@@ -3183,12 +3183,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.valueField;
+                return valueField;
             }
             set
             {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
+                valueField = value;
+                RaisePropertyChanged("Value");
             }
         }
 
@@ -3196,7 +3196,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -3226,12 +3226,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbGNameField;
+                return arbGNameField;
             }
             set
             {
-                this.arbGNameField = value;
-                this.RaisePropertyChanged("ArbGName");
+                arbGNameField = value;
+                RaisePropertyChanged("ArbGName");
             }
         }
 
@@ -3240,12 +3240,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbGFANrField;
+                return arbGFANrField;
             }
             set
             {
-                this.arbGFANrField = value;
-                this.RaisePropertyChanged("ArbGFANr");
+                arbGFANrField = value;
+                RaisePropertyChanged("ArbGFANr");
             }
         }
 
@@ -3254,12 +3254,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbGFANameField;
+                return arbGFANameField;
             }
             set
             {
-                this.arbGFANameField = value;
-                this.RaisePropertyChanged("ArbGFAName");
+                arbGFANameField = value;
+                RaisePropertyChanged("ArbGFAName");
             }
         }
 
@@ -3268,12 +3268,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.arbGStNrField;
+                return arbGStNrField;
             }
             set
             {
-                this.arbGStNrField = value;
-                this.RaisePropertyChanged("ArbGStNr");
+                arbGStNrField = value;
+                RaisePropertyChanged("ArbGStNr");
             }
         }
 
@@ -3282,12 +3282,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.adresseField;
+                return adresseField;
             }
             set
             {
-                this.adresseField = value;
-                this.RaisePropertyChanged("Adresse");
+                adresseField = value;
+                RaisePropertyChanged("Adresse");
             }
         }
 
@@ -3295,7 +3295,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
@@ -3331,12 +3331,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.itemsField;
+                return itemsField;
             }
             set
             {
-                this.itemsField = value;
-                this.RaisePropertyChanged("Items");
+                itemsField = value;
+                RaisePropertyChanged("Items");
             }
         }
 
@@ -3347,12 +3347,12 @@ namespace Dataline.Elster.Lohn.LStB201601
         {
             get
             {
-                return this.itemsElementNameField;
+                return itemsElementNameField;
             }
             set
             {
-                this.itemsElementNameField = value;
-                this.RaisePropertyChanged("ItemsElementName");
+                itemsElementNameField = value;
+                RaisePropertyChanged("ItemsElementName");
             }
         }
 
@@ -3360,7 +3360,7 @@ namespace Dataline.Elster.Lohn.LStB201601
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null))
             {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));

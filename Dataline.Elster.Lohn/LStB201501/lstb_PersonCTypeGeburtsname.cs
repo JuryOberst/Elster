@@ -29,40 +29,40 @@ namespace Dataline.Elster.Lohn.LStB201501 {
         /// <remarks/>
         public string Name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
-                this.RaisePropertyChanged("Name");
+                nameField = value;
+                RaisePropertyChanged("Name");
             }
         }
         
         /// <remarks/>
         public string Namensvorsatz {
             get {
-                return this.namensvorsatzField;
+                return namensvorsatzField;
             }
             set {
-                this.namensvorsatzField = value;
-                this.RaisePropertyChanged("Namensvorsatz");
+                namensvorsatzField = value;
+                RaisePropertyChanged("Namensvorsatz");
             }
         }
         
         /// <remarks/>
         public string Namenszusatz {
             get {
-                return this.namenszusatzField;
+                return namenszusatzField;
             }
             set {
-                this.namenszusatzField = value;
-                this.RaisePropertyChanged("Namenszusatz");
+                namenszusatzField = value;
+                RaisePropertyChanged("Namenszusatz");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

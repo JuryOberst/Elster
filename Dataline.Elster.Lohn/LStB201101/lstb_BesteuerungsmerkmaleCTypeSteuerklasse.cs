@@ -32,11 +32,11 @@ namespace Dataline.Elster.Lohn.LStB201101 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string gueltig_ab {
             get {
-                return this.gueltig_abField;
+                return gueltig_abField;
             }
             set {
-                this.gueltig_abField = value;
-                this.RaisePropertyChanged("gueltig_ab");
+                gueltig_abField = value;
+                RaisePropertyChanged("gueltig_ab");
             }
         }
         
@@ -44,11 +44,11 @@ namespace Dataline.Elster.Lohn.LStB201101 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public decimal faktor {
             get {
-                return this.faktorField;
+                return faktorField;
             }
             set {
-                this.faktorField = value;
-                this.RaisePropertyChanged("faktor");
+                faktorField = value;
+                RaisePropertyChanged("faktor");
             }
         }
         
@@ -56,11 +56,11 @@ namespace Dataline.Elster.Lohn.LStB201101 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool faktorSpecified {
             get {
-                return this.faktorFieldSpecified;
+                return faktorFieldSpecified;
             }
             set {
-                this.faktorFieldSpecified = value;
-                this.RaisePropertyChanged("faktorSpecified");
+                faktorFieldSpecified = value;
+                RaisePropertyChanged("faktorSpecified");
             }
         }
         
@@ -68,18 +68,18 @@ namespace Dataline.Elster.Lohn.LStB201101 {
         [System.Xml.Serialization.XmlTextAttribute(DataType="integer")]
         public string Value {
             get {
-                return this.valueField;
+                return valueField;
             }
             set {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
+                valueField = value;
+                RaisePropertyChanged("Value");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

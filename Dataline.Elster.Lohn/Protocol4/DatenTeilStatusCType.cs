@@ -32,11 +32,11 @@ namespace Dataline.Elster.Lohn.Protocol4 {
         [System.Xml.Serialization.XmlElementAttribute("Nutzdatenblock")]
         public System.Collections.Generic.List<Protocol4.NutzdatenBlockStatusCType> Nutzdatenblock {
             get {
-                return this.nutzdatenblockField;
+                return nutzdatenblockField;
             }
             set {
-                this.nutzdatenblockField = value;
-                this.RaisePropertyChanged("Nutzdatenblock");
+                nutzdatenblockField = value;
+                RaisePropertyChanged("Nutzdatenblock");
             }
         }
         
@@ -44,11 +44,11 @@ namespace Dataline.Elster.Lohn.Protocol4 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string transferTicket {
             get {
-                return this.transferTicketField;
+                return transferTicketField;
             }
             set {
-                this.transferTicketField = value;
-                this.RaisePropertyChanged("transferTicket");
+                transferTicketField = value;
+                RaisePropertyChanged("transferTicket");
             }
         }
         
@@ -56,11 +56,11 @@ namespace Dataline.Elster.Lohn.Protocol4 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public Protocol4.DatenTeilStatusCTypeCode code {
             get {
-                return this.codeField;
+                return codeField;
             }
             set {
-                this.codeField = value;
-                this.RaisePropertyChanged("code");
+                codeField = value;
+                RaisePropertyChanged("code");
             }
         }
         
@@ -68,18 +68,18 @@ namespace Dataline.Elster.Lohn.Protocol4 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string text {
             get {
-                return this.textField;
+                return textField;
             }
             set {
-                this.textField = value;
-                this.RaisePropertyChanged("text");
+                textField = value;
+                RaisePropertyChanged("text");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

@@ -27,18 +27,18 @@ namespace Dataline.Elster.Lohn {
         [System.Xml.Serialization.XmlElementAttribute("Nutzdatenblock")]
         public System.Collections.Generic.List<NutzdatenblockCType> Nutzdatenblock {
             get {
-                return this.nutzdatenblockField;
+                return nutzdatenblockField;
             }
             set {
-                this.nutzdatenblockField = value;
-                this.RaisePropertyChanged("Nutzdatenblock");
+                nutzdatenblockField = value;
+                RaisePropertyChanged("Nutzdatenblock");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

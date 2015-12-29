@@ -40,18 +40,18 @@ namespace Dataline.Elster.Lohn {
         public System.Collections.Generic.List<object> Items
         {
             get {
-                return this.itemsField;
+                return itemsField;
             }
             set {
-                this.itemsField = value;
-                this.RaisePropertyChanged("Items");
+                itemsField = value;
+                RaisePropertyChanged("Items");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

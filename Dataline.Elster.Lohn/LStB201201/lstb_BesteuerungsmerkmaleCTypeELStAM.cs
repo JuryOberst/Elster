@@ -33,33 +33,33 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         /// <remarks/>
         public LStB201201.lstb_BesteuerungsmerkmaleCTypeELStAMSteuerklasse Steuerklasse {
             get {
-                return this.steuerklasseField;
+                return steuerklasseField;
             }
             set {
-                this.steuerklasseField = value;
-                this.RaisePropertyChanged("Steuerklasse");
+                steuerklasseField = value;
+                RaisePropertyChanged("Steuerklasse");
             }
         }
         
         /// <remarks/>
         public LStB201201.lstb_BesteuerungsmerkmaleCTypeELStAMKinder Kinder {
             get {
-                return this.kinderField;
+                return kinderField;
             }
             set {
-                this.kinderField = value;
-                this.RaisePropertyChanged("Kinder");
+                kinderField = value;
+                RaisePropertyChanged("Kinder");
             }
         }
         
         /// <remarks/>
         public LStB201201.lstb_BesteuerungsmerkmaleCTypeELStAMKirchensteuerabzug Kirchensteuerabzug {
             get {
-                return this.kirchensteuerabzugField;
+                return kirchensteuerabzugField;
             }
             set {
-                this.kirchensteuerabzugField = value;
-                this.RaisePropertyChanged("Kirchensteuerabzug");
+                kirchensteuerabzugField = value;
+                RaisePropertyChanged("Kirchensteuerabzug");
             }
         }
         
@@ -68,11 +68,11 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlElementAttribute("Steuerfreibetrag", typeof(LStB201201.lstb_BesteuerungsmerkmaleCTypeELStAMSteuerfreibetrag), IsNullable=true)]
         public object Item {
             get {
-                return this.itemField;
+                return itemField;
             }
             set {
-                this.itemField = value;
-                this.RaisePropertyChanged("Item");
+                itemField = value;
+                RaisePropertyChanged("Item");
             }
         }
         
@@ -80,18 +80,18 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
         public System.DateTime gueltig_ab {
             get {
-                return this.gueltig_abField;
+                return gueltig_abField;
             }
             set {
-                this.gueltig_abField = value;
-                this.RaisePropertyChanged("gueltig_ab");
+                gueltig_abField = value;
+                RaisePropertyChanged("gueltig_ab");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

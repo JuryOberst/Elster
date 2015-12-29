@@ -38,7 +38,7 @@ namespace Dataline.Elster.Lohn
                 if (other == null)
                     return false;
 
-                return this.gueltig_ab == other.gueltig_ab && this.Item == other.Item && this.Kinder == other.Kinder && this.Kirchensteuerabzug == other.Kirchensteuerabzug && this.Steuerklasse == other.Steuerklasse;
+                return gueltig_ab == other.gueltig_ab && Item == other.Item && Kinder == other.Kinder && Kirchensteuerabzug == other.Kirchensteuerabzug && Steuerklasse == other.Steuerklasse;
             }
 
             public override int GetHashCode()

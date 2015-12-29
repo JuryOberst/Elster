@@ -33,44 +33,44 @@ namespace Dataline.Elster.Lohn.LStB201501 {
         /// <remarks/>
         public lstb_PersonCTypeFamilienname Familienname {
             get {
-                return this.familiennameField;
+                return familiennameField;
             }
             set {
-                this.familiennameField = value;
-                this.RaisePropertyChanged("Familienname");
+                familiennameField = value;
+                RaisePropertyChanged("Familienname");
             }
         }
         
         /// <remarks/>
         public lstb_PersonCTypeGeburtsname Geburtsname {
             get {
-                return this.geburtsnameField;
+                return geburtsnameField;
             }
             set {
-                this.geburtsnameField = value;
-                this.RaisePropertyChanged("Geburtsname");
+                geburtsnameField = value;
+                RaisePropertyChanged("Geburtsname");
             }
         }
         
         /// <remarks/>
         public string Geburtsdatum {
             get {
-                return this.geburtsdatumField;
+                return geburtsdatumField;
             }
             set {
-                this.geburtsdatumField = value;
-                this.RaisePropertyChanged("Geburtsdatum");
+                geburtsdatumField = value;
+                RaisePropertyChanged("Geburtsdatum");
             }
         }
         
         /// <remarks/>
         public lstb_AdresseCType Adresse {
             get {
-                return this.adresseField;
+                return adresseField;
             }
             set {
-                this.adresseField = value;
-                this.RaisePropertyChanged("Adresse");
+                adresseField = value;
+                RaisePropertyChanged("Adresse");
             }
         }
         
@@ -78,18 +78,18 @@ namespace Dataline.Elster.Lohn.LStB201501 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public lstb_PersonCTypeGeschlecht geschlecht {
             get {
-                return this.geschlechtField;
+                return geschlechtField;
             }
             set {
-                this.geschlechtField = value;
-                this.RaisePropertyChanged("geschlecht");
+                geschlechtField = value;
+                RaisePropertyChanged("geschlecht");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

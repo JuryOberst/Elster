@@ -32,11 +32,11 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public allg_Konfession_ab2008SType konfession {
             get {
-                return this.konfessionField;
+                return konfessionField;
             }
             set {
-                this.konfessionField = value;
-                this.RaisePropertyChanged("konfession");
+                konfessionField = value;
+                RaisePropertyChanged("konfession");
             }
         }
         
@@ -44,11 +44,11 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public allg_Konfession_ab2008SType ehegkonfession {
             get {
-                return this.ehegkonfessionField;
+                return ehegkonfessionField;
             }
             set {
-                this.ehegkonfessionField = value;
-                this.RaisePropertyChanged("ehegkonfession");
+                ehegkonfessionField = value;
+                RaisePropertyChanged("ehegkonfession");
             }
         }
         
@@ -56,11 +56,11 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ehegkonfessionSpecified {
             get {
-                return this.ehegkonfessionFieldSpecified;
+                return ehegkonfessionFieldSpecified;
             }
             set {
-                this.ehegkonfessionFieldSpecified = value;
-                this.RaisePropertyChanged("ehegkonfessionSpecified");
+                ehegkonfessionFieldSpecified = value;
+                RaisePropertyChanged("ehegkonfessionSpecified");
             }
         }
         
@@ -68,18 +68,18 @@ namespace Dataline.Elster.Lohn.LStB201001 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string gueltig_ab {
             get {
-                return this.gueltig_abField;
+                return gueltig_abField;
             }
             set {
-                this.gueltig_abField = value;
-                this.RaisePropertyChanged("gueltig_ab");
+                gueltig_abField = value;
+                RaisePropertyChanged("gueltig_ab");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

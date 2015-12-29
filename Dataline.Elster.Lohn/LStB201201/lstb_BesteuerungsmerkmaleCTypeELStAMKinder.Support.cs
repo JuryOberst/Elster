@@ -24,7 +24,7 @@ namespace Dataline.Elster.Lohn
                 if (other == null)
                     return false;
 
-                return this.Value == other.Value;
+                return Value == other.Value;
             }
 
             public override int GetHashCode()

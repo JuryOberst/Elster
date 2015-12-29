@@ -42,11 +42,11 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
         public string jahr {
             get {
-                return this.jahrField;
+                return jahrField;
             }
             set {
-                this.jahrField = value;
-                this.RaisePropertyChanged("jahr");
+                jahrField = value;
+                RaisePropertyChanged("jahr");
             }
         }
         
@@ -54,11 +54,11 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public allg_Datum_MMSType beginn {
             get {
-                return this.beginnField;
+                return beginnField;
             }
             set {
-                this.beginnField = value;
-                this.RaisePropertyChanged("beginn");
+                beginnField = value;
+                RaisePropertyChanged("beginn");
             }
         }
         
@@ -66,11 +66,11 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool beginnSpecified {
             get {
-                return this.beginnFieldSpecified;
+                return beginnFieldSpecified;
             }
             set {
-                this.beginnFieldSpecified = value;
-                this.RaisePropertyChanged("beginnSpecified");
+                beginnFieldSpecified = value;
+                RaisePropertyChanged("beginnSpecified");
             }
         }
         
@@ -78,11 +78,11 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public allg_Datum_MMSType ende {
             get {
-                return this.endeField;
+                return endeField;
             }
             set {
-                this.endeField = value;
-                this.RaisePropertyChanged("ende");
+                endeField = value;
+                RaisePropertyChanged("ende");
             }
         }
         
@@ -90,11 +90,11 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool endeSpecified {
             get {
-                return this.endeFieldSpecified;
+                return endeFieldSpecified;
             }
             set {
-                this.endeFieldSpecified = value;
-                this.RaisePropertyChanged("endeSpecified");
+                endeFieldSpecified = value;
+                RaisePropertyChanged("endeSpecified");
             }
         }
         
@@ -102,11 +102,11 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public decimal bmgfreibetrag {
             get {
-                return this.bmgfreibetragField;
+                return bmgfreibetragField;
             }
             set {
-                this.bmgfreibetragField = value;
-                this.RaisePropertyChanged("bmgfreibetrag");
+                bmgfreibetragField = value;
+                RaisePropertyChanged("bmgfreibetrag");
             }
         }
         
@@ -114,11 +114,11 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public decimal einmversbezug {
             get {
-                return this.einmversbezugField;
+                return einmversbezugField;
             }
             set {
-                this.einmversbezugField = value;
-                this.RaisePropertyChanged("einmversbezug");
+                einmversbezugField = value;
+                RaisePropertyChanged("einmversbezug");
             }
         }
         
@@ -126,11 +126,11 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool einmversbezugSpecified {
             get {
-                return this.einmversbezugFieldSpecified;
+                return einmversbezugFieldSpecified;
             }
             set {
-                this.einmversbezugFieldSpecified = value;
-                this.RaisePropertyChanged("einmversbezugSpecified");
+                einmversbezugFieldSpecified = value;
+                RaisePropertyChanged("einmversbezugSpecified");
             }
         }
         
@@ -138,18 +138,18 @@ namespace Dataline.Elster.Lohn.LStB200901 {
         [System.Xml.Serialization.XmlTextAttribute()]
         public decimal Value {
             get {
-                return this.valueField;
+                return valueField;
             }
             set {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
+                valueField = value;
+                RaisePropertyChanged("Value");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

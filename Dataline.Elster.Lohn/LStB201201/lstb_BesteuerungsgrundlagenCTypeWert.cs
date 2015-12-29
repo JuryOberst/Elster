@@ -28,11 +28,11 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string name {
             get {
-                return this.nameField;
+                return nameField;
             }
             set {
-                this.nameField = value;
-                this.RaisePropertyChanged("name");
+                nameField = value;
+                RaisePropertyChanged("name");
             }
         }
         
@@ -40,18 +40,18 @@ namespace Dataline.Elster.Lohn.LStB201201 {
         [System.Xml.Serialization.XmlTextAttribute()]
         public decimal Value {
             get {
-                return this.valueField;
+                return valueField;
             }
             set {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
+                valueField = value;
+                RaisePropertyChanged("Value");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

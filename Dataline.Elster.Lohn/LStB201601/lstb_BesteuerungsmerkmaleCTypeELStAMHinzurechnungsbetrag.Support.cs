@@ -24,7 +24,7 @@ namespace Dataline.Elster.Lohn
                 if (other == null)
                     return false;
 
-                return this.jahr == other.jahr && this.monat == other.monat && this.tag == other.tag && this.tagSpecified == other.tagSpecified && this.woche == other.woche && this.wocheSpecified == other.wocheSpecified;
+                return jahr == other.jahr && monat == other.monat && tag == other.tag && tagSpecified == other.tagSpecified && woche == other.woche && wocheSpecified == other.wocheSpecified;
             }
 
             public override int GetHashCode()

@@ -39,11 +39,11 @@ namespace Dataline.Elster.Lohn.LStB201401 {
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
         public object[] Items {
             get {
-                return this.itemsField;
+                return itemsField;
             }
             set {
-                this.itemsField = value;
-                this.RaisePropertyChanged("Items");
+                itemsField = value;
+                RaisePropertyChanged("Items");
             }
         }
         
@@ -52,18 +52,18 @@ namespace Dataline.Elster.Lohn.LStB201401 {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public LStB201401.ItemsChoiceType2[] ItemsElementName {
             get {
-                return this.itemsElementNameField;
+                return itemsElementNameField;
             }
             set {
-                this.itemsElementNameField = value;
-                this.RaisePropertyChanged("ItemsElementName");
+                itemsElementNameField = value;
+                RaisePropertyChanged("ItemsElementName");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

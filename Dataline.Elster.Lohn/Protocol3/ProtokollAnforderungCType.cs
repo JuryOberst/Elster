@@ -30,11 +30,11 @@ namespace Dataline.Elster.Lohn.Protocol3 {
         /// <remarks/>
         public string TransferTicket {
             get {
-                return this.transferTicketField;
+                return transferTicketField;
             }
             set {
-                this.transferTicketField = value;
-                this.RaisePropertyChanged("TransferTicket");
+                transferTicketField = value;
+                RaisePropertyChanged("TransferTicket");
             }
         }
         
@@ -42,11 +42,11 @@ namespace Dataline.Elster.Lohn.Protocol3 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public Protocol3.ProtokollAnforderungVersionSType version {
             get {
-                return this.versionField;
+                return versionField;
             }
             set {
-                this.versionField = value;
-                this.RaisePropertyChanged("version");
+                versionField = value;
+                RaisePropertyChanged("version");
             }
         }
         
@@ -54,18 +54,18 @@ namespace Dataline.Elster.Lohn.Protocol3 {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public Protocol3.ProtokollVersionSType protokollVersion {
             get {
-                return this.protokollVersionField;
+                return protokollVersionField;
             }
             set {
-                this.protokollVersionField = value;
-                this.RaisePropertyChanged("protokollVersion");
+                protokollVersionField = value;
+                RaisePropertyChanged("protokollVersion");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

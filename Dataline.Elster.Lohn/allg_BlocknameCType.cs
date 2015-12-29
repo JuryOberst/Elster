@@ -28,11 +28,11 @@ namespace Dataline.Elster.Lohn {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public allg_BlocknameCTypeArt art {
             get {
-                return this.artField;
+                return artField;
             }
             set {
-                this.artField = value;
-                this.RaisePropertyChanged("art");
+                artField = value;
+                RaisePropertyChanged("art");
             }
         }
         
@@ -40,18 +40,18 @@ namespace Dataline.Elster.Lohn {
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value {
             get {
-                return this.valueField;
+                return valueField;
             }
             set {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
+                valueField = value;
+                RaisePropertyChanged("Value");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

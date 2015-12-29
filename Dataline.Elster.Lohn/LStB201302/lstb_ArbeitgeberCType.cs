@@ -33,62 +33,62 @@ namespace Dataline.Elster.Lohn.LStB201302 {
         /// <remarks/>
         public string ArbGName {
             get {
-                return this.arbGNameField;
+                return arbGNameField;
             }
             set {
-                this.arbGNameField = value;
-                this.RaisePropertyChanged("ArbGName");
+                arbGNameField = value;
+                RaisePropertyChanged("ArbGName");
             }
         }
         
         /// <remarks/>
         public string ArbGFANr {
             get {
-                return this.arbGFANrField;
+                return arbGFANrField;
             }
             set {
-                this.arbGFANrField = value;
-                this.RaisePropertyChanged("ArbGFANr");
+                arbGFANrField = value;
+                RaisePropertyChanged("ArbGFANr");
             }
         }
         
         /// <remarks/>
         public string ArbGFAName {
             get {
-                return this.arbGFANameField;
+                return arbGFANameField;
             }
             set {
-                this.arbGFANameField = value;
-                this.RaisePropertyChanged("ArbGFAName");
+                arbGFANameField = value;
+                RaisePropertyChanged("ArbGFAName");
             }
         }
         
         /// <remarks/>
         public string ArbGStNr {
             get {
-                return this.arbGStNrField;
+                return arbGStNrField;
             }
             set {
-                this.arbGStNrField = value;
-                this.RaisePropertyChanged("ArbGStNr");
+                arbGStNrField = value;
+                RaisePropertyChanged("ArbGStNr");
             }
         }
         
         /// <remarks/>
         public LStB201302.lstb_ArbGAdresseCType Adresse {
             get {
-                return this.adresseField;
+                return adresseField;
             }
             set {
-                this.adresseField = value;
-                this.RaisePropertyChanged("Adresse");
+                adresseField = value;
+                RaisePropertyChanged("Adresse");
             }
         }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }

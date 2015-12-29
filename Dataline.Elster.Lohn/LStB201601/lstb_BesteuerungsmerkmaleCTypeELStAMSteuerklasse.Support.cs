@@ -24,7 +24,7 @@ namespace Dataline.Elster.Lohn
                 if (other == null)
                     return false;
 
-                return this.faktor == other.faktor && this.faktorSpecified == other.faktorSpecified && this.Value == other.Value;
+                return faktor == other.faktor && faktorSpecified == other.faktorSpecified && Value == other.Value;
             }
 
             public override int GetHashCode()
