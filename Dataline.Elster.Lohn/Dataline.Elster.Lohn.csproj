@@ -43,9 +43,11 @@
     <EmbeddedResource Include="xsd\allg000008.xsd">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <AdditionalFiles Include="..\stylecop.json">
+      <Link>stylecop.json</Link>
+    </AdditionalFiles>
     <None Include="Dataline.Elster.Lohn.nuspec" />
     <None Include="packages.config" />
-    <None Include="stylecop.json" />
     <None Include="xsd\convert.cmd" />
     <EmbeddedResource Include="xsd\elster0810_bisNH_extern.xsd">
       <SubType>Designer</SubType>

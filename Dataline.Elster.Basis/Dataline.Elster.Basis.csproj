@@ -62,9 +62,11 @@
     <Compile Include="XmlSchemaUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AdditionalFiles Include="..\stylecop.json">
+      <Link>stylecop.json</Link>
+    </AdditionalFiles>
     <None Include="Dataline.Elster.Basis.nuspec" />
     <None Include="packages.config" />
-    <None Include="stylecop.json" />
     <None Include="xsd\convert.cmd" />
   </ItemGroup>
   <ItemGroup>

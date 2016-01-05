@@ -6,4 +6,5 @@
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/GeneratedFilesAndFolders/=F5E91C00_002D2E9A_002D43DD_002DBD7A_002D8AF77F8F00C7_002Ff_003Aelster0810_005Felo_005Fextern_002Ecs/@EntryIndexedValue">F5E91C00-2E9A-43DD-BD7A-8AF77F8F00C7/f:elster0810_elo_extern.cs</s:String>
 	<s:Boolean x:Key="/Default/CodeInspection/Highlighting/DoNotShowVsBulb/@EntryValue">True</s:Boolean>
 	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/Abbreviations/=NRW/@EntryIndexedValue">NRW</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=TypesAndNamespaces/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb"&gt;&lt;ExtraRule Prefix="usta_" Suffix="" Style="AaBb" /&gt;&lt;/Policy&gt;</s:String>
 	<s:String x:Key="/Default/CodeStyle/Naming/JavaScriptNaming/UserRules/=JS_005FLOCAL_005FCONSTRUCTOR/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String></wpf:ResourceDictionary>

@@ -56,9 +56,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AdditionalFiles Include="..\stylecop.json">
+      <Link>stylecop.json</Link>
+    </AdditionalFiles>
     <None Include="Dataline.Elster.Datenabholung.nuspec" />
     <None Include="packages.config" />
-    <None Include="stylecop.json" />
     <None Include="xsd\convert.cmd" />
     <EmbeddedResource Include="xsd\datenabholung_5.xsd">
       <SubType>Designer</SubType>

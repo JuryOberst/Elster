@@ -40,9 +40,11 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <AdditionalFiles Include="..\stylecop.json">
+      <Link>stylecop.json</Link>
+    </AdditionalFiles>
     <None Include="Dataline.Elster.Datenuebermittler2015.nuspec" />
     <None Include="packages.config" />
-    <None Include="stylecop.json" />
     <None Include="xsd\convert.cmd" />
     <EmbeddedResource Include="xsd\datenuebermittler-2015\Aenderungsliste-2015.xsd">
       <SubType>Designer</SubType>
