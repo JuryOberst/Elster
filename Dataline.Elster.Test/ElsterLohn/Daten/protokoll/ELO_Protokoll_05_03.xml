@@ -83,7 +83,7 @@ qD56GlEIfVmTg8M0zGhQUVASjN36/lcz6pN/Nc48gywLHhBLD8ZBucE=</TransportSchluessel>
 					<ZeitStempel>20100430143628</ZeitStempel>
 					<DatenTeil transferTicket="0000008546547646610" code="1" text="Es sind Fehler aufgetreten - die Nutzdatenblöcke konnten nur teilweise verarbeitet werden.">
 						<Nutzdatenblock nutzdatenTicket="1" code="4" text="Daten geprüft und teilweise fehlerhaft - Datenblock wurde nur teilweise verarbeitet." verarbeiteteNdS="10" nichtverarbeiteteNdS="1">
-							<NdSFehler ordnungsMerkmal="Kunde2" lfdNr="2" fehlerNummer="200033002" fehlerText="Fehler beim Parsen der XML-Daten : Datatype error: In element &apos;Geburtsdatum&apos; : Content &apos;1980-05-41&apos; does not match any union types."/>
+							<NdSFehler lfdNr="2" fehlerNummer="200033002" fehlerText="Fehler beim Parsen der XML-Daten : Datatype error: In element &apos;Geburtsdatum&apos; : Content &apos;1980-05-41&apos; does not match any union types."/>
 						</Nutzdatenblock>
 					</DatenTeil>
 				</Protokoll>
