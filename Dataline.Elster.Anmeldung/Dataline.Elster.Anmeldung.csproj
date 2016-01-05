@@ -191,18 +191,18 @@
     <EmbeddedResource Include="xsd\usta_201501.xsd">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="xsd\elster0810_LStA_201601_extern.xsd">
+    <EmbeddedResource Include="xsd\elster0810_LStA_201601_extern.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="xsd\elster0810_UStA_201601_extern.xsd">
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\elster0810_UStA_201601_extern.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="xsd\lsta_201601.xsd">
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\lsta_201601.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="xsd\usta_201601.xsd">
+    </EmbeddedResource>
+    <EmbeddedResource Include="xsd\usta_201601.xsd">
       <SubType>Designer</SubType>
-    </None>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnmeldungResourceProvider.cs" />

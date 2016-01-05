@@ -5,6 +5,8 @@
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/GeneratedFilesAndFolders/=B9CA3437_002D053A_002D4EFB_002DB80A_002D5B51DB5AEC25_002Ff_003Aelster0810_005Felo2_005Fextern_002D2015_002Ecs/@EntryIndexedValue">B9CA3437-053A-4EFB-B80A-5B51DB5AEC25/f:elster0810_elo2_extern-2015.cs</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/GeneratedFilesAndFolders/=F5E91C00_002D2E9A_002D43DD_002DBD7A_002D8AF77F8F00C7_002Ff_003Aelster0810_005Felo_005Fextern_002Ecs/@EntryIndexedValue">F5E91C00-2E9A-43DD-BD7A-8AF77F8F00C7/f:elster0810_elo_extern.cs</s:String>
 	<s:Boolean x:Key="/Default/CodeInspection/Highlighting/DoNotShowVsBulb/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/Abbreviations/=LSTA/@EntryIndexedValue">LSTA</s:String>
 	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/Abbreviations/=NRW/@EntryIndexedValue">NRW</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/Abbreviations/=USTVA/@EntryIndexedValue">USTVA</s:String>
 	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=TypesAndNamespaces/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb"&gt;&lt;ExtraRule Prefix="usta_" Suffix="" Style="AaBb" /&gt;&lt;/Policy&gt;</s:String>
 	<s:String x:Key="/Default/CodeStyle/Naming/JavaScriptNaming/UserRules/=JS_005FLOCAL_005FCONSTRUCTOR/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String></wpf:ResourceDictionary>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
@@ -13,7 +14,7 @@ using Xunit;
 
 namespace Dataline.Elster.Test.ElsterLohn
 {
-    public class ElsterLohnTests
+    public class ElsterLohnTests : ElsterDocumentValidation
     {
         [Theory]
         [InlineData("ELO_DatenLieferung_LStB_201001_01.xml")]
@@ -37,13 +38,11 @@ namespace Dataline.Elster.Test.ElsterLohn
         [InlineData("protokoll/ELO_ProtokollAnforderung_03.xml")]
         public void TestDeserialize(string relativeFileName)
         {
-            var doc = Load(relativeFileName);
             var provider = new LohnResourceProvider();
-            //provider.BaseFileNames
+            TestDocument(relativeFileName, provider, provider.BaseFileNames.Single());
         }
 
-        [NotNull]
-        private static XDocument Load([NotNull] string relativeFileName)
+        protected override XDocument Load(string relativeFileName)
         {
             var asm = typeof(ElsterLohnTests).Assembly;
             var resFileName = $"Daten.{relativeFileName.Replace('/', '.')}";

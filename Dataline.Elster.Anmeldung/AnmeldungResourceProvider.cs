@@ -57,7 +57,7 @@ namespace Dataline.Elster.Anmeldung
 
         public string GetBaseFileNameAnmeldungssteuer(int year, int month = 1)
         {
-            if (year < 2004 || year > 2015)
+            if (year < 2004 || year > 2016)
                 throw new ArgumentOutOfRangeException(nameof(year));
             if (month != 1)
                 throw new ArgumentOutOfRangeException(nameof(month));
@@ -67,7 +67,7 @@ namespace Dataline.Elster.Anmeldung
 
         public string GetBaseFileNameUmsatzsteuer(int year, int month)
         {
-            if (year < 2004 || year > 2015)
+            if (year < 2004 || year > 2016)
                 throw new ArgumentOutOfRangeException(nameof(year));
             if (month != 1)
             {

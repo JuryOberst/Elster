@@ -63,9 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ElsterAnmeldung\ElsterAnmeldungTests.cs" />
+    <Compile Include="ElsterDocumentValidation.cs" />
     <Compile Include="ElsterLohn\ElsterLohnTests.cs" />
     <Compile Include="IdNrTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceProviderXmlResolver.cs" />
     <Compile Include="SchemaResourceTests.cs" />
     <Compile Include="StaticTaxOfficeProviderTests.cs" />
     <Compile Include="TaxNumberTests.cs" />
@@ -124,6 +127,62 @@
     <EmbeddedResource Include="ElsterLohn\Daten\protokoll\ELO_Protokoll_05_02.xml" />
     <EmbeddedResource Include="ElsterLohn\Daten\protokoll\ELO_Protokoll_05_03.xml" />
     <EmbeddedResource Include="ElsterLohn\Daten\protokoll\ELO_Protokoll_verschluesselt.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\LSTA_Bayern_2004.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\LSTA_Bayern_2005.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\LSTA_Bayern_2006.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\LSTA_Bayern_2007.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\LSTA_Bayern_2008.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\LSTA_Bayern_2009.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\LSTA_Bayern_2010.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\LSTA_Bayern_2011.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\LSTA_Bayern_2012.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\LSTA_Bayern_2013.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\LSTA_Bayern_2014.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\LSTA_Bayern_2015.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\LSTA_Bayern_2016.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_2004.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_2005.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_2006.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_2007.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_2008.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_2009.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_2010_erstes_Halbjahr.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_2010_zweites_Halbjahr.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_2011_erstes_Halbjahr.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_2011_zweites_Halbjahr.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_2012.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_2013.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_2014.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_2015.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_2016.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_Df_2004.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_Df_2005.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_Df_2006.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_Df_2007.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_Df_2008.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_Df_2009.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_Df_2010.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_Df_2011.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_Df_2012.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_Df_2013.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_Df_2014.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_Df_2015.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_Df_2016.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_SoVZ_2004.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_SoVZ_2005.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_SoVZ_2006.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_SoVZ_2007.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_SoVZ_2008.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_SoVZ_2009.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_SoVZ_2010.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_SoVZ_2011.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_SoVZ_2012.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_SoVZ_2013.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_SoVZ_2014.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_SoVZ_2015.xml" />
+    <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_SoVZ_2016.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -40,13 +40,13 @@ namespace Dataline.Elster.Test
             var resourceProvider = new AnmeldungResourceProvider();
 
             Assert.Throws<ArgumentOutOfRangeException>(() => resourceProvider.GetBaseFileNameAnmeldungssteuer(2003));
-            Assert.Throws<ArgumentOutOfRangeException>(() => resourceProvider.GetBaseFileNameAnmeldungssteuer(2016));
+            Assert.Throws<ArgumentOutOfRangeException>(() => resourceProvider.GetBaseFileNameAnmeldungssteuer(2017));
             Assert.Throws<ArgumentOutOfRangeException>(() => resourceProvider.GetBaseFileNameAnmeldungssteuer(2011, 2));
 
             var fileNames = new HashSet<string>(resourceProvider.FileNames);
 
             Assert.True(fileNames.Contains(resourceProvider.GetBaseFileNameAnmeldungssteuer(2004)));
-            Assert.True(fileNames.Contains(resourceProvider.GetBaseFileNameAnmeldungssteuer(2015)));
+            Assert.True(fileNames.Contains(resourceProvider.GetBaseFileNameAnmeldungssteuer(2016)));
         }
 
         [Fact]
@@ -55,13 +55,13 @@ namespace Dataline.Elster.Test
             var resourceProvider = new AnmeldungResourceProvider();
 
             Assert.Throws<ArgumentOutOfRangeException>(() => resourceProvider.GetBaseFileNameUmsatzsteuer(2003, 1));
-            Assert.Throws<ArgumentOutOfRangeException>(() => resourceProvider.GetBaseFileNameUmsatzsteuer(2016, 1));
+            Assert.Throws<ArgumentOutOfRangeException>(() => resourceProvider.GetBaseFileNameUmsatzsteuer(2017, 1));
             Assert.Throws<ArgumentOutOfRangeException>(() => resourceProvider.GetBaseFileNameUmsatzsteuer(2011, 3));
 
             var fileNames = new HashSet<string>(resourceProvider.FileNames);
 
             Assert.True(fileNames.Contains(resourceProvider.GetBaseFileNameUmsatzsteuer(2004, 1)));
-            Assert.True(fileNames.Contains(resourceProvider.GetBaseFileNameUmsatzsteuer(2015, 1)));
+            Assert.True(fileNames.Contains(resourceProvider.GetBaseFileNameUmsatzsteuer(2016, 1)));
             Assert.True(fileNames.Contains(resourceProvider.GetBaseFileNameUmsatzsteuer(2011, 2)));
         }
     }
