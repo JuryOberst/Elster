@@ -5,6 +5,7 @@
 	Änderungshistorie
 	Version 1: Erstellung
 	Version 2: Freibetrag DBA Türkei aufgenommen (Nummer 34 des Ausdrucks)
+	Version 3: Aktualisierte Tabelle der Länderkennzeichen auf Basis des Dokuments  "GR_Anlage_08_Tabelle_der_Laenderkennzeichen_V.2.56.pdf"
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:elsterbase="http://www.elster.de/basis08/XMLSchema" xmlns:elsterlohn="http://www.elsterlohn.de/2016-01/XMLSchema" targetNamespace="http://www.elsterlohn.de/2016-01/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:import namespace="http://www.elster.de/basis08/XMLSchema" schemaLocation="./allg000008.xsd"/>
@@ -1164,7 +1165,7 @@ Auswärtstätigkeit</xs:documentation>
 				<xs:annotation>
 					<xs:documentation xml:lang="DE">Staat / Gebiet             =Cookinseln</xs:documentation>
 					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =von den Cookinseln</xs:documentation>
-					<xs:documentation xml:lang="DE">Länderschlüssel        =536</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =527</xs:documentation>
 				</xs:annotation>
 			</xs:pattern>
 			<xs:pattern value="CR">
@@ -1405,10 +1406,11 @@ Auswärtstätigkeit</xs:documentation>
 					<xs:documentation xml:lang="DE">Länderschlüssel        =347</xs:documentation>
 				</xs:annotation>
 			</xs:pattern>
-			<xs:pattern value="HOK">
+			<xs:pattern value="HKG">
 				<xs:annotation>
 					<xs:documentation xml:lang="DE">Staat / Gebiet             =Hongkong</xs:documentation>
-					<xs:documentation xml:lang="DE">Länderschlüssel        =495</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =chinesisch(Hongkong)</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =411</xs:documentation>
 				</xs:annotation>
 			</xs:pattern>
 			<xs:pattern value="IND">
@@ -1716,6 +1718,13 @@ Auswärtstätigkeit</xs:documentation>
 					<xs:documentation xml:lang="DE">Länderschlüssel        =143</xs:documentation>
 				</xs:annotation>
 			</xs:pattern>
+			<xs:pattern value="MAC">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Macau</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =chinesisch (Macau)</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =412</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
 			<xs:pattern value="RM">
 				<xs:annotation>
 					<xs:documentation xml:lang="DE">Staat / Gebiet             =Madagaskar</xs:documentation>
@@ -1814,8 +1823,7 @@ Auswärtstätigkeit</xs:documentation>
 			</xs:pattern>
 			<xs:pattern value="MIK">
 				<xs:annotation>
-					<xs:documentation xml:lang="DE">Staat / Gebiet             =Mikronesien, Föderierte Staaten von</xs:documentation>
-					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =mikronesisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Mikronesien, Föderierte Staaten von mikronesisch</xs:documentation>
 					<xs:documentation xml:lang="DE">Länderschlüssel        =545</xs:documentation>
 				</xs:annotation>
 			</xs:pattern>
@@ -1939,7 +1947,7 @@ Auswärtstätigkeit</xs:documentation>
 				<xs:annotation>
 					<xs:documentation xml:lang="DE">Staat / Gebiet             =Niue</xs:documentation>
 					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =niueanisch</xs:documentation>
-					<xs:documentation xml:lang="DE">Länderschlüssel        =536</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =533</xs:documentation>
 				</xs:annotation>
 			</xs:pattern>
 			<xs:pattern value="NMA">
@@ -2014,8 +2022,7 @@ Auswärtstätigkeit</xs:documentation>
 			</xs:pattern>
 			<xs:pattern value="PIN">
 				<xs:annotation>
-					<xs:documentation xml:lang="DE">Staat / Gebiet             =Pazifische Inseln (Marianen- und</xs:documentation>
-					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =Karolineninseln)</xs:documentation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Pazifische Inseln (Marianen- und Karolineninseln)</xs:documentation>
 					<xs:documentation xml:lang="DE">Länderschlüssel        =599</xs:documentation>
 				</xs:annotation>
 			</xs:pattern>
@@ -2055,8 +2062,7 @@ Auswärtstätigkeit</xs:documentation>
 			</xs:pattern>
 			<xs:pattern value="PRI">
 				<xs:annotation>
-					<xs:documentation xml:lang="DE">Staat / Gebiet             =Puerto</xs:documentation>
-					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =Rico</xs:documentation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =Puerto Rico</xs:documentation>
 					<xs:documentation xml:lang="DE">Länderschlüssel        =399</xs:documentation>
 				</xs:annotation>
 			</xs:pattern>
@@ -2248,8 +2254,8 @@ Auswärtstätigkeit</xs:documentation>
 			</xs:pattern>
 			<xs:pattern value="SCN">
 				<xs:annotation>
-					<xs:documentation xml:lang="DE">Staat / Gebiet             =St. Kitts und Nevis </xs:documentation>
-					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =von St.  Kitts und Nevis</xs:documentation>
+					<xs:documentation xml:lang="DE">Staat / Gebiet             =St. Kitts und Nevis</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =von St. Kitts und Nevis</xs:documentation>
 					<xs:documentation xml:lang="DE">Länderschlüssel        =370</xs:documentation>
 				</xs:annotation>
 			</xs:pattern>
@@ -2323,11 +2329,11 @@ Auswärtstätigkeit</xs:documentation>
 					<xs:documentation xml:lang="DE">Länderschlüssel        =470</xs:documentation>
 				</xs:annotation>
 			</xs:pattern>
-			<xs:pattern value="RC">
+			<xs:pattern value="TWN">
 				<xs:annotation>
 					<xs:documentation xml:lang="DE">Staat / Gebiet             =Taiwan</xs:documentation>
-					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =chinesisch</xs:documentation>
-					<xs:documentation xml:lang="DE">Länderschlüssel        =479</xs:documentation>
+					<xs:documentation xml:lang="DE">Staatsangehörigkeit   =taiwanisch</xs:documentation>
+					<xs:documentation xml:lang="DE">Länderschlüssel        =465</xs:documentation>
 				</xs:annotation>
 			</xs:pattern>
 			<xs:pattern value="EAT">
