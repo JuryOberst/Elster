@@ -91,12 +91,12 @@ AhjH8k/TvGlEU7FYaqjypFw=</TransportSchluessel>
 					xmlns="http://www.elsterfachmethodik.de/protokollverfahren/version5/XMLSchema">
 					<ZeitStempel>20020224151612</ZeitStempel>
 					<!--DatenLieferung: Status zur Kompletten Lieferung-->
-					<DatenTeilStatus 
+					<DatenTeil 
 						transferTicket="0000578909144200208" 
 						code="1" 
 						text="Es sind Fehler aufgetreten - die Nutzdatenblöcke konnten nur teilweise verarbeitet werden.">
 						<!--für alle NutdatenBlöcke dieser Lieferung wird ein Status ausgegeben -->
-						<NutzdatenBlockStatus 
+						<Nutzdatenblock 
 							nutzdatenTicket="nutzdatenTicket01" 
 							code="2" 
 							text="Daten geprüft und teilweise fehlerhaft - Datenblock wurde nur teilweise verarbeitet."
@@ -122,13 +122,13 @@ AhjH8k/TvGlEU7FYaqjypFw=</TransportSchluessel>
 								lfdNr="12"
 								fehlerNummer="200033002"
 								fehlerText="org.xml.sax.SAXParseException: cvc-complex-type.2.4.a: Invalid content starting with element 'AuslandsPLZ'. One of '{ &quot; http://www.elster.de/2002/XMLSchema &quot; :Postfach}' is expected."/>
-						</NutzdatenBlockStatus>
-						<NutzdatenBlockStatus 
+						</Nutzdatenblock>
+						<Nutzdatenblock 
 							nutzdatenTicket="nutzdatenTicket02"
 							code="0"
 							text="Daten geprüft und korrekt"
 							verarbeiteteNdS="20"/>
-					</DatenTeilStatus>
+					</DatenTeil>
 				</Protokoll>
 			</Nutzdaten>
 		</Nutzdatenblock>
