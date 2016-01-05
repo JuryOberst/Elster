@@ -19,7 +19,8 @@ namespace Dataline.Elster
         /// </summary>
         /// <param name="validFor">Nur die Finanzämter, die zu diesem Zeitpunkt gültig waren</param>
         /// <returns>Abfrage für Finanzämter</returns>
-        [NotNull, ItemNotNull]
+        [NotNull]
+        [ItemNotNull]
         IQueryable<TaxOfficeInfo> Query(DateTime? validFor = null);
     }
 }

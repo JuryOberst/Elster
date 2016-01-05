@@ -21,7 +21,8 @@ namespace Dataline.Elster
         /// <param name="taxOffices">Die zu filternden Finanzämter</param>
         /// <param name="validFor">Das Datum an dem die Finanzämter gültig sein müssen</param>
         /// <returns>Die gefilterten Finanzämter</returns>
-        [NotNull, ItemNotNull]
+        [NotNull]
+        [ItemNotNull]
         public static IEnumerable<TaxOfficeInfo> ValidFor([NotNull, ItemNotNull] this IEnumerable<TaxOfficeInfo> taxOffices, DateTime? validFor)
         {
             if (!validFor.HasValue)
@@ -41,7 +42,8 @@ namespace Dataline.Elster
         /// <param name="taxOffices">Die zu filternden Finanzämter</param>
         /// <param name="validFor">Das Datum an dem die Finanzämter gültig sein müssen</param>
         /// <returns>Die gefilterten Finanzämter</returns>
-        [NotNull, ItemNotNull]
+        [NotNull]
+        [ItemNotNull]
         public static IQueryable<TaxOfficeInfo> ValidFor([NotNull, ItemNotNull] this IQueryable<TaxOfficeInfo> taxOffices, DateTime? validFor)
         {
             if (!validFor.HasValue)
