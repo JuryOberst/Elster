@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<Elster xmlns="http://www.elster.de/2002/XMLSchema">
+	<TransferHeader version="8">
+		<Verfahren>ElsterLohn2</Verfahren>
+		<DatenArt>AenderungslisteDUe</DatenArt>
+		<Vorgang>send-NoSig</Vorgang>
+		<TransferTicket>1234567890123456789</TransferTicket>
+		<Testmerker>700000001</Testmerker>
+		<Empfaenger id="L">
+			<Ziel>CS</Ziel>
+		</Empfaenger>
+		<HerstellerID>00000</HerstellerID>
+		<DatenLieferant>ElsterLohn2 HerstellerMock 1.0.0-003</DatenLieferant>
+		<EingangsDatum>20130101120000</EingangsDatum>
+		<Datei>
+			<Verschluesselung>none</Verschluesselung>
+			<Kompression>none</Kompression>
+			<DatenGroesse>1</DatenGroesse>
+			<TransportSchluessel></TransportSchluessel>
+		</Datei>
+	</TransferHeader>
+	<DatenTeil>
+		<Nutzdatenblock>
+			<NutzdatenHeader version="10">
+				<NutzdatenTicket>1</NutzdatenTicket>
+				<Empfaenger id="L">CS</Empfaenger>
+				<Hersteller>
+					<ProduktName />
+					<ProduktVersion />
+				</Hersteller>
+				<DatenLieferant>ElsterLohn2 HerstellerMock 1.0.0-003</DatenLieferant>
+			</NutzdatenHeader>
+			<Nutzdaten>
+				<Aenderungsliste 
+						stnrDUe="5192000000099" 
+						transferTicket="e226849ec535xu4if9epdr15b9y4vjfq" 
+						nutzdatenTicket="1" 
+						art="ABMELDEBESTAETIGUNGSLISTE" 
+						laufendeNummer="201501001" 
+						anzahlTeillisten="1" 
+						schemaversion="1" 
+						xmlns="http://www.elster.de/elo2/datenuebermittler/aenderungsliste/2015">
+					<Arbeitgeber stnrAG="5192070003740">
+						
+						<Arbeitnehmer idnr="01127645382" >
+							<AN-Verfahrenshinweis code="552020001" message="Abmeldung erfolgreich" type="INFORMATION"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="01197645386" >
+							<AN-Verfahrenshinweis code="552020202" message="Arbeitnehmer unbekannt: Die IdNr des Arbeitnehmers kann nicht verifiziert werden." type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="02217645388" >
+							<AN-Verfahrenshinweis code="552020212" message="Angabe des 29.02. außerhalb eines Schaltjahres (beschaeftigungsbeginn, abmeldeDatum oder refDatumAG)" type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="07796532843" >
+							<AN-Verfahrenshinweis code="552020300" message="Ab-/Ummeldung des Arbeitnehmers (IdNr und Geburtsdatum) ist nicht möglich, weil kein Arbeitsverhältnis besteht." type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="09916743524" >
+							<AN-Verfahrenshinweis code="552020303" datum="20150101" message="refDatumAG aus der Abmeldung stimmt nicht mit refDatumAG aus der An-/Ummeldung überein. [refDatumAG = 20150101]" type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="04507896126" >
+							<AN-Verfahrenshinweis code="552020304" datum="20150101" message="Abmeldung nicht möglich, da Abmeldedatum kleiner als refDatumAG aus der An-/Ummeldung [refDatumAG = 20150101]" type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="03317856295" >
+							<AN-Verfahrenshinweis code="552020305" message="Abmeldung nicht möglich, da Abmeldedatum in der Zukunft" type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="02217856341" >
+							<AN-Verfahrenshinweis code="552020306" datum="20150315" datumAlt="20150316" message="Beschäftigungsende des Arbeitsverhältnisses geändert. [Beschäftigungsende alt = 20150316] [Beschäftigungsende neu = 20150315]" type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="01127649385">
+							<AN-Verfahrenshinweis code="552020900" message="Verarbeitungsabbruch - bitte kontaktieren Sie Ihr zuständiges Betriebsstätten-Finanzamt." type="FEHLER"/>
+						</Arbeitnehmer>
+						
+						<AG-Verfahrenshinweis code="552010002" message="Besondere Hinweise zu mindestens einem Arbeitnehmer" type="INFORMATION" />
+						<Steuernummerhinweis code="551000009" message="Bitte verwenden Sie im Verfahren ElsterLohn II die im Attribut steuernummer enthaltene Steuernummer" type="INFORMATION" steuernummer="5192022224444"/>
+					</Arbeitgeber>
+				</Aenderungsliste>
+			</Nutzdaten>
+		</Nutzdatenblock>
+	</DatenTeil>
+</Elster>

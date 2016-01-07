@@ -52,15 +52,20 @@ namespace Dataline.Elster.Datenuebermittler2015
         {
             string resourceName;
             if (!_fileToResourceName.TryGetValue(fileName, out resourceName))
-                return _basisResourceProvider.CreateStream(fileName);
+            {
+                if (fileName.StartsWith("../"))
+                    fileName = fileName.Substring(3);
+            if (!_fileToResourceName.TryGetValue($"datenuebermittler-2015/{fileName}", out resourceName))
+                    return _basisResourceProvider.CreateStream(fileName);
+            }
             return _assembly.GetManifestResourceStream(resourceName);
         }
 
         private static string ReplacePath(string fileName)
         {
-            const string path = "datenuebermittler-2015";
+            const string path = "datenuebermittler_2015";
             if (fileName.StartsWith(path + "."))
-                return $"{path}/{fileName.Substring(path.Length + 1)}";
+                return $"datenuebermittler-2015/{fileName.Substring(path.Length + 1)}";
             return fileName;
         }
     }

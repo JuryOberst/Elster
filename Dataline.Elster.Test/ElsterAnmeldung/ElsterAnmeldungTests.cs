@@ -13,7 +13,7 @@ namespace Dataline.Elster.Test.ElsterAnmeldung
     {
         private static readonly Regex YearRegex = new Regex(@"_([0-9]{4})(_((erstes)|(zweites))_Halbjahr)?\.", RegexOptions.Compiled);
 
-        [Theory]
+        [Theory(DisplayName = "Lohnsteueranmeldung")]
         [InlineData("LSTA_Bayern_2004.xml")]
         [InlineData("LSTA_Bayern_2005.xml")]
         [InlineData("LSTA_Bayern_2006.xml")]
@@ -35,7 +35,7 @@ namespace Dataline.Elster.Test.ElsterAnmeldung
             TestDocument(doc, provider, provider.GetBaseFileNameAnmeldungssteuer(yearMonth.Item1, yearMonth.Item2));
         }
 
-        [Theory]
+        [Theory(DisplayName = "Umsatzsteuervoranmeldung")]
         [InlineData("USTVA_2004.xml")]
         [InlineData("USTVA_2005.xml")]
         [InlineData("USTVA_2006.xml")]

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<Elster xmlns="http://www.elster.de/2002/XMLSchema">
+	<TransferHeader version="8">
+		<Verfahren>ElsterLohn2</Verfahren>
+		<DatenArt>AenderungslisteDUe</DatenArt>
+		<Vorgang>send-NoSig</Vorgang>
+		<TransferTicket>1234567890123456789</TransferTicket>
+		<Testmerker>700000001</Testmerker>
+		<Empfaenger id="L">
+			<Ziel>CS</Ziel>
+		</Empfaenger>
+		<HerstellerID>00000</HerstellerID>
+		<DatenLieferant>ElsterLohn2 HerstellerMock 1.0.0-003</DatenLieferant>
+		<EingangsDatum>20130101120000</EingangsDatum>
+		<Datei>
+			<Verschluesselung>none</Verschluesselung>
+			<Kompression>none</Kompression>
+			<DatenGroesse>1</DatenGroesse>
+			<TransportSchluessel></TransportSchluessel>
+		</Datei>
+	</TransferHeader>
+	<DatenTeil>
+		<Nutzdatenblock>
+			<NutzdatenHeader version="10">
+				<NutzdatenTicket>1</NutzdatenTicket>
+				<Empfaenger id="L">CS</Empfaenger>
+				<Hersteller>
+					<ProduktName />
+					<ProduktVersion />
+				</Hersteller>
+				<DatenLieferant>ElsterLohn2 HerstellerMock 1.0.0-003</DatenLieferant>
+			</NutzdatenHeader>
+			<Nutzdaten>
+				<Aenderungsliste 
+						stnrDUe="5192070000196" 
+						transferTicket="ze2686xe2rr4tc051144ip7ac20xec4t" 
+						nutzdatenTicket="1" 
+						art="BRUTTOLISTE" 
+						laufendeNummer="201501001" 
+						anzahlTeillisten="1" 
+						schemaversion="1" 
+						xmlns="http://www.elster.de/elo2/datenuebermittler/aenderungsliste/2015">
+					<Arbeitgeber stnrAG="5192070000196">
+						<Arbeitnehmer idnr="01127645382">
+							  <ELStAM gueltigAb="20150101">
+								<Steuerklasse nummer="1"/>
+								<Kinderfreibetrag anzahl="0"/>
+								<Kirchensteuer konfession="--"/>
+								<Faktor wert="0"/>
+								<Freibetrag tag="0" woche="0" monat="0" jahr="0"/>
+							  </ELStAM>
+							<AN-Verfahrenshinweis code="552020000" message="Keine besonderen Hinweise" type="INFORMATION"/>
+						</Arbeitnehmer>
+						<AG-Verfahrenshinweis code="552010002" message="Besondere Hinweise zu mindestens einem Arbeitnehmer" type="INFORMATION" />
+					</Arbeitgeber>
+				</Aenderungsliste>
+			</Nutzdaten>
+		</Nutzdatenblock>
+	</DatenTeil>
+</Elster>

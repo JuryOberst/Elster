@@ -3,6 +3,7 @@
 	xmlns:wechsel="http://www.elster.de/elo2/datenuebermittler/DatenuebermittlerWechselRequest/2015"
 	xmlns:anan="http://www.elster.de/elo2/datenuebermittler/ArbeitnehmerAnmeldenRequest/2015"
 	xmlns:anab="http://www.elster.de/elo2/datenuebermittler/ArbeitnehmerAbmeldenRequest/2015"
+	xmlns:aend="http://www.elster.de/elo2/datenuebermittler/aenderungsliste/2015"
 	xmlns:elsterbasisTH8="http://www.elster.de/2002/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="http://www.elster.de/2002/XMLSchema"
 	elementFormDefault="qualified" attributeFormDefault="unqualified">
@@ -15,7 +16,10 @@
 	<xs:import
 		namespace="http://www.elster.de/elo2/datenuebermittler/DatenuebermittlerWechselRequest/2015"
 		schemaLocation="./datenuebermittler-2015/DatenuebermittlerWechselRequest-2015.xsd" />
-	<!-- Externe Elster Basis Schemas / Nicht Bestandteil der Auslieferung -->
+  <xs:import
+		namespace="http://www.elster.de/elo2/datenuebermittler/aenderungsliste/2015"
+		schemaLocation="./datenuebermittler-2015/Aenderungsliste-2015.xsd" />
+  <!-- Externe Elster Basis Schemas / Nicht Bestandteil der Auslieferung -->
 	<!-- Aktuelle Version zum Zeitpunkt der Auslieferung: -->
 	<!-- https://www.elster.de/ssl/secure/coala_download/Teil1_ElsterBasis-XML-Schnittstelle_V2.4.zip -->
 	<xs:include schemaLocation="./th000008_extern.xsd" />
@@ -67,6 +71,7 @@
 			<xs:element ref="anab:ArbeitnehmerAbmeldenRequest" />
 			<xs:element ref="anan:ArbeitnehmerAnmeldenRequest" />
 			<xs:element ref="wechsel:DatenuebermittlerWechselRequest" />
-		</xs:choice>
+      <xs:element ref="aend:Aenderungsliste" />
+    </xs:choice>
 	</xs:complexType>
 </xs:schema>

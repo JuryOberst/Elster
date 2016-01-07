@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -43,6 +44,7 @@ namespace Dataline.Elster.Test
                 relativeUri = _schemaRootUri.MakeRelativeUri(absoluteUri);
             }
             var fileName = relativeUri.OriginalString;
+            Debug.WriteLine("{0} -> {1}", absoluteUri, fileName);
             var stream = _provider.CreateStream(fileName);
             if (stream == null)
                 throw new System.Xml.Schema.XmlSchemaException($"Schema from resource {absoluteUri} not found. Determined file name was {fileName}.");

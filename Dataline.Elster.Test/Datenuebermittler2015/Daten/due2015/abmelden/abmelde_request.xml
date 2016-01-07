@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="no"?>
+<Elster xmlns="http://www.elster.de/2002/XMLSchema">
+    <TransferHeader version="000008">
+        <Verfahren>ElsterLohn2</Verfahren>
+        <DatenArt>DUeAbmelden</DatenArt>
+        <Vorgang>send-Auth</Vorgang>
+        <Testmerker>700000001</Testmerker>
+        <HerstellerID>12345</HerstellerID>
+        <DatenLieferant>Mock-Datenübermittler, Adresse, Telefon, Mail</DatenLieferant>
+        <Datei>
+            <Verschluesselung>PKCS#7v1.5</Verschluesselung>
+            <Kompression>GZIP</Kompression>
+            <DatenGroesse>1234</DatenGroesse>
+            <TransportSchluessel/>
+        </Datei>
+    </TransferHeader>
+    <DatenTeil>
+        <Nutzdatenblock>
+            <NutzdatenHeader version="000010">
+                <NutzdatenTicket>1</NutzdatenTicket>
+                <Empfaenger id="L">CS</Empfaenger>
+                <Hersteller>
+                    <ProduktName>TIM</ProduktName>
+                    <ProduktVersion>V 1.0</ProduktVersion>
+                </Hersteller>
+                <DatenLieferant>Mock-Arbeitgeber, Adresse, Telefon, Mail</DatenLieferant>
+            </NutzdatenHeader>
+            <Nutzdaten>
+				<ArbeitnehmerAbmeldenRequest 
+						xmlns="http://www.elster.de/elo2/datenuebermittler/ArbeitnehmerAbmeldenRequest/2015" 
+						stnrAG="5192070000196">
+				    <ArbeitnehmerAb abmeldeDatum="20150101" refDatumAG="20150101" gebdat="20150101" idnr="12345678901"/>
+				</ArbeitnehmerAbmeldenRequest>
+            </Nutzdaten>
+        </Nutzdatenblock>
+    </DatenTeil>
+</Elster>

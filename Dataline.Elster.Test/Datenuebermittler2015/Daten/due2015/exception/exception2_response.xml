@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<Elster xmlns="http://www.elster.de/2002/XMLSchema">
+	<TransferHeader version="8">
+		<Verfahren>ElsterLohn2</Verfahren>
+		<DatenArt>AenderungslisteDUe</DatenArt>
+		<Vorgang>send-NoSig</Vorgang>
+		<TransferTicket>1234567890123456789</TransferTicket>
+		<Testmerker>700000001</Testmerker>
+		<Empfaenger id="L">
+			<Ziel>CS</Ziel>
+		</Empfaenger>
+		<HerstellerID>00000</HerstellerID>
+		<DatenLieferant>ElsterLohn2 HerstellerMock 1.0.0-003</DatenLieferant>
+		<EingangsDatum>20130101120000</EingangsDatum>
+		<Datei>
+			<Verschluesselung>none</Verschluesselung>
+			<Kompression>none</Kompression>
+			<DatenGroesse>1</DatenGroesse>
+			<TransportSchluessel></TransportSchluessel>
+		</Datei>
+	</TransferHeader>
+	<DatenTeil>
+		<Nutzdatenblock>
+			<NutzdatenHeader version="10">
+				<NutzdatenTicket>1</NutzdatenTicket>
+				<Empfaenger id="L">CS</Empfaenger>
+				<Hersteller>
+					<ProduktName />
+					<ProduktVersion />
+				</Hersteller>
+				<DatenLieferant>ElsterLohn2 HerstellerMock 1.0.0-003</DatenLieferant>
+			</NutzdatenHeader>
+			<Nutzdaten>
+	            <Aenderungsliste 
+	            		schemaversion="1" 
+	            		anzahlTeillisten="1" 
+	            		laufendeNummer="201409001" 
+	            		art="ANMELDEBESTAETIGUNGSLISTE" 
+	            		nutzdatenTicket="1" 
+	            		transferTicket="e22683oxgdrhsp50av97kpp5w8745ppv" 
+	            		stnrDUe="5192000000099" 
+						xmlns="http://www.elster.de/elo2/datenuebermittler/aenderungsliste/2015"
+	            >
+	              <Arbeitgeber stnrAG="5399000000000">
+	                <AG-Verfahrenshinweis message="Validierungs Fehler: [Cannot find the declaration of element 'ArbeitnehmerAnmeldenAnforderung'.]" code="552010002" type="FEHLER"/>
+					<Steuernummerhinweis code="551000009" message="Bitte verwenden Sie im Verfahren ElsterLohn II die im Attribut steuernummer enthaltene Steuernummer" type="INFORMATION" steuernummer="5192022224444"/>
+	              </Arbeitgeber>
+	            </Aenderungsliste>
+			</Nutzdaten>
+		</Nutzdatenblock>
+	</DatenTeil>
+</Elster>

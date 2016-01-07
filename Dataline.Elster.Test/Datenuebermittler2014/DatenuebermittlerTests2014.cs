@@ -11,7 +11,7 @@ namespace Dataline.Elster.Test.Datenuebermittler2014
 {
     public class DatenuebermittlerTests2014 : ElsterDocumentValidation
     {
-        [Fact]
+        [Fact(DisplayName = "Datenübermittler 2014")]
         public void TestRequestResponseValidation()
         {
             var provider = new Datenuebermittler2014ResourceProvider();

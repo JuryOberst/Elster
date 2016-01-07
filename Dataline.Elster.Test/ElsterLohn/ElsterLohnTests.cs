@@ -16,7 +16,7 @@ namespace Dataline.Elster.Test.ElsterLohn
 {
     public class ElsterLohnTests : ElsterDocumentValidation
     {
-        [Theory]
+        [Theory(DisplayName = "Lohnsteuerbescheinigung")]
         [InlineData("ELO_DatenLieferung_LStB_201001_01.xml")]
         [InlineData("ELO_DatenLieferung_LStB_201101_01.xml")]
         [InlineData("ELO_DatenLieferung_LStB_201201_01.xml")]

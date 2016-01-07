@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datenuebermittler2014\DatenuebermittlerTests2014.cs" />
+    <Compile Include="Datenuebermittler2015\DatenuebermittlerTests2015.cs" />
     <Compile Include="ElsterAnmeldung\ElsterAnmeldungTests.cs" />
     <Compile Include="ElsterDocumentValidation.cs" />
     <Compile Include="ElsterLohn\ElsterLohnTests.cs" />
@@ -190,7 +191,21 @@
     <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_SoVZ_2015.xml" />
     <EmbeddedResource Include="ElsterAnmeldung\Daten\USTVA_SoVZ_2016.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Datenuebermittler2015\Daten\due2015\abmelden\abmelde_request.xml" />
+    <EmbeddedResource Include="Datenuebermittler2015\Daten\due2015\abmelden\abmelde_response.xml" />
+    <EmbeddedResource Include="Datenuebermittler2015\Daten\due2015\anmelden\anmelde_request.xml" />
+    <EmbeddedResource Include="Datenuebermittler2015\Daten\due2015\anmelden\anmelde_response.xml" />
+    <EmbeddedResource Include="Datenuebermittler2015\Daten\due2015\anmelden\bruttoliste2015_response.xml" />
+    <EmbeddedResource Include="Datenuebermittler2015\Daten\due2015\anmelden\monatsliste2015_response.xml" />
+    <EmbeddedResource Include="Datenuebermittler2015\Daten\due2015\exception\exception2_request.xml" />
+    <EmbeddedResource Include="Datenuebermittler2015\Daten\due2015\exception\exception2_response.xml" />
+    <EmbeddedResource Include="Datenuebermittler2015\Daten\due2015\exception\exception_request.xml" />
+    <EmbeddedResource Include="Datenuebermittler2015\Daten\due2015\exception\exception_response.xml" />
+    <EmbeddedResource Include="Datenuebermittler2015\Daten\due2015\ummelden\ummelde_request.xml" />
+    <EmbeddedResource Include="Datenuebermittler2015\Daten\due2015\ummelden\ummelde_response.xml" />
+    <Content Include="Datenuebermittler2015\Daten\readme.txt" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Datenuebermittler2014\Daten\aenderungliste\5192000000099.0.xml" />
     <EmbeddedResource Include="Datenuebermittler2014\Daten\aenderungliste\5192070000017.0.xml" />

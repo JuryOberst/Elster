@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<Elster xmlns="http://www.elster.de/2002/XMLSchema">
+	<TransferHeader version="8">
+		<Verfahren>ElsterLohn2</Verfahren>
+		<DatenArt>AenderungslisteDUe</DatenArt>
+		<Vorgang>send-NoSig</Vorgang>
+		<TransferTicket>1234567890123456789</TransferTicket>
+		<Testmerker>700000001</Testmerker>
+		<Empfaenger id="L">
+			<Ziel>CS</Ziel>
+		</Empfaenger>
+		<HerstellerID>00000</HerstellerID>
+		<DatenLieferant>ElsterLohn2 HerstellerMock 1.0.0-003</DatenLieferant>
+		<EingangsDatum>20130101120000</EingangsDatum>
+		<Datei>
+			<Verschluesselung>none</Verschluesselung>
+			<Kompression>none</Kompression>
+			<DatenGroesse>1</DatenGroesse>
+			<TransportSchluessel></TransportSchluessel>
+		</Datei>
+	</TransferHeader>
+	<DatenTeil>
+		<Nutzdatenblock>
+			<NutzdatenHeader version="10">
+				<NutzdatenTicket>1</NutzdatenTicket>
+				<Empfaenger id="L">CS</Empfaenger>
+				<Hersteller>
+					<ProduktName />
+					<ProduktVersion />
+				</Hersteller>
+				<DatenLieferant>ElsterLohn2 HerstellerMock 1.0.0-003</DatenLieferant>
+			</NutzdatenHeader>
+			<Nutzdaten>
+				<Aenderungsliste 
+						stnrDUe="5192000000099" 
+						transferTicket="e22686xe2rr4tc051144ip7ac20xec4t" 
+						nutzdatenTicket="1" 
+						art="ANMELDEBESTAETIGUNGSLISTE" 
+						laufendeNummer="201501001" 
+						anzahlTeillisten="1" 
+						schemaversion="1" 
+						xmlns="http://www.elster.de/elo2/datenuebermittler/aenderungsliste/2015">
+					<Arbeitgeber stnrAG="5192070000196">
+
+						<Arbeitnehmer idnr="01127645382">
+							  <ELStAM gueltigAb="20150101">
+								<Steuerklasse nummer="1"/>
+								<Kinderfreibetrag anzahl="0"/>
+								<Kirchensteuer konfession="--"/>
+								<Faktor wert="0"/>
+								<Freibetrag tag="0" woche="0" monat="0" jahr="0"/>
+							  </ELStAM>
+							<AN-Verfahrenshinweis code="552020000" message="Keine besonderen Hinweise" type="INFORMATION"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="01197645386">
+							<AN-Verfahrenshinweis code="552020200" message="Keine Anmeldeberechtigung" type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="02217645388">
+							<AN-Verfahrenshinweis code="552020201" message="Keine Anmeldung vor Beschäftigungsbeginn möglich" type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="07796532843">
+							<AN-Verfahrenshinweis code="552020202" message="Arbeitnehmer unbekannt: Die IdNr des Arbeitnehmers kann nicht verifiziert werden." type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="09916743524">
+							<AN-Verfahrenshinweis code="552020203" message="Erneute Anmeldung nicht möglich - Arbeitnehmer ist bereits angemeldet." type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="04507896126">
+							<AN-Verfahrenshinweis code="552020204" message="refDatumAG liegt vor Verfahrensstart." type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="02217856341">
+							<AN-Verfahrenshinweis code="552020205" message="refDatumAG liegt vor Beginn der Meldepflicht." type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="01127649385">
+							<AN-Verfahrenshinweis code="552020206" message="refDatumAG liegt vor Jahresbeginn (bei Eingangsdatum ab 01.03. des Jahres)." type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="07716539487">
+							<AN-Verfahrenshinweis code="552020207" message="refDatumAG liegt vor Vorjahresbeginn (bei Eingangsdatum vor 01.03. des Jahres)." type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="00127689454">
+							<AN-Verfahrenshinweis code="552020208" message="refDatumAG liegt vor Beschäftigungsbeginn." type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="01127643854">
+							<AN-Verfahrenshinweis code="552020209" message="Für ein refDatumAG nach dem Eingangsdatum der Anmeldung in der Clearingstelle ist nur der Tag des Verfahrensstarts erlaubt." type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="03397645284">
+							<AN-Verfahrenshinweis code="552020210" message="Für Hauptarbeitsverhältnis kann kein Freibetrag angefordert werden." type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="07716592483">
+							 <ELStAM gueltigAb="20150101">
+								<Steuerklasse nummer="1"/>
+								<Kinderfreibetrag anzahl="0"/>
+								<Kirchensteuer konfession="--"/>
+								<Faktor wert="0"/>
+								<Freibetrag tag="3.33" woche="23.10" monat="100" jahr="1200"/>
+							 </ELStAM>
+							<AN-Verfahrenshinweis code="552020211" message="Freibetrag gekürzt, da verfügbares Hinzurechnungsvolumen kleiner als angeforderter Freibetrag." type="INFORMATION"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="03317695288">
+							<AN-Verfahrenshinweis code="552020212" message="Angabe des 29.02. außerhalb eines Schaltjahres (beschaeftigungsbeginn, abmeldeDatum oder refDatumAG)" type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="06617532847">
+							<AN-Verfahrenshinweis code="552020213" datum="20150101" message="Das refDatumAG der Anmeldung muss nach dem Ende der Beschäftigung aus der letzten Abmeldung liegen. [Beschäftigungsende = 20150101]" type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="03397642851">
+						  <ELStAM gueltigAb="20150101">
+							<Steuerklasse nummer="4"/>
+							<Kinderfreibetrag anzahl="0"/>
+							<Kirchensteuer konfession="--"/>
+							<Faktor wert="873"/>
+							<Freibetrag tag="0" woche="0" monat="0" jahr="0"/>
+						  </ELStAM>
+							<AN-Verfahrenshinweis code="552020214" message="Anmeldung nach Kulanzfrist, neues refDatumAG der aktuellen Beschäftigung. [refDatumAG = 20150103]" datum="20150103" type="INFORMATION"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="07716592848">
+							<AN-Verfahrenshinweis code="552020215" message="Zu dem refDatumAG der Anmeldung liegt bereits ein Hauptarbeitsverhältnis vor." type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="03317649281">
+							<AN-Verfahrenshinweis code="552020900" message="Verarbeitungsabbruch - bitte kontaktieren Sie Ihr zuständiges Betriebsstätten-Finanzamt." type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="00127645381">
+							<AN-Verfahrenshinweis code="552020202" message="Arbeitnehmer unbekannt: Die IdNr des Arbeitnehmers kann nicht verifiziert werden." type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="04507638210">
+							<AN-Verfahrenshinweis code="552020212" message="Angabe des 29.02. außerhalb eines Schaltjahres (beschaeftigungsbeginn, abmeldeDatum oder refDatumAG)" type="ABLEHNUNG"/>
+						</Arbeitnehmer>
+						<Arbeitnehmer idnr="06617532986">
+							<AN-Verfahrenshinweis code="552020900" message="Verarbeitungsabbruch - bitte kontaktieren Sie Ihr zuständiges Betriebsstätten-Finanzamt." type="FEHLER"/>
+						</Arbeitnehmer>
+
+						<AG-Verfahrenshinweis code="552010002" message="Besondere Hinweise zu mindestens einem Arbeitnehmer" type="INFORMATION" />
+						<Steuernummerhinweis code="551000009" message="Bitte verwenden Sie im Verfahren ElsterLohn II die im Attribut steuernummer enthaltene Steuernummer" type="INFORMATION" steuernummer="5192022224444"/>
+					</Arbeitgeber>
+				</Aenderungsliste>
+			</Nutzdaten>
+		</Nutzdatenblock>
+	</DatenTeil>
+</Elster>
