@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dataline.Elster.Basis", "Dataline.Elster.Basis\Dataline.Elster.Basis.csproj", "{03239608-FA8F-4D16-9EC5-DF54CC99BA8F}"
 EndProject
@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		LICENSE.md = LICENSE.md
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dataline.Elster.Datenuebermittler2014", "Dataline.Elster.Datenuebermittler2014\Dataline.Elster.Datenuebermittler2014.csproj", "{BDB31820-5678-4462-BC60-019A89E487B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{629DA954-C067-46EB-BB53-A53182FFAD2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{629DA954-C067-46EB-BB53-A53182FFAD2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{629DA954-C067-46EB-BB53-A53182FFAD2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDB31820-5678-4462-BC60-019A89E487B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDB31820-5678-4462-BC60-019A89E487B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDB31820-5678-4462-BC60-019A89E487B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDB31820-5678-4462-BC60-019A89E487B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

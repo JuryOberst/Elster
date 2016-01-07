@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!-- Generiert: 2013.09.03 01:09:31 
+ElsterDatenabholung liefert ein vollstÃ€ndiges ElsterXML.
+Allerdings ist die Aennderungsliste verschlÃŒsselt. 
+Daher ist es hier sinnvoller nur die ELO2-Nutzdaten - die Aenderungsliste - anzugeben.
+ -->
+<!--
+Erfolgreiche Anmeldung gekürzter FB
+===================================
+Ein Arbeitnehmer wird erfolgreich angemeldet. Es wird nicht der beantragte Freibetrag gewährt.
+-->
+
+<ns11:Aenderungsliste xmlns:ns10="http://www.elster.de/elo2/datenuebermittler/Steuerdaten" xmlns:ns11="http://www.elster.de/elo2/datenuebermittler" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       anzahlTeillisten="1" 
+       stnrDUe="@due-stnr@" 
+       nutzdatenTicket="@NDTicket@" 
+       laufendeNummer="2012001" 
+       schemaversion="2012" 
+       transferTicket="@TTicket@" 
+       art="ANMELDEBESTAETIGUNGSLISTE">
+    <ns11:Arbeitgeber stnrAG="5192070000210"
+        
+    >
+    
+    <ns11:Arbeitnehmer idnr="00139827540">
+      <ns10:ELStAM gueltigAb="20120501">
+        <ns10:Steuerklasse nummer="6"/>
+        <ns10:Kirchensteuer konfession="ev"/>
+        <ns10:KirchensteuerEhegatte konfession="rk"/>
+        <ns10:Freibetrag woche="24.1" tag="3.45" jahr="1234" monat="103"/>
+      </ns10:ELStAM>
+      <ns11:Verfahrenshinweis code="552020211" message="Freibetrag gekürzt, da verfügbares Hinzurechnungsvolumen kleiner als angeforderter Freibetrag"/>
+    </ns11:Arbeitnehmer>
+	<ns11:Verfahrenshinweis code="552010002" message="Besondere Hinweise zu mindestens einem Arbeitnehmer."/>
+  </ns11:Arbeitgeber>
+</ns11:Aenderungsliste>
+
+

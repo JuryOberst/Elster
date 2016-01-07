@@ -17,13 +17,9 @@ namespace Dataline.Elster.Test
         private static readonly XNamespace Xsi = XNamespace.Get("http://www.w3.org/2001/XMLSchema-instance");
 
 
-        [NotNull]
-        protected abstract XDocument Load([NotNull] string relativeFileName);
-
-        protected void TestDocument(string relativeFileName, IResourceProvider provider, string baseFileName)
+        protected void TestDocument(XDocument doc, IResourceProvider provider, string baseFileName, bool forceSettingSchemaLocation = false)
         {
-            var doc = Load(relativeFileName);
-            doc = FixDocumentSchema(doc, baseFileName);
+            doc = FixDocumentSchema(doc, baseFileName, forceSettingSchemaLocation);
 
             var resolver = new ResourceProviderXmlResolver(new Uri(ResourceProviderXmlResolver.TestRootUri, "Schemata/"), provider);
             var readerSettings = new XmlReaderSettings()
@@ -49,7 +45,7 @@ namespace Dataline.Elster.Test
             Assert.True(resolver.EntityFetched);
         }
 
-        private static XDocument FixDocumentSchema(XDocument document, string baseFileName)
+        private static XDocument FixDocumentSchema(XDocument document, string baseFileName, bool forceSettingSchemaLocation)
         {
             var docRoot = document.Root;
             if (docRoot == null)
@@ -61,9 +57,19 @@ namespace Dataline.Elster.Test
                 docRoot.SetAttributeValue(XNamespace.Xmlns + "xsi", Xsi.NamespaceName);
                 documentChanged = true;
             }
-            if (docRoot.Attribute(Xsi + "schemaLocation") == null)
+            var schemaLocationAttribute = docRoot.Attribute(Xsi + "schemaLocation");
+            if (forceSettingSchemaLocation)
             {
-                var schemaLocation = $"http://www.elster.de/2002/XMLSchema ./Schemata/{baseFileName.Replace("\\", "/")}";
+                schemaLocationAttribute?.Remove();
+            }
+            if (forceSettingSchemaLocation || schemaLocationAttribute == null)
+            {
+                Assert.NotNull(document.Root);
+                //var docSchema = document.Root.Name.NamespaceName;
+                //if (string.IsNullOrEmpty(docSchema))
+                //    docSchema = "http://www.elster.de/2002/XMLSchema";
+                var docSchema = "http://www.elster.de/2002/XMLSchema";
+                var schemaLocation = $"{docSchema} ./Schemata/{baseFileName.Replace("\\", "/")}";
                 docRoot.SetAttributeValue(Xsi + "schemaLocation", schemaLocation);
                 documentChanged = true;
             }

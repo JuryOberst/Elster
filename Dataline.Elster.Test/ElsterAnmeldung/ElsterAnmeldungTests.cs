@@ -31,7 +31,8 @@ namespace Dataline.Elster.Test.ElsterAnmeldung
         {
             var yearMonth = GetYearMonth(relativeFileName);
             var provider = new AnmeldungResourceProvider();
-            TestDocument(relativeFileName, provider, provider.GetBaseFileNameAnmeldungssteuer(yearMonth.Item1, yearMonth.Item2));
+            var doc = Load(relativeFileName);
+            TestDocument(doc, provider, provider.GetBaseFileNameAnmeldungssteuer(yearMonth.Item1, yearMonth.Item2));
         }
 
         [Theory]
@@ -80,10 +81,11 @@ namespace Dataline.Elster.Test.ElsterAnmeldung
         {
             var yearMonth = GetYearMonth(relativeFileName);
             var provider = new AnmeldungResourceProvider();
-            TestDocument(relativeFileName, provider, provider.GetBaseFileNameUmsatzsteuer(yearMonth.Item1, yearMonth.Item2));
+            var doc = Load(relativeFileName);
+            TestDocument(doc, provider, provider.GetBaseFileNameUmsatzsteuer(yearMonth.Item1, yearMonth.Item2));
         }
 
-        protected override XDocument Load(string relativeFileName)
+        private static XDocument Load(string relativeFileName)
         {
             var asm = typeof(ElsterAnmeldungTests).Assembly;
             var resFileName = $"Daten.{relativeFileName.Replace('/', '.')}";

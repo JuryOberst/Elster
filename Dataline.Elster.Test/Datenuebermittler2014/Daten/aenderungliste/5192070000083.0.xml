@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!-- Generiert: 2013.09.03 01:09:31 
+ElsterDatenabholung liefert ein vollstÃ€ndiges ElsterXML.
+Allerdings ist die Aennderungsliste verschlÃŒsselt. 
+Daher ist es hier sinnvoller nur die ELO2-Nutzdaten - die Aenderungsliste - anzugeben.
+ -->
+<!--
+Negativmeldung
+==============
+Bei keinem der angemeldeten Arbeitnehmer liegt in diesem Monat eine Änderung vor.
+-->
+
+<ns11:Aenderungsliste xmlns:ns10="http://www.elster.de/elo2/datenuebermittler/Steuerdaten" xmlns:ns11="http://www.elster.de/elo2/datenuebermittler" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       anzahlTeillisten="1" 
+       stnrDUe="@due-stnr@" 
+       nutzdatenTicket="@NDTicket@" 
+       laufendeNummer="2012001" 
+       schemaversion="2012" 
+       transferTicket="@TTicket@" 
+       art="MONATSLISTE">
+    <ns11:Arbeitgeber stnrAG="5192070000083"
+        
+    >
+    
+	<ns11:Verfahrenshinweis code="552010001" message="Für die bei Ihnen beschäftigten Arbeitnehmer haben sich keine Änderungen ergeben."/>
+  </ns11:Arbeitgeber>
+</ns11:Aenderungsliste>
+
+

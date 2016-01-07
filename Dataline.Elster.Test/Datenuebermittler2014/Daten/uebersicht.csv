@@ -1,0 +1,28 @@
+Definierte Arbeitgeber-Steuernummern / Fälle
+AG-Steuernummer;Gruppe;Titel;Beschreibung
+5192000000099;Allgemein;Defaultantwort;Wird erzeugt, wenn eine unbekannte MOCK-AG-Steuernummer verwendet wird.
+5192070000017;Abmeldung;Abmeldung eines verstorbenen Arbeitnehmers;Die Abmeldung eines Arbeitnehmers, der der ELStAM von den Meldebehörden bereits als verstorben  gemeldet wurde, wird von der ELStAM mit einem Fehler abgelehnt.
+5192070000028;Abmeldung;Abzumeldendes Beschäftigungsverhältnis nicht gefunden;Das per @refGueltigAb referenzierte Beschäftigungsverhältnis konnte in der ELStAM nicht gefunden werden.  Ursache kann sein, dass ein Zahlendreher vorliegt oder dass diese Abmeldung die entsprechende Anmeldung überholt hat.  (Problembereich der unständig Beschäftigten, z.B. Kameraleute/Statisten, die tageweise zwischen zwei AG (WDR,RTL) wechseln.
+5192070000039;Abmeldung;Doppelte Abmeldung;Es wird ein Arbeitnehmer abgemeldet, der bereits abgemeldet ist.
+5192070000050;Abmeldung;Erfolgreiche Abmeldung;
+5192070000061;Aenderungsliste;Erfolgreiche Anmeldung mit zusätzlicher Änderungsliste FB eingtragen;Ein Arbeitnehmer wird erfolgreich angemeldet.  Nach dem Beschäftigungsbeginn, aber vor dem Anmelden, heiratet der AN.
+5192070000072;Aenderungsliste;Sperrung einer IdNr;Es gibt Umstände, unter denen IdNr stillgelegt werden.  In Folge dessen darf diese auch in der ELStAM nicht weiter verwendet werden.  Über diese Sperrung erhält der Arbeitgeber Kenntnis per gesonderten Fehlercode in der regulären Änderungsliste.
+5192070000083;Aenderungsliste;Negativmeldung;Bei keinem der angemeldeten Arbeitnehmer liegt in diesem Monat eine Änderung vor.
+5192070000119;Aenderungsliste;Änderungsliste zwei AN;Nach dem Beschäftigungsbeginn, aber vor dem Anmelden, heiratet der AN. Nach der Anmeldung trägt das Finanzamt einen Freibetrag ein.
+5192070000130;Allgemein;Unbekannte IdNr;Eine unbekannte IdNr kann in An-, Ab- und Ummeldungen vorkommen.
+5192070000141;Allgemein;XSD inkompatibles XML;Es wurde ein XSD-inkompatibles XML geschickt.
+5192070000152;Allgemein;XML regelwidrig;Die nach der XSD-Validierung weitere Überprüfung hat Unzulässigkeiten ermittelt.
+5192070000174;Anmeldung;Erfolgreiches Nebenbeschäftigungsverhältnis;Erfolgreiche Anmeldung für ein Nebenbeschäftigungsverhältnis.
+5192070000185;Anmeldung;Erfolgreiche Anmeldung mit zusätzlicher ELStAM;Ein Arbeitnehmer wird erfolgreich angemeldet. Nach dem Beschäftigungsbeginn, aber vor dem Anmelden, heiratet der AN und lässt sich einen Freibetrag eintragen.
+5192070000196;Anmeldung;Erfolgreiche Anmeldung;Ein Arbeitnehmer wird erfolgreich angemeldet.
+5192070000210;Anmeldung;Erfolgreiche Anmeldung gekürzter FB;Ein Arbeitnehmer wird erfolgreich angemeldet. Es wird nicht der beantragte Freibetrag gewährt.
+5192070000221;Anmeldung;Anmeldung ohne Berechtigung;Der Arbeitgeber verfügt nicht über die Berechtigung, die ELStAM abzurufen, z.B. wegen Sperrlisten.
+5192070000232;Anmeldung;Anmeldung einer gesperrten IdNr;
+5192070000243;Anmeldung;Anmeldung vor Beschäftigungsbeginn;Eine Anmeldung kann nur im Nachhinein oder am gleichen Tag erfasst werden.
+5192070000254;Anmeldung;Erfolgreiche Anmeldung zweier Arbeitnehmer;
+5192070000265;Anmeldung;Anmeldung zweier Arbeitnehmer bei denen einer fehlschlägt;Der zweite AN erteilt keine Abrufberechtigung bspw aufgrund Sperrung im FA
+5192070000276;Anmeldung;Erfolgreiche Anmeldung zweier Arbeitnehmer mit Freibeträgen;
+5192070000287;Bruttoliste;Erfolgreiche Anmeldung mit zusätzlicher Bruttoliste mit zwei AN;Bei der Änderungsliste handelt es sich um eine im FA genehmigte Bruttoliste.
+5192070000298;Ummeldung;Ummeldung: 2x erfolgreich;
+5192070000301;Anmeldung;Erfolgreiche Anmeldung es werden zwei ELStAMs geliefert.;Ein Arbeitnehmer wird erfolgreich angemeldet. Es wird nicht der beantragte Freibetrag gewährt.
+5192070000312;Anmeldung;Erfolgreiche Anmeldung für 500 Arbeitnehmer.;

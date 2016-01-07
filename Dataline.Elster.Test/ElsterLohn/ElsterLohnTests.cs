@@ -39,10 +39,11 @@ namespace Dataline.Elster.Test.ElsterLohn
         public void TestDeserialize(string relativeFileName)
         {
             var provider = new LohnResourceProvider();
-            TestDocument(relativeFileName, provider, provider.BaseFileNames.Single());
+            var doc = Load(relativeFileName);
+            TestDocument(doc, provider, provider.BaseFileNames.Single());
         }
 
-        protected override XDocument Load(string relativeFileName)
+        private static XDocument Load(string relativeFileName)
         {
             var asm = typeof(ElsterLohnTests).Assembly;
             var resFileName = $"Daten.{relativeFileName.Replace('/', '.')}";

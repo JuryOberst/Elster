@@ -11,7 +11,7 @@ using System.Reflection;
 [assembly: AssemblyConfiguration("Release")]
 #endif
 [assembly: AssemblyCompany("DATALINE GmbH & Co. KG")]
-[assembly: AssemblyCopyright("Copyright © 2015 DATALINE GmbH & Co. KG")]
+[assembly: AssemblyCopyright("Copyright © 2015-2016 DATALINE GmbH & Co. KG")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

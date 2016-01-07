@@ -1,0 +1,2 @@
+@echo off
+xsd /n:Dataline.Elster.Datenuebermittler2014 /c /edb basis\headerbasis000002.xsd elo2basis.xsd datenuebermittler\Aenderungsliste.xsd datenuebermittler\ArbeitnehmerAbmeldenRequest.xsd datenuebermittler\ArbeitnehmerAnmeldenRequest.xsd datenuebermittler\DatenuebermittlerWechselRequest.xsd datenuebermittler\Steuerdaten.xsd datenuebermittler\elster0810_elo2_extern.xsd 

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!-- Generiert: 2013.09.03 01:09:31 
+ElsterDatenabholung liefert ein vollständiges ElsterXML.
+Allerdings ist die Aennderungsliste verschlüsselt. 
+Daher ist es hier sinnvoller nur die ELO2-Nutzdaten - die Aenderungsliste - anzugeben.
+ -->
+<!--
+Erfolgreiche Anmeldung zweier Arbeitnehmer mit Freibetr�gen
+-->
+
+<ns11:Aenderungsliste xmlns:ns10="http://www.elster.de/elo2/datenuebermittler/Steuerdaten" xmlns:ns11="http://www.elster.de/elo2/datenuebermittler" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       anzahlTeillisten="1" 
+       stnrDUe="@due-stnr@" 
+       nutzdatenTicket="@NDTicket@" 
+       laufendeNummer="2012001" 
+       schemaversion="2012" 
+       transferTicket="@TTicket@" 
+       art="ANMELDEBESTAETIGUNGSLISTE">
+    <ns11:Arbeitgeber stnrAG="5192070000276"
+        
+    >
+    
+    <ns11:Arbeitnehmer idnr="00139827540">
+      <ns10:ELStAM gueltigAb="20120101">
+        <ns10:Steuerklasse nummer="1"/>
+        <ns10:Kirchensteuer konfession="ev"/>
+        <ns10:Freibetrag woche="24.1" tag="3.45" jahr="1234" monat="103"/>
+      </ns10:ELStAM>
+      <ns11:Verfahrenshinweis code="552001010" message="Anmeldung erfolgreich"/>
+    </ns11:Arbeitnehmer>
+    <ns11:Arbeitnehmer idnr="09925714630">
+      <ns10:ELStAM gueltigAb="20120101">
+        <ns10:Steuerklasse nummer="1"/>
+        <ns10:Kirchensteuer konfession="ev"/>
+        <ns10:Freibetrag woche="29.2" tag="4.2" jahr="1500" monat="125"/>
+      </ns10:ELStAM>
+      <ns11:Verfahrenshinweis code="552001010" message="Anmeldung erfolgreich"/>
+    </ns11:Arbeitnehmer>
+	<ns11:Verfahrenshinweis code="552010000" message="Keine besonderen Hinweise zu den in der Liste enthaltenen Arbeitnehmern."/>
+  </ns11:Arbeitgeber>
+</ns11:Aenderungsliste>
+
+

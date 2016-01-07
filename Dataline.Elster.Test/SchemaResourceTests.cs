@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Dataline.Elster.Anmeldung;
 using Dataline.Elster.Basis;
 using Dataline.Elster.Datenabholung;
+using Dataline.Elster.Datenuebermittler2014;
 using Dataline.Elster.Datenuebermittler2015;
 using Dataline.Elster.Lohn;
 
@@ -18,6 +19,7 @@ namespace Dataline.Elster.Test
         [InlineData(typeof(AnmeldungResourceProvider))]
         [InlineData(typeof(LohnResourceProvider))]
         [InlineData(typeof(DatenabholungResourceProvider))]
+        [InlineData(typeof(Datenuebermittler2014ResourceProvider))]
         [InlineData(typeof(Datenuebermittler2015ResourceProvider))]
         [InlineData(typeof(LohnResourceProvider))]
         public void LoadableTest(Type resourceProviderType)

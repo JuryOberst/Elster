@@ -1,0 +1,217 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:elo2="http://www.elster.de/elo2/Basis" xmlns="http://www.elster.de/elo2/datenuebermittler/Steuerdaten"
+	targetNamespace="http://www.elster.de/elo2/datenuebermittler/Steuerdaten"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.elster.de/elo2/Basis"
+		schemaLocation="../elo2basis.xsd" />
+	<xs:element name="ELStAM">
+		<xs:complexType>
+			<xs:annotation>
+				<xs:documentation>Besteuerungsmerkmale zum Arbeitsverhältnis
+				</xs:documentation>
+			</xs:annotation>
+			<xs:sequence>
+				<xs:element name="Steuerklasse">
+					<xs:annotation>
+						<xs:documentation>Mögliche Steuerklassen: 1,2,3,4,5,6
+						</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="nummer" use="required">
+							<xs:annotation>
+								<xs:documentation>Steuerklasse des Arbeitnehmers im Haupt- oder
+									Nebenarbeitsverhältnis (HAV bzw. NAV)</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="elo2:allg_SteuerklasseSType">
+									<xs:minInclusive value="1" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Kinderfreibetrag">
+					<xs:annotation>
+						<xs:documentation>Zu berücksichtigende Kinderfreibeträge.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="anzahl" use="required">
+							<xs:annotation>
+								<xs:documentation>Zahl der Kinderfreibeträge des Arbeitnehmers.
+									Angabe mit einer Nachkommastelle in Schritten von 0,5.
+								</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+									<xs:fractionDigits value="1" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Kirchensteuer">
+					<xs:annotation>
+						<xs:documentation>Kirchensteuer des Steuerpflichtigen in
+							Abhängigkeit von der Religionszugehörigkeit, dem Bundesländern
+							Wohnort und dem Bundesland Firmenstitz (bei Arbeitnehmern).
+						</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="konfession" type="elo2:allg_Konfession_ab2008SType"
+							use="required">
+							<xs:annotation>
+								<xs:documentation>Werteliste, zweistellig</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="KirchensteuerEhegatte" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Wann dieses Element als Teil der
+							Besteuerungsmerkmale geliefert wird, ist von mehreren Faktoren
+							anhängig. Familienstand VH allein reicht nicht aus.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="konfession" type="elo2:allg_Konfession_ab2008SType"
+							use="required">
+							<xs:annotation>
+								<xs:documentation>Werteliste, zweistellig</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Faktor">
+					<xs:annotation>
+						<xs:documentation>Angabe eines Faktor bei Steuerklasse 4. Nur
+							möglich, wenn keine Freibeträge ausgewiesen sind, ansonsten wird
+							der Wert 0 übermittelt. Bei den Steuerklassen 1,2,3,5 oder 6 ist
+							nur der Wert 0 zulässig.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="wert" use="required">
+							<xs:annotation>
+								<xs:documentation>Übermittlung der 3 Nachkommastellen des
+									Faktors. Der Wert "0" bedeutet "Kein Faktorverfahren".
+								</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:int">
+									<xs:minInclusive value="0" />
+									<xs:maxInclusive value="999" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Freibetrag" type="Freibetrag">
+					<xs:annotation>
+						<xs:documentation>Für HAV oder NAV ausgewiesener Freibetrag für
+							das aktuelle Jahr ab Gültigkeitsbeginn dieser
+							Besteuerungsmerkmale. Bei Angabe eines Faktors ist nur der Wert
+							"0" erlaubt.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Hinzurechnungsbetrag" type="Hinzurechnungsbetrag"
+					minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Für das HAV ggf. ausgewiesener
+							Hinzurechnungsbetrag (Antragswert) im laufenden Jahr ab
+							Gültigkeitsbeginn dieser Besteuerungsmerkmale. Für das NAV wird
+							kein Hnizurechnungsbetrag übermittelt.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="gueltigAb" type="elo2:allg_Datum8SType"
+				use="required">
+				<xs:annotation>
+					<xs:documentation>Beginn der Gültigkeit dieser Besteuerungsmerkmale
+						des Arbeitnehmers.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Freibetrag">
+		<xs:annotation>
+			<xs:documentation>Für HAV oder NAV ggf. ausgewiesener Freibetrag für
+				das aktuelle Jahr ab Gültigkeitsbeginn dieser Besteuerungsmerkmale.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="jahr" use="required">
+			<xs:annotation>
+				<xs:documentation>Jahreswert des Freibetrages</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:int">
+					<xs:minInclusive value="0" />
+					<xs:maxInclusive value="999999999" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="monat" use="required">
+			<xs:annotation>
+				<xs:documentation>Monatswert des Freibetrages</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:int">
+					<xs:minInclusive value="0" />
+					<xs:maxInclusive value="99999999" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="woche" type="xs:decimal" use="required">
+			<xs:annotation>
+				<xs:documentation>Wochenwert des Freibetrages</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="tag" type="xs:decimal" use="required">
+			<xs:annotation>
+				<xs:documentation>Tageswert des Freibetrages</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Hinzurechnungsbetrag">
+		<xs:annotation>
+			<xs:documentation>Für NAV ggf. ausgewiesener Hinzurechnungsbetrag für
+				das HAV im laufenden Jahr ab Gültigkeitsbeginn dieser
+				Besteuerungsmerkmale.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="jahr" use="required">
+			<xs:annotation>
+				<xs:documentation>Jahreswert des Hinzurechnungsbetrages
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:int">
+					<xs:minInclusive value="0" />
+					<xs:maxInclusive value="999999999" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="monat" use="required">
+			<xs:annotation>
+				<xs:documentation>Monatswert des Hinzurechnungsbetrages
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:int">
+					<xs:minInclusive value="0" />
+					<xs:maxInclusive value="99999999" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="woche" type="xs:decimal" use="required">
+			<xs:annotation>
+				<xs:documentation>Wochenwert des Hinzurechnungsbetrages
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="tag" type="xs:decimal" use="required">
+			<xs:annotation>
+				<xs:documentation>Tageswert des Hinzurechnungsbetrages
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

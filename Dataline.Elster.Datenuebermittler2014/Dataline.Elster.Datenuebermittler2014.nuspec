@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <authors>DATALINE GmbH &amp; Co.KG</authors>
+    <owners>DATALINE GmbH &amp; Co.KG</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/dataline-gmbh/Elster</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Klassen für ELSTER Lohn 2 (Datenübermittler 2014)</description>
+    <releaseNotes>Erstes Release</releaseNotes>
+    <copyright>Copyright 2015-2016 DATALINE GmbH &amp; Co.KG</copyright>
+    <tags>ELSTER Lohn 2 II Datenübermittler 2014</tags>
+  </metadata>
+</package>

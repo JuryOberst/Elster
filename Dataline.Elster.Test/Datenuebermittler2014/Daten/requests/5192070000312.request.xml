@@ -1,0 +1,3558 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!-- Generiert: 2013.09.03 01:09:31 -->
+<!--
+Erfolgreiche Anmeldung für 500 Arbeitnehmer.
+-->
+<Elster xmlns="http://www.elster.de/2002/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:schemaLocation="http://www.elster.de/2002/XMLSchema">
+  <TransferHeader version="000008">
+    <Verfahren>ElsterLohn2</Verfahren>
+    <!-- Gruppe: Anmeldung -->
+    <DatenArt>DUeAnmelden</DatenArt>
+    <Vorgang>send-Auth</Vorgang>
+    <TransferTicket>@TTicket@</TransferTicket>
+    <Testmerker>700000001</Testmerker>
+    <SigUser>
+      <SigPruefung>00000000000000</SigPruefung>
+      <AuthInfo>
+        <AuthAccountID>1234567890</AuthAccountID>
+        <AuthZuordnungskriterium>Steuernummer Person</AuthZuordnungskriterium>
+        <AuthSteuernummer>5192000000099</AuthSteuernummer>
+        <AuthRegDatum>20110725</AuthRegDatum>
+      </AuthInfo>
+      <UserInfo>
+        <User id="2">
+          <Vorname />
+          <Name />
+        </User>
+      </UserInfo>
+      <Sig>MIIESzCCAzOgAwIBAgIEQZIPhjANBgkqhkiG9w0BAQsFADBGMQswCQYDVQQGEwJERTEPMA0GA1UEChMGRWxzdGVyMQswCQYDVQQLEwJDQTEZMBcGA1UEAxMQRWxzdGVyU29mdFRlc3RDQTAeFw0wOTA0MjAxMDAwNDVaFw0xMjA0MjAxMDAwNDVaMCwxFDASBgNVBAUTCzExMDAwNzM3ODNBMRQwEgYDVQQDDAtNYWllcixNICYgTTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKQAxGKmOntX3xhx2ywf9iF2cGuhXoGe/VKNLAEYsSikVb3tdHryxXCDp7eBi+veEiJH9E7FSK9C3nNpR6JoEJdc3FcRzJegKDXy+g4TEAXBJAXYrK312RSTgmbfliVX24yzPOOyJM0K6F45yEJeNLTZbAmuNpWq4oAuOhk3dhJq7mQCCYB9W8jlEed2Jtswnu97qnKqKH0iFrwpj1JVZM5YPO3aFtY7J853m4BKiFcK4b1QFjqMADVqOMF9/bpaMosfqKinfTHLVM3JN3GPf5aaeYL2+kwdk2x32r4aqKFmcLvHaVWO4boDzZuFxIC/e2B+XhtlWIWpFpWdy3C0XlcCAwEAAaOCAVkwggFVMA4GA1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBSYEhkDThKJQpq+P34uxhe6Tf4zMzCBogYDVR0fBIGaMIGXMIGUoIGRoIGOhoGLbGRhcDovLzEwLjM2LjEyNS45MTozODkvY24lM2RFbHN0ZXJTb2Z0VGVzdENBLG91JTNkQ0EsbCUzZENBJTIwWmVydGlmaWthdGUsZGMlM2R3aWVzZWwsZGMlM2RlbHN0ZXIsZGMlM2RkZT9jZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0O2JpbmFyeTBxBgNVHSMEajBogBQhxfOBiW2uTx73w036wjNTHjhtTKFKpEgwRjELMAkGA1UEBhMCREUxDzANBgNVBAoTBkVsc3RlcjEPMA0GA1UECxMGUm9vdENBMRUwEwYDVQQDEwxFbHN0ZXJSb290Q0GCBDuaykswDQYJKoZIhvcNAQELBQADggEBAKqmaOa/2jNT/Ltm/4Lm/rYmpXljRvMyGwaXszRpYrj+i8DvfE+FIrrxeqrfag/jVIJzhtoGde7DyXUpqTOHz9/BANy7KFnGDIJ0DjCNvF/8p0ZVwqE5i573Bk7y12/x9Inrd5dE0qZA0hXaJ/V/VdkXAXPhfAA8uN6mZeSewoMNGO71ZbsvfN5JiyKH+q/RqxW7hGPWE5nFP6CLvJdQDn/H9haHaHEl7JGeeH2sJ3KvDT491POX+vL7RREVtM8RJ1JSJD+nUFJAvBv6STh/bxTsrrBkQEkmovEbHvNoulDZwKpuMxlcPbuVx398thO+3c6BoM4FzMX+8a2H55DERcU=</Sig>
+    </SigUser>
+    <Empfaenger id="L">
+      <Ziel>CS</Ziel>
+    </Empfaenger>
+    <HerstellerID>00000</HerstellerID>
+    <DatenLieferant>Vereintes Steuerberater-Rechenzentrum</DatenLieferant>
+    <Datei>
+        <Verschluesselung>PKCS#7v1.5</Verschluesselung>
+        <Kompression>GZIP</Kompression>
+        <DatenGroesse>1<!-- Groesse des DatenTeils nach Verschluesselung und Komprimierung --></DatenGroesse>
+        <TransportSchluessel><!-- Text mit mehreren Tags XML-DSig --></TransportSchluessel>
+    </Datei>
+  </TransferHeader>
+  <DatenTeil>
+    <Nutzdatenblock>
+      <NutzdatenHeader version="000010">
+        <NutzdatenTicket>@NDTicket@</NutzdatenTicket>
+        <Empfaenger id="L">CS</Empfaenger>
+      </NutzdatenHeader>
+      <Nutzdaten>
+        <ArbeitnehmerAnmeldenRequest
+          xmlns="http://www.elster.de/elo2/datenuebermittler/ArbeitnehmerAnmeldenRequest"
+          stnrAG="5192070000312" >
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233444" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233452" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233469" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233477" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233485" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233493" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233549" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233557" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233565" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233573" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233581" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233590" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233645" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233653" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233661" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233670" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233688" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233696" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233740" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233758" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233766" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233774" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233782" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233799" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233846" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233854" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233862" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233879" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233887" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233895" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233942" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233959" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233967" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233975" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233983" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012233991" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234349" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234357" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234365" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234373" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234381" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234390" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234437" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234453" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234461" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234470" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234488" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234496" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234531" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234540" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234558" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234566" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234574" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234582" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234599" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234638" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234646" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234654" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234662" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234679" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234687" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234695" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234734" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234742" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234759" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234767" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234775" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234783" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234791" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234839" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234847" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234855" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234863" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234871" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234880" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234898" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234935" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234943" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234951" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234960" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234978" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234986" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012234994" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235340" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235358" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235366" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235374" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235382" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235399" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235438" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235446" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235454" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235462" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235479" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235487" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235495" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235534" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235542" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235567" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235575" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235583" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235591" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235639" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235647" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235655" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235663" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235671" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235680" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235698" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235735" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235743" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235751" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235760" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235778" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235786" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235794" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235833" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235841" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235850" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235868" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235876" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235884" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235892" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235930" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235948" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235956" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235964" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235972" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235989" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012235997" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236342" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236359" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236367" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236375" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236383" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236391" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236439" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236447" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236455" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236463" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236471" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236480" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236498" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236535" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236543" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236551" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236560" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236578" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236586" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236594" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236633" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236641" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236650" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236676" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236684" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236692" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236730" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236748" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236756" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236764" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236772" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236789" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236797" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236836" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236844" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236852" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236869" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236877" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236885" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236893" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236932" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236949" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236957" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236965" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236973" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236981" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012236990" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237347" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237355" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237363" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237371" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237380" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237398" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237435" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237443" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237451" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237460" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237478" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237486" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237494" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237533" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237541" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237550" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237568" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237576" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237584" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237592" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237630" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237648" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237656" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237664" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237672" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237689" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237697" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237736" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237744" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237752" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237769" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237785" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237793" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237832" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237849" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237857" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237865" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237873" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237881" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237890" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237937" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237945" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237953" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237961" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237970" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237988" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012237996" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238341" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238350" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238368" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238376" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238384" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238392" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238430" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238448" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238456" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238464" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238472" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238489" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238497" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238536" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238544" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238552" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238569" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238577" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238585" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238593" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238632" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238649" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238657" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238665" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238673" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238681" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238690" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238737" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238745" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238753" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238761" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238770" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238788" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238796" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238831" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238840" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238858" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238866" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238874" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238899" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238938" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238946" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238954" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238962" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238979" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238987" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012238995" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239344" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239352" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239369" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239377" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239385" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239393" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239432" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239449" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239457" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239465" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239473" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239481" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239490" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239537" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239545" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239553" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239561" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239570" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239588" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239596" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239631" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239640" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239658" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239666" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239674" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239682" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239699" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239738" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239746" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239754" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239762" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239779" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239787" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239795" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239834" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239842" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239859" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239867" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239875" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239883" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239891" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239939" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239947" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239955" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239963" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239971" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012239980" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243342" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243359" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243367" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243375" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243383" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243391" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243439" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243455" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243463" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243471" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243480" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243498" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243535" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243543" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243551" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243560" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243578" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243586" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243594" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243633" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243641" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243650" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243668" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243676" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243684" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243692" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243730" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243748" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243756" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243764" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243772" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243789" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243797" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243836" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243844" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243852" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243869" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243877" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243885" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243893" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243932" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243949" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243957" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243965" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243973" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243981" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012243990" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244339" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244355" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244363" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244371" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244380" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244398" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244533" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244550" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244568" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244576" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244584" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244592" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244630" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244656" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244664" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244672" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244689" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244697" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244736" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244752" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244769" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244777" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244785" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244793" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244832" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244857" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244865" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244873" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244881" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244890" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244937" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244953" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244961" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244970" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244988" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012244996" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245333" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245341" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245350" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245368" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245376" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245384" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245392" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245430" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245456" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245464" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245472" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245489" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245497" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245536" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245544" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245569" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245577" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245585" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245593" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245632" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245649" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245657" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245665" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245673" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245681" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245690" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245737" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245745" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245753" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245761" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245770" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245788" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245796" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245831" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245840" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245858" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245866" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245874" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245882" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245899" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245938" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245946" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245954" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245962" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245979" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245987" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012245995" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246336" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246344" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246352" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246369" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246377" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246385" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246393" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246432" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246457" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246465" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246473" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246481" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246490" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246537" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246545" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246553" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246561" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246570" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246588" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246596" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246631" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246640" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246658" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246674" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246682" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246699" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246738" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246746" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246754" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246762" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246779" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246787" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246795" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246834" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246842" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246859" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246867" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246875" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246883" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246891" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246939" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246947" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246955" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246963" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246971" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246980" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012246998" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012247337" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012247345" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012247353" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012247361" />
+        
+        <Arbeitnehmer gebdat="19670813" 
+	                refDatumAG="20001230" 
+                    beschaeftigungsbeginn="20001230"
+                    istHauptarbeitgeber="false"
+                    
+                idnr="10012247370" />
+        </ArbeitnehmerAnmeldenRequest>
+        
+        
+      </Nutzdaten>
+    </Nutzdatenblock>
+  </DatenTeil>
+</Elster>
