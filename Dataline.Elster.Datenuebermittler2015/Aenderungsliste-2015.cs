@@ -11,6 +11,9 @@
 // 
 // Dieser Quellcode wurde automatisch generiert von xsd, Version=4.6.81.0.
 // 
+
+using System.Collections.Generic;
+
 namespace Dataline.Elster.Datenuebermittler2015 {
     using System.Xml.Serialization;
     
@@ -149,7 +152,7 @@ namespace Dataline.Elster.Datenuebermittler2015 {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/elo2/datenuebermittler/aenderungsliste/2015")]
     public partial class ArbeitgeberComplex : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private ArbeitnehmerComplex[] arbeitnehmerField;
+        private List<ArbeitnehmerComplex> arbeitnehmerField;
         
         private AGVerfahrenshinweisComplex aGVerfahrenshinweisField;
         
@@ -159,7 +162,7 @@ namespace Dataline.Elster.Datenuebermittler2015 {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Arbeitnehmer")]
-        public ArbeitnehmerComplex[] Arbeitnehmer {
+        public List<ArbeitnehmerComplex> Arbeitnehmer {
             get {
                 return this.arbeitnehmerField;
             }
@@ -220,9 +223,9 @@ namespace Dataline.Elster.Datenuebermittler2015 {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/elo2/datenuebermittler/aenderungsliste/2015")]
     public partial class ArbeitnehmerComplex : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private ELStAMComplex[] eLStAMField;
+        private List<ELStAMComplex> eLStAMField;
         
-        private ANVerfahrenshinweisComplex[] aNVerfahrenshinweisField;
+        private List<ANVerfahrenshinweisComplex> aNVerfahrenshinweisField;
         
         private string idnrField;
         
@@ -232,7 +235,7 @@ namespace Dataline.Elster.Datenuebermittler2015 {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("ELStAM")]
-        public ELStAMComplex[] ELStAM {
+        public List<ELStAMComplex> ELStAM {
             get {
                 return this.eLStAMField;
             }
@@ -244,7 +247,7 @@ namespace Dataline.Elster.Datenuebermittler2015 {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("AN-Verfahrenshinweis")]
-        public ANVerfahrenshinweisComplex[] ANVerfahrenshinweis {
+        public List<ANVerfahrenshinweisComplex> ANVerfahrenshinweis {
             get {
                 return this.aNVerfahrenshinweisField;
             }

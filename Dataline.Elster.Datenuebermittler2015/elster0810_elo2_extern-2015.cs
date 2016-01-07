@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Collections.Generic;
+
 using Dataline.Elster.Basis;
 
 #pragma warning disable 1591
@@ -26,13 +28,13 @@ namespace Dataline.Elster.Datenuebermittler2015 {
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.elster.de/elo2/datenuebermittler/ArbeitnehmerAnmeldenRequest/2015", IsNullable=false)]
     public partial class ArbeitnehmerAnmeldenRequest : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private ArbeitnehmerAnmeldenComplex[] arbeitnehmerAnField;
+        private List<ArbeitnehmerAnmeldenComplex> arbeitnehmerAnField;
         
         private string stnrAGField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("ArbeitnehmerAn")]
-        public ArbeitnehmerAnmeldenComplex[] ArbeitnehmerAn {
+        public List<ArbeitnehmerAnmeldenComplex> ArbeitnehmerAn {
             get {
                 return this.arbeitnehmerAnField;
             }
@@ -171,7 +173,7 @@ namespace Dataline.Elster.Datenuebermittler2015 {
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.elster.de/elo2/datenuebermittler/DatenuebermittlerWechselRequest/2015", IsNullable=false)]
     public partial class DatenuebermittlerWechselRequest : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private ArbeitnehmerUmmeldenComplex[] arbeitnehmerUmField;
+        private List<ArbeitnehmerUmmeldenComplex> arbeitnehmerUmField;
         
         private string stnrAGField;
         
@@ -179,7 +181,7 @@ namespace Dataline.Elster.Datenuebermittler2015 {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("ArbeitnehmerUm")]
-        public ArbeitnehmerUmmeldenComplex[] ArbeitnehmerUm {
+        public List<ArbeitnehmerUmmeldenComplex> ArbeitnehmerUm {
             get {
                 return this.arbeitnehmerUmField;
             }
@@ -274,13 +276,13 @@ namespace Dataline.Elster.Datenuebermittler2015 {
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.elster.de/elo2/datenuebermittler/ArbeitnehmerAbmeldenRequest/2015", IsNullable=false)]
     public partial class ArbeitnehmerAbmeldenRequest : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private ArbeitnehmerAbmeldenComplex[] arbeitnehmerAbField;
+        private List<ArbeitnehmerAbmeldenComplex> arbeitnehmerAbField;
         
         private string stnrAGField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("ArbeitnehmerAb")]
-        public ArbeitnehmerAbmeldenComplex[] ArbeitnehmerAb {
+        public List<ArbeitnehmerAbmeldenComplex> ArbeitnehmerAb {
             get {
                 return this.arbeitnehmerAbField;
             }
@@ -517,255 +519,6 @@ namespace Dataline.Elster.Datenuebermittler2015 {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elster.de/2002/XMLSchema")]
-    public enum EmpfaengerCTypeID {
-        
-        /// <remarks/>
-        L,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/2002/XMLSchema")]
-    public partial class DateiCType : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private VerschluesselungSType verschluesselungField;
-        
-        private KompressionSType kompressionField;
-        
-        private string datenGroesseField;
-        
-        private string transportSchluesselField;
-        
-        private ErstellungType erstellungField;
-        
-        /// <remarks/>
-        public VerschluesselungSType Verschluesselung {
-            get {
-                return this.verschluesselungField;
-            }
-            set {
-                this.verschluesselungField = value;
-                this.RaisePropertyChanged("Verschluesselung");
-            }
-        }
-        
-        /// <remarks/>
-        public KompressionSType Kompression {
-            get {
-                return this.kompressionField;
-            }
-            set {
-                this.kompressionField = value;
-                this.RaisePropertyChanged("Kompression");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="positiveInteger")]
-        public string DatenGroesse {
-            get {
-                return this.datenGroesseField;
-            }
-            set {
-                this.datenGroesseField = value;
-                this.RaisePropertyChanged("DatenGroesse");
-            }
-        }
-        
-        /// <remarks/>
-        public string TransportSchluessel {
-            get {
-                return this.transportSchluesselField;
-            }
-            set {
-                this.transportSchluesselField = value;
-                this.RaisePropertyChanged("TransportSchluessel");
-            }
-        }
-        
-        /// <remarks/>
-        public ErstellungType Erstellung {
-            get {
-                return this.erstellungField;
-            }
-            set {
-                this.erstellungField = value;
-                this.RaisePropertyChanged("Erstellung");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/headerbasis02/XMLSchema")]
-    public enum VerschluesselungSType {
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("PKCS#7v1.5")]
-        PKCS7v15,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("PKCS#7v1.5enveloped")]
-        PKCS7v15enveloped,
-        
-        /// <remarks/>
-        NO_BASE64,
-        
-        /// <remarks/>
-        none,
-        
-        /// <remarks/>
-        CMSEncryptedData,
-        
-        /// <remarks/>
-        CMSEnvelopedData,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/headerbasis02/XMLSchema")]
-    public enum KompressionSType {
-        
-        /// <remarks/>
-        GZIP,
-        
-        /// <remarks/>
-        none,
-        
-        /// <remarks/>
-        NO_BASE64,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/2002/XMLSchema")]
-    public partial class ErstellungType : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private EricType ericField;
-        
-        /// <remarks/>
-        public EricType Eric {
-            get {
-                return this.ericField;
-            }
-            set {
-                this.ericField = value;
-                this.RaisePropertyChanged("Eric");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/2002/XMLSchema")]
-    public partial class EricType : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string[] textField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string[] Text {
-            get {
-                return this.textField;
-            }
-            set {
-                this.textField = value;
-                this.RaisePropertyChanged("Text");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elster.de/2002/XMLSchema")]
-    public partial class TransferHeaderCTypeZusatz : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string[] infoField;
-        
-        private string[] elsterInfoField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Info")]
-        public string[] Info {
-            get {
-                return this.infoField;
-            }
-            set {
-                this.infoField = value;
-                this.RaisePropertyChanged("Info");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ElsterInfo")]
-        public string[] ElsterInfo {
-            get {
-                return this.elsterInfoField;
-            }
-            set {
-                this.elsterInfoField = value;
-                this.RaisePropertyChanged("ElsterInfo");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elster.de/2002/XMLSchema")]
-    public enum TransferHeaderCTypeVersion {
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("8")]
-        Item8,
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("000008")]
-        Item000008,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elster.de/2002/XMLSchema")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.elster.de/2002/XMLSchema", IsNullable=false)]
@@ -813,11 +566,11 @@ namespace Dataline.Elster.Datenuebermittler2015 {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/2002/XMLSchema")]
     public partial class DatenTeilCType : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private NutzdatenblockCType[] nutzdatenblockField;
+        private List<NutzdatenblockCType> nutzdatenblockField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Nutzdatenblock")]
-        public NutzdatenblockCType[] Nutzdatenblock {
+        public List<NutzdatenblockCType> Nutzdatenblock {
             get {
                 return this.nutzdatenblockField;
             }
