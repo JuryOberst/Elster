@@ -24,12 +24,16 @@ namespace Dataline.Elster.Anmeldung
             var element = (XElement)XNode.ReadFrom(reader);
             var anmeldungssteuern = element.Element(ElsterNamespace + "Anmeldungssteuern");
             if (anmeldungssteuern == null)
-                throw new XmlException("Der Knoten \'Anmeldungssteuern\' fehlt unterhalb von \'Nutzdaten\'.");
+                throw new XmlException("Der Knoten 'Anmeldungssteuern' fehlt unterhalb von 'Nutzdaten'.");
             var version = anmeldungssteuern.Attribute("version");
+            if (version == null)
+                throw new XmlException("Das Attribut 'version' fehlt für den Knoten 'Anmeldungssteuern'");
             var art = anmeldungssteuern.Attribute("art");
+            if (art == null)
+                throw new XmlException("Das Attribut 'art' fehlt für den Knoten 'Anmeldungssteuern'");
             var artNamespace = (art.Value == "LStA" ? art.Value : "UStA");
             var artClassName = (art.Value == "LStA" ? "AnmeldungssteuernCType" : "usta_AnmeldungssteuernCType");
-            var targetTypeName = string.Format("{3}.{1}{0}.{2}", version, artNamespace, artClassName, typeof(NutzdatenCType).Namespace);
+            var targetTypeName = string.Format("{3}.{1}{0}.{2}", version.Value, artNamespace, artClassName, typeof(NutzdatenCType).Namespace);
             var targetType = Type.GetType(targetTypeName, true);
 
             var serializer = GetSerializer(targetType);
