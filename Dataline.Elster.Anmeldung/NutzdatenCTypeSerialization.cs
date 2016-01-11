@@ -19,7 +19,7 @@ namespace Dataline.Elster.Anmeldung
             return null;
         }
 
-        void IXmlSerializable.ReadXml(System.Xml.XmlReader reader)
+        void IXmlSerializable.ReadXml(XmlReader reader)
         {
             var element = (XElement)XNode.ReadFrom(reader);
             var anmeldungssteuern = element.Element(ElsterNamespace + "Anmeldungssteuern");
