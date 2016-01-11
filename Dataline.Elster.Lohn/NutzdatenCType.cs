@@ -37,6 +37,7 @@ namespace Dataline.Elster.Lohn {
         [XmlElement("Lohnsteuerbescheinigung", typeof(LStB201401.lstb_LohnsteuerbescheinigungCType), Namespace="http://www.elsterlohn.de/2014-01/XMLSchema")]
         [XmlElement("Lohnsteuerbescheinigung", typeof(LStB201501.lstb_LohnsteuerbescheinigungCType), Namespace = "http://www.elsterlohn.de/2015-01/XMLSchema")]
         [XmlElement("Lohnsteuerbescheinigung", typeof(LStB201601.lstb_LohnsteuerbescheinigungCType), Namespace = "http://www.elsterlohn.de/2016-01/XMLSchema")]
+        [XmlElement("LStBStorno", typeof(StornoV1.StornierungCType), Namespace = "http://www.elsterlohn.de/LStBStornoV1/XMLSchema")]
         public System.Collections.Generic.List<object> Items
         {
             get {
