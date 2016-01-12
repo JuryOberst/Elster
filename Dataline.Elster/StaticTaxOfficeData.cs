@@ -1484,6 +1484,13 @@ namespace Dataline.Elster
                             TaxOfficeChange.SetValid(2715, false),
                         }
                 },
+                {
+                    new DateTime(2015, 11, 22),
+                    new List<TaxOfficeChange>()
+                        {
+                            TaxOfficeChange.Redirect(3063, false, 3061),
+                        }
+                },
             };
 #endregion
     }
