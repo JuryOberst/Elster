@@ -491,7 +491,7 @@
     <Compile Include="ProtokollCType.cs" />
     <Compile Include="ProtokollStatusCodeSType.cs" />
     <Compile Include="ProtokollVersionSType.cs" />
-    <Compile Include="StornoV1\elster0810_elo_extern.cs" />
+    <Compile Include="LStBStornoV1\elster0810_elo_extern.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dataline.Elster.Basis\Dataline.Elster.Basis.csproj">

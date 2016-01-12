@@ -11,7 +11,8 @@
 // 
 // Dieser Quellcode wurde automatisch generiert von xsd, Version=4.6.1055.0.
 // 
-namespace Dataline.Elster.Lohn.StornoV1 {
+namespace Dataline.Elster.Lohn.LStBStornoV1
+{
     using System.Xml.Serialization;
     
     /// <remarks/>
