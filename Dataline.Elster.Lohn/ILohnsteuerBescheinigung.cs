@@ -4,8 +4,7 @@
 
 namespace Dataline.Elster.Lohn
 {
-    public interface ILohnsteuerBescheinigung
+    public interface ILohnsteuerBescheinigung : INutzdatenElement
     {
-        string LStBVersion { get; }
     }
 }

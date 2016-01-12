@@ -147,6 +147,7 @@
     <Compile Include="DTStatusCType.cs" />
     <Compile Include="Elster.cs" />
     <Compile Include="ILohnsteuerBescheinigung.cs" />
+    <Compile Include="INutzdatenElement.cs" />
     <Compile Include="LohnResourceProvider.cs" />
     <Compile Include="LStB200901\AuslandsPLZCType.cs" />
     <Compile Include="LStB200901\ItemsChoiceType.cs" />
@@ -466,12 +467,14 @@
     <Compile Include="LStB201601\lstb_LohnsteuerbescheinigungCTypeDauer.Support.cs" />
     <Compile Include="LStB201601\lstb_LohnsteuerbescheinigungCType.Support.cs" />
     <Compile Include="LStB201601\lstb_PersonCTypeFamilienname.Support.cs" />
+    <Compile Include="LStBStornoV1\StornierungCType.Support.cs" />
     <Compile Include="NdBStatusCType.cs" />
     <Compile Include="NdSFehlerCType.cs" />
     <Compile Include="NutzdatenblockCType.cs" />
     <Compile Include="NutzdatenBlockStatusCType.cs" />
     <Compile Include="NutzdatenCType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocol3\ProtokollAnforderungCType.Support.cs" />
     <Compile Include="Protocol3\ProtokollAnforderungCType.cs" />
     <Compile Include="Protocol3\ProtokollAnforderungVersionSType.cs" />
     <Compile Include="Protocol3\ProtokollVersionSType.cs" />
@@ -480,11 +483,13 @@
     <Compile Include="Protocol4\NdSFehlerCType.cs" />
     <Compile Include="Protocol4\NutzdatenBlockStatusCType.cs" />
     <Compile Include="Protocol4\NutzdatenBlockStatusCTypeCode.cs" />
+    <Compile Include="Protocol4\ProtokollCType.Support.cs" />
     <Compile Include="Protocol4\ProtokollCType.cs" />
     <Compile Include="Protocol5\DatenTeilStatusCType.cs" />
     <Compile Include="Protocol5\NdSFehlerCType.cs" />
     <Compile Include="Protocol5\NutzdatenBlockStatusCType.cs" />
     <Compile Include="Protocol5\ProtokollCType.cs" />
+    <Compile Include="Protocol5\ProtokollCType.Support.cs" />
     <Compile Include="Protocol5\ProtokollStatusCodeSType.cs" />
     <Compile Include="ProtokollAnforderungCType.cs" />
     <Compile Include="ProtokollAnforderungVersionSType.cs" />

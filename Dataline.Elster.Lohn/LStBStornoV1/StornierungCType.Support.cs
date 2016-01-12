@@ -12,16 +12,20 @@
 // Copyright (c) DATALINE GmbH &amp; Co. KG. All rights reserved.
 // </copyright>
 
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+
 using Dataline.Elster.Basis;
 
 namespace Dataline.Elster.Lohn
 {
-    namespace LStB201001
+    namespace LStBStornoV1
     {
-        public partial class lstb_LohnsteuerbescheinigungCType : ILohnsteuerBescheinigung
+        public partial class StornierungCType : INutzdatenElement
         {
             /// <inheritdoc/>
-            string INutzdatenElement.ElementArt => "LStB";
+            string INutzdatenElement.ElementArt => "LStBStorno";
 
             /// <inheritdoc/>
             string INutzdatenElement.ElementVersion => XmlSchemaUtilities.GetEnumXmlValue(version);

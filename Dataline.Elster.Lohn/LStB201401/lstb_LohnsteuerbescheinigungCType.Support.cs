@@ -24,10 +24,11 @@ namespace Dataline.Elster.Lohn
     {
         public partial class lstb_LohnsteuerbescheinigungCType : ILohnsteuerBescheinigung
         {
-            public string LStBVersion
-            {
-                get { return XmlSchemaUtilities.GetEnumXmlValue(version); }
-            }
+            /// <inheritdoc/>
+            string INutzdatenElement.ElementArt => "LStB";
+
+            /// <inheritdoc/>
+            string INutzdatenElement.ElementVersion => XmlSchemaUtilities.GetEnumXmlValue(version);
 
             private IEnumerable<lstb_BesteuerungsmerkmaleCTypeELStAM> FilterBesteuerungsmerkmale<T>(Func<lstb_BesteuerungsmerkmaleCTypeELStAM, T> getCompareItem, Action<lstb_BesteuerungsmerkmaleCTypeELStAM> setNewItem) where T : class
             {

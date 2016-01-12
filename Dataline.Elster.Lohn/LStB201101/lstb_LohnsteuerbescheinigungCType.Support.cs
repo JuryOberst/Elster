@@ -20,10 +20,11 @@ namespace Dataline.Elster.Lohn
     {
         public partial class lstb_LohnsteuerbescheinigungCType : ILohnsteuerBescheinigung
         {
-            public string LStBVersion
-            {
-                get { return XmlSchemaUtilities.GetEnumXmlValue(version); }
-            }
+            /// <inheritdoc/>
+            string INutzdatenElement.ElementArt => "LStB";
+
+            /// <inheritdoc/>
+            string INutzdatenElement.ElementVersion => XmlSchemaUtilities.GetEnumXmlValue(version);
         }
     }
 }
