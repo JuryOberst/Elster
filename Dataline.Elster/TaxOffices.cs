@@ -183,7 +183,7 @@ namespace Dataline.Elster
         /// <param name="taxOfficeId">Die zu prüfende Bundesfinanzamtsnummer</param>
         /// <param name="regionId">Die Region für Berlin</param>
         /// <returns><code>true</code> wenn die Bundesfinanzamtsnummer/<paramref name="regionId"/> zu Berlin A gehört</returns>
-        /// <exception cref="ArgumentOutOfRangeException"></exception>
+        /// <exception cref="ArgumentOutOfRangeException">Das Bundesland ist nicht Berlin</exception>
         public bool IsBerlinA(int taxOfficeId, int regionId)
         {
             var province = GetProvinceFor(taxOfficeId);
