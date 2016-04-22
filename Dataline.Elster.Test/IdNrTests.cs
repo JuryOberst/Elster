@@ -4,34 +4,22 @@ namespace Dataline.Elster.Test
 {
     public class IdNrTests
     {
-        private static readonly string[] _realIdNrs = {
-            "71304527968",
-            "60244195735",
-            "23305869173",
-        };
-
-        private static readonly string[] _testIdNrs = {
-            "02476291358",
-        };
-
-        [Fact]
-        public void TestTestIds()
+        [Theory]
+        [InlineData("02476291358")]
+        public void TestTestIds(string idNr)
         {
-            foreach (var id in _testIdNrs)
-            {
-                var test = new IdNr(id);
-                Assert.Equal(IdNrStatus.Ok, test.Status);
-            }
+            var test = new IdNr(idNr);
+            Assert.Equal(IdNrStatus.Ok, test.Status);
         }
 
-        [Fact]
-        public void TestRealIds()
+        [Theory]
+        [InlineData("71304527968")]
+        [InlineData("60244195735")]
+        [InlineData("23305869173")]
+        public void TestRealIds(string idNr)
         {
-            foreach (var id in _realIdNrs)
-            {
-                var test = new IdNr(id);
-                Assert.Equal(IdNrStatus.Ok, test.Status);
-            }
+            var test = new IdNr(idNr);
+            Assert.Equal(IdNrStatus.Ok, test.Status);
         }
     }
 }
