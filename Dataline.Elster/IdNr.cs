@@ -123,13 +123,19 @@ namespace Dataline.Elster
                 figureCount[index] += 1;
             }
 
-            // Nur eine Ziffer darf und muss doppelt vorhanden sein.
-            // Wenn also 9 (von 11) Ziffern eindeutig sind, dann sind die beiden anderen Ziffern
-            // automatisch doppelt vorhanden.
-            if (figureCount.Where(x => x == 1).Count() != 8)
+            // Nur eine Ziffer muss doppelt oder dreifach vorhanden sein.
+            // In anderen Worten: 7 oder 8 Ziffern dürfen nur einmal vohanden sein.
+            var uniqueCount = figureCount.Where(x => x == 1).Count();
+            if (uniqueCount != 8 && uniqueCount != 7)
                 return IdNrStatus.InvalidStructure;
-            if (figureCount.Where(x => x == 0).Count() != 1)
+
+            // Das bedeutet im Umkehrschluss, dass eine oder zwei Ziffern
+            // nicht vorhanden sein dürfen!
+            var missingCount = figureCount.Where(x => x == 0).Count();
+            var expectedMissingCount = 9 - uniqueCount;
+            if (expectedMissingCount != missingCount)
                 return IdNrStatus.InvalidStructure;
+
             if (CheckDigit != CalculateCheckDigit())
                 return IdNrStatus.CheckDigigMismatch;
             return IdNrStatus.Ok;
