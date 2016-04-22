@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<RuleSet Name="Dataline" ToolsVersion="14.0">
+<RuleSet Name="Dataline" ToolsVersion="15.0">
   <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
     <Rule Id="CA1001" Action="Warning" />
     <Rule Id="CA1821" Action="Warning" />
@@ -16,6 +16,7 @@
     <Rule Id="SA1513" Action="None" />
     <Rule Id="SA1516" Action="None" />
     <Rule Id="SA1601" Action="None" />
+    <Rule Id="SA1623" Action="None" />
     <Rule Id="SA1642" Action="None" />
     <Rule Id="SA1643" Action="None" />
     <Rule Id="SA1652" Action="None" />
