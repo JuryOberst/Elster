@@ -11,14 +11,14 @@
 #pragma warning disable 1591
 
 // 
-// Dieser Quellcode wurde automatisch generiert von xsd, Version=4.6.81.0.
+// Dieser Quellcode wurde automatisch generiert von xsd, Version=4.6.1055.0.
 // 
 namespace Dataline.Elster.Basis {
     using System.Xml.Serialization;
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/2002/XMLSchema")]
     [System.Xml.Serialization.XmlRootAttribute("TransferHeader", Namespace="http://www.elster.de/2002/XMLSchema", IsNullable=false)]
@@ -258,7 +258,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/headerbasis02/XMLSchema")]
     public enum VerfahrenSType {
         
@@ -335,6 +335,9 @@ namespace Dataline.Elster.Basis {
         ElsterGeCoSYN,
         
         /// <remarks/>
+        ElsterGinsterVDB,
+        
+        /// <remarks/>
         ElsterIDRecherche,
         
         /// <remarks/>
@@ -404,6 +407,9 @@ namespace Dataline.Elster.Basis {
         ElsterSignatur,
         
         /// <remarks/>
+        ElsterSignaturNachricht,
+        
+        /// <remarks/>
         ElsterSmart,
         
         /// <remarks/>
@@ -441,7 +447,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/headerbasis02/XMLSchema")]
     public enum DatenArtSType {
         
@@ -461,6 +467,48 @@ namespace Dataline.Elster.Basis {
         
         /// <remarks/>
         Abholverlangen,
+        
+        /// <remarks/>
+        AktivierungsbriefReVerSt,
+        
+        /// <remarks/>
+        AktivierungsbriefBZSt,
+        
+        /// <remarks/>
+        Fristverlaengerung,
+        
+        /// <remarks/>
+        AnpassungVorauszahlung,
+        
+        /// <remarks/>
+        NeueAdresse,
+        
+        /// <remarks/>
+        NeueBankverbindung,
+        
+        /// <remarks/>
+        NachreichenBelege,
+        
+        /// <remarks/>
+        SachlicheBilligkeitsgruende,
+        
+        /// <remarks/>
+        PersoenlicheBilligkeitsgruende,
+        
+        /// <remarks/>
+        AusschlussAntwort,
+        
+        /// <remarks/>
+        WiederbelegungAntwort,
+        
+        /// <remarks/>
+        Erlass,
+        
+        /// <remarks/>
+        Vollstreckungsaufschub,
+        
+        /// <remarks/>
+        SonstigeNachrichten,
         
         /// <remarks/>
         AbrufcodeAntrag,
@@ -571,6 +619,9 @@ namespace Dataline.Elster.Basis {
         BescheidBenachrichtigung,
         
         /// <remarks/>
+        BescheidnachrichtAnEOP,
+        
+        /// <remarks/>
         Bilanz,
         
         /// <remarks/>
@@ -587,6 +638,12 @@ namespace Dataline.Elster.Basis {
         
         /// <remarks/>
         BRMNachricht,
+        
+        /// <remarks/>
+        BRMRueckmeldungDaten,
+        
+        /// <remarks/>
+        BRMRueckmeldungBestDB,
         
         /// <remarks/>
         BUCH,
@@ -610,6 +667,12 @@ namespace Dataline.Elster.Basis {
         BZStDiverseRM,
         
         /// <remarks/>
+        CRS,
+        
+        /// <remarks/>
+        CRSRM,
+        
+        /// <remarks/>
         DAAL,
         
         /// <remarks/>
@@ -619,13 +682,7 @@ namespace Dataline.Elster.Basis {
         DEICH,
         
         /// <remarks/>
-        DFP1,
-        
-        /// <remarks/>
         Dialog,
-        
-        /// <remarks/>
-        DSAP1,
         
         /// <remarks/>
         DUeAbmelden,
@@ -662,6 +719,12 @@ namespace Dataline.Elster.Basis {
         
         /// <remarks/>
         EAWZwiErgebnis,
+        
+        /// <remarks/>
+        ECOM,
+        
+        /// <remarks/>
+        ECOMRM,
         
         /// <remarks/>
         Einspruch,
@@ -706,10 +769,19 @@ namespace Dataline.Elster.Basis {
         ElsterZansDaten,
         
         /// <remarks/>
+        ELOProtokoll,
+        
+        /// <remarks/>
         EMAIL,
         
         /// <remarks/>
         EMAK,
+        
+        /// <remarks/>
+        EMAKFRM,
+        
+        /// <remarks/>
+        USTVEUFRM,
         
         /// <remarks/>
         EMAKF,
@@ -806,6 +878,12 @@ namespace Dataline.Elster.Basis {
         
         /// <remarks/>
         Fallliste,
+        
+        /// <remarks/>
+        FAMKA,
+        
+        /// <remarks/>
+        FAMKARM,
         
         /// <remarks/>
         FATCA,
@@ -913,10 +991,25 @@ namespace Dataline.Elster.Basis {
         GEWUM,
         
         /// <remarks/>
+        GEWUL,
+        
+        /// <remarks/>
         GEWXX,
         
         /// <remarks/>
         GINSTERLieferung,
+        
+        /// <remarks/>
+        GINSTERLieferungAbel,
+        
+        /// <remarks/>
+        GINSTERLieferungDuebel,
+        
+        /// <remarks/>
+        ZObELBestaetigungAbel,
+        
+        /// <remarks/>
+        ZObELBestaetigungDuebel,
         
         /// <remarks/>
         GMB,
@@ -995,6 +1088,9 @@ namespace Dataline.Elster.Basis {
         
         /// <remarks/>
         IDSERVRM,
+        
+        /// <remarks/>
+        VergabeAenderungIFAS,
         
         /// <remarks/>
         InformationsMeldung,
@@ -1111,24 +1207,6 @@ namespace Dataline.Elster.Basis {
         KFEST,
         
         /// <remarks/>
-        KFZB,
-        
-        /// <remarks/>
-        KFZD,
-        
-        /// <remarks/>
-        KFZDB,
-        
-        /// <remarks/>
-        KFZE,
-        
-        /// <remarks/>
-        KFZL,
-        
-        /// <remarks/>
-        KFZR,
-        
-        /// <remarks/>
         KIGE,
         
         /// <remarks/>
@@ -1166,6 +1244,9 @@ namespace Dataline.Elster.Basis {
         
         /// <remarks/>
         KOF,
+        
+        /// <remarks/>
+        KOFH,
         
         /// <remarks/>
         KOFZ,
@@ -1363,7 +1444,7 @@ namespace Dataline.Elster.Basis {
         NLIST,
         
         /// <remarks/>
-        NVB,
+        NVBFreistellungsauftrag,
         
         /// <remarks/>
         PersG,
@@ -1376,6 +1457,9 @@ namespace Dataline.Elster.Basis {
         
         /// <remarks/>
         PdfBrief,
+        
+        /// <remarks/>
+        PortalPostfachnachrichten,
         
         /// <remarks/>
         POSLJ,
@@ -1409,6 +1493,9 @@ namespace Dataline.Elster.Basis {
         
         /// <remarks/>
         ProtRBM,
+        
+        /// <remarks/>
+        ProtNVBFreistellungsauftrag,
         
         /// <remarks/>
         ProtRiesterVersicherung,
@@ -1507,6 +1594,12 @@ namespace Dataline.Elster.Basis {
         SondEStStatRM,
         
         /// <remarks/>
+        SperrvermerkKirchensteuer,
+        
+        /// <remarks/>
+        ProtSperrvermerkKirchensteuer,
+        
+        /// <remarks/>
         SpezRechtAntrag,
         
         /// <remarks/>
@@ -1541,6 +1634,9 @@ namespace Dataline.Elster.Basis {
         
         /// <remarks/>
         StAb50a,
+        
+        /// <remarks/>
+        StAbS50a,
         
         /// <remarks/>
         STE,
@@ -1678,9 +1774,6 @@ namespace Dataline.Elster.Basis {
         VVAEF,
         
         /// <remarks/>
-        VVAEO,
-        
-        /// <remarks/>
         VVAM,
         
         /// <remarks/>
@@ -1787,10 +1880,82 @@ namespace Dataline.Elster.Basis {
         
         /// <remarks/>
         Mahnung,
+        
+        /// <remarks/>
+        ZMDORM,
+        
+        /// <remarks/>
+        VERSRM,
+        
+        /// <remarks/>
+        VVAEBRM,
+        
+        /// <remarks/>
+        StAb50aRM,
+        
+        /// <remarks/>
+        FSAKRM,
+        
+        /// <remarks/>
+        EMAKRM,
+        
+        /// <remarks/>
+        MELKRM,
+        
+        /// <remarks/>
+        BRMVDBRueckmeldungAnlief,
+        
+        /// <remarks/>
+        VDBBRMVollmachtAnlageLief,
+        
+        /// <remarks/>
+        VDBBRMVollmachtUpdateLief,
+        
+        /// <remarks/>
+        VDBBRMRueckmeldungLief,
+        
+        /// <remarks/>
+        VollmachtStornoLief,
+        
+        /// <remarks/>
+        StnrInfo,
+        
+        /// <remarks/>
+        StnrSuch,
+        
+        /// <remarks/>
+        StatusVdbL,
+        
+        /// <remarks/>
+        Pruef,
+        
+        /// <remarks/>
+        StatusVdbZ,
+        
+        /// <remarks/>
+        KDBVollmacht,
+        
+        /// <remarks/>
+        VDBVollmacht,
+        
+        /// <remarks/>
+        VDBVollmachtRM,
+        
+        /// <remarks/>
+        KDBVollmachtRM,
+        
+        /// <remarks/>
+        VDBKDBRueckmeldungLief,
+        
+        /// <remarks/>
+        BRMVollmachtStorno,
+        
+        /// <remarks/>
+        VollmachtStornoAnlief,
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/headerbasis02/XMLSchema")]
     public enum VorgangSType {
         
@@ -1848,7 +2013,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/headerbasis02/XMLSchema")]
     public enum TestmerkerSType {
         
@@ -1911,6 +2076,14 @@ namespace Dataline.Elster.Basis {
         /// <remarks/>
         [System.Xml.Serialization.XmlEnumAttribute("300000001")]
         Item300000001,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("300000002")]
+        Item300000002,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("300000003")]
+        Item300000003,
         
         /// <remarks/>
         [System.Xml.Serialization.XmlEnumAttribute("370000001")]
@@ -1998,7 +2171,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elster.de/2002/XMLSchema")]
     public partial class TransferHeaderCTypeSigUser : object, System.ComponentModel.INotifyPropertyChanged {
@@ -2028,7 +2201,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/2002/XMLSchema")]
     public partial class RCCType : object, System.ComponentModel.INotifyPropertyChanged {
@@ -2096,7 +2269,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elster.de/2002/XMLSchema")]
     public partial class RCCTypeRueckgabe : object, System.ComponentModel.INotifyPropertyChanged {
@@ -2138,7 +2311,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elster.de/2002/XMLSchema")]
     public partial class RCCTypeStack : object, System.ComponentModel.INotifyPropertyChanged {
@@ -2180,7 +2353,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/2002/XMLSchema")]
     public partial class EmpfaengerCType : object, System.ComponentModel.INotifyPropertyChanged {
@@ -2227,7 +2400,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/headerbasis02/XMLSchema")]
     public enum BundeslandSType {
         
@@ -2298,6 +2471,9 @@ namespace Dataline.Elster.Basis {
         CM,
         
         /// <remarks/>
+        CN,
+        
+        /// <remarks/>
         DS,
         
         /// <remarks/>
@@ -2311,7 +2487,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elster.de/2002/XMLSchema")]
     public enum EmpfaengerCTypeID {
         
@@ -2320,7 +2496,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/2002/XMLSchema")]
     public partial class EricType : object, System.ComponentModel.INotifyPropertyChanged {
@@ -2350,7 +2526,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/2002/XMLSchema")]
     public partial class ErstellungType : object, System.ComponentModel.INotifyPropertyChanged {
@@ -2379,7 +2555,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/2002/XMLSchema")]
     public partial class DateiCType : object, System.ComponentModel.INotifyPropertyChanged {
@@ -2461,7 +2637,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/headerbasis02/XMLSchema")]
     public enum VerschluesselungSType {
         
@@ -2484,10 +2660,14 @@ namespace Dataline.Elster.Basis {
         
         /// <remarks/>
         CMSEnvelopedData,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("EnvelopedData;RSA-OAEP;AES-128;GZip;B64")]
+        EnvelopedDataRSAOAEPAES128GZipB64,
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/headerbasis02/XMLSchema")]
     public enum KompressionSType {
         
@@ -2502,7 +2682,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elster.de/2002/XMLSchema")]
     public partial class TransferHeaderCTypeZusatz : object, System.ComponentModel.INotifyPropertyChanged {
@@ -2546,7 +2726,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elster.de/2002/XMLSchema")]
     public enum TransferHeaderCTypeVersion {
         

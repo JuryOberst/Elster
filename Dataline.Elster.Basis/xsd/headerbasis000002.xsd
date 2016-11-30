@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-15"?>
 <xs:schema xmlns:elsterheaderbasis="http://www.elster.de/headerbasis02/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.elster.de/headerbasis02/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="8">
-	<!-- Definition globaler simple Types________________________________________________________-->
+	<!-- Definition globaler simple Types________________________________________________________ -->
 	<xs:simpleType name="AuthSteuernummerSType">
 		<xs:union memberTypes="elsterheaderbasis:UStIDNrDESType elsterheaderbasis:StNrSType"/>
 	</xs:simpleType>
 	<xs:simpleType name="BaseStringSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">Die Einschraenkungen sind in der Schnittstellenbeschreibung SST_Arbeitgeber zu entnehmen;"</xs:documentation>
+			<xs:documentation xml:lang="DE">Die Einschraenkungen sind
+				in der Schnittstellenbeschreibung SST_Arbeitgeber zu entnehmen;"
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringNoLeadingOrTrailingSeparators">
 			<xs:pattern value="[\p{L}|\p{P}|\p{Zs}|\p{Nd}]*"/>
@@ -14,8 +16,14 @@
 	</xs:simpleType>
 	<xs:simpleType name="BaseStringLightSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">Der String muss mindestens 1 Zeichen vom Typ {N} oder {L} beinhalten, zusaetzlich gelten die Einschraenkungen  des BaseStringNoLeadingOrTrailingSeparators</xs:documentation>
-			<xs:documentation xml:lang="DE">Verweis auf http://www.w3.org/TR/2001/REC-xmlschema-2-20010502/#regexs</xs:documentation>
+			<xs:documentation xml:lang="DE">Der String muss
+				mindestens 1 Zeichen vom Typ {N} oder {L} beinhalten, zusaetzlich
+				gelten die Einschraenkungen des
+				BaseStringNoLeadingOrTrailingSeparators
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">Verweis auf
+				http://www.w3.org/TR/2001/REC-xmlschema-2-20010502/#regexs
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringNoLeadingOrTrailingSeparators">
 			<xs:pattern value=".*([\p{N}]|[\p{L}]).*"/>
@@ -23,8 +31,13 @@
 	</xs:simpleType>
 	<xs:simpleType name="BaseStringNoLeadingOrTrailingSeparators">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">Das letzte Zeichen darf nicht vom Typ {Z} sein, zusaetzlich gelten die Einschraenkungen  des BaseStringNoLeadingSeparators</xs:documentation>
-			<xs:documentation xml:lang="DE">Verweis auf http://www.w3.org/TR/2001/REC-xmlschema-2-20010502/#regexs</xs:documentation>
+			<xs:documentation xml:lang="DE">Das letzte Zeichen darf
+				nicht vom Typ {Z} sein, zusaetzlich gelten die Einschraenkungen des
+				BaseStringNoLeadingSeparators
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">Verweis auf
+				http://www.w3.org/TR/2001/REC-xmlschema-2-20010502/#regexs
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringNoLeadingSeparators">
 			<xs:pattern value=".*[\P{Z}]"/>
@@ -32,8 +45,13 @@
 	</xs:simpleType>
 	<xs:simpleType name="BaseStringNoLeadingSeparators">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">Das erste Zeichen darf nicht vom Typ {Z} sein, zusaetzlich gelten die Einschraenkungen  des BaseStringUltraLightSType</xs:documentation>
-			<xs:documentation xml:lang="DE">Verweis auf http://www.w3.org/TR/2001/REC-xmlschema-2-20010502/#regexs</xs:documentation>
+			<xs:documentation xml:lang="DE">Das erste Zeichen darf
+				nicht vom Typ {Z} sein, zusaetzlich gelten die Einschraenkungen des
+				BaseStringUltraLightSType
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">Verweis auf
+				http://www.w3.org/TR/2001/REC-xmlschema-2-20010502/#regexs
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringUltraLightSType">
 			<xs:pattern value="[\P{Z}].*"/>
@@ -41,8 +59,12 @@
 	</xs:simpleType>
 	<xs:simpleType name="BaseStringUltraLightSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">Alle Zeichen die nicht Kategorien C oder Zl gehoeren;</xs:documentation>
-			<xs:documentation xml:lang="DE">Verweis auf http://www.w3.org/TR/2001/REC-xmlschema-2-20010502/#regexs</xs:documentation>
+			<xs:documentation xml:lang="DE">Alle Zeichen die nicht
+				Kategorien C oder Zl gehoeren;
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">Verweis auf
+				http://www.w3.org/TR/2001/REC-xmlschema-2-20010502/#regexs
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:pattern value="([^\n\r\t\p{C}\p{Zl}])*"/>
@@ -50,9 +72,7 @@
 	</xs:simpleType>
 	<xs:simpleType name="BUFANrSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">siehe Elster Developers Toolkit </xs:documentation>
-			<xs:documentation xml:lang="DE">4-stellig numerisch </xs:documentation>
-			<xs:documentation xml:lang="DE">Bundesfinanzamtsnummer</xs:documentation>
+			<xs:documentation xml:lang="DE">Bundesfinanzamtsnummer; siehe ERiC DTK</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringSType">
 			<xs:length value="4"/>
@@ -85,79 +105,168 @@
 	</xs:simpleType>
 	<xs:simpleType name="BundeslandSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">Einheitliche Abkuerzungen fuer die Bundeslaender</xs:documentation>
-			<xs:documentation xml:lang="DE">BW = Baden-Württemberg</xs:documentation>
-			<xs:documentation xml:lang="DE">BY = Bayern</xs:documentation>
-			<xs:documentation xml:lang="DE">BE = Berlin</xs:documentation>
-			<xs:documentation xml:lang="DE">BB = Brandenburg</xs:documentation>
-			<xs:documentation xml:lang="DE">HB = Bremen</xs:documentation>
-			<xs:documentation xml:lang="DE">HH = Hamburg</xs:documentation>
-			<xs:documentation xml:lang="DE">HE = Hessen</xs:documentation>
-			<xs:documentation xml:lang="DE">MV = Mecklenburg-Vorpommern</xs:documentation>
-			<xs:documentation xml:lang="DE">ND = Niedersachsen</xs:documentation>
-			<xs:documentation xml:lang="DE">NW = Nordrhein-Westfalen</xs:documentation>
-			<xs:documentation xml:lang="DE">RP = Rheinland-Pfalz</xs:documentation>
-			<xs:documentation xml:lang="DE">SL = Saarland</xs:documentation>
-			<xs:documentation xml:lang="DE">SN = Sachsen</xs:documentation>
-			<xs:documentation xml:lang="DE">ST = Sachsen-Anhalt</xs:documentation>
-			<xs:documentation xml:lang="DE">SH = Schleswig-Holstein</xs:documentation>
-			<xs:documentation xml:lang="DE">TH = Thüringen</xs:documentation>
-			<xs:documentation xml:lang="DE">EC = ElsterCountry "Testbundesland" - nicht mit Echtdatenlieferung kombinieren ! </xs:documentation>
-			<xs:documentation xml:lang="DE">CS = Clearingstelle"</xs:documentation>
-			<xs:documentation xml:lang="DE">CD = Clearingstelle Düsseldorf"</xs:documentation>
-			<xs:documentation xml:lang="DE">CM = Clearingstelle München"</xs:documentation>
-			<xs:documentation xml:lang="DE">BF = Bundesamt fuer Finanzen</xs:documentation>
-			<xs:documentation xml:lang="DE">BFF = Bundesamt fuer Finanzen</xs:documentation>
-			<xs:documentation xml:lang="DE">OP = ElsterOnline Portal</xs:documentation>
-			<xs:documentation xml:lang="DE">TK = Testcenter Konsens</xs:documentation>
-			<xs:documentation xml:lang="DE">ZF = ZFA</xs:documentation>
-			<xs:documentation xml:lang="DE">DS = DESTATIS</xs:documentation>
+			<xs:documentation xml:lang="DE">Einheitliche Abkuerzungen fuer die Bundeslaender
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringSType">
-			<xs:enumeration value="BW"/>
-			<xs:enumeration value="BY"/>
-			<xs:enumeration value="BE"/>
-			<xs:enumeration value="BB"/>
-			<xs:enumeration value="HB"/>
-			<xs:enumeration value="HH"/>
-			<xs:enumeration value="HE"/>
-			<xs:enumeration value="MV"/>
-			<xs:enumeration value="ND"/>
-			<xs:enumeration value="NW"/>
-			<xs:enumeration value="RP"/>
-			<xs:enumeration value="SL"/>
-			<xs:enumeration value="SN"/>
-			<xs:enumeration value="ST"/>
-			<xs:enumeration value="SH"/>
-			<xs:enumeration value="TH"/>
-			<xs:enumeration value="EC"/>
-			<xs:enumeration value="BF"/>
-			<xs:enumeration value="BFF"/>
-			<xs:enumeration value="CS"/>
-			<xs:enumeration value="CD"/>
-			<xs:enumeration value="CM"/>
-			<xs:enumeration value="DS"/>
-			<xs:enumeration value="OP"/>
-			<xs:enumeration value="TK"/>
-			<xs:enumeration value="ZF"/>
+			<xs:enumeration value="BW">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">BW = Baden-Württemberg</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BY">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">BY = Bayern</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BE">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">BE = Berlin</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">BB = Brandenburg</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="HB">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">HB = Bremen</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="HH">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">HH = Hamburg</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="HE">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">HE = Hessen</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MV">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">MV = Mecklenburg-Vorpommern</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ND">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">ND = Niedersachsen</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NW">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">NW = Nordrhein-Westfalen</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="RP">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">RP = Rheinland-Pfalz</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SL">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">SL = Saarland</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">SN = Sachsen</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ST">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">ST = Sachsen-Anhalt</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SH">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">SH = Schleswig-Holstein</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TH">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">TH = Thüringen</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="EC">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">EC = ElsterCountry "Testbundesland" - nicht mit Echtdatenlieferung kombinieren !</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BF">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">BF = Bundesamt fuer Finanzen</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BFF">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">BFF = Bundesamt fuer Finanzen</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">CS = Clearingstelle"</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CD">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">CD = Clearingstelle Düsseldorf"</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CM">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">CM = ZPS - Kommunikation"</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CN">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">CN = ZPS - Fachlichkeit"</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DS">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">DS = DESTATIS</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OP">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">OP = ElsterOnline Portal</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TK">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">TK = Testcenter Konsens</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ZF">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">ZF = ZFA</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="CodeExternSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">Externer Fehlercode</xs:documentation>
+			<xs:documentation xml:lang="DE">Externer Fehlercode
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="CodeInternSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">Interner Fehlercode</xs:documentation>
+			<xs:documentation xml:lang="DE">Interner Fehlercode
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="DatumSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">Datum und Uhrzeit 14-stellig ohne Trennzeichen</xs:documentation>
-			<xs:documentation xml:lang="DE">Format : JJJJMMTThhmmss</xs:documentation>
+			<xs:documentation xml:lang="DE">Datum und Uhrzeit
+				14-stellig ohne Trennzeichen
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">Format : JJJJMMTThhmmss
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringSType">
 			<xs:length value="14"/>
@@ -166,7 +275,10 @@
 	</xs:simpleType>
 	<xs:simpleType name="DatenArtSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">Die Zuordnung der Datenarten zu den Verfahren ist in der Liste "Verfahren - Datenarten - Vorgang" beschrieben. Dort sind auch die zugelassenen XML-Vorgänge aufgeführt.</xs:documentation>
+			<xs:documentation xml:lang="DE">Die Zuordnung der Datenarten zu den Verfahren ist in der
+				Liste "Verfahren - Datenarten - Vorgang" beschrieben.
+				Dort sind auch die zugelassenen XML-Vorgänge aufgeführt.
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringSType">
 			<xs:enumeration value="34a"/>
@@ -178,6 +290,28 @@
 					<xs:documentation/>
 				</xs:annotation>
 			</xs:enumeration>
+			<xs:enumeration value="AktivierungsbriefReVerSt">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AktivierungsbriefBZSt">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Fristverlaengerung"/>
+			<xs:enumeration value="AnpassungVorauszahlung"/>
+			<xs:enumeration value="NeueAdresse"/>
+			<xs:enumeration value="NeueBankverbindung"/>
+			<xs:enumeration value="NachreichenBelege"/>
+			<xs:enumeration value="SachlicheBilligkeitsgruende"/>
+			<xs:enumeration value="PersoenlicheBilligkeitsgruende"/>
+			<xs:enumeration value="AusschlussAntwort"/>
+			<xs:enumeration value="WiederbelegungAntwort"/>
+			<xs:enumeration value="Erlass"/>
+			<xs:enumeration value="Vollstreckungsaufschub"/>
+			<xs:enumeration value="SonstigeNachrichten"/>
 			<xs:enumeration value="AbrufcodeAntrag"/>
 			<xs:enumeration value="AbrufcodeEMail"/>
 			<xs:enumeration value="AbrufcodeStorno"/>
@@ -214,12 +348,15 @@
 			<xs:enumeration value="BA"/>
 			<xs:enumeration value="BBANK"/>
 			<xs:enumeration value="BescheidBenachrichtigung"/>
+			<xs:enumeration value="BescheidnachrichtAnEOP"/>
 			<xs:enumeration value="Bilanz"/>
 			<xs:enumeration value="BLZ"/>
 			<xs:enumeration value="Brief"/>
 			<xs:enumeration value="BRMAntraegeUndRechte"/>
 			<xs:enumeration value="BRMFreischaltung"/>
 			<xs:enumeration value="BRMNachricht"/>
+			<xs:enumeration value="BRMRueckmeldungDaten"/>
+			<xs:enumeration value="BRMRueckmeldungBestDB"/>
 			<xs:enumeration value="BUCH"/>
 			<xs:enumeration value="BUKON"/>
 			<xs:enumeration value="BUKOR"/>
@@ -227,12 +364,20 @@
 			<xs:enumeration value="BUKWZ"/>
 			<xs:enumeration value="BZStDiverse"/>
 			<xs:enumeration value="BZStDiverseRM"/>
+			<xs:enumeration value="CRS">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterExtern </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CRSRM">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterExtern </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="DAAL"/>
 			<xs:enumeration value="DaBu216"/>
 			<xs:enumeration value="DEICH"/>
-			<xs:enumeration value="DFP1"/>
 			<xs:enumeration value="Dialog"/>
-			<xs:enumeration value="DSAP1"/>
 			<xs:enumeration value="DUeAbmelden"/>
 			<xs:enumeration value="DUeAnmelden"/>
 			<xs:enumeration value="DUeUmmelden"/>
@@ -245,6 +390,16 @@
 			<xs:enumeration value="EAWZErgebnis"/>
 			<xs:enumeration value="EAWZwiAuftrag"/>
 			<xs:enumeration value="EAWZwiErgebnis"/>
+			<xs:enumeration value="ECOM">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterExtern </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ECOMRM">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterExtern </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="Einspruch"/>
 			<xs:enumeration value="EKoFreischaltung"/>
 			<xs:enumeration value="ELStAMSuche"/>
@@ -259,8 +414,15 @@
 			<xs:enumeration value="ElsterLohnInternAuftrag"/>
 			<xs:enumeration value="ElsterVaStDaten"/>
 			<xs:enumeration value="ElsterZansDaten"/>
+			<xs:enumeration value="ELOProtokoll">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterBereitstellung</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="EMAIL"/>
 			<xs:enumeration value="EMAK"/>
+			<xs:enumeration value="EMAKFRM"/>
+			<xs:enumeration value="USTVEUFRM"/>
 			<xs:enumeration value="EMAKF"/>
 			<xs:enumeration value="EMCS"/>
 			<xs:enumeration value="EMSL"/>
@@ -293,6 +455,8 @@
 			<xs:enumeration value="F15K"/>
 			<xs:enumeration value="F15L"/>
 			<xs:enumeration value="Fallliste"/>
+			<xs:enumeration value="FAMKA"/>
+			<xs:enumeration value="FAMKARM"/>
 			<xs:enumeration value="FATCA"/>
 			<xs:enumeration value="FATCARM"/>
 			<xs:enumeration value="FDSuche"/>
@@ -328,8 +492,13 @@
 			<xs:enumeration value="GewStZ"/>
 			<xs:enumeration value="GEWTP"/>
 			<xs:enumeration value="GEWUM"/>
+			<xs:enumeration value="GEWUL"/>
 			<xs:enumeration value="GEWXX"/>
 			<xs:enumeration value="GINSTERLieferung"/>
+			<xs:enumeration value="GINSTERLieferungAbel"/>
+			<xs:enumeration value="GINSTERLieferungDuebel"/>
+			<xs:enumeration value="ZObELBestaetigungAbel"/>
+			<xs:enumeration value="ZObELBestaetigungDuebel"/>
 			<xs:enumeration value="GMB"/>
 			<xs:enumeration value="GMBAE"/>
 			<xs:enumeration value="GMBAS"/>
@@ -356,6 +525,7 @@
 			<xs:enumeration value="IDNrSuche"/>
 			<xs:enumeration value="IDSERV"/>
 			<xs:enumeration value="IDSERVRM"/>
+			<xs:enumeration value="VergabeAenderungIFAS"/>
 			<xs:enumeration value="InformationsMeldung"/>
 			<xs:enumeration value="KanzleiAnlage"/>
 			<xs:enumeration value="KanzleiUpdate"/>
@@ -394,12 +564,6 @@
 			<xs:enumeration value="KEVIZZWX"/>
 			<xs:enumeration value="KEVIZZZX"/>
 			<xs:enumeration value="KFEST"/>
-			<xs:enumeration value="KFZB"/>
-			<xs:enumeration value="KFZD"/>
-			<xs:enumeration value="KFZDB"/>
-			<xs:enumeration value="KFZE"/>
-			<xs:enumeration value="KFZL"/>
-			<xs:enumeration value="KFZR"/>
 			<xs:enumeration value="KIGE"/>
 			<xs:enumeration value="KISTA"/>
 			<xs:enumeration value="KISTARM"/>
@@ -413,6 +577,7 @@
 			<xs:enumeration value="KMVProtokoll"/>
 			<xs:enumeration value="KMVInternVersand"/>
 			<xs:enumeration value="KOF"/>
+			<xs:enumeration value="KOFH"/>
 			<xs:enumeration value="KOFZ"/>
 			<xs:enumeration value="KOFL"/>
 			<xs:enumeration value="Kontoabfrage"/>
@@ -478,11 +643,12 @@
 			<xs:enumeration value="MitteilungKdbZero"/>
 			<xs:enumeration value="Negativliste"/>
 			<xs:enumeration value="NLIST"/>
-			<xs:enumeration value="NVB"/>
+			<xs:enumeration value="NVBFreistellungsauftrag"/>
 			<xs:enumeration value="PersG"/>
 			<xs:enumeration value="PersGBStat"/>
 			<xs:enumeration value="PersGBStatRM"/>
 			<xs:enumeration value="PdfBrief"/>
+			<xs:enumeration value="PortalPostfachnachrichten"/>
 			<xs:enumeration value="POSLJ"/>
 			<xs:enumeration value="POSLM"/>
 			<xs:enumeration value="ProtAuslaendischeLebensversicherung"/>
@@ -494,6 +660,7 @@
 			<xs:enumeration value="ProtokollAnforderung"/>
 			<xs:enumeration value="ProtKMFreistellungsauftrag"/>
 			<xs:enumeration value="ProtRBM"/>
+			<xs:enumeration value="ProtNVBFreistellungsauftrag"/>
 			<xs:enumeration value="ProtRiesterVersicherung"/>
 			<xs:enumeration value="ProtRuerupVersicherung"/>
 			<xs:enumeration value="PUBKY"/>
@@ -526,6 +693,8 @@
 			<xs:enumeration value="SEPA"/>
 			<xs:enumeration value="SondEStStat"/>
 			<xs:enumeration value="SondEStStatRM"/>
+			<xs:enumeration value="SperrvermerkKirchensteuer"/>
+			<xs:enumeration value="ProtSperrvermerkKirchensteuer"/>
 			<xs:enumeration value="SpezRechtAntrag"/>
 			<xs:enumeration value="SpezRechtFreischaltung"/>
 			<xs:enumeration value="SpezRechtGenehmigung"/>
@@ -538,6 +707,11 @@
 			<xs:enumeration value="StBKontingentierung"/>
 			<xs:enumeration value="StBQuote"/>
 			<xs:enumeration value="StAb50a"/>
+			<xs:enumeration value="StAbS50a">
+				<xs:annotation>
+					<xs:documentation>Übermittlung: Wie bisher bei der Anmeldung § 50a EStG der Jahre 2010 bis 2013 im EOP</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="STE"/>
 			<xs:enumeration value="STK"/>
 			<xs:enumeration value="SteuernummernInfo"/>
@@ -583,7 +757,6 @@
 			<xs:enumeration value="VV"/>
 			<xs:enumeration value="VVAEB"/>
 			<xs:enumeration value="VVAEF"/>
-			<xs:enumeration value="VVAEO"/>
 			<xs:enumeration value="VVAM"/>
 			<xs:enumeration value="VWDVG"/>
 			<xs:enumeration value="WarnMeldung"/>
@@ -620,15 +793,132 @@
 			<xs:enumeration value="Erstattung"/>
 			<xs:enumeration value="ErklaerungAnfrage"/>
 			<xs:enumeration value="Mahnung"/>
+			<xs:enumeration value="ZMDORM">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterExtern</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VERSRM">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterExtern</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VVAEBRM">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterExtern</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="StAb50aRM">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterExtern</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FSAKRM">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterExtern</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="EMAKRM">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterExtern</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MELKRM">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterExtern</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BRMVDBRueckmeldungAnlief">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterVollmachtDB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VDBBRMVollmachtAnlageLief">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterVollmachtDB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VDBBRMVollmachtUpdateLief">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterVollmachtDB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VDBBRMRueckmeldungLief">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterVollmachtDB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VollmachtStornoLief">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterVollmachtDB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="StnrInfo">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterGinsterVDB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="StnrSuch">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterGinsterVDB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="StatusVdbL">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterGinsterVDB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Pruef">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterGinsterVDB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="StatusVdbZ">
+				<xs:annotation>
+					<xs:documentation>Verfahren: ElsterGinsterVDB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="KDBVollmacht">
+				<xs:annotation>
+					<xs:documentation>ElsterGinsterVDB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VDBVollmacht">
+				<xs:annotation>
+					<xs:documentation>ElsterGinsterVDB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VDBVollmachtRM">
+				<xs:annotation>
+					<xs:documentation>ElsterGinsterVDB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="KDBVollmachtRM">
+				<xs:annotation>
+					<xs:documentation>ElsterBereitstellung</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VDBKDBRueckmeldungLief">
+				<xs:annotation>
+					<xs:documentation>ElsterBereitstellung</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BRMVollmachtStorno">
+				<xs:annotation>
+					<xs:documentation>ElsterVollmachtDB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VollmachtStornoAnlief">
+				<xs:annotation>
+					<xs:documentation>ElsterVollmachtDB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="DatenGroesseSType">
 		<xs:annotation>
 			<xs:documentation xml:lang="DE">Groesse des Elements DatenTeil in Byte
-Zu große Dateien koennen bereits vor der Entschluesselung ausgesondert 
-werden. 
-Schutz vor Sabotage. 
-Die Groesse der Datei bezieht sich auf den DatenTeil nach Komprimierung  und Verschluesselung, inklusive der Tags fuer den DatenTeil.
+Die Groesse der Datei bezieht sich auf den DatenTeil nach Komprimierung und Verschluesselung, inklusive der Tags fuer den DatenTeil.
 Nicht auf die Größe der gesamten Datenlieferung!</xs:documentation>
 			<xs:documentation>Numerisch Text, max. 42 Zeichen</xs:documentation>
 		</xs:annotation>
@@ -638,9 +928,9 @@ Nicht auf die Größe der gesamten Datenlieferung!</xs:documentation>
 	</xs:simpleType>
 	<xs:simpleType name="DatenLieferantSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">Datenlieferant der Nutzdaten - Steuerpflichtiger selbst bzw. dessen Lohnbuchhaltungsbuero / Steuerberater</xs:documentation>
+			<xs:documentation xml:lang="DE">Datenlieferant der Nutzdaten - Steuerpflichtiger selbst bzw. dessen Lohnbuchhaltungsbuero / Steuerberater.</xs:documentation>
 			<xs:documentation xml:lang="DE">Beispielhafter Aufbau:
-String der Lieferanteninformationen enthaelt ; Ansprechpartner mit Telefon. Email etc. Bei ESt: Steuerpflichtiger oder Steuerberater/Firma  (entfaellt hier u.U. auch)Aufbau: Lieferant (Firma); Ansprechpartner; Telefon; E-Mail Adresse; Ort; PLZ; Straße; Land;</xs:documentation>
+String der Lieferanteninformationen enthaelt ; Ansprechpartner mit Telefon. Email etc. Bei ESt: Steuerpflichtiger oder Steuerberater/Firma (entfaellt hier u.U. auch) Aufbau: Lieferant (Firma); Ansprechpartner; Telefon; E-Mail Adresse; Ort; PLZ; Straße;Land;</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="256"/>
@@ -649,17 +939,21 @@ String der Lieferanteninformationen enthaelt ; Ansprechpartner mit Telefon. Emai
 	</xs:simpleType>
 	<xs:simpleType name="EmpfaengerSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">Bundeslandkuerzel oder Finanzamtsnummer</xs:documentation>
+			<xs:documentation xml:lang="DE">Bundeslandkuerzel oder
+				Finanzamtsnummer
+			</xs:documentation>
 		</xs:annotation>
 		<xs:union memberTypes="elsterheaderbasis:BundeslandSType elsterheaderbasis:BUFANrSType"/>
 	</xs:simpleType>
 	<xs:simpleType name="EmpfaengerIDSType">
 		<xs:annotation>
 			<xs:documentation xml:lang="DE">
-							Attribut, ob Laenderschluessel oder BundesFinanzamtsnummer
-							L= Laenderschluessel (z.B. bei LStB.)
-							F= BundesFinanzamtsnummer (z.B. bei ESt)
-						</xs:documentation>
+				Attribut, ob
+				Laenderschluessel oder BundesFinanzamtsnummer
+				L= Laenderschluessel
+				(z.B. bei LStB.)
+				F= BundesFinanzamtsnummer (z.B. bei ESt)
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringSType">
 			<xs:length value="1"/>
@@ -669,22 +963,30 @@ String der Lieferanteninformationen enthaelt ; Ansprechpartner mit Telefon. Emai
 	</xs:simpleType>
 	<xs:simpleType name="EingangsDatumSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="de">Serverseitiges Eingangsdatum
+			<xs:documentation xml:lang="de">Serverseitiges
+				Eingangsdatum
 
-Datum und Uhrzeit, wann die Daten beim Server eingegangen sind
-Als Eingangsdatum wird das Datum der Beendigung der Übermittlung bezeichnet.
+				Datum und Uhrzeit, wann die Daten beim Server
+				eingegangen sind
+				Als Eingangsdatum wird das Datum der Beendigung der
+				Übermittlung
+				bezeichnet.
 
-Numerisch,  14-stellig, JJJJMMTThhmmss
-</xs:documentation>
+				Numerisch, 14-stellig, JJJJMMTThhmmss
+			</xs:documentation>
 			<xs:documentation>Wird nur serverseitig gefüllt!</xs:documentation>
 		</xs:annotation>
 		<xs:union memberTypes="elsterheaderbasis:DatumSType"/>
 	</xs:simpleType>
 	<xs:simpleType name="ETIDSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">ETID - Elster Transfer ID</xs:documentation>
-			<xs:documentation xml:lang="DE">Eindeutiges Zuordnungskriterium der Datenlieferung	Identifizierung des gesamten Sendepakets, zur Zuordnung der Datenlieferung und der Antwort zum richtigen Sender und Zeitpunkt.</xs:documentation>
-			<xs:documentation xml:lang="DE">Wird nur serverseitig gesetzt und gefüllt!</xs:documentation>
+			<xs:documentation xml:lang="DE">ETID - Elster Transfer ID
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">Eindeutiges Zuordnungskriterium der Datenlieferung Identifizierung des gesamten Sendepakets, zur Zuordnung der Datenlieferung und der Antwort zum richtigen Sender und Zeitpunkt.
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">Wird nur serverseitig
+				gesetzt und gefüllt!
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:length value="32"/>
@@ -693,17 +995,31 @@ Numerisch,  14-stellig, JJJJMMTThhmmss
 	</xs:simpleType>
 	<xs:simpleType name="HerstellerIDSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">Die HerstellerID ist eine für jeden Hersteller eindeutige Zuordnungsnummer.
-Nur Fälle, die von registrierten Softwareherstellern gesendet  werden, werden angenommen und verarbeitet.
+			<xs:documentation xml:lang="DE">Die HerstellerID ist eine
+				für jeden Hersteller eindeutige Zuordnungsnummer.
+				Nur Fälle, die von
+				registrierten Softwareherstellern gesendet werden,
+				werden angenommen
+				und verarbeitet.
 
-Die HerstellerID muss von jedem teilnehmenden Hersteller bei dem Bayerischen Landesamt für Steuern beantragt werden.
-EMail an: id@elster.de
-Vorab kann zum Testen der Software der Software-Hersteller für Testdatenlieferungen die Test-ID 74931 verwenden in Kombination mit einem Testmerker z.B. 700000004
-Diese Testfälle werden am ELSTER Annahmeserver gelöscht.
-Bei Echtfällen ist die zugeteilte HerstellerID zu verwenden.
+				Die HerstellerID muss von jedem teilnehmenden
+				Hersteller bei dem
+				Bayerischen Landesamt für Steuern beantragt
+				werden.
+				EMail an: id@elster.de
+				Vorab kann zum Testen der Software der
+				Software-Hersteller für
+				Testdatenlieferungen die Test-ID 74931
+				verwenden in Kombination mit
+				einem Testmerker z.B. 700000004
+				Diese
+				Testfälle werden am ELSTER Annahmeserver gelöscht.
+				Bei Echtfällen ist
+				die zugeteilte HerstellerID zu verwenden.
 
-Intern gibt es zusätzlich noch die Test-ID 94931.
-</xs:documentation>
+				Intern gibt es zusätzlich
+				noch die Test-ID 94931.
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringSType">
 			<xs:length value="5"/>
@@ -712,7 +1028,9 @@ Intern gibt es zusätzlich noch die Test-ID 94931.
 	</xs:simpleType>
 	<xs:simpleType name="NachNameSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">Nachname einer Person 30-stellig</xs:documentation>
+			<xs:documentation xml:lang="DE">Nachname einer Person
+				30-stellig
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringSType">
 			<xs:minLength value="1"/>
@@ -723,11 +1041,10 @@ Intern gibt es zusätzlich noch die Test-ID 94931.
 		<xs:annotation>
 			<xs:documentation xml:lang="DE">Mit welcher Kompression wurden die Daten komprimiert.
 Beim ElsterXML müssen die Inhalte der folgenden Elemente komprimiert werden:
--	Datenlieferant
--	SigUser
--	TransportSchluessel
--	DatenTeil
-</xs:documentation>
+- Datenlieferant
+- SigUser
+- TransportSchluessel
+- DatenTeil</xs:documentation>
 			<xs:documentation>Text, max. 42 Zeichen</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringSType">
@@ -738,7 +1055,10 @@ Beim ElsterXML müssen die Inhalte der folgenden Elemente komprimiert werden:
 	</xs:simpleType>
 	<xs:simpleType name="LeerSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">Fuer Tags die grundsaetzlich nicht geliefert werden duerfen - wird hilfsweise zugelassen diese leer zu liefern !</xs:documentation>
+			<xs:documentation xml:lang="DE">Fuer Tags die
+				grundsaetzlich nicht geliefert werden duerfen - wird hilfsweise
+				zugelassen diese leer zu liefern !
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value=""/>
@@ -746,10 +1066,17 @@ Beim ElsterXML müssen die Inhalte der folgenden Elemente komprimiert werden:
 	</xs:simpleType>
 	<xs:simpleType name="NutzdatenBlockTicketSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">Ticket fuer Fehlerbehandlung zur Identifizierung der einzelnen Nutzdatenblöcke.
-Ist nur ein Nutzdatenblock vorhanden, so bietet sich hier der Wert _1_ an.
-Wird vom Datenlieferant gefuellt und muss in der Datenlieferung eindeutig sein.</xs:documentation>
-			<xs:documentation xml:lang="DE">32-stellig alphanummerisch</xs:documentation>
+			<xs:documentation xml:lang="DE">Ticket fuer
+				Fehlerbehandlung zur Identifizierung der einzelnen Nutzdatenblöcke.
+				Ist nur ein Nutzdatenblock vorhanden, so bietet sich hier der Wert
+				_1_ an.
+				Wird vom Datenlieferant gefuellt und muss in der
+				Datenlieferung
+				eindeutig sein.
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">32-stellig
+				alphanummerisch
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringSType">
 			<xs:maxLength value="32"/>
@@ -758,9 +1085,10 @@ Wird vom Datenlieferant gefuellt und muss in der Datenlieferung eindeutig sein.<
 	</xs:simpleType>
 	<xs:simpleType name="StNrSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">siehe Elster Developers Toolkit </xs:documentation>
-			<xs:documentation xml:lang="DE">13-stellig numerisch </xs:documentation>
-			<xs:documentation xml:lang="DE">Bundesfinanzamtsnummer + 0 + Bezirk +  Unterscheidungsnr. + Pruefziffer</xs:documentation>
+			<xs:documentation xml:lang="DE">siehe  ERiC DTK</xs:documentation>
+			<xs:documentation xml:lang="DE">13-stellig numerisch
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">Bundesfinanzamtsnummer + 0 + Bezirk + Unterscheidungsnr. + Pruefziffer</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringSType">
 			<xs:length value="13"/>
@@ -787,43 +1115,48 @@ Wird vom Datenlieferant gefuellt und muss in der Datenlieferung eindeutig sein.<
 	</xs:simpleType>
 	<xs:simpleType name="TestmerkerSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="de">gilt fuer die gesamte Datenlieferung</xs:documentation>
-			<xs:documentation xml:lang="de">Kennzeichnung der Datenlieferung ob es sich um einen Echtfall oder einen Testfall handelt.</xs:documentation>
+			<xs:documentation xml:lang="de">gilt fuer die gesamte
+				Datenlieferung
+			</xs:documentation>
+			<xs:documentation xml:lang="de">Kennzeichnung der
+				Datenlieferung ob es sich um einen Echtfall oder einen Testfall
+				handelt.
+			</xs:documentation>
 			<xs:documentation xml:lang="de">Ein Echtfall kann haben:
-- kein Element Testmerker
-- Element Testmerker mit Inhalt: 0 oder 000000000
-Ein Testfall muss mit einem Testmerker versehen werden, damit er nicht wie ein Echtfall verarbeitet wird.
-Handelt es sich um Daten, die nur zum Testen des Frontends versendet wurden, müssen sie nicht mehr weiter verarbeitet werden.</xs:documentation>
-			<xs:documentation xml:lang="DE">Verfahrensunabhaengige Testmerker
---0               Echtfall
---000000000 Echtfall
-</xs:documentation>
+				- kein Element Testmerker
+				- Element Testmerker mit Inhalt: 0 oder
+				000000000
+				Ein Testfall muss mit einem Testmerker versehen werden,
+				damit er nicht
+				wie ein Echtfall verarbeitet wird.
+				Handelt es sich um
+				Daten, die nur zum Testen des Frontends versendet
+				wurden, müssen sie
+				nicht mehr weiter verarbeitet werden.
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">Verfahrensunabhaengige Testmerker:
+--0 Echtfall
+-- 000000000 Echtfall</xs:documentation>
 			<xs:documentation xml:lang="DE">Testmerker für EMS / ERiClet
---010000001 Test ElsterInfo-Element: Hier wird in der Serverantwort eine Test-ElsterInfo Nachricht eingefügt
-</xs:documentation>
+--010000001 Test ElsterInfo-Element: Hier wird in der Serverantwort eine Test-ElsterInfo Nachricht eingefügt</xs:documentation>
 			<xs:documentation xml:lang="DE">Verfahrensunabhaengige Testmerker für Elster Phase I Verfahren (Unter anderem für ElsterErklaerung, ElsterAnmeldung, ElsterBilanz, ElsterDatenabholung und ElsterLohn2 )
--- 700000001	Aussonderung der Daten im Land (ECC)
--- 700000004	Aussonderung der Daten in der Clearingstelle
-</xs:documentation>
+-- 700000001 Aussonderung der Daten im Land (ECC)
+-- 700000004 Aussonderung der Daten in der Clearingstelle</xs:documentation>
 			<xs:documentation xml:lang="DE">Testmerker für ElsterLohn
 --220002000 Protokollerzeugung und Kompletttest mit Einspeicherung in den eSpeicher des Landes
---220000000 Nur Validierung Clearingstelle und Protokollerstellung
-</xs:documentation>
+--220000000 Nur Validierung, Clearingstelle und Protokollerstellung</xs:documentation>
 			<xs:documentation xml:lang="DE">Testmerker für ElsterKontoabfrage
 --230000001 - Komplettest
---230000002 - Komplettest - mit Rollback
-</xs:documentation>
+--230000002 - Komplettest - mit Rollback</xs:documentation>
 			<xs:documentation xml:lang="DE">Testmerker für ElsterKMV
---240000000 Zur internen Verwendung - genauere Angaben siehe Fachverfahren
-</xs:documentation>
+--240000000 Zur internen Verwendung - genauere Angaben siehe Fachverfahren</xs:documentation>
 			<xs:documentation xml:lang="DE">Testmerker für Laenderadapter
---400000010 - TEST ELAD ElsterLohn (nur fuer interne Zwecke der Finanzverwaltung) 
+--400000010 - TEST ELAD ElsterLohn (nur fuer interne Zwecke der Finanzverwaltung)
 --400000020 - TEST ELAD ElsterEingang (nur fuer interne Zwecke der Finanzverwaltung)
 --400000030 - TEST ELAD Elster Auswertung (nur fuer interne Zwecke der Finanzverwaltung)
 --400000040 - TEST ELAD Auswertung (nur fuer interne Zwecke der Finanzverwaltung)
 --400000050 - TEST ELAD Fachmethodik Fallliste (nur fuer interne Zwecke der Finanzverwaltung)
---400000060 - TEST ELAD Lohn2 (nur fuer interne Zwecke der Finanzverwaltung)
-</xs:documentation>
+--400000060 - TEST ELAD Lohn2 (nur fuer interne Zwecke der Finanzverwaltung)</xs:documentation>
 			<xs:documentation xml:lang="DE">Testmerker für Portal (Nur zur internen Verwendung)
 --700000002
 --500000003
@@ -833,28 +1166,22 @@ Handelt es sich um Daten, die nur zum Testen des Frontends versendet wurden, müs
 --500000007
 --500000013
 --500000014
---500000015
-</xs:documentation>
+--500000015</xs:documentation>
 			<xs:documentation xml:lang="DE">Testmerker für Zobel
---510000001
-</xs:documentation>
+--510000001</xs:documentation>
 			<xs:documentation xml:lang="DE">Testmerker für ElsterKapESt (Nur zur internen Verwendung)
 --160000001
---160000002
-</xs:documentation>
+--160000002</xs:documentation>
 			<xs:documentation xml:lang="DE">Testmerker für ElsterExtern
 -- 120000001
 -- 120000002 - Kompletttest I
--- 120000003 - Kompletttest III
-</xs:documentation>
-			<xs:documentation xml:lang="DE">Testmerker für ElsterBRM
---370000001 Zum Test der einzelnen BRM Anfragen
-
-</xs:documentation>
+-- 120000003 -
+Kompletttest III</xs:documentation>
+			<xs:documentation xml:lang="DE">Testmerker für ElsterBRM 
+--370000001 Zum Test der einzelnen BRM Anfragen</xs:documentation>
 			<xs:documentation xml:lang="DE">Testmerker für ElsterSignatur (Nur zur internen Verwendung)
 --080000001 Zum Test des Abrufcodes (interne Verwendung)
---380000001 Testfall für VaSt, Verfahren ElsterSignatur 
-</xs:documentation>
+--380000001 Testfall für VaSt, Verfahren ElsterSignatur</xs:documentation>
 			<xs:documentation xml:lang="DE">Testmerker für ElsterIDRecherche (intern)
 --480000001</xs:documentation>
 		</xs:annotation>
@@ -874,6 +1201,17 @@ Handelt es sich um Daten, die nur zum Testen des Frontends versendet wurden, müs
 			<xs:enumeration value="230000002"/>
 			<xs:enumeration value="240000000"/>
 			<xs:enumeration value="300000001"/>
+			<xs:enumeration value="300000002">
+				<xs:annotation>
+					<xs:documentation>Test der Verschlüsselung nach PKCS#1v2.1
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="300000003">
+				<xs:annotation>
+					<xs:documentation>Test der VDB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="370000001"/>
 			<xs:enumeration value="380000001"/>
 			<xs:enumeration value="400000010"/>
@@ -899,11 +1237,18 @@ Handelt es sich um Daten, die nur zum Testen des Frontends versendet wurden, müs
 	</xs:simpleType>
 	<xs:simpleType name="TransferTicketSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">TransferTicket</xs:documentation>
-			<xs:documentation xml:lang="de">Eindeutiges Zuordnungskriterium der Datenlieferung
-Identifizierung des gesamten Sendepakets, zur Zuordnung der Datenlieferung und der Antwort zum richtigen Sender und Zeitpunkt.
-In Planung: 32-stellige alphanumerische Ticketnummer (Termin noch offen)
-</xs:documentation>
+			<xs:documentation xml:lang="DE">TransferTicket
+			</xs:documentation>
+			<xs:documentation xml:lang="de">Eindeutiges
+				Zuordnungskriterium der Datenlieferung
+				Identifizierung des gesamten
+				Sendepakets, zur Zuordnung der Datenlieferung und der
+				Antwort zum
+				richtigen Sender und Zeitpunkt.
+				In Planung: 32-stellige
+				alphanumerische Ticketnummer (Termin noch
+				offen)
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringSType">
 			<xs:pattern value="\d{19}"/>
@@ -912,7 +1257,9 @@ In Planung: 32-stellige alphanumerische Ticketnummer (Termin noch offen)
 	</xs:simpleType>
 	<xs:simpleType name="UStIDNrDESType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">deutsche UmsatzsteuerIDNummer</xs:documentation>
+			<xs:documentation xml:lang="DE">deutsche
+				UmsatzsteuerIDNummer
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringSType">
 			<xs:pattern value="DE[0-9]{9}"/>
@@ -922,7 +1269,9 @@ In Planung: 32-stellige alphanumerische Ticketnummer (Termin noch offen)
 	</xs:simpleType>
 	<xs:simpleType name="UStIDNrEUSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">Umsatzsteueridentifikationsnummer EU-Weit</xs:documentation>
+			<xs:documentation xml:lang="DE">Umsatzsteueridentifikationsnummer
+				EU-Weit
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringSType">
 			<xs:pattern value="BE[0-9]{10}"/>
@@ -971,15 +1320,33 @@ In Planung: 32-stellige alphanumerische Ticketnummer (Termin noch offen)
 	<xs:simpleType name="TransportSchluesselSType">
 		<xs:annotation>
 			<xs:documentation xml:lang="DE">
-Öffentlicher Schluessel des Clients für die Transportverschluesselung vom Server zum Client.
-Für die Transportverschlüsselung vom Server zum Client bei einer offline Meldung (KMV und ElsterLohn (LSTB)) ist der öffentliche Schlüssel des Clients/Datenlieferers nötig (daher ist dieser beim Versand der Daten mitzuschicken, also beim Hinweg zum Server). 
-Nur bei diesen zwei Typen von Daten hat das Auswirkung auf eine spätere asynchrone Protokollabholung. 
+				Öffentlicher Schluessel
+				des Clients für die Transportverschluesselung vom Server
+				zum Client.
+				Für die Transportverschlüsselung vom Server zum Client bei einer
+				offline Meldung (KMV und ElsterLohn (LSTB)) ist der öffentliche
+				Schlüssel des Clients/Datenlieferers nötig (daher ist dieser beim
+				Versand der Daten mitzuschicken, also beim Hinweg zum Server).
+				Nur
+				bei diesen zwei Typen von Daten hat das Auswirkung auf eine spätere
+				asynchrone Protokollabholung.
 
-Bei der Verschlüsselungsart PKCS#7v1.5enveloped enthält dieses Element das Zertifikat anstelle eines verschlüsselten öffentlichen Schlüssels.
+				Bei der Verschlüsselungsart
+				PKCS#7v1.5enveloped enthält dieses Element
+				das Zertifikat anstelle
+				eines verschlüsselten öffentlichen
+				Schlüssels.
 
-Der Inhalt dieses Elements ist mit demselben Schlüssel, wie der Inhalt des Datenteils (öffentlichen Schlüssel der Clearingstelle) verschlüsselt
+				Der Inhalt dieses
+				Elements ist mit demselben Schlüssel, wie der Inhalt
+				des Datenteils
+				(öffentlichen Schlüssel der Clearingstelle)
+				verschlüsselt
 
-Base 64-codierter String des X509-Zertifikats mit Öffentlichem RSA Schlüssel des Clients.</xs:documentation>
+				Base
+				64-codierter String des X509-Zertifikats mit Öffentlichem RSA
+				Schlüssel des Clients.
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
@@ -987,99 +1354,182 @@ Base 64-codierter String des X509-Zertifikats mit Öffentlichem RSA Schlüssel des
 		<xs:annotation>
 			<xs:documentation>Protokoll der Verschlüsselung
 
-Es kann vorkommen, dass verschiedene Verschlüsselungsarten eingesetzt werden, eine Unterscheidung ist hier nötig, um das richtige Entschlüsselungstool anzusteuern. 
+				Es kann vorkommen,
+				dass verschiedene Verschlüsselungsarten eingesetzt
+				werden, eine
+				Unterscheidung ist hier nötig, um das richtige
+				Entschlüsselungstool
+				anzusteuern.
 
-Beim ElsterXML müssen die Inhalte der folgenden Elemente verschlüsselt übermittelt werden:
--	DatenLieferant
--	SigUser
--	TransportSchluessel
--	DatenTeil</xs:documentation>
+				Beim ElsterXML müssen die Inhalte der folgenden Elemente
+				verschlüsselt
+				übermittelt werden:
+				- DatenLieferant
+				- SigUser
+				-
+				TransportSchluessel
+				- DatenTeil
+			</xs:documentation>
 			<xs:documentation>Text max. 42 Zeichen</xs:documentation>
-			<xs:documentation xml:lang="DE">Mit welcher Verschluesselungsart wurden die Daten verschluesselt</xs:documentation>
-			<xs:documentation xml:lang="DE">Protokoll der Verschluesselung. Es kann vorkommen, dass verschieden Verschluesselungsarten eingesetzt werden, eine Unterscheidung ist hier noetig, um das richtige Entschluesselungstool anzusteuern, Protokoll der Verschluesselung</xs:documentation>
+			<xs:documentation xml:lang="DE">Mit welcher
+				Verschluesselungsart wurden die Daten verschluesselt
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">Protokoll der
+				Verschluesselung. Es kann vorkommen, dass verschieden
+				Verschluesselungsarten eingesetzt werden, eine Unterscheidung ist
+				hier noetig, um das richtige Entschluesselungstool anzusteuern,
+				Protokoll der Verschluesselung
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringSType">
 			<xs:enumeration value="PKCS#7v1.5"/>
-			<xs:enumeration value="PKCS#7v1.5enveloped"/>
-			<xs:enumeration value="NO_BASE64"/>
+			<xs:enumeration value="PKCS#7v1.5enveloped">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Ein X.509-Zertifikat als TransportSchluessel (im TansferHeader) für die Antwort (öffentlicher Schlüssel) ist mit zu versenden.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NO_BASE64">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Wird intern verwendet!</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="none"/>
 			<xs:enumeration value="CMSEncryptedData"/>
-			<xs:enumeration value="CMSEnvelopedData"/>
+			<xs:enumeration value="CMSEnvelopedData">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Ein X.509-Zertifikat als TransportSchluessel (im TansferHeader) für die Antwort (öffentlicher Schlüssel) ist mit zu versenden.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="EnvelopedData;RSA-OAEP;AES-128;GZip;B64">
+				<xs:annotation>
+					<xs:documentation xml:lang="DE">Neuer Verschlüsselungstag wird frühestens ab Mai 2016 unterstützt. 
+Bei der Verschlüsselungsart "EnvelopedData;RSA-OAEP;AES-128;GZip;B64" muss der symmetrische Teil mit AES128 verschlüsselt sein und der asymmetrische Teil mit RSAES-OAEP mit der Hashfunktion SHA256, der Maskengenerierungsfunktion MGF1 und als Hashfunktion der Maskengenerierungsfunktion ebenso SHA256.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="VerfahrenSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">DummyWorker	 internes Verfahren der Finanzverwaltung
-ElsterAnmeldung	 Verfahren zur Übermittlung von Anmeldesteuern (Lohnsteuer-Anmeldung und Umsatzsteuer-Voranmeldung
-ElsterAuswertung	Auswertungen (internes Verfahren)
-ElsterBackupSystem	Bereitstellung von Daten aus dem Backup (internes Verfahren)
-ElsterBereitstellung	Bereitstellung von Daten zur Abholung (internes Verfahren)
-ElsterBilanz	 Verfahren fuer Bilanz
-ElsterBrief	
-ElsterBRM	Berechtigungsmanagement (internes Verfahren)
+			<xs:documentation xml:lang="DE">DummyWorker internes
+				Verfahren der Finanzverwaltung
+				ElsterAnmeldung Verfahren zur
+				Übermittlung von Anmeldesteuern (Lohnsteuer-Anmeldung
+				und
+				Umsatzsteuer-Voranmeldung
+				ElsterAuswertung Auswertungen (internes
+				Verfahren)
+				ElsterBackupSystem Bereitstellung von Daten aus dem Backup
+				(internes Verfahren)
+				ElsterBilanz Verfahren fuer Bilanz
+				ElsterBrief
+				ElsterBRM Berechtigungsmanagement (internes Verfahren)
 
-ElsterDAME	 Verfahren DAME
-ElsterDatenabholung	Abholen von Daten (Bsp. Bescheiddaten)
-ElsterDatenbereitstellung	Bereitstellen von Daten (internes Verfahren)
-ElsterDatenversand	Versand von Daten (internes Verfahren)
-ElsterDVEtoLKS	 Datenlieferungen vom Statistischen Bundesamt  DESTATIS (internes Verfahren)
-ElsterElfe	Internes Verfahren
-ElsterELStAM	ELStAM Daten (internes Verfahren)
-ElsterEMail	Email Anstoß (internes Verfahren)
-ElsterErklaerung	 zur Uebermittlung von Steuererklaerungen z.B. Einkommensteuer, Umsatzsteuer (Jahreserklaerung) und Gewerbesteuer
-ElsterExtern	Alle Externen Verfahren (internes Verfahren)
-ElsterFSE	 Verfahren fuer den Fragebogen zur steuerlichen Erfassung
-ElsterFT	Datenlieferungen über ElsterFT
-ElsterFTintern	Datenlieferungen analog zu ElsterFT über ERiC (internes Verfahren)
-ElsterIDRecherche	ID Nummern Recherche (internes Verfahren)
-ElsterKapESt	 Verfahren Kapitalertragssteuer-Anmeldung
-ElsterKMV	Kontrollmitteilungsverfahren
-ElsterKMVIntern Internes Verfahren
-ElsterKMVProtokoll	Lieferung von Protokollen von KMV (internes Verfahren)
-ElsterKontoabfrage	 Steuerkontenabfrage insbes. fuer Steuerberater bzw. ueber Portal (Online) Abfragen, Anmeldung etc. für Steuerkonto
-ElsterKontoablage	Datenlieferung zu Rechten zur Kontoabfrage
-ElsterKStoKS	 Datenlieferung von Kopfstelle zu Kopfstelle (Internes Verfahren)
+				ElsterDAME
+				Verfahren DAME
+				ElsterDatenbereitstellung Bereitstellen von Daten
+				(internes Verfahren)
+				ElsterDatenversand Versand von Daten (internes
+				Verfahren)
+				ElsterDVEtoLKS Datenlieferungen vom Statistischen
+				Bundesamt DESTATIS (internes
+				Verfahren)
+				ElsterElfe Internes Verfahren
+				ElsterELStAM ELStAM Daten (internes Verfahren)
+				ElsterEMail Email
+				Anstoß (internes Verfahren)
+				ElsterErklaerung zur Uebermittlung von
+				Steuererklaerungen z.B. Einkommensteuer,
+				Umsatzsteuer
+				(Jahreserklaerung) und Gewerbesteuer
+				ElsterExtern Alle Externen
+				Verfahren (internes Verfahren)
+				ElsterFSE Verfahren fuer den
+				Fragebogen zur steuerlichen Erfassung
+				ElsterFT Datenlieferungen über
+				ElsterFT
+				ElsterFTintern Datenlieferungen analog zu ElsterFT über ERiC
+				(internes Verfahren)
+				ElsterIDRecherche ID Nummern Recherche (internes
+				Verfahren)
+				ElsterKapESt Verfahren Kapitalertragssteuer-Anmeldung
+				ElsterKMV Kontrollmitteilungsverfahren
+				ElsterKMVIntern Internes
+				Verfahren
+				ElsterKMVProtokoll Lieferung von Protokollen von KMV
+				(internes Verfahren)
+				ElsterKontoabfrage Steuerkontenabfrage insbes.
+				fuer Steuerberater
+				bzw. ueber Portal (Online) Abfragen, Anmeldung
+				etc. für Steuerkonto
+				ElsterKontoablage Datenlieferung zu Rechten zur
+				Kontoabfrage
+				ElsterKStoKS Datenlieferung von Kopfstelle zu Kopfstelle
+				(Internes
+				Verfahren)
 
-ElsterLKStoZF	Verfahren zum Austausch von Daten von den Landeskopfstellen zum ZFA
-ElsterLohn	 Uebermittlung von Lohnsteuerbescheinigungen bzw. Lohnersatzleistungen (Lohnsteuerbescheinigung, Protokoll zur Bescheinigung)
-ElsterLohn2	ElsterLohn2
-ElsterLohnProtokoll  Lieferung von Protokollen (internes Verfahren)
-ElsterLStZerlegung Internes Verfahren
-ElsterMAG	maschinelle Abfrageverfahren Arbeitgeber (IDNr)
-ElsterMOSS Mini-one-step-shop
-ElsterNachricht	Unformatierte Nachrichten (Bsp. Einspruch)
-ElsterPdf 	
-ElsterPortal	ElsterOnline-Portal Daten (internes Verfahren)
-ElsterPortalAdapter	 internes Verfahren der Finanzverwaltung
-ElsterSignatur	Verfahren zum Themengebiet Authentifizierung
-ElsterSuch	Internes Verfahren
-ElsterSuchExtern	Internes Verfahren
-ElsterVaSt	Verfahren zum Erlangen von Belegen um die Steuererklärung vorauszufüllen
-ElsterVerarbeitungsMeldung	Informationen zur Verarbeitung (internes Verfahren)
-ElsterVollmachtDB	Datenlieferungen zu Vollmachten/Kontingentierung
-ElsterZANS	
-ElsterZFtoLKS	Verfahren zum Austausch von Daten vom ZFA zu den Landeskopfstellen
-ElsterZfaZivit Verfahren zum Austausch von Daten vom ZFA zu ZIVIT
-ElsterZobEL	Datenlieferungen ZobEL (internes Verfahren)
-</xs:documentation>
+				ElsterLKStoZF Verfahren zum Austausch von Daten
+				von den Landeskopfstellen zum ZFA
+				ElsterLohn Uebermittlung von
+				Lohnsteuerbescheinigungen bzw.
+				Lohnersatzleistungen
+				(Lohnsteuerbescheinigung, Protokoll zur
+				Bescheinigung)
+				ElsterLohn2
+				ElsterLohn2
+				ElsterLohnProtokoll Lieferung von Protokollen (internes
+				Verfahren)
+				ElsterLStZerlegung Internes Verfahren
+				ElsterMAG maschinelle
+				Abfrageverfahren Arbeitgeber (IDNr)
+				ElsterMOSS Mini-one-step-shop
+				ElsterNachricht Unformatierte Nachrichten (Bsp. Einspruch)
+				ElsterPdf
+				ElsterPortal ElsterOnline-Portal Daten (internes Verfahren)
+				ElsterPortalAdapter internes Verfahren der Finanzverwaltung
+				ElsterSignatur Verfahren zum Themengebiet Authentifizierung
+				ElsterSuch Internes Verfahren
+				ElsterSuchExtern Internes Verfahren
+				ElsterVaSt Verfahren zum Erlangen von Belegen um die Steuererklärung
+				vorauszufüllen
+				ElsterVerarbeitungsMeldung Informationen zur
+				Verarbeitung (internes Verfahren)
+				ElsterVollmachtDB Datenlieferungen
+				zu Vollmachten/Kontingentierung
+				ElsterZANS
+				
+				ElsterZfaZivit
+				Verfahren zum Austausch von Daten vom ZFA zu ZIVIT
+				ElsterZobEL
+				Datenlieferungen ZobEL (internes Verfahren)
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringSType">
 			<xs:enumeration value="DummyWorker"/>
 			<xs:enumeration value="ElsterAnmeldung"/>
 			<xs:enumeration value="ElsterAuswertung"/>
 			<xs:enumeration value="ElsterBackupSystem"/>
-			<xs:enumeration value="ElsterBereitstellung"/>
+			<xs:enumeration value="ElsterBereitstellung">
+				<xs:annotation>
+					<xs:documentation>Bereitstellung von Daten zur Abholung (internes Verfahren)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="ElsterBilanz"/>
 			<xs:enumeration value="ElsterBRM"/>
 			<xs:enumeration value="ElsterBRMOrg">
 				<xs:annotation>
-					<xs:documentation>Berechtigungsmanagement (internes Verfahren)</xs:documentation>
+					<xs:documentation>Berechtigungsmanagement (internes Verfahren)
+					</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="ElsterBrief"/>
 			<xs:enumeration value="ElsterDVEtoLKS"/>
 			<xs:enumeration value="ElsterDAME"/>
-			<xs:enumeration value="ElsterDatenabholung"/>
+			<xs:enumeration value="ElsterDatenabholung">
+				<xs:annotation>
+					<xs:documentation>Abholen von Daten (Bsp. Bescheiddaten)
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="ElsterDatenbereitstellung"/>
 			<xs:enumeration value="ElsterDatenversand"/>
 			<xs:enumeration value="ElsterErklaerung"/>
@@ -1096,6 +1546,11 @@ ElsterZobEL	Datenlieferungen ZobEL (internes Verfahren)
 			<xs:enumeration value="ElsterFT"/>
 			<xs:enumeration value="ElsterFTintern"/>
 			<xs:enumeration value="ElsterGeCoSYN"/>
+			<xs:enumeration value="ElsterGinsterVDB">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="ElsterIDRecherche"/>
 			<xs:enumeration value="ElsterKapESt"/>
 			<xs:enumeration value="ElsterKMV"/>
@@ -1114,7 +1569,9 @@ ElsterZobEL	Datenlieferungen ZobEL (internes Verfahren)
 			<xs:enumeration value="ElsterLohnProtokoll"/>
 			<xs:enumeration value="ElsterLKStoDVE">
 				<xs:annotation>
-					<xs:documentation xml:lang="DE">Datenlieferungen zum Statistischen Bundesamt  DESTATIS (internes Verfahren)</xs:documentation>
+					<xs:documentation xml:lang="DE">Datenlieferungen zum
+						Statistischen Bundesamt DESTATIS (internes Verfahren)
+					</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="ElsterLKStoZF"/>
@@ -1131,6 +1588,7 @@ ElsterZobEL	Datenlieferungen ZobEL (internes Verfahren)
 			<xs:enumeration value="ElsterPortal"/>
 			<xs:enumeration value="ElsterPortalAdapter"/>
 			<xs:enumeration value="ElsterSignatur"/>
+			<xs:enumeration value="ElsterSignaturNachricht"/>
 			<xs:enumeration value="ElsterSmart">
 				<xs:annotation>
 					<xs:documentation/>
@@ -1142,7 +1600,11 @@ ElsterZobEL	Datenlieferungen ZobEL (internes Verfahren)
 			<xs:enumeration value="ElsterVerarbeitungsMeldung"/>
 			<xs:enumeration value="ElsterVollmachtDB"/>
 			<xs:enumeration value="ElsterZANS"/>
-			<xs:enumeration value="ElsterZFtoLKS"/>
+			<xs:enumeration value="ElsterZFtoLKS">
+				<xs:annotation>
+					<xs:documentation>Verfahren zum Austausch von Daten vom ZFA zu den Landeskopfstellen</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="ElsterZfaZivit"/>
 			<xs:enumeration value="ElsterZObEL"/>
 			<xs:enumeration value="ElsterGINSTER"/>
@@ -1156,12 +1618,11 @@ ElsterZobEL	Datenlieferungen ZobEL (internes Verfahren)
 	<xs:simpleType name="VersionClientSType">
 		<xs:annotation>
 			<xs:documentation xml:lang="DE">Produktversion
-Version des Clientprogramms, das die Daten versendet. 
+Version des Clientprogramms, das die Daten versendet.
 
 Das optionale Element soll dem Softwarehersteller zur Selbstverwaltung dienen und es soll ihm ermöglicht werden das Element entsprechend seiner Anforderungen zu füllen.
 
 Wenn bei einer Verschluesselungssoftware eine neuere Version eingesetzt wird, ist es u.U. wichtig, ob die erhaltenen Daten schon mit der neuen oder noch mit der alten Verschluesselung verschluesselt wurden, um die Daten entschluesseln zu koennen.</xs:documentation>
-			<xs:documentation>Text, max. 42 Zeichen</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringSType">
 			<xs:maxLength value="42"/>
@@ -1169,17 +1630,35 @@ Wenn bei einer Verschluesselungssoftware eine neuere Version eingesetzt wird, is
 	</xs:simpleType>
 	<xs:simpleType name="VorgangSType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">Hauptinformation ob die Daten authentifiziert wurden (send-Auth) oder nicht (send-NoSig)</xs:documentation>
-			<xs:documentation xml:lang="DE">	
-send-NoSig	Senden von Daten ohne Authentifizierung
-send-Sig	Senden von authentifizierten Daten (Signatur im NHeader)  (Obsolet)
-send-Auth	Senden von authentifizierten Daten (Signatur im THeader)
+			<xs:documentation xml:lang="DE">Hauptinformation ob die
+				Daten authentifiziert wurden (send-Auth) oder nicht (send-NoSig)
+			</xs:documentation>
+			<xs:documentation xml:lang="DE">
+				send-NoSig Senden von
+				Daten ohne Authentifizierung
+				send-Sig Senden von authentifizierten
+				Daten (Signatur im NHeader) (Obsolet)
+				send-Auth Senden von
+				authentifizierten Daten (Signatur im THeader)
 
-send-Auth-Part	Senden von Daten die partielle verarbeitet werden, d.h. wenn bei Sammellieferungen ein Fehler enthalten ist, wird nicht die gesamte Datenlieferung abgelehnt, sondern nur der fehlerhafte Teil.
-send-Auth-Offline	Senden von authentifizierten Daten (Signatur im THeader), die im Offlineverfahren verarbeitet und bestätigt werden
-send-Auth-Offline-Part	Senden von authentifizierten Daten (Signatur im THeader), die im Offlineverfahren verarbeitet und bestätigt werden, partielle offline Verarbeitung der Datenlieferung, d.h. wenn bei Sammellieferungen ein Fehler enthalten ist, wird nicht die gesamte Datenlieferung abgelehnt, sondern nur der fehlerhafte Teil.
-send-Auth-Continue	Wird aktuell nur bei internen Datenlieferungen verwendet.
-</xs:documentation>
+				send-Auth-Part Senden
+				von Daten die partielle verarbeitet werden,
+				d.h. wenn bei
+				Sammellieferungen ein Fehler enthalten ist, wird nicht
+				die gesamte
+				Datenlieferung abgelehnt, sondern nur der fehlerhafte
+				Teil.
+				send-Auth-Offline Senden von authentifizierten Daten (Signatur im
+				THeader), die im
+				Offlineverfahren verarbeitet und bestätigt werden
+				send-Auth-Offline-Part Senden von authentifizierten Daten (Signatur
+				im THeader), die im Offlineverfahren verarbeitet und bestätigt
+				werden, partielle offline Verarbeitung der Datenlieferung, d.h. wenn
+				bei Sammellieferungen ein Fehler enthalten ist, wird nicht die
+				gesamte Datenlieferung abgelehnt, sondern nur der fehlerhafte Teil.
+				send-Auth-Continue Wird aktuell nur bei internen Datenlieferungen
+				verwendet.
+			</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="elsterheaderbasis:BaseStringSType">
 			<xs:enumeration value="get-Sig"/>

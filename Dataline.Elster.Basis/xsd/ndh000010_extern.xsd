@@ -33,17 +33,15 @@ Der Aufbau entspricht der Beschreibung im Transferheader.</xs:documentation>
 			<xs:element name="Hersteller" type="elster:NDH_HerstellerCType"/>
 			<xs:element name="DatenLieferant" type="headerbasis:DatenLieferantSType">
 				<xs:annotation>
-					<xs:documentation xml:lang="de">Verantwortlicher für die Erstellung der gelieferten Nutzdaten (z.B. AG, Steuerpflichtiger, STB)
-Nicht zwangsläufig dieselbe Person, wie im TransferHeader.
+					<xs:documentation xml:lang="de">Der Datenlieferant im NutzdatenHeader ist der, der die Nutzdaten erzeugt hat (z.B. AG, Steuerpflichtiger, Steuerberater bzw. die Kanzlei), nicht zwangsläufig dieselbe Person, wie im TransferHeader.
 
-Enthält einen String der Lieferanteninformationen enthält. (Ansprechpartner im Fehlerfall)
+Dieses Feld dient der Information darüber, wer in Problemfällen kontaktiert werden könnte. 
 Ansprechpartner mit Telefon, E-Mail, etc.
+
 Beispiel:
 Bei ESt: Steuerpflichtiger oder Steuerberater/Firma  
 
-Text; max. 256 Zeichen
 Möglicher Aufbau: Name des Erstellers; Strasse; Hausnummer; Hausnummerzusatz; Adresszusatz; PLZ; Ort; Land; Telefon; E-Mail-Adresse
-
 Beispiel: "Hr. YY; Teststraße; 12; a; im Hinterhof; 80333; Muenchen;Deutschland; 089/1111 1111; tester@test.de"</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -99,10 +97,7 @@ bzw. 2-stelliger Länderschlüssel</xs:documentation>
 		<xs:sequence>
 			<xs:element name="ProduktName">
 				<xs:annotation>
-					<xs:documentation xml:lang="de">Copyright für die Datensatzerstellung
-Für evtl. Druck oder PDF-Anzeige, oder evtl. Rückgabemeldungen (ehem. Copyright).
-
-alphanumerisch; max. 50 Zeichen
+					<xs:documentation xml:lang="de">Copyright für die Datensatzerstellung für evtl. Druck oder PDF-Anzeige, oder evtl. Rückgabemeldungen (ehem. Copyright).
 
 Beispiel:
 _Elsterformular 2001_
@@ -117,10 +112,7 @@ _Elsterformular 2001_
 			</xs:element>
 			<xs:element name="ProduktVersion">
 				<xs:annotation>
-					<xs:documentation xml:lang="de">Version des externen Programms
-Für evtl. Druck oder PDF-Anzeige
-
-alphanumerisch; max. 50 Zeichen
+					<xs:documentation xml:lang="de">Version des externen Programms für evtl. Druck oder PDF-Anzeige
 Beispiel: "ElsterFormular V1.7"
 </xs:documentation>
 				</xs:annotation>
@@ -169,15 +161,10 @@ Rückgabewert einer SendeAktion (RC)
 
 Für den Endnutzer:
 Anhand dieser Nummer erkennt man ob 
-- die Daten verarbeitbar sind und angenommen wurden 
-(Wert gleich 0) 
+- die Daten verarbeitbar sind und angenommen wurden (Wert gleich 0) 
 Oder
 -  die Daten NICHT angenommen wurden und die Daten nochmal geschickt werden müssen. 
-(Wert ungleich 0)
-
-Beim Senden darf dieses Element nicht gesetzt werden;
-
-Numerisch</xs:documentation>
+(Wert ungleich 0)</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element name="Text" type="xs:string">
@@ -197,9 +184,7 @@ Für den Endnutzer.</xs:documentation>
 							<xs:annotation>
 								<xs:documentation xml:lang="de">Extern nicht zu setzen und zu füllen!
 Rückgabewert einer SendeAktion
-Für den Softwarehersteller oder die Hotline
-
-Numerisch</xs:documentation>
+Für den Softwarehersteller oder die Hotline</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element name="Text" type="xs:string">
@@ -236,7 +221,6 @@ Das Element Info kann mehrfach übermittelt werden
 				<xs:annotation>
 					<xs:documentation>Extern nicht zu setzen und zu füllen!
 Mitteilungen für den Datenlieferanten 
-
 Nicht in jeder Serverantwort enthalten	
 
 Text
@@ -246,7 +230,7 @@ Beispieltext: "Ihr Authentifizierungszertifikat läuft am *.*.* ab, bitte loggen 
 				<xs:simpleType>
 					<xs:annotation>
 						<xs:documentation xml:lang="de">Element ist nur bei Ruecklieferungen aus der Clearingstelle vorhanden;  wird  in der Clearingstelle gesetzt und gefuellt;</xs:documentation>
-						<xs:documentation xml:lang="de">das TAG darf vom Datenlieferant nicht geliefert werden (auch nicht leer)</xs:documentation>
+						<xs:documentation xml:lang="de">Das Element darf vom Datenlieferant nicht geliefert werden (auch nicht leer)</xs:documentation>
 					</xs:annotation>
 					<xs:restriction base="xs:string">
 						<xs:minLength value="1"/>

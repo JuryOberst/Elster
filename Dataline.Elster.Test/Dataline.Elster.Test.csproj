@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatenabholungV6\DatenabholungTests.cs" />
     <Compile Include="Datenuebermittler2014\DatenuebermittlerTests2014.cs" />
     <Compile Include="Datenuebermittler2015\DatenuebermittlerTests2015.cs" />
     <Compile Include="ElsterAnmeldung\ElsterAnmeldungTests.cs" />
@@ -205,6 +206,21 @@
     <EmbeddedResource Include="Datenuebermittler2015\Daten\due2015\exception\exception_response.xml" />
     <EmbeddedResource Include="Datenuebermittler2015\Daten\due2015\ummelden\ummelde_request.xml" />
     <EmbeddedResource Include="Datenuebermittler2015\Daten\due2015\ummelden\ummelde_response.xml" />
+    <EmbeddedResource Include="DatenabholungV6\Daten\1_ElsterDatenabholung_Liste_Anfrage.xml" />
+    <EmbeddedResource Include="DatenabholungV6\Daten\2_ElsterDatenabholung_Liste_Antwort.xml" />
+    <EmbeddedResource Include="DatenabholungV6\Daten\Einzelabholung\3_Einzelbescheid_ElsterDatenabholung_Abholung_Anfrage.xml" />
+    <EmbeddedResource Include="DatenabholungV6\Daten\Einzelabholung\4a_Einzelbescheid_ElsterDatenabholung_Abholung_Antwort_Direkt.xml" />
+    <EmbeddedResource Include="DatenabholungV6\Daten\Einzelabholung\4a_Einzelbescheid_ElsterDatenabholung_Abholung_Antwort_Direkt_mit_Metadaten.xml" />
+    <EmbeddedResource Include="DatenabholungV6\Daten\Einzelabholung\4b1_Einzelbescheid_ElsterDatenabholung_Abholung_Antwort_WebserverLink.xml" />
+    <EmbeddedResource Include="DatenabholungV6\Daten\Einzelabholung\4b2_Einzelbescheid_ElsterDatenabholung_Abholung_Antwort_WebserverDatei.xml" />
+    <EmbeddedResource Include="DatenabholungV6\Daten\Einzelabholung\5_Einzelbescheid_ElsterDatenabholung_Bestaetigung.xml" />
+    <EmbeddedResource Include="DatenabholungV6\Daten\Einzelabholung\6_Einzelbescheid_ElsterDatenabholung_Bestaetigung_Antwort.xml" />
+    <EmbeddedResource Include="DatenabholungV6\Daten\Sammelabholung\3_Sammelbescheid_ElsterDatenabholung_Abholung_Anfrage.xml" />
+    <EmbeddedResource Include="DatenabholungV6\Daten\Sammelabholung\4a_Sammelbescheid_ElsterDatenabholung_Abholung_Antwort_Direkt.xml" />
+    <EmbeddedResource Include="DatenabholungV6\Daten\Sammelabholung\4b1_Sammelbescheid_ElsterDatenabholung_Abholung_Antwort_WebserverLink.xml" />
+    <EmbeddedResource Include="DatenabholungV6\Daten\Sammelabholung\4b2_Sammelbescheid_ElsterDatenabholung_Abholung_Antwort_WebServerDatei.xml" />
+    <EmbeddedResource Include="DatenabholungV6\Daten\Sammelabholung\5_Sammelbescheid_ElsterDatenabholung_Bestaetigung.xml" />
+    <EmbeddedResource Include="DatenabholungV6\Daten\Sammelabholung\6_Sammelbescheid_ElsterDatenabholung_Bestaetigung_Antwort.xml" />
     <Content Include="Datenuebermittler2015\Daten\readme.txt" />
   </ItemGroup>
   <ItemGroup>

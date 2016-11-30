@@ -11,14 +11,14 @@
 #pragma warning disable 1591
 
 // 
-// Dieser Quellcode wurde automatisch generiert von xsd, Version=4.6.81.0.
+// Dieser Quellcode wurde automatisch generiert von xsd, Version=4.6.1055.0.
 // 
 namespace Dataline.Elster.Basis {
     using System.Xml.Serialization;
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/2002/XMLSchema")]
     [System.Xml.Serialization.XmlRootAttribute("NutzdatenHeader", Namespace="http://www.elster.de/2002/XMLSchema", IsNullable=false)]
@@ -140,7 +140,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/2002/XMLSchema")]
     public partial class NDH_EmpfaengerCType : object, System.ComponentModel.INotifyPropertyChanged {
@@ -184,7 +184,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/headerbasis02/XMLSchema")]
     public enum EmpfaengerIDSType {
         
@@ -196,7 +196,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/2002/XMLSchema")]
     public partial class NDH_ZusatzCType : object, System.ComponentModel.INotifyPropertyChanged {
@@ -240,7 +240,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/2002/XMLSchema")]
     public partial class NDH_RCCType : object, System.ComponentModel.INotifyPropertyChanged {
@@ -308,7 +308,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elster.de/2002/XMLSchema")]
     public partial class NDH_RCCTypeRueckgabe : object, System.ComponentModel.INotifyPropertyChanged {
@@ -350,7 +350,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elster.de/2002/XMLSchema")]
     public partial class NDH_RCCTypeStack : object, System.ComponentModel.INotifyPropertyChanged {
@@ -392,7 +392,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.elster.de/2002/XMLSchema")]
     public partial class NDH_HerstellerCType : object, System.ComponentModel.INotifyPropertyChanged {
@@ -434,7 +434,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elster.de/2002/XMLSchema")]
     public partial class NutzdatenHeaderCTypeSigUser : object, System.ComponentModel.INotifyPropertyChanged {
@@ -464,7 +464,7 @@ namespace Dataline.Elster.Basis {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.elster.de/2002/XMLSchema")]
     public enum NutzdatenHeaderCTypeVersion {
         

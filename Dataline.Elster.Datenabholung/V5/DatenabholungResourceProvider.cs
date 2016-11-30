@@ -9,7 +9,7 @@ using System.Reflection;
 
 using Dataline.Elster.Basis;
 
-namespace Dataline.Elster.Datenabholung
+namespace Dataline.Elster.Datenabholung.V5
 {
     /// <summary>
     /// Der XSD-Anbieter für das Modul Datenabholung
@@ -28,7 +28,8 @@ namespace Dataline.Elster.Datenabholung
         public DatenabholungResourceProvider()
         {
             var type = GetType();
-            var basePath = $"{type.Namespace}.xsd.";
+            var assemblyBaseNamespace = string.Join(".", type.Namespace.Split('.').Reverse().Skip(1).Reverse());
+            var basePath = $"{assemblyBaseNamespace}.xsd.";
             _assembly = type.GetTypeInfo().Assembly;
             _fileToResourceName = _assembly.GetManifestResourceNames()
                 .Where(x => x.StartsWith(basePath))

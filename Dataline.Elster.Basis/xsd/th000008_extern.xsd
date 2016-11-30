@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-15"?>
 <!-- Version 8.23 -->
-<xs:schema xmlns:headerbasis="http://www.elster.de/headerbasis02/XMLSchema" xmlns:elster="http://www.elster.de/2002/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.elster.de/2002/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1">
+<xs:schema xmlns:headerbasis="http://www.elster.de/headerbasis02/XMLSchema" xmlns:elster="http://www.elster.de/2002/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.elster.de/2002/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2">
 	<xs:import namespace="http://www.elster.de/headerbasis02/XMLSchema" schemaLocation="./headerbasis000002.xsd"/>
 	<xs:element name="TransferHeader" type="elster:TransferHeaderCType"/>
 	<xs:complexType name="TransferHeaderCType">
@@ -17,9 +17,7 @@ ElsterAnmeldung für Anmeldungsteuerdaten, usw.</xs:documentation>
 			</xs:element>
 			<xs:element name="DatenArt" type="headerbasis:DatenArtSType">
 				<xs:annotation>
-					<xs:documentation xml:lang="de">Um welche Daten handelt es sich inhaltlich. Nur unterstützte Datentypen gelangen in die Nachverarbeitung.</xs:documentation>
-					<xs:documentation xml:lang="de">Text; max. 42 Zeichen
-</xs:documentation>
+					<xs:documentation xml:lang="de">Um welche Daten handelt es sich inhaltlich. Nur unterstützte Datenarten gelangen in die Nachverarbeitung.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Vorgang" type="headerbasis:VorgangSType">
@@ -29,8 +27,6 @@ Angabe
 - ob und ggf. wie die Daten authentifiziert wurden
 - ob die Datenlieferung serverseitig online oder offline verarbeitet wird
 - ob die Verarbeitung der Daten partiell erfolgt, d.h. ob bei einer Datenlieferungen mit mehreren Datenpaketen bei einem Fehler die ganze Datenlieferung als fehlerhaft abgelehnt wird oder nur der fehlerhafte Teil
-
-Text; max. 42 Zeichen
 </xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -48,9 +44,8 @@ das Tag darf vom Datenlieferant nicht geliefert werden (auch nicht leer)</xs:doc
 			</xs:element>
 			<xs:element name="Testmerker" type="headerbasis:TestmerkerSType" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation xml:lang="de">Muss vom Datenlieferant gefuellt werden; wenn nicht vorhanden dann Echtfall ; Echfall aber auch wenn Testmerker = "0" oder = "000000000"</xs:documentation>
-					<xs:documentation xml:lang="de">gilt fuer die gesamte Datenlieferung !!!</xs:documentation>
-					<xs:documentation xml:lang="de">Kennzeichnung der Datenlieferung ob es sich um einen Echtfall oder einen Testfall handelt.</xs:documentation>
+					<xs:documentation xml:lang="de">Muss vom Datenlieferant gefuellt werden; wenn nicht vorhanden dann Echtfall ; Echtfall aber auch wenn Testmerker = "0" oder = "000000000"</xs:documentation>
+					<xs:documentation xml:lang="de">Gilt fuer die gesamte Datenlieferung!</xs:documentation>
 					<xs:documentation xml:lang="de">Kennzeichnung der Datenlieferung ob es sich um einen Echtfall oder einen Testfall handelt.</xs:documentation>
 					<xs:documentation xml:lang="de">Ein Echtfall kann haben:
 - kein Element Testmerker
@@ -90,8 +85,7 @@ Ausnahme: Verfahren ElsterLohn
 			<xs:element name="HerstellerID" type="headerbasis:HerstellerIDSType"/>
 			<xs:element name="DatenLieferant">
 				<xs:annotation>
-					<xs:documentation xml:lang="DE">Datenlieferant ist derjenige, der die Datenlieferung an die Finanzverwaltung (Clearingstelle) uebermittelt. (ggf. Servicerechen-zentrum) 
-
+					<xs:documentation xml:lang="DE">Datenlieferant ist derjenige, der die Datenlieferung an die Finanzverwaltung (Clearingstelle) uebermittelt. (ggf. Servicerechenzentrum) 
 Der Inhalt des Tags "DatenLieferant" ist nach dem selben Verfahren und dem gleichen Schlüssel zu verschluesseln, wie die gesamte Datenlieferung;
 Der Inhalt wird online entschlüsselt, wenn dies nicht funktioniert, wird dem Anwender sofort ein Fehler zurückgegeben.
 
@@ -137,10 +131,7 @@ JJJJMMTThhmmss:Zahl, 14-stellig - extern nicht zu fuellen - </xs:documentation>
 					<xs:sequence>
 						<xs:element name="Info" minOccurs="0" maxOccurs="unbounded">
 							<xs:annotation>
-								<xs:documentation xml:lang="de">Freitext für Informationen
-
-Das Element Info kann mehrfach geliefert werden.
-</xs:documentation>
+								<xs:documentation xml:lang="de">Freitext für Informationen, kann vom Datenlieferant für eigene Zusätze / Informationen genutzt werden</xs:documentation>
 							</xs:annotation>
 							<xs:simpleType>
 								<xs:annotation>
@@ -278,7 +269,8 @@ In den Unterelementen von RC kann man erkennen ob die Übermittlung der Daten gek
 					<xs:sequence>
 						<xs:element name="Code">
 							<xs:annotation>
-								<xs:documentation xml:lang="de">Rückgabewert einer SendeAktion 
+								<xs:documentation xml:lang="de">Extern nicht zu setzen und zu füllen!
+Rückgabewert einer SendeAktion 
 
 Für den Endnutzer:
 Die verarbeitende Anwendung soll erkennen können, ob ein Fehler (9-stellige Fehlernummer) vorliegt oder nicht (0 = fehlerfreie Datenannahme) und ggf. Schritte einleiten können. 
@@ -287,9 +279,6 @@ Beim Senden muss dieses Element nicht gesetzt werden; falls der Wert gefüllt übe
 WICHTIGER HINWEIS:
 Wenn der Returncode _0_ im TransferHeader steht, muss bei DatenArten, bei denen das Element DatenTeil mit Inhalt zurückgeliefert wird, zusätzlich auch der Rückgabe Code im NutzdatenHeader geprüft werden!
 Nur dadurch kann man erkennen ob die Daten angenommen wurden von der Finanzverwaltung oder nicht.
-
-Numerisch -extern nicht zu setzen und zu füllen -
-
 </xs:documentation>
 							</xs:annotation>
 							<xs:simpleType>
@@ -301,15 +290,12 @@ Numerisch -extern nicht zu setzen und zu füllen -
 						</xs:element>
 						<xs:element name="Text" type="xs:string">
 							<xs:annotation>
-								<xs:documentation xml:lang="de">Die Fehlermeldung ist ein Text, der genaueren Aufschluss über einen Fehler gibt.
+								<xs:documentation xml:lang="de">Extern nicht zu setzen und zu füllen!
+Die Fehlermeldung ist ein Text, der genaueren Aufschluss über einen Fehler gibt.
 
 Für den Endnutzer:
 der Text kann z.B. ausgegeben werden
-Beim Senden muss dieses Element nicht gesetzt werden; falls der Wert gefüllt übermittelt wird, wird dieser in der Serverantwort überschrieben.
-
-</xs:documentation>
-								<xs:documentation xml:lang="de">Text -extern nicht  setzen und zu füllen -
-</xs:documentation>
+Beim Senden muss dieses Element nicht gesetzt werden; falls der Wert gefüllt übermittelt wird, wird dieser in der Serverantwort überschrieben.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 					</xs:sequence>
@@ -320,11 +306,10 @@ Beim Senden muss dieses Element nicht gesetzt werden; falls der Wert gefüllt übe
 					<xs:sequence>
 						<xs:element name="Code">
 							<xs:annotation>
-								<xs:documentation>Rückgabewert einer SendeAktion
+								<xs:documentation>Extern nicht zu setzen und zu füllen!
+Rückgabewert einer SendeAktion
 
-Für den Softwarehersteller oder die Hotline 
-
-Numerisch -extern nicht zu setzen und zu füllen -</xs:documentation>
+Für den Softwarehersteller oder die Hotline</xs:documentation>
 							</xs:annotation>
 							<xs:simpleType>
 								<xs:annotation>
@@ -335,12 +320,10 @@ Numerisch -extern nicht zu setzen und zu füllen -</xs:documentation>
 						</xs:element>
 						<xs:element name="Text" type="xs:string">
 							<xs:annotation>
-								<xs:documentation>Die Fehlermeldung ist ein Text, der genaueren Aufschluss über einen Fehler gibt.
+								<xs:documentation>Extern nicht zu setzen und zu füllen!
+Die Fehlermeldung ist ein Text, der genaueren Aufschluss über einen Fehler gibt.
 
-Für den Softwarehersteller oder die Hotline
-
-Text -extern nicht zu setzen und zu füllen -
-</xs:documentation>
+Für den Softwarehersteller oder die Hotline</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 					</xs:sequence>
