@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <authors>DATALINE GmbH &amp; Co.KG</authors>
+    <owners>DATALINE GmbH &amp; Co.KG</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/dataline-gmbh/Elster</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>ELSTER-Basisfunktionen</description>
+    <releaseNotes>Erstes Release</releaseNotes>
+    <copyright>Copyright 2015 DATALINE GmbH &amp; Co.KG</copyright>
+    <tags>ELSTER</tags>
+    <dependencies>
+      <group targetFramework="native" />
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETStandard1.0">
+        <dependency id="System.Diagnostics.Debug" version="4.0.11" />
+        <dependency id="System.Diagnostics.Tools" version="4.0.1" />
+        <dependency id="System.Linq.Queryable" version="4.0.1" />
+        <dependency id="System.Resources.ResourceManager" version="4.0.1" />
+        <dependency id="System.Runtime" version="4.1.0" />
+        <dependency id="System.Runtime.Extensions" version="4.1.0" />
+        <dependency id="System.Text.RegularExpressions" version="4.1.0" />
+      </group>
+      <group targetFramework=".NETPortable,Version=v4.5,Profile=Profile259" />
+    </dependencies>
+    <frameworkAssemblies />
+  </metadata>
+  <files>
+    <file src="..\..\_._" target="lib\native\" />
+    <file src="$id$.targets" target="build\native\" />
+    <file src="bin\$configuration$\net45\$id$.dll" target="lib\net45\" />
+    <file src="bin\$configuration$\net45\$id$.xml" target="lib\net45\" />
+    <file src="bin\$configuration$\netstandard1.0\$id$.dll" target="lib\netstandard1.0\" />
+    <file src="bin\$configuration$\netstandard1.0\$id$.xml" target="lib\netstandard1.0\" />
+    <file src="bin\$configuration$\portable45-net45+win8+wp8+wpa81\$id$.dll" target="lib\portable-net45+win8+wp8+wpa81\" />
+    <file src="bin\$configuration$\portable45-net45+win8+wp8+wpa81\$id$.xml" target="lib\portable-net45+win8+wp8+wpa81\" />
+  </files>
+</package>

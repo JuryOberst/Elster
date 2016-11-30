@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <authors>DATALINE GmbH &amp; Co.KG</authors>
+    <owners>DATALINE GmbH &amp; Co.KG</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/dataline-gmbh/Elster</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Klassen für ELSTER Lohn 2 (Datenübermittler 2014)</description>
+    <releaseNotes>Erstes Release</releaseNotes>
+    <copyright>Copyright 2015-2016 DATALINE GmbH &amp; Co.KG</copyright>
+    <tags>ELSTER Lohn 2 II Datenübermittler 2014</tags>
+    <dependencies>
+      <group targetFramework="native" />
+      <group targetFramework="net45" />
+      <group targetFramework="netstandard1.0" />
+      <group targetFramework="portable-net45+win8+wpa81+wp8" />
+    </dependencies>
+    <frameworkAssemblies />
+  </metadata>
+  <files>
+    <file src="..\..\_._" target="lib\native\" />
+    <file src="$id$.targets" target="build\native\" />
+    <file src="bin\$configuration$\net45\$id$.dll" target="lib\net45\" />
+    <file src="bin\$configuration$\netstandard1.0\$id$.dll" target="lib\netstandard1.0\" />
+    <file src="bin\$configuration$\portable45-net45+win8+wp8+wpa81\$id$.dll" target="lib\portable-net45+win8+wp8+wpa81\" />
+  </files>
+</package>

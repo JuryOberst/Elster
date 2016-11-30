@@ -1,0 +1,85 @@
+﻿{
+  "configurations": {
+    "Debug": {
+      "buildOptions": {
+        "define": [ "DEBUG" ],
+        "debugType": "portable"
+      }
+    },
+    "Release": {
+      "buildOptions": {
+        "debugType": "none",
+        "xmlDoc": true,
+        "optimize": true
+      }
+    }
+  },
+
+  "buildOptions": {
+    "additionalArguments": [ "/ruleset:../../Dataline.ruleset", "/additionalfile:../../stylecop.json" ],
+    "compile": [ "../../GlobalAssemblyInfo.cs" ],
+    "embed": "xsd/**/*.xsd"
+  },
+
+  "dependencies": {
+    "JetBrains.Annotations": {
+      "version": "10.2.1",
+      "type": "build"
+    },
+    "StyleCop.Analyzers": {
+      "version": "1.0.0",
+      "type": "build"
+    }
+  },
+
+  "frameworks": {
+    "netstandard1.0": {
+      "imports": [ "dotnet" ],
+      "dependencies": {
+        "System.Diagnostics.Debug": "4.0.11",
+        "System.Diagnostics.Tools": "4.0.1",
+        "System.Linq": "4.1.0",
+        "System.ObjectModel": "4.0.12",
+        "System.Reflection.Extensions": "4.0.1",
+        "System.Resources.ResourceManager": "4.0.1",
+        "System.Runtime": "4.1.0",
+        "System.Runtime.Extensions": "4.1.0",
+        "System.Threading": "4.0.11",
+        "System.Xml.XmlSerializer": "4.0.11"
+      }
+    },
+    ".NETPortable,Version=v4.5,Profile=Profile259": {
+      "frameworkAssemblies": {
+        "mscorlib": { "type": "build" },
+        "System": { "type": "build" },
+        "System.Collections": { "type": "build" },
+        "System.Core": { "type": "build" },
+        "System.Diagnostics.Debug": { "type": "build" },
+        "System.Diagnostics.Tools": { "type": "build" },
+        "System.IO": { "type": "build" },
+        "System.Linq": { "type": "build" },
+        "System.Linq.Expressions": { "type": "build" },
+        "System.Linq.Queryable": { "type": "build" },
+        "System.Net.Primitives": { "type": "build" },
+        "System.ObjectModel": { "type": "build" },
+        "System.Reflection": { "type": "build" },
+        "System.Reflection.Extensions": { "type": "build" },
+        "System.Resources.ResourceManager": { "type": "build" },
+        "System.Runtime": { "type": "build" },
+        "System.Runtime.Extensions": { "type": "build" },
+        "System.Runtime.Serialization.Xml": { "type": "build" },
+        "System.Text.RegularExpressions": { "type": "build" },
+        "System.Threading": { "type": "build" },
+        "System.Xml": { "type": "build" },
+        "System.Xml.XmlSerializer": { "type": "build" }
+      }
+    },
+    "net45": {
+      "frameworkAssemblies": {
+        "System.Xml": "",
+        "System.Xml.Linq": "",
+        "System.Xml.XmlSerializer": ""
+      }
+    }
+  }
+}
