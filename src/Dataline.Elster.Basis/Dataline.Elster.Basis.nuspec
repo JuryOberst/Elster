@@ -33,9 +33,6 @@
       </group>
     </dependencies>
     <frameworkAssemblies>
-      <frameworkAssembly assemblyName="System.Xml" targetFramework="native" />
-      <frameworkAssembly assemblyName="System.Xml.Linq" targetFramework="native" />
-      <frameworkAssembly assemblyName="System.Xml.XmlSerializer" targetFramework="native" />
       <frameworkAssembly assemblyName="System.Xml" targetFramework="net45" />
       <frameworkAssembly assemblyName="System.Xml.Linq" targetFramework="net45" />
       <frameworkAssembly assemblyName="System.Xml.XmlSerializer" targetFramework="net45" />
