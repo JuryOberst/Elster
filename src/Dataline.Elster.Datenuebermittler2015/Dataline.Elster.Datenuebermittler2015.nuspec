@@ -9,8 +9,10 @@
     <projectUrl>https://github.com/dataline-gmbh/Elster</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Klassen für ELSTER Lohn 2 (Datenübermittler 2015)</description>
-    <releaseNotes>Erstes Release</releaseNotes>
-    <copyright>Copyright 2015 DATALINE GmbH &amp; Co.KG</copyright>
+    <releaseNotes>
+      - Erste Version für .NET Standard
+    </releaseNotes>
+    <copyright>Copyright 2016 DATALINE GmbH &amp; Co.KG</copyright>
     <tags>ELSTER Lohn 2 II Datenübermittler 2015</tags>
     <dependencies>
       <dependency id="Dataline.Elster.Basis" version="$version$" />

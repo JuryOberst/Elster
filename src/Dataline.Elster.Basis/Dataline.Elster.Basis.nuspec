@@ -9,8 +9,11 @@
     <projectUrl>https://github.com/dataline-gmbh/Elster</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Basis-Klassen für ELSTER</description>
-    <releaseNotes>Erstes Release</releaseNotes>
-    <copyright>Copyright 2015 DATALINE GmbH &amp; Co.KG</copyright>
+    <releaseNotes>
+      - Erste Version für .NET Standard
+      - Aktuelle ELSTER Basis-Schemata
+    </releaseNotes>
+    <copyright>Copyright 2016 DATALINE GmbH &amp; Co.KG</copyright>
     <tags>ELSTER Basis</tags>
     <dependencies>
       <group targetFramework="netstandard1.0">

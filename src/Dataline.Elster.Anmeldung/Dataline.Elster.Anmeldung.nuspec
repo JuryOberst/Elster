@@ -9,8 +9,10 @@
     <projectUrl>https://github.com/dataline-gmbh/Elster</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Klassen für die Lohn- und Umsatzsteueranmeldung über ELSTER</description>
-    <releaseNotes>Erstes Release</releaseNotes>
-    <copyright>Copyright 2015 DATALINE GmbH &amp; Co.KG</copyright>
+    <releaseNotes>
+      - Erste Version für .NET Standard
+    </releaseNotes>
+    <copyright>Copyright 2016 DATALINE GmbH &amp; Co.KG</copyright>
     <tags>ELSTER Lohnsteuer Umsatzsteuer Lohnsteueranmeldung Umsatzsteueranmeldung</tags>
     <dependencies>
       <group>

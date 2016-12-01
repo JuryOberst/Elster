@@ -9,8 +9,11 @@
     <projectUrl>https://github.com/dataline-gmbh/Elster</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Klassen für die ELSTER-Datenabholung (z.B. Elektronische Lohnsteuerkarte)</description>
-    <releaseNotes>Erstes Release</releaseNotes>
-    <copyright>Copyright 2015 DATALINE GmbH &amp; Co.KG</copyright>
+    <releaseNotes>
+      - Erste Version für .NET Standard
+      - Datenabholung Version 6
+    </releaseNotes>
+    <copyright>Copyright 2016 DATALINE GmbH &amp; Co.KG</copyright>
     <tags>ELSTER Datenabholung Elektronische Lohnsteuerkarte</tags>
     <dependencies>
       <dependency id="Dataline.Elster.Basis" version="$version$" />

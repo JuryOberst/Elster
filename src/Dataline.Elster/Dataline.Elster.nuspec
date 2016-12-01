@@ -9,7 +9,10 @@
     <projectUrl>https://github.com/dataline-gmbh/Elster</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>ELSTER-Basisfunktionen</description>
-    <releaseNotes>Erstes Release</releaseNotes>
+    <releaseNotes>
+      - Erste Version für .NET Standard
+    </releaseNotes>
+    <copyright>Copyright 2016 DATALINE GmbH &amp; Co.KG</copyright>
     <copyright>Copyright 2015 DATALINE GmbH &amp; Co.KG</copyright>
     <tags>ELSTER</tags>
     <dependencies>
