@@ -15,7 +15,13 @@
     <copyright>Copyright 2016 DATALINE GmbH &amp; Co.KG</copyright>
     <tags>ELSTER Lohnsteuer Umsatzsteuer Lohnsteueranmeldung Umsatzsteueranmeldung</tags>
     <dependencies>
-      <group>
+      <group targetFramework="native">
+        <dependency id="Dataline.Elster.Basis" version="$version$" />
+      </group>
+      <group targetFramework="net45">
+        <dependency id="Dataline.Elster.Basis" version="$version$" />
+      </group>
+      <group targetFramework="portable-net45+win8+wp8+wpa81">
         <dependency id="Dataline.Elster.Basis" version="$version$" />
       </group>
       <group targetFramework="netstandard1.0">

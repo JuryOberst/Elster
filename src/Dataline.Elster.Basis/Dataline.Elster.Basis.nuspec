@@ -16,6 +16,9 @@
     <copyright>Copyright 2016 DATALINE GmbH &amp; Co.KG</copyright>
     <tags>ELSTER Basis</tags>
     <dependencies>
+      <group targetFramework="native" />
+      <group targetFramework="net45" />
+      <group targetFramework="portable-net45+win8+wp8+wpa81" />
       <group targetFramework="netstandard1.0">
         <dependency id="System.Diagnostics.Debug" version="[4.0.11,5.0)" />
         <dependency id="System.Diagnostics.Tools" version="[4.0.1,5.0)" />
