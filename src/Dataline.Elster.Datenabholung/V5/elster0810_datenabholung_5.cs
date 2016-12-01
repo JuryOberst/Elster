@@ -15,7 +15,7 @@ using Dataline.Elster.Basis;
 // 
 // Dieser Quellcode wurde automatisch generiert von xsd, Version=4.6.81.0.
 // 
-namespace Dataline.Elster.Datenabholung {
+namespace Dataline.Elster.Datenabholung.V5 {
     using System.Xml.Serialization;
     
     /// <remarks/>
