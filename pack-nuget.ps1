@@ -1,6 +1,8 @@
 param(
 	[Parameter(Mandatory=$True)]
 	[string]$Version,
+	[string]$Configuration = "Release",
+	[string]$NuGet = $null,
 	[string]$VersionSuffix = $null
 )
 
@@ -13,10 +15,12 @@ new-item $packageOutputPath -itemtype directory | out-null
 
 $fullVersion = $Version + (&{if ($VersionSuffix) { "-" + $VersionSuffix } else { "" }})
 
+$nugetExecutable = if ($NuGet) { $NuGet } else { "nuget" }
+
 $nuspecPath = join-path (join-path (Join-Path $PSScriptRoot "src") "Dataline.*") "*.nuspec"
 
 get-item $nuspecPath | % {
 	$packageId = $_.Basename
-	& nuget pack $_.FullName -Properties "Configuration=Release;Id=$packageId" -OutputDirectory $packageOutputPath -Version $fullVersion
+	& $nugetExecutable pack $_.FullName -Properties "Configuration=$Configuration;Id=$packageId" -OutputDirectory $packageOutputPath -Version $fullVersion
 	if (!$?) { exit 1 }
 }
