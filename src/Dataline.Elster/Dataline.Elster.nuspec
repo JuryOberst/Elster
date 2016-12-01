@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <id>$id$</id>
+    <id>Dataline.Elster</id>
     <version>$version$</version>
     <authors>DATALINE GmbH &amp; Co.KG</authors>
     <owners>DATALINE GmbH &amp; Co.KG</owners>
