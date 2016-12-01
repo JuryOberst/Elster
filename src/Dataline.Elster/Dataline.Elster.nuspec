@@ -13,7 +13,6 @@
       - Erste Version für .NET Standard
     </releaseNotes>
     <copyright>Copyright 2016 DATALINE GmbH &amp; Co.KG</copyright>
-    <copyright>Copyright 2015 DATALINE GmbH &amp; Co.KG</copyright>
     <tags>ELSTER</tags>
     <dependencies>
       <group targetFramework="netstandard1.0">
