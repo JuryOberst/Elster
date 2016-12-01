@@ -35,7 +35,6 @@
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.Xml" targetFramework="net45" />
       <frameworkAssembly assemblyName="System.Xml.Linq" targetFramework="net45" />
-      <frameworkAssembly assemblyName="System.Xml.XmlSerializer" targetFramework="net45" />
     </frameworkAssemblies>
   </metadata>
   <files>

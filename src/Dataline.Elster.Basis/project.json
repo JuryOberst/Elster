@@ -77,8 +77,7 @@
     "net45": {
       "frameworkAssemblies": {
         "System.Xml": "",
-        "System.Xml.Linq": "",
-        "System.Xml.XmlSerializer": ""
+        "System.Xml.Linq": ""
       }
     }
   }
