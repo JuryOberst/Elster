@@ -13,16 +13,17 @@
     <copyright>Copyright 2015 DATALINE GmbH &amp; Co.KG</copyright>
     <tags>ELSTER Lohnsteuer Umsatzsteuer Lohnsteueranmeldung Umsatzsteueranmeldung</tags>
     <dependencies>
-      <group targetFramework="native" />
-      <group targetFramework="net45" />
-      <group targetFramework="netstandard1.0">
-        <dependency id="System.Xml.XDocument" version="4.0.11" />
+      <group>
+        <dependency id="Dataline.Elster.Basis" version="$version$" />
       </group>
-      <group targetFramework="portable-net45+win8+wpa81+wp8" />
+      <group targetFramework="netstandard1.0">
+        <dependency id="Dataline.Elster.Basis" version="$version$" />
+        <dependency id="System.Xml.XDocument" version="[4.0.11,5.0)" />
+      </group>
     </dependencies>
-    <frameworkAssemblies />
   </metadata>
   <files>
+    <file src="..\..\*.md" target="" />
     <file src="..\..\_._" target="lib\native\" />
     <file src="$id$.targets" target="build\native\" />
     <file src="bin\$configuration$\net45\$id$.dll" target="lib\net45\" />

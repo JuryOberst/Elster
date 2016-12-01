@@ -13,22 +13,20 @@
     <copyright>Copyright 2015 DATALINE GmbH &amp; Co.KG</copyright>
     <tags>ELSTER</tags>
     <dependencies>
-      <group targetFramework="native" />
-      <group targetFramework=".NETFramework4.5" />
-      <group targetFramework=".NETStandard1.0">
-        <dependency id="System.Diagnostics.Debug" version="4.0.11" />
-        <dependency id="System.Diagnostics.Tools" version="4.0.1" />
-        <dependency id="System.Linq.Queryable" version="4.0.1" />
-        <dependency id="System.Resources.ResourceManager" version="4.0.1" />
-        <dependency id="System.Runtime" version="4.1.0" />
-        <dependency id="System.Runtime.Extensions" version="4.1.0" />
-        <dependency id="System.Text.RegularExpressions" version="4.1.0" />
+      <group targetFramework="netstandard1.0">
+        <dependency id="System.Diagnostics.Debug" version="[4.0.11,5.0)" />
+        <dependency id="System.Diagnostics.Tools" version="[4.0.1,5.0)" />
+        <dependency id="System.Linq.Queryable" version="[4.0.1,5.0)" />
+        <dependency id="System.Resources.ResourceManager" version="[4.0.1,5.0)" />
+        <dependency id="System.Runtime" version="[4.1.0,5.0)" />
+        <dependency id="System.Runtime.Extensions" version="[4.1.0,5.0)" />
+        <dependency id="System.Text.RegularExpressions" version="[4.1.0,5.0)" />
       </group>
-      <group targetFramework=".NETPortable,Version=v4.5,Profile=Profile259" />
     </dependencies>
     <frameworkAssemblies />
   </metadata>
   <files>
+    <file src="..\..\*.md" target="" />
     <file src="..\..\_._" target="lib\native\" />
     <file src="$id$.targets" target="build\native\" />
     <file src="bin\$configuration$\net45\$id$.dll" target="lib\net45\" />
