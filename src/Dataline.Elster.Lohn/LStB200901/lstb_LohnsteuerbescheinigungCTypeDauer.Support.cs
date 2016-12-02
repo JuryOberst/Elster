@@ -20,7 +20,7 @@ using Dataline.Elster.Basis;
 
 namespace Dataline.Elster.Lohn
 {
-    namespace LStB201601
+    namespace LStB200901
     {
         public partial class lstb_LohnsteuerbescheinigungCTypeDauer
         {

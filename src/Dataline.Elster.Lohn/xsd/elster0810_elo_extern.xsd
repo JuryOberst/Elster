@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
-	XML-Schema als Schnittstelle zur Übermittlung von Lohnsteuerbescheinigungen.
+	XML-Schema als Schnittstelle zur Ãœbermittlung von Lohnsteuerbescheinigungen.
 	=============
-	Änderungshistorie
+	Ã„nderungshistorie
 	Version 7:
 		Einbinden der LStB 2009
 		Einbinden der Protokollversionen 3,4,5 
@@ -12,31 +12,33 @@
 		Einbinden der LStB 2010
 		Entfernen der LStB 2007
 	Version 9:
-		Verwendung der Adapter-Schemata für LStB 2009-2010
-		2008 wird nicht mehr unterstützt
-	Version 10: Einbinden der Beta-Schemata für LSTB 2011
-	Version 11: Einbindung der Adapter für die Protokolle der Version 4 und 5
-	Version 12: Einbindung der LStB für 2012
-	Version 13: Entfernen des Namespace-Präfix elsterlohn200801
-	Version 14: Einbindung der LStB für 201301
-	Version 15: Einbindung der LStB für 201302
-	Version 16: Namespace-Präfix elsterlohn201302 nachgetragen
-	Version 17: die Jahre 2009-2011 werden nicht mehr unterstützt
-	Version 18: Einbindung der LStB für 201401
-	Version 19, 20: Einbinden der LStB für 201501
+		Verwendung der Adapter-Schemata fÃ¼r LStB 2009-2010
+		2008 wird nicht mehr unterstÃ¼tzt
+	Version 10: Einbinden der Beta-Schemata fÃ¼r LSTB 2011
+	Version 11: Einbindung der Adapter fÃ¼r die Protokolle der Version 4 und 5
+	Version 12: Einbindung der LStB fÃ¼r 2012
+	Version 13: Entfernen des Namespace-PrÃ¤fix elsterlohn200801
+	Version 14: Einbindung der LStB fÃ¼r 201301
+	Version 15: Einbindung der LStB fÃ¼r 201302
+	Version 16: Namespace-PrÃ¤fix elsterlohn201302 nachgetragen
+	Version 17: die Jahre 2009-2011 werden nicht mehr unterstÃ¼tzt
+	Version 18: Einbindung der LStB fÃ¼r 201401
+	Version 19, 20: Einbinden der LStB fÃ¼r 201501
 	Version 21: Einbinden der LStB 201601 und LStBStornoV1
+	Version 22: Einbinden der LStB 201701
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:elster="http://www.elster.de/2002/XMLSchema" xmlns:elsterlohn200901="http://www.elsterlohn.de/2009-01/XMLSchema" xmlns:elsterlohn201001="http://www.elsterlohn.de/2010-01/XMLSchema" xmlns:elsterlohn201101="http://www.elsterlohn.de/2011-01/XMLSchema" xmlns:elsterlohn201201="http://www.elsterlohn.de/2012-01/XMLSchema" xmlns:elsterlohn201301="http://www.elsterlohn.de/2013-01/XMLSchema" xmlns:elsterlohn201302="http://www.elsterlohn.de/2013-02/XMLSchema" xmlns:elsterlohn201401="http://www.elsterlohn.de/2014-01/XMLSchema" xmlns:elsterlohn201501="http://www.elsterlohn.de/2015-01/XMLSchema" xmlns:elsterlohn201601="http://www.elsterlohn.de/2016-01/XMLSchema" xmlns:lstbstornov1="http://www.elsterlohn.de/LStBStornoV1/XMLSchema" xmlns:protokoll5="http://www.elsterfachmethodik.de/protokollverfahren/version5/XMLSchema" xmlns:protokoll4="http://www.elsterfachmethodik.de/protokollverfahren/version4/XMLSchema" xmlns:protokoll3="http://www.elsterfachmethodik.de/protokollverfahren/version3/XMLSchema" targetNamespace="http://www.elster.de/2002/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:elster="http://www.elster.de/2002/XMLSchema" xmlns:elsterlohn200901="http://www.elsterlohn.de/2009-01/XMLSchema" xmlns:elsterlohn201001="http://www.elsterlohn.de/2010-01/XMLSchema" xmlns:elsterlohn201101="http://www.elsterlohn.de/2011-01/XMLSchema" xmlns:elsterlohn201201="http://www.elsterlohn.de/2012-01/XMLSchema" xmlns:elsterlohn201301="http://www.elsterlohn.de/2013-01/XMLSchema" xmlns:elsterlohn201302="http://www.elsterlohn.de/2013-02/XMLSchema" xmlns:elsterlohn201401="http://www.elsterlohn.de/2014-01/XMLSchema" xmlns:elsterlohn201501="http://www.elsterlohn.de/2015-01/XMLSchema" xmlns:elsterlohn201601="http://www.elsterlohn.de/2016-01/XMLSchema" xmlns:elsterlohn201701="http://www.elsterlohn.de/2017-01/XMLSchema" xmlns:lstbstornov1="http://www.elsterlohn.de/LStBStornoV1/XMLSchema" xmlns:protokoll5="http://www.elsterfachmethodik.de/protokollverfahren/version5/XMLSchema" xmlns:protokoll4="http://www.elsterfachmethodik.de/protokollverfahren/version4/XMLSchema" xmlns:protokoll3="http://www.elsterfachmethodik.de/protokollverfahren/version3/XMLSchema" targetNamespace="http://www.elster.de/2002/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<!-- Import : Lohnsteuerbescheinigungen / Storno -->
-	<xs:import namespace="http://www.elsterlohn.de/2009-01/XMLSchema" schemaLocation="./lstb200901_adapter.xsd"/>
-	<xs:import namespace="http://www.elsterlohn.de/2010-01/XMLSchema" schemaLocation="./lstb201001_adapter.xsd"/>
-	<xs:import namespace="http://www.elsterlohn.de/2011-01/XMLSchema" schemaLocation="./lstb201101_adapter.xsd"/>
-	<xs:import namespace="http://www.elsterlohn.de/2012-01/XMLSchema" schemaLocation="./lstb201201_adapter.xsd"/>
-	<xs:import namespace="http://www.elsterlohn.de/2013-01/XMLSchema" schemaLocation="./lstb201301_adapter.xsd"/>
-	<xs:import namespace="http://www.elsterlohn.de/2013-02/XMLSchema" schemaLocation="./lstb201302_adapter.xsd"/>
-	<xs:import namespace="http://www.elsterlohn.de/2014-01/XMLSchema" schemaLocation="./lstb201401_adapter.xsd"/>
+  <xs:import namespace="http://www.elsterlohn.de/2009-01/XMLSchema" schemaLocation="./lstb200901_adapter.xsd"/>
+  <xs:import namespace="http://www.elsterlohn.de/2010-01/XMLSchema" schemaLocation="./lstb201001_adapter.xsd"/>
+  <xs:import namespace="http://www.elsterlohn.de/2011-01/XMLSchema" schemaLocation="./lstb201101_adapter.xsd"/>
+  <xs:import namespace="http://www.elsterlohn.de/2012-01/XMLSchema" schemaLocation="./lstb201201_adapter.xsd"/>
+  <xs:import namespace="http://www.elsterlohn.de/2013-01/XMLSchema" schemaLocation="./lstb201301_adapter.xsd"/>
+  <xs:import namespace="http://www.elsterlohn.de/2013-02/XMLSchema" schemaLocation="./lstb201302_adapter.xsd"/>
+  <xs:import namespace="http://www.elsterlohn.de/2014-01/XMLSchema" schemaLocation="./lstb201401_adapter.xsd"/>
 	<xs:import namespace="http://www.elsterlohn.de/2015-01/XMLSchema" schemaLocation="./lstb201501_adapter.xsd"/>
 	<xs:import namespace="http://www.elsterlohn.de/2016-01/XMLSchema" schemaLocation="./lstb201601_adapter.xsd"/>
+	<xs:import namespace="http://www.elsterlohn.de/2017-01/XMLSchema" schemaLocation="./lstb201701_adapter.xsd"/>
 	<xs:import namespace="http://www.elsterlohn.de/LStBStornoV1/XMLSchema" schemaLocation="./lstb_storno_000001_adapter.xsd"/>
 	<!-- Import : Protokoll Version 4 und 5 -->
 	<xs:import namespace="http://www.elsterfachmethodik.de/protokollverfahren/version3/XMLSchema" schemaLocation="./protokollanforderung000003.xsd"/>
@@ -65,7 +67,7 @@
 				<xs:element name="TransferHeader" type="elster:TransferHeaderCType"/>
 				<xs:element name="DatenTeil" type="elster:DatenTeilCType">
 					<xs:annotation>
-						<xs:documentation xml:lang="DE">verschlüsselt</xs:documentation>
+						<xs:documentation xml:lang="DE">verschlÃ¼sselt</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 			</xs:sequence>
@@ -75,7 +77,7 @@
 			<xs:field xpath="elster:NutzdatenTicket"/>
 		</xs:unique>
 	</xs:element>
-	<!-- DatenTeil; hier noch mal separat aufgeführt damit auch der Datenteil
+	<!-- DatenTeil; hier noch mal separat aufgefÃ¼hrt damit auch der Datenteil
 	     einer Lieferung komplett ohne TransferHeader validiert werden kann. -->
 	<xs:element name="DatenTeil" type="elster:DatenTeilCType">
 		<xs:unique name="EindeutigesNutzdatenTicketinDatenTeil">
@@ -92,7 +94,7 @@
 	<!-- Nutzdatenblock -->
 	<xs:complexType name="NutzdatenblockCType">
 		<xs:annotation>
-			<xs:documentation xml:lang="DE">Der Nutzdatenblock enthält jeweils einen "NutzdatenHeader"- und einen "Nutzdaten"-Tag</xs:documentation>
+			<xs:documentation xml:lang="DE">Der Nutzdatenblock enthÃ¤lt jeweils einen "NutzdatenHeader"- und einen "Nutzdaten"-Tag</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="NutzdatenHeader" type="elster:NutzdatenHeaderCType"/>
@@ -103,15 +105,16 @@
 	<xs:complexType name="NutzdatenCType">
 		<xs:choice>
 			<xs:choice maxOccurs="unbounded">
-				<xs:element ref="elsterlohn200901:Lohnsteuerbescheinigung"/>
-				<xs:element ref="elsterlohn201001:Lohnsteuerbescheinigung"/>
-				<xs:element ref="elsterlohn201101:Lohnsteuerbescheinigung"/>
-				<xs:element ref="elsterlohn201201:Lohnsteuerbescheinigung"/>
+        <xs:element ref="elsterlohn200901:Lohnsteuerbescheinigung"/>
+        <xs:element ref="elsterlohn201001:Lohnsteuerbescheinigung"/>
+        <xs:element ref="elsterlohn201101:Lohnsteuerbescheinigung"/>
+        <xs:element ref="elsterlohn201201:Lohnsteuerbescheinigung"/>
 				<xs:element ref="elsterlohn201301:Lohnsteuerbescheinigung"/>
 				<xs:element ref="elsterlohn201302:Lohnsteuerbescheinigung"/>
 				<xs:element ref="elsterlohn201401:Lohnsteuerbescheinigung"/>
 				<xs:element ref="elsterlohn201501:Lohnsteuerbescheinigung"/>
 				<xs:element ref="elsterlohn201601:Lohnsteuerbescheinigung"/>
+				<xs:element ref="elsterlohn201701:Lohnsteuerbescheinigung"/>
 				<xs:element ref="lstbstornov1:LStBStorno"/>
 			</xs:choice>
 			<xs:choice>

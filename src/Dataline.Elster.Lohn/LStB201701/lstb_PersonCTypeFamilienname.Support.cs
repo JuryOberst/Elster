@@ -17,7 +17,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
 
-namespace Dataline.Elster.Lohn.LStB201601
+namespace Dataline.Elster.Lohn.LStB201701
 {
     public partial class lstb_PersonCTypeFamilienname
     {

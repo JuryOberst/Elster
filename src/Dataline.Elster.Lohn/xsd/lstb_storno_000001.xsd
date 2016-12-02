@@ -4,6 +4,7 @@
 	=============
 	Änderungshistorie
 	Version 1: Erstellung
+	Version 2: maxInclusive vom Zuflussjahr entfernt
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:elsterlohn="http://www.elsterlohn.de/LStBStornoV1/XMLSchema" xmlns:elsterbase="http://www.elster.de/basis08/XMLSchema" targetNamespace="http://www.elsterlohn.de/LStBStornoV1/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<!--Version 1 -->
@@ -46,7 +47,6 @@
 				<xs:simpleType>
 					<xs:restriction base="xs:gYear">
 						<xs:minInclusive value="2016"/>
-						<xs:maxInclusive value="2016"/>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
