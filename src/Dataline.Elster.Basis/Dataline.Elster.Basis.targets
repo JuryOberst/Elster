@@ -3,7 +3,7 @@
   <!-- for C++/CLI projects only -->
   <ItemGroup Condition="'$(Language)' == 'C++'">
     <Reference Include="Dataline.Elster.Basis">
-      <HintPath>$(MSBuildThisFileDirectory)..\lib\net45\Dataline.Elster.Basis.dll</HintPath>
+      <HintPath>$(MSBuildThisFileDirectory)..\..\lib\net45\Dataline.Elster.Basis.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
