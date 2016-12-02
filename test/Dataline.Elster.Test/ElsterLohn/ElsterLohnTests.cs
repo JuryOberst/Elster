@@ -30,6 +30,8 @@ namespace Dataline.Elster.Test.ElsterLohn
         [InlineData("ELO_DatenLieferung_LStB_201501_01.xml")]
         [InlineData("ELO_DatenLieferung_LStB_201601_Neu.xml")]
         [InlineData("ELO_DatenLieferung_LStB_201601_Korrektur.xml")]
+        [InlineData("ELO_DatenLieferung_LStB_201701_Neu.xml")]
+        [InlineData("ELO_DatenLieferung_LStB_201701_Korrektur.xml")]
         [InlineData("ELO_DatenLieferung_LStBStorno_v1_Storno.xml")]
         [InlineData("protokoll/ELO_Protokoll_03_01.xml")]
         [InlineData("protokoll/ELO_Protokoll_03_02.xml")]
