@@ -31,6 +31,7 @@ namespace Dataline.Elster.Test.ElsterAnmeldung
         [InlineData("LSTA_Bayern_2014.xml")]
         [InlineData("LSTA_Bayern_2015.xml")]
         [InlineData("LSTA_Bayern_2016.xml")]
+        [InlineData("LSTA_Bayern_2017.xml")]
         public void TestDeserializeLSTA(string relativeFileName)
         {
             var yearMonth = GetYearMonth(relativeFileName);
@@ -55,6 +56,7 @@ namespace Dataline.Elster.Test.ElsterAnmeldung
         [InlineData("USTVA_2014.xml")]
         [InlineData("USTVA_2015.xml")]
         [InlineData("USTVA_2016.xml")]
+        [InlineData("USTVA_2017.xml")]
         [InlineData("USTVA_Df_2004.xml")]
         [InlineData("USTVA_Df_2005.xml")]
         [InlineData("USTVA_Df_2006.xml")]
@@ -68,6 +70,7 @@ namespace Dataline.Elster.Test.ElsterAnmeldung
         [InlineData("USTVA_Df_2014.xml")]
         [InlineData("USTVA_Df_2015.xml")]
         [InlineData("USTVA_Df_2016.xml")]
+        [InlineData("USTVA_Df_2017.xml")]
         [InlineData("USTVA_SoVZ_2004.xml")]
         [InlineData("USTVA_SoVZ_2005.xml")]
         [InlineData("USTVA_SoVZ_2006.xml")]
@@ -81,6 +84,7 @@ namespace Dataline.Elster.Test.ElsterAnmeldung
         [InlineData("USTVA_SoVZ_2014.xml")]
         [InlineData("USTVA_SoVZ_2015.xml")]
         [InlineData("USTVA_SoVZ_2016.xml")]
+        [InlineData("USTVA_SoVZ_2017.xml")]
         public void TestDeserializeUSTVA(string relativeFileName)
         {
             var yearMonth = GetYearMonth(relativeFileName);

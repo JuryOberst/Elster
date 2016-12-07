@@ -25,8 +25,10 @@ REM md ..\UStA201201
 REM md ..\UStA201301
 REM md ..\UStA201401
 REM md ..\UStA201501
-md ..\LStA201601
-md ..\UStA201601
+REM md ..\LStA201601
+REM md ..\UStA201601
+md ..\LStA201701
+md ..\UStA201701
 
 REM xsd /o:..\LStA200401 /n:Dataline.Elster.Anmeldung.LStA200401 /edb /c headerbasis000002.xsd .\elster0810_LStA_200401_extern.xsd
 REM xsd /o:..\LStA200501 /n:Dataline.Elster.Anmeldung.LStA200501 /edb /c headerbasis000002.xsd .\elster0810_LStA_200501_extern.xsd
@@ -53,5 +55,7 @@ REM xsd /o:..\UStA201201 /n:Dataline.Elster.Anmeldung.UStA200121 /edb /c headerb
 REM xsd /o:..\UStA201301 /n:Dataline.Elster.Anmeldung.UStA200131 /edb /c headerbasis000002.xsd .\elster0810_UStA_201301_extern.xsd
 REM xsd /o:..\UStA201401 /n:Dataline.Elster.Anmeldung.UStA200141 /edb /c headerbasis000002.xsd .\elster0810_UStA_201401_extern.xsd
 REM xsd /o:..\UStA201501 /n:Dataline.Elster.Anmeldung.UStA200151 /edb /c headerbasis000002.xsd .\elster0810_UStA_201501_extern.xsd
-xsd /o:..\LStA201601 /n:Dataline.Elster.Anmeldung.LStA201601 /edb /c headerbasis000002.xsd .\elster0810_LStA_201601_extern.xsd
-xsd /o:..\UStA201601 /n:Dataline.Elster.Anmeldung.UStA201601 /edb /c headerbasis000002.xsd .\elster0810_UStA_201601_extern.xsd
+REM xsd /o:..\LStA201601 /n:Dataline.Elster.Anmeldung.LStA201601 /edb /c headerbasis000002.xsd .\elster0810_LStA_201601_extern.xsd
+REM xsd /o:..\UStA201601 /n:Dataline.Elster.Anmeldung.UStA201601 /edb /c headerbasis000002.xsd .\elster0810_UStA_201601_extern.xsd
+xsd /o:..\LStA201701 /n:Dataline.Elster.Anmeldung.LStA201701 /edb /c headerbasis000002.xsd .\elster0810_LStA_201701_extern.xsd
+xsd /o:..\UStA201701 /n:Dataline.Elster.Anmeldung.UStA201701 /edb /c headerbasis000002.xsd .\elster0810_UStA_201701_extern.xsd
