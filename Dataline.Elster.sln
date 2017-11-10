@@ -1,11 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5202E214-7CA8-4AB8-A6AE-4F5E935631B9}"
 	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
 		LICENSE.md = LICENSE.md
 		pack-nuget.ps1 = pack-nuget.ps1
 		README.md = README.md
@@ -16,21 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{01895410-481
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{71A03DC6-87DD-4E38-B82E-3CFF8F6EAF40}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.Elster", "src\Dataline.Elster\Dataline.Elster.xproj", "{ED8DEEFE-F8A1-4126-B746-FCB6EA0D780E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.Elster", "src\Dataline.Elster\Dataline.Elster.csproj", "{ED8DEEFE-F8A1-4126-B746-FCB6EA0D780E}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.Elster.Basis", "src\Dataline.Elster.Basis\Dataline.Elster.Basis.xproj", "{2F837AEB-C1EA-4ECF-B106-CEB6DA76CE6F}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.Elster.Anmeldung", "src\Dataline.Elster.Anmeldung\Dataline.Elster.Anmeldung.xproj", "{AECFCB45-8859-4FEB-8268-54FD6A007436}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.Elster.Lohn", "src\Dataline.Elster.Lohn\Dataline.Elster.Lohn.xproj", "{D5D4DA0C-4C88-4901-9B62-586AF98201B9}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.Elster.Datenabholung", "src\Dataline.Elster.Datenabholung\Dataline.Elster.Datenabholung.xproj", "{2550FE7A-1EE2-4E64-B0D1-91C5B5C25D26}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.Elster.Datenuebermittler2014", "src\Dataline.Elster.Datenuebermittler2014\Dataline.Elster.Datenuebermittler2014.xproj", "{5EEF6272-502F-48F8-AB25-7F4A2C29ED33}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.Elster.Datenuebermittler2015", "src\Dataline.Elster.Datenuebermittler2015\Dataline.Elster.Datenuebermittler2015.xproj", "{86BC33E1-A5BE-4CFA-8859-46649CAAF2DA}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Dataline.Elster.Test", "test\Dataline.Elster.Test\Dataline.Elster.Test.xproj", "{C5F8E4F9-9DB8-4C58-BF9D-D9D4D1367623}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataline.Elster.Test", "test\Dataline.Elster.Test\Dataline.Elster.Test.csproj", "{C5F8E4F9-9DB8-4C58-BF9D-D9D4D1367623}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,30 +29,6 @@ Global
 		{ED8DEEFE-F8A1-4126-B746-FCB6EA0D780E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED8DEEFE-F8A1-4126-B746-FCB6EA0D780E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED8DEEFE-F8A1-4126-B746-FCB6EA0D780E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2F837AEB-C1EA-4ECF-B106-CEB6DA76CE6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F837AEB-C1EA-4ECF-B106-CEB6DA76CE6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F837AEB-C1EA-4ECF-B106-CEB6DA76CE6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F837AEB-C1EA-4ECF-B106-CEB6DA76CE6F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AECFCB45-8859-4FEB-8268-54FD6A007436}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AECFCB45-8859-4FEB-8268-54FD6A007436}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AECFCB45-8859-4FEB-8268-54FD6A007436}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AECFCB45-8859-4FEB-8268-54FD6A007436}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D5D4DA0C-4C88-4901-9B62-586AF98201B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D5D4DA0C-4C88-4901-9B62-586AF98201B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D5D4DA0C-4C88-4901-9B62-586AF98201B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D5D4DA0C-4C88-4901-9B62-586AF98201B9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2550FE7A-1EE2-4E64-B0D1-91C5B5C25D26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2550FE7A-1EE2-4E64-B0D1-91C5B5C25D26}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2550FE7A-1EE2-4E64-B0D1-91C5B5C25D26}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2550FE7A-1EE2-4E64-B0D1-91C5B5C25D26}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5EEF6272-502F-48F8-AB25-7F4A2C29ED33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5EEF6272-502F-48F8-AB25-7F4A2C29ED33}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5EEF6272-502F-48F8-AB25-7F4A2C29ED33}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5EEF6272-502F-48F8-AB25-7F4A2C29ED33}.Release|Any CPU.Build.0 = Release|Any CPU
-		{86BC33E1-A5BE-4CFA-8859-46649CAAF2DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{86BC33E1-A5BE-4CFA-8859-46649CAAF2DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{86BC33E1-A5BE-4CFA-8859-46649CAAF2DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{86BC33E1-A5BE-4CFA-8859-46649CAAF2DA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C5F8E4F9-9DB8-4C58-BF9D-D9D4D1367623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C5F8E4F9-9DB8-4C58-BF9D-D9D4D1367623}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5F8E4F9-9DB8-4C58-BF9D-D9D4D1367623}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -76,12 +39,9 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{ED8DEEFE-F8A1-4126-B746-FCB6EA0D780E} = {01895410-4819-4E5D-A540-CFCF54E77D17}
-		{2F837AEB-C1EA-4ECF-B106-CEB6DA76CE6F} = {01895410-4819-4E5D-A540-CFCF54E77D17}
-		{AECFCB45-8859-4FEB-8268-54FD6A007436} = {01895410-4819-4E5D-A540-CFCF54E77D17}
-		{D5D4DA0C-4C88-4901-9B62-586AF98201B9} = {01895410-4819-4E5D-A540-CFCF54E77D17}
-		{2550FE7A-1EE2-4E64-B0D1-91C5B5C25D26} = {01895410-4819-4E5D-A540-CFCF54E77D17}
-		{5EEF6272-502F-48F8-AB25-7F4A2C29ED33} = {01895410-4819-4E5D-A540-CFCF54E77D17}
-		{86BC33E1-A5BE-4CFA-8859-46649CAAF2DA} = {01895410-4819-4E5D-A540-CFCF54E77D17}
 		{C5F8E4F9-9DB8-4C58-BF9D-D9D4D1367623} = {71A03DC6-87DD-4E38-B82E-3CFF8F6EAF40}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23505F2B-BF0D-46CC-AA29-04863FB32DCC}
 	EndGlobalSection
 EndGlobal

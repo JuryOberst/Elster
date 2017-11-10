@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:elsterlohn="http://www.elsterlohn.de/LStBStornoV1/XMLSchema" targetNamespace="http://www.elsterlohn.de/LStBStornoV1/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<!--Version 1 -->
-	<xs:include schemaLocation="./lstb_storno_000001.xsd"/>
-	<xs:element name="LStBStorno" type="elsterlohn:StornierungCType"/>
-</xs:schema>
