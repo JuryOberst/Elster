@@ -40,11 +40,11 @@ namespace Dataline.Elster
                     switch (change.ChangeType)
                     {
                         case TaxOfficeChangeType.New:
-                            Debug.Assert(oldEntries.Count(x => x.ValidUntil == null) == 0, "We must not have a tax office with the same tax office number.");
+                            Debug.Assert(oldEntries.Count(x => x.ValidUntil == null) == 0, $"We must not have a tax office with the same tax office number with number being {change.BufaNr}.");
                             newEntry = ProcessNew(date, change);
                             break;
                         case TaxOfficeChangeType.ChangeName:
-                            Debug.Assert(oldEntries.Any(x => x.ValidUntil == null), "Ensure that the previous entry exists.");
+                            Debug.Assert(oldEntries.Any(x => x.ValidUntil == null), $"Ensure that the previous entry exists with number being {change.BufaNr}.");
                             newEntry = ProcessChangeName(date, change, oldEntries);
                             break;
                         case TaxOfficeChangeType.ChangeValid:
