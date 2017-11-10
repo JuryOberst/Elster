@@ -1473,7 +1473,7 @@ namespace Dataline.Elster
                     new List<TaxOfficeChange>()
                         {
                             TaxOfficeChange.SetValid(2716, false),
-                            TaxOfficeChange.Change(5319, " Gelsenkirchen-Süd"),
+                            TaxOfficeChange.Change(5319, "Gelsenkirchen-Süd"),
                             TaxOfficeChange.Redirect(5318, false, 5319),
                         }
                 },
@@ -1490,6 +1490,114 @@ namespace Dataline.Elster
                         {
                             TaxOfficeChange.Redirect(3063, false, 3061),
                         }
+                },
+                {
+                    new DateTime(2016, 1, 1),
+                    new List<TaxOfficeChange>()
+                        {
+                            TaxOfficeChange.Change(9187, "München-Abt. Körperschaften", false),
+                            TaxOfficeChange.New(9188, "München-Abt. Betriebsprüfung", false),
+                            TaxOfficeChange.Change(9189, "München-Abt. Erhebung", false),
+                        }
+                },
+                {
+                    new DateTime(2016, 6, 27),
+                    new List<TaxOfficeChange>()
+                        {
+                            TaxOfficeChange.Redirect(3235, true, 3238),
+                            TaxOfficeChange.Change(3235, "Borna", false),
+                        }
+                },
+                {
+                    new DateTime(2016, 9, 22),
+                    new List<TaxOfficeChange>()
+                        {
+                            TaxOfficeChange.Change(2119, "Kiel (19)"),
+                            TaxOfficeChange.Change(2120, "Kiel (20)"),
+                            TaxOfficeChange.New(2137, "Zentrale Prüfungsstelle", false),
+                            TaxOfficeChange.Change(2471, "Landeshauptkasse Bremen", false),
+                            TaxOfficeChange.SetValid(2476, false),
+                        }
+                },
+                {
+                    new DateTime(2016, 12, 1),
+                    new List<TaxOfficeChange>()
+                        {
+                            TaxOfficeChange.Redirect(3206, true, 3210),
+                            TaxOfficeChange.Change(3206, "Freital", false),
+                        }
+                },
+                {
+                    new DateTime(2017, 1, 31),
+                    new List<TaxOfficeChange>()
+                        {
+                            TaxOfficeChange.New(9272, "Finanzamt SU LFS Bayern Ansbach", false, true),
+                            TaxOfficeChange.New(9273, "Finanzamt SU Ausbildung AbAg", false, true),
+                            TaxOfficeChange.New(9274, "Finanzamt SU Laufende Fortbildung", false, true),
+                            TaxOfficeChange.New(9275, "Finanzamt SU Fortbildung neue EDV-Verf.", false, true),
+                            TaxOfficeChange.New(9276, "Finanzamt SU LFS Ansbach Prüfung", false, true),
+                        }
+                },
+                {
+                    new DateTime(2017, 6, 2),
+                    new List<TaxOfficeChange>()
+                        {
+                            TaxOfficeChange.Change(9232, "Lohr a. Main mit Außenstellen", false),
+                            TaxOfficeChange.Change(9138, "Memmingen-Mindelheim (138)"),
+                            TaxOfficeChange.Change(9140, "Memmingen-Mindelheim (140)"),
+                            TaxOfficeChange.New(1191, "Technisches Finanzamt Berlin", true),
+                            TaxOfficeChange.Change(1127, "für Körperschaften I"),
+                            TaxOfficeChange.Change(1129, "für Körperschaften III"),
+                            TaxOfficeChange.Change(1130, "für Körperschaften IV"),
+                            TaxOfficeChange.Change(1137, "für Körperschaften II"),
+                            TaxOfficeChange.Change(2244, "Hamburg-Ost (44)"),
+                            TaxOfficeChange.Change(2251, "Hamburg-Ost (51)"),
+                            TaxOfficeChange.Redirect(2738, false, 2722),
+                            TaxOfficeChange.Redirect(2739, false, 2722),
+                            TaxOfficeChange.SetValid(3235, false),
+                        }
+                },
+                {
+                    new DateTime(2017, 6, 28),
+                    new List<TaxOfficeChange>()
+                    {
+                        TaxOfficeChange.Change(9142, "München Bewertung des Grundbesitzes"),
+                        TaxOfficeChange.Change(9143, "München (143) Körpersch./PersonenGes"),
+                        TaxOfficeChange.Change(9144, "München (144) Selbständige/Gewerbe/VuV"),
+                        TaxOfficeChange.Change(9145, "München (145) Selbständige/Gewerbe/VuV"),
+                        TaxOfficeChange.Change(9146, "München (146) Selbständige/Gewerbe/VuV"),
+                        TaxOfficeChange.Change(9147, "München (147) Selbständige/Gewerbe/VuV"),
+                        TaxOfficeChange.Change(9148, "München (148) Selbständige/Gewerbe/VuV"),
+                        TaxOfficeChange.Change(9149, "München Erhebung"),
+                        TaxOfficeChange.Change(9181, "München (181) Arbeitn./Renten/Hausgem"),
+                        TaxOfficeChange.Change(9182, "München (182) Arbeitn./Renten/Hausgem"),
+                        TaxOfficeChange.Change(9183, "München (183) Arbeitn./Renten/Hausgem"),
+                        TaxOfficeChange.Change(9184, "München (184) Arbeitn./Renten/Hausgem"),
+                        TaxOfficeChange.Change(9185, "München (185) Arbeitn./Renten/Hausgem"),
+                        TaxOfficeChange.Change(9187, "München Körperschaften"),
+                        TaxOfficeChange.Change(9188, "München Betriebsprüfung"),
+                        TaxOfficeChange.Change(9189, "München Erhebung"),
+                        TaxOfficeChange.SetValid(3206, false),
+                    }
+                },
+                {
+                    new DateTime(2017, 8, 10),
+                    new List<TaxOfficeChange>()
+                    {
+                        TaxOfficeChange.Redirect(2119, false, 2120),
+                        TaxOfficeChange.Change(2120, "Kiel"),
+                    }
+                },
+                {
+                    new DateTime(2017, 10, 9),
+                    new List<TaxOfficeChange>()
+                    {
+                        TaxOfficeChange.Change(9123, "Kempten-Immenstadt (123)"),
+                        TaxOfficeChange.Change(9127, "Kempten-Immenstadt (127)"),
+                        TaxOfficeChange.Change(2457, "Bremerhaven Bewertung Bremen"),
+                        TaxOfficeChange.Redirect(2484, false, 2460),
+                        TaxOfficeChange.Change(2390, "für Fahndung und Strafsachen Braunschweig"),
+                    }
                 },
             };
 #endregion
