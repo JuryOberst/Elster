@@ -14,6 +14,9 @@ namespace Dataline.Elster
     /// </summary>
     public class TaxOfficeInfo
     {
+        [CanBeNull]
+        private string _normalizedName;
+
         /// <summary>
         /// Initialisiert eine neue Instanz der <see cref="TaxOfficeInfo" /> Klasse.
         /// </summary>
@@ -95,5 +98,33 @@ namespace Dataline.Elster
         /// </remarks>
         [CanBeNull]
         public IReadOnlyList<int> RedirectTo { get; set; }
+
+        /// <summary>
+        /// Holt den normalisierten Namen des Finanzamts
+        /// </summary>
+        /// <returns>Der normalisierte Name, ggf. mit <c>Finanzamt</c> am Anfang</returns>
+        [NotNull]
+        public string NormalizedName
+        {
+            get
+            {
+                return _normalizedName ?? (_normalizedName = GetNormalizedName());
+            }
+        }
+
+        [NotNull]
+        private string GetNormalizedName()
+        {
+            if (Name.IndexOf("Finanzamt", StringComparison.Ordinal) != -1
+                || Name.IndexOf("FA", StringComparison.Ordinal) != -1
+                || Name.IndexOf("hauptkasse", StringComparison.OrdinalIgnoreCase) != -1
+                || Name.IndexOf("finanzkasse", StringComparison.OrdinalIgnoreCase) != -1
+                || Name.IndexOf("Prüfungsstelle", StringComparison.Ordinal) != -1)
+            {
+                return Name;
+            }
+
+            return "Finanzamt " + Name;
+        }
     }
 }

@@ -11,6 +11,19 @@ namespace Dataline.Elster.Test
 {
     public class TaxOfficesTests
     {
+        [Theory]
+        [InlineData(2390, "Finanzamt für Fahndung und Strafsachen Braunschweig")]
+        [InlineData(9232, "Finanzamt Lohr a. Main mit Außenstellen")]
+        [InlineData(2471, "Landeshauptkasse Bremen")]
+        [InlineData(2137, "Zentrale Prüfungsstelle")]
+        [InlineData(9272, "Finanzamt SU LFS Bayern Ansbach")]
+        [InlineData(2713, "Landesfinanzkasse Daun")]
+        public void TestTaxOfficeNameNormalization(int bufaNr, string expectedName)
+        {
+            var taxOffice = TaxOffices.Active.Load(bufaNr).Single();
+            Assert.Equal(expectedName, taxOffice.NormalizedName);
+        }
+
         [Fact]
         public void TestQueryInvalidTaxOffices()
         {
