@@ -1599,6 +1599,13 @@ namespace Dataline.Elster
                         TaxOfficeChange.Change(2390, "für Fahndung und Strafsachen Braunschweig"),
                     }
                 },
+                {
+                    new DateTime(2017, 11, 30),
+                    new List<TaxOfficeChange>()
+                    {
+                        TaxOfficeChange.Change(9202, "Obernburg a. Main mit Außenstelle Amorbach"),
+                    }
+                },
             };
 #endregion
     }
